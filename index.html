@@ -1,1 +1,148 @@
-hello
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismael Calixto | Desenvolvedor & Suporte Técnico</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Aplicando a fonte Inter como padrão */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300">
+
+    <!-- ===== HEADER ===== -->
+    <header class="bg-slate-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">Ismael Calixto</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#sobre" class="hover:text-sky-400 transition-colors duration-300">Sobre</a>
+                <a href="#servicos" class="hover:text-sky-400 transition-colors duration-300">Serviços</a>
+                <a href="#portfolio" class="hover:text-sky-400 transition-colors duration-300">Portfólio</a>
+                <a href="#contato" class="hover:text-sky-400 transition-colors duration-300">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO SECTION ===== -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center bg-grid-slate-700/20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-4">
+                    Transformando Ideias em Soluções Digitais
+                </h1>
+                <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-8">
+                    Desenvolvedor Full-Stack e Especialista em Suporte Técnico, apaixonado por programação e por resolver problemas com tecnologia.
+                </p>
+                <a href="https://wa.me/5521998908129?text=Olá,%20Ismael!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar." target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-8 rounded-lg text-lg inline-flex items-center transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M12.01 2.011a10.012 10.012 0 0 1 7.437 16.442l-1.484-1.484a8.009 8.009 0 0 0-5.953-13.438zM2.011 12.01a10.012 10.012 0 0 1 16.442-7.437l-1.484 1.484a8.009 8.009 0 0 0-13.438 5.953zM12 3a9 9 0 1 1-9 9 9.01 9.01 0 0 1 9-9zm0 2a7 7 0 1 0 7 7 7 7 0 0 0-7-7zm0 3a4 4 0 1 1-4 4 4 4 0 0 1 4-4z"></path></svg>
+                    Fale comigo no WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== SOBRE MIM ===== -->
+        <section id="sobre" class="py-20 bg-slate-800/50">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 class="text-4xl font-bold text-white mb-4">Olá, sou o Ismael Calixto.</h2>
+                <p class="text-lg text-slate-400 mb-6">
+                    Desde que comecei minha jornada na programação, descobri uma paixão por criar coisas novas e, principalmente, por resolver problemas reais. Atualmente, sou estudante de Ciência da Computação na prestigiosa Universidade Federal Fluminense (UFF), onde aprofundo meus conhecimentos para construir soluções cada vez mais robustas e eficientes.
+                </p>
+                <p class="text-lg text-slate-400">
+                    Meu objetivo é simples: usar a tecnologia para facilitar a vida das pessoas e impulsionar negócios. Seja otimizando o seu computador ou construindo um site para sua empresa, meu foco é sempre na qualidade, transparência e no resultado final.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== SERVIÇOS ===== -->
+        <section id="servicos" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-white text-center mb-12">O Que Eu Faço</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1: Suporte Técnico -->
+                    <div class="bg-slate-800 p-8 rounded-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="bg-sky-500/10 text-sky-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Suporte Técnico</h3>
+                        <p class="text-slate-400">Formatação, instalação de programas, otimização de sistema, backup seguro e remoção de vírus. Deixo seu computador mais rápido e seguro.</p>
+                    </div>
+                    <!-- Card 2: Sites com WordPress -->
+                    <div class="bg-slate-800 p-8 rounded-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="bg-sky-500/10 text-sky-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Sites com WordPress</h3>
+                        <p class="text-slate-400">Criação de sites institucionais, blogs e landing pages modernos e responsivos. Aumente a presença online da sua empresa com um site profissional.</p>
+                    </div>
+                    <!-- Card 3: Sistemas Sob Medida -->
+                    <div class="bg-slate-800 p-8 rounded-lg transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="bg-sky-500/10 text-sky-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Sistemas Sob Medida</h3>
+                        <p class="text-slate-400">Desenvolvimento de programas e aplicações para desktop ou celular, pensados para automatizar tarefas e otimizar processos do seu negócio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PORTFÓLIO ===== -->
+        <section id="portfolio" class="py-20 bg-slate-800/50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-white text-center mb-12">Um Pouco do Meu Trabalho</h2>
+                <div class="max-w-4xl mx-auto bg-slate-800 rounded-lg overflow-hidden md:flex">
+                    <div class="md:w-1/2">
+                        <!-- IMPORTANTE: Troque o link abaixo por um print do site extinbras.com.br -->
+                        <img class="h-full w-full object-cover" src="https://placehold.co/800x600/1e293b/94a3b8?text=Print+do+Site+Extinbras" alt="Imagem do site Extinbras">
+                    </div>
+                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                        <h3 class="text-3xl font-bold text-white mb-3">Extinbras - Site Institucional</h3>
+                        <p class="text-slate-400 mb-6">Desenvolvimento de um site institucional completo para a Extinbras, empresa de engenharia de incêndio. O projeto foi criado em WordPress, com foco em um design limpo, profissional e que facilitasse o contato de novos clientes.</p>
+                        <a href="https://extinbras.com.br" target="_blank" class="text-sky-400 hover:text-sky-300 font-semibold inline-flex items-center">
+                            Ver Projeto
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTATO ===== -->
+        <section id="contato" class="py-20">
+            <div class="container mx-auto px-6 text-center max-w-3xl">
+                <h2 class="text-4xl font-bold text-white mb-4">Vamos Conversar?</h2>
+                <p class="text-lg text-slate-400 mb-8">
+                    Se você tem uma ideia, um problema para resolver ou simplesmente quer otimizar sua tecnologia, estou à disposição. Me mande uma mensagem e vamos encontrar a melhor solução juntos.
+                </p>
+                <a href="https://wa.me/5521998908129?text=Olá,%20Ismael!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar." target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-8 rounded-lg text-lg inline-flex items-center transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M12.01 2.011a10.012 10.012 0 0 1 7.437 16.442l-1.484-1.484a8.009 8.009 0 0 0-5.953-13.438zM2.011 12.01a10.012 10.012 0 0 1 16.442-7.437l-1.484 1.484a8.009 8.009 0 0 0-13.438 5.953zM12 3a9 9 0 1 1-9 9 9.01 9.01 0 0 1 9-9zm0 2a7 7 0 1 0 7 7 7 7 0 0 0-7-7zm0 3a4 4 0 1 1-4 4 4 4 0 0 1 4-4z"></path></svg>
+                    Iniciar Conversa no WhatsApp
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-slate-800/50 border-t border-slate-700/50">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2024 Ismael Calixto. Todos os direitos reservados.</p>
+            <p class="text-sm mt-2">Desenvolvido com paixão e código.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+

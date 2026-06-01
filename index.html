@@ -1,147 +1,2935 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ismael Calixto | Desenvolvedor & Suporte Técnico</title>
-    
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
+    <title>CodeSquad - Protótipo</title>
     <style>
-        /* Aplicando a fonte Inter como padrão */
+        :root {
+            --navy-950: #010817;
+            --navy-900: #02133e;
+            --navy-850: #061b4f;
+            --navy-800: #09245f;
+            --navy-700: #123273;
+            --navy-600: #1c438f;
+            --gold-500: #d6a52a;
+            --gold-400: #e8bc3d;
+            --gold-300: #ffd76b;
+            --gold-200: #ffe7a3;
+            --cream: #fff8e3;
+            --mint: #3de0a3;
+            --mint-soft: rgba(61, 224, 163, 0.16);
+            --red: #ff6b6b;
+            --red-soft: rgba(255, 107, 107, 0.14);
+            --orange: #f59e0b;
+            --ink: #f8fbff;
+            --muted: #b9c8e9;
+            --muted-2: #8294be;
+            --panel: rgba(7, 25, 70, 0.82);
+            --panel-strong: rgba(4, 17, 52, 0.94);
+            --card: rgba(255, 255, 255, 0.075);
+            --card-strong: rgba(255, 255, 255, 0.12);
+            --line: rgba(255, 255, 255, 0.16);
+            --shadow: 0 24px 90px rgba(0, 0, 0, 0.36);
+            --radius-xl: 30px;
+            --radius-lg: 22px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
+            --font-display: "Space Grotesk", "Aptos Display", "Trebuchet MS", sans-serif;
+            --font-body: "Aptos", "Trebuchet MS", Verdana, sans-serif;
+            --font-code: "JetBrains Mono", "Cascadia Code", "Courier New", monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow: hidden;
+            color: var(--ink);
+            font-family: var(--font-body);
+            background:
+                radial-gradient(circle at 18% 12%, rgba(232, 188, 61, 0.22), transparent 26%),
+                radial-gradient(circle at 84% 0%, rgba(37, 91, 181, 0.48), transparent 30%),
+                linear-gradient(135deg, var(--navy-950), var(--navy-900) 52%, #020b25);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.28;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 46px 46px;
+            mask-image: radial-gradient(circle at center, black, transparent 78%);
+        }
+
+        button, input, textarea, select {
+            font: inherit;
+        }
+
+        button {
+            border: 0;
+        }
+
+        button, .clickable, .project-card, .file-item, .editor-tab, .ide-tab, .chat-item {
+            cursor: pointer;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .app-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            height: 82px;
+            padding: 14px clamp(18px, 4vw, 48px);
+            border-bottom: 1px solid var(--line);
+            background: rgba(2, 19, 62, 0.78);
+            backdrop-filter: blur(20px);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: var(--ink);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+        }
+
+        .brand-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .brand-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 900;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .brand-subtitle {
+            color: var(--gold-300);
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .status-pill, .mini-pill, .role-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 34px;
+            padding: 7px 12px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--ink);
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.82rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .status-pill.gold, .role-pill.gold {
+            border-color: rgba(232, 188, 61, 0.55);
+            color: var(--gold-200);
+            background: rgba(232, 188, 61, 0.14);
+        }
+
+        .status-pill.voice {
+            border-color: rgba(61, 224, 163, 0.42);
+            color: #c9ffe8;
+            background: var(--mint-soft);
+        }
+
+        .avatar-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border: 1px solid rgba(232, 188, 61, 0.58);
+            border-radius: 16px;
+            color: var(--navy-900);
+            background: linear-gradient(145deg, var(--gold-300), var(--gold-500));
+            box-shadow: 0 16px 28px rgba(214, 165, 42, 0.24);
+            font-family: var(--font-display);
+            font-weight: 900;
+        }
+
+        .screen {
+            display: none;
+            height: calc(100vh - 82px);
+            overflow-y: auto;
+            padding: clamp(18px, 3vw, 34px) clamp(18px, 4vw, 48px);
+            animation: screenIn 0.35s ease both;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        #ide-screen.screen {
+            height: 100vh;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        @keyframes screenIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 46px;
+            padding: 12px 18px;
+            border-radius: 14px;
+            border: 1px solid transparent;
+            color: var(--ink);
+            font-weight: 900;
+            transition: box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn:hover {
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:disabled, input:disabled {
+            cursor: not-allowed;
+            opacity: 0.58;
+        }
+
+        .btn-primary {
+            color: #06133a;
+            background: linear-gradient(145deg, var(--gold-300), var(--gold-500));
+            box-shadow: 0 18px 42px rgba(214, 165, 42, 0.28);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 24px 54px rgba(214, 165, 42, 0.38);
+        }
+
+        .btn-secondary {
+            border-color: rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(232, 188, 61, 0.42);
+            background: rgba(232, 188, 61, 0.12);
+        }
+
+        .btn-success {
+            color: #041534;
+            background: linear-gradient(145deg, #73ffc9, var(--mint));
+            box-shadow: 0 18px 42px rgba(61, 224, 163, 0.22);
+        }
+
+        .btn-danger {
+            border-color: rgba(255, 107, 107, 0.46);
+            color: #ffd7d7;
+            background: rgba(255, 107, 107, 0.12);
+        }
+
+        .btn-ghost {
+            border: 1px solid var(--line);
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .icon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            color: var(--ink);
+            background: rgba(255, 255, 255, 0.08);
+            font-weight: 900;
+        }
+
+        .icon-btn:hover {
+            border-color: rgba(232, 188, 61, 0.46);
+            background: rgba(232, 188, 61, 0.12);
+        }
+
+        .home-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(330px, 0.85fr);
+            gap: clamp(20px, 4vw, 42px);
+            align-items: stretch;
+        }
+
+        .home-paper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .start-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 14px;
+            padding: 4px 0 8px;
+            text-align: center;
+        }
+
+        .start-actions-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            line-height: 1.2;
+            max-width: 420px;
+            text-align: center;
+        }
+
+        .btn-start {
+            min-height: 66px;
+            padding: 18px;
+            font-size: 1.2rem;
+            line-height: 1.15;
+            text-align: center;
+            min-width: min(100%, 360px);
+        }
+
+        .hero-panel, .match-card, .panel, .project-card, .profile-card, .lobby-stage, .modal-content, .ide-card {
+            border: 1px solid var(--line);
+            border-radius: var(--radius-xl);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.045));
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(18px);
+        }
+
+        .hero-panel {
+            position: relative;
+            min-height: 520px;
+            overflow: hidden;
+            padding: clamp(24px, 5vw, 56px);
+        }
+
+        .hero-panel::after {
+            content: "";
+            position: absolute;
+            right: -150px;
+            bottom: -170px;
+            width: 420px;
+            height: 420px;
+            border: 70px solid rgba(232, 188, 61, 0.12);
+            border-radius: 110px;
+            transform: rotate(45deg);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 13px;
+            border: 1px solid rgba(232, 188, 61, 0.34);
+            border-radius: 999px;
+            color: var(--gold-200);
+            background: rgba(232, 188, 61, 0.1);
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            position: relative;
+            max-width: 860px;
+            margin-top: 28px;
+            font-family: var(--font-display);
+            font-size: clamp(2.6rem, 7vw, 6.4rem);
+            line-height: 0.94;
+            letter-spacing: -0.07em;
+            z-index: 1;
+        }
+
+        .hero-title span {
+            color: var(--gold-300);
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin-top: 24px;
+            color: var(--muted);
+            font-size: clamp(1rem, 1.8vw, 1.18rem);
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .btn-queue {
+            min-height: 66px;
+            padding: 16px 28px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .step-row {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 38px;
+        }
+
+        .step-card {
+            min-height: 152px;
+            padding: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 20px;
+            background: rgba(3, 15, 46, 0.54);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 12px;
+            color: #06133a;
+            background: var(--gold-300);
+            font-weight: 1000;
+        }
+
+        .step-card h3 {
+            margin-top: 14px;
+            font-family: var(--font-display);
+            font-size: 1rem;
+        }
+
+        .step-card p {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+
+        .home-side {
+            display: grid;
+            gap: 18px;
+        }
+
+        .match-card {
+            position: relative;
+            overflow: hidden;
+            padding: 24px;
+        }
+
+        .match-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(232, 188, 61, 0.2), transparent 34%);
+            pointer-events: none;
+        }
+
+        .section-kicker {
+            color: var(--gold-300);
+            font-size: 0.76rem;
+            font-weight: 1000;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            margin-top: 8px;
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 3vw, 2.1rem);
+            letter-spacing: -0.04em;
+        }
+
+        .section-copy {
+            margin-top: 10px;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .match-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .metric-tile {
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.065);
+        }
+
+        .metric-label {
+            color: var(--muted-2);
+            font-size: 0.76rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .metric-value {
+            margin-top: 7px;
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 1000;
+        }
+
+        .voice-priority {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            margin-top: 18px;
+            padding: 16px;
+            border: 1px solid rgba(61, 224, 163, 0.26);
+            border-radius: 18px;
+            background: var(--mint-soft);
+        }
+
+        .pulse-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--mint);
+            box-shadow: 0 0 0 0 rgba(61, 224, 163, 0.6);
+            animation: pulse 1.8s infinite;
+            flex: 0 0 auto;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(61, 224, 163, 0.5); }
+            70% { box-shadow: 0 0 0 14px rgba(61, 224, 163, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(61, 224, 163, 0); }
+        }
+
+        .voice-priority strong {
+            display: block;
+            color: #ddfff0;
+        }
+
+        .voice-priority span {
+            display: block;
+            margin-top: 2px;
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        .panel {
+            padding: 24px;
+        }
+
+        .search-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .search-bar, .form-input, .form-textarea, .chat-input-box input, select {
+            width: 100%;
+            min-height: 46px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 14px;
+            color: var(--ink);
+            background: rgba(2, 12, 38, 0.72);
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .search-bar {
+            max-width: 380px;
+            padding: 0 16px;
+        }
+
+        .form-input, select {
+            padding: 0 13px;
+            margin-top: 8px;
+        }
+
+        .form-textarea {
+            min-height: 116px;
+            resize: none;
+            padding: 13px;
+            margin-top: 8px;
+        }
+
+        .search-bar:focus, .form-input:focus, .form-textarea:focus, .chat-input-box input:focus, select:focus {
+            border-color: rgba(232, 188, 61, 0.65);
+            box-shadow: 0 0 0 4px rgba(232, 188, 61, 0.12);
+        }
+
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .project-card {
+            position: relative;
+            min-height: 172px;
+            padding: 18px;
+            border-radius: 22px;
+            box-shadow: none;
+            transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            border-color: rgba(232, 188, 61, 0.46);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: inset 0 0 0 1px rgba(232, 188, 61, 0.14), 0 12px 32px rgba(0, 0, 0, 0.18);
+        }
+
+        .project-card h3 {
+            max-width: calc(100% - 108px);
+            font-family: var(--font-display);
+            font-size: 1.08rem;
+            line-height: 1.2;
+        }
+
+        .project-card p {
+            margin-top: 9px;
+            color: var(--muted);
+            line-height: 1.45;
+            font-size: 0.9rem;
+        }
+
+        .status-badge-card {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 1000;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .badge-success {
+            border: 1px solid rgba(61, 224, 163, 0.44);
+            color: #c9ffe8;
+            background: rgba(61, 224, 163, 0.12);
+        }
+
+        .badge-failed {
+            border: 1px solid rgba(255, 107, 107, 0.44);
+            color: #ffd1d1;
+            background: rgba(255, 107, 107, 0.12);
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 28px;
+            padding: 5px 9px;
+            border-radius: 999px;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.74rem;
+            font-weight: 800;
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            min-height: 62px;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.055);
+            font-family: var(--font-display);
+            font-weight: 1000;
+        }
+
+        .chat-list {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        .chat-item {
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.055);
+        }
+
+        .chat-item:hover {
+            border-color: rgba(232, 188, 61, 0.4);
+            background: rgba(232, 188, 61, 0.1);
+        }
+
+        .chat-input-box {
+            display: flex;
+            gap: 8px;
+            padding: 12px;
+            border-top: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chat-input-box input {
+            flex: 1;
+            min-width: 0;
+            padding: 0 13px;
+        }
+
+        .chat-msg {
+            max-width: 88%;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            color: var(--ink);
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.9rem;
+            line-height: 1.45;
+            word-break: break-word;
+        }
+
+        .chat-msg b {
+            color: var(--gold-300);
+        }
+
+        .back-btn {
+            margin-bottom: 18px;
+        }
+
+        .profile-shell {
+            display: grid;
+            grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
+            gap: 22px;
+            align-items: start;
+        }
+
+        .profile-card {
+            padding: 26px;
+        }
+
+        .profile-identity {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .profile-avatar-large {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 86px;
+            height: 86px;
+            border: 1px solid rgba(232, 188, 61, 0.44);
+            border-radius: 28px;
+            color: #06133a;
+            background: linear-gradient(145deg, var(--gold-300), var(--gold-500));
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 1000;
+            box-shadow: 0 20px 48px rgba(214, 165, 42, 0.24);
+        }
+
+        .profile-name {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .profile-tabs, .profile-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 116px minmax(0, 1fr);
+            gap: 12px;
+            align-items: center;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.055);
+        }
+
+        .info-label {
+            color: var(--gold-300);
+            font-weight: 1000;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .skill-card {
+            padding: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .bar {
+            overflow: hidden;
+            height: 9px;
+            margin-top: 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .bar span {
+            display: block;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--gold-500), var(--gold-300));
+        }
+
+        .lobby-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(320px, 410px);
+            gap: 22px;
+            align-items: stretch;
+            min-height: calc(100vh - 154px);
+        }
+
+        .lobby-stage {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(22px, 4vw, 40px);
+        }
+
+        .lobby-stage::after {
+            content: "";
+            position: absolute;
+            top: 46px;
+            right: -110px;
+            width: 320px;
+            height: 320px;
+            border-radius: 90px;
+            border: 54px solid rgba(232, 188, 61, 0.1);
+            transform: rotate(45deg);
+            pointer-events: none;
+        }
+
+        .lobby-hero {
+            position: relative;
+            z-index: 1;
+            max-width: 780px;
+        }
+
+        .lobby-hero h1 {
+            margin-top: 14px;
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 4.4rem);
+            letter-spacing: -0.06em;
+            line-height: 0.98;
+        }
+
+        .lobby-hero p {
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.65;
+        }
+
+        .team-container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .lobby-queue-row {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(260px, 420px) auto;
+            align-items: center;
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .lobby-queue-row.match-ready {
+            grid-template-columns: 1fr;
+            align-items: stretch;
+        }
+
+        .lobby-queue-row:not(.match-ready) .team-container {
+            grid-template-columns: 1fr;
+        }
+
+        .lobby-queue-row.match-ready .lobby-actions {
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .user-slot, .team-member-card {
+            padding: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.065);
+        }
+
+        .user-slot.active-user, .team-member-card.active-user {
+            border-color: rgba(232, 188, 61, 0.58);
+            background: rgba(232, 188, 61, 0.11);
+        }
+
+        .member-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .member-avatar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 17px;
+            color: #06133a;
+            background: linear-gradient(145deg, var(--gold-300), var(--gold-500));
+            font-weight: 1000;
+        }
+
+        .member-avatar.blue {
+            color: var(--ink);
+            background: linear-gradient(145deg, #2b62bd, #0a2f82);
+        }
+
+        .member-avatar.mint {
+            color: #02133e;
+            background: linear-gradient(145deg, #9affd8, var(--mint));
+        }
+
+        .member-name {
+            font-weight: 1000;
+        }
+
+        .member-role {
+            margin-top: 3px;
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 14px;
+            min-width: 0;
+        }
+
+        .mute-btn {
+            min-width: 72px;
+            min-height: 38px;
+            border-radius: 12px;
+            border: 1px solid rgba(61, 224, 163, 0.28);
+            color: #dfffee;
+            background: var(--mint-soft);
+            font-size: 0.8rem;
+            font-weight: 900;
+        }
+
+        .mute-btn.muted {
+            border-color: rgba(255, 107, 107, 0.35);
+            color: #ffd2d2;
+            background: var(--red-soft);
+        }
+
+        .vol-slider {
+            width: 100%;
+            min-width: 70px;
+            accent-color: var(--gold-500);
+        }
+
+        .match-found-card {
+            display: none;
+            position: relative;
+            z-index: 1;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .match-found-card.active {
+            display: grid;
+        }
+
+        .brief-card {
+            padding: 18px;
+            border: 1px solid rgba(232, 188, 61, 0.24);
+            border-radius: 22px;
+            background: rgba(232, 188, 61, 0.09);
+        }
+
+        .brief-card strong {
+            display: block;
+            color: var(--gold-200);
+            font-size: 0.86rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .brief-card span {
+            display: block;
+            margin-top: 9px;
+            font-family: var(--font-display);
+            font-size: 1.22rem;
+            font-weight: 1000;
+        }
+
+        .lobby-actions {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .lobby-chat-panel {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-xl);
+            background: var(--panel);
+            box-shadow: var(--shadow);
+        }
+
+        .lobby-chat-panel .chat-list {
+            min-height: 0;
+        }
+
+        .ide-app {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 7% 5%, rgba(232, 188, 61, 0.16), transparent 24%),
+                linear-gradient(135deg, #020815, var(--navy-900));
+        }
+
+        .ide-topbar {
+            display: grid;
+            grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.6fr) auto;
+            gap: 14px;
+            align-items: center;
+            min-height: 78px;
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--line);
+            background: rgba(2, 19, 62, 0.88);
+            backdrop-filter: blur(20px);
+        }
+
+        .ide-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .ide-title {
+            min-width: 0;
+        }
+
+        .ide-title strong {
+            display: block;
+            overflow: hidden;
+            font-family: var(--font-display);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .ide-title span {
+            display: block;
+            margin-top: 3px;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        .challenge-strip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .timer-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 108px;
+            min-height: 42px;
+            padding: 8px 14px;
+            border: 1px solid rgba(232, 188, 61, 0.48);
+            border-radius: 15px;
+            color: var(--gold-200);
+            background: rgba(232, 188, 61, 0.12);
+            font-family: var(--font-display);
+            font-size: 1.12rem;
+            font-weight: 1000;
+        }
+
+        .ide-header-btns {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .ide-body {
+            display: grid;
+            grid-template-columns: 310px minmax(0, 1fr) 360px;
+            gap: 14px;
+            min-height: 0;
+            flex: 1;
+            padding: 14px;
+        }
+
+        .mission-dock, .editor-panel, .comms-panel {
+            min-height: 0;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            background: var(--panel);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
+        }
+
+        .mission-dock {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ide-tabs {
+            display: flex;
+            flex: 0 0 auto;
+            padding: 8px;
+            gap: 8px;
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.045);
+        }
+
+        .ide-tab {
+            flex: 1;
+            min-height: 40px;
+            padding: 10px;
+            border-radius: 13px;
+            color: var(--muted);
+            font-weight: 1000;
+            text-align: center;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+        }
+
+        .ide-tab.active {
+            color: #06133a;
+            background: var(--gold-300);
+        }
+
+        .left-panel-content, .right-panel-content {
+            display: none;
+            min-height: 0;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .left-panel-content.active, .right-panel-content.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mission-card-content {
+            padding: 16px;
+        }
+
+        .mission-card-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            line-height: 1.1;
+        }
+
+        .mission-card-content h4 {
+            margin-top: 16px;
+            color: var(--gold-200);
+            font-family: var(--font-display);
+            font-size: 1rem;
+        }
+
+        .mission-card-content p, .mission-card-content li {
+            color: var(--muted);
+            line-height: 1.55;
+            font-size: 0.9rem;
+        }
+
+        .mission-card-content code {
+            color: var(--gold-200);
+            font-family: var(--font-code);
+        }
+
+        .mission-card-content pre {
+            overflow-x: auto;
+            margin-top: 10px;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            color: #c9ffe8;
+            background: rgba(2, 10, 34, 0.72);
+            font-family: var(--font-code);
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+
+        .mission-card-content ul {
+            display: grid;
+            gap: 8px;
+            margin-top: 12px;
+            padding-left: 18px;
+        }
+
+        .role-brief {
+            margin: 14px 0;
+            padding: 14px;
+            border: 1px solid rgba(232, 188, 61, 0.25);
+            border-radius: 18px;
+            background: rgba(232, 188, 61, 0.09);
+        }
+
+        .role-brief strong {
+            display: block;
+            color: var(--gold-200);
+        }
+
+        .role-brief span {
+            display: block;
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .file-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 12px;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            min-height: 42px;
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 14px;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.045);
+            font-size: 0.9rem;
+        }
+
+        .file-item.active, .file-item:hover {
+            border-color: rgba(232, 188, 61, 0.4);
+            color: var(--ink);
+            background: rgba(232, 188, 61, 0.1);
+        }
+
+        .file-delete-btn, .tab-close {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 28px;
+            height: 28px;
+            border-radius: 9px;
+            color: #ffd0d0;
+            background: rgba(255, 107, 107, 0.12);
+            font-weight: 1000;
+        }
+
+        .btn-new-file {
+            width: calc(100% - 24px);
+            margin: 12px 12px 0;
+        }
+
+        .editor-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .editor-tabs {
+            display: flex;
+            gap: 8px;
+            min-height: 54px;
+            overflow-x: auto;
+            padding: 8px;
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .editor-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            min-width: max-content;
+            padding: 9px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 13px;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.045);
+            font-family: var(--font-code);
+            font-size: 0.84rem;
+        }
+
+        .editor-tab.active {
+            border-color: rgba(232, 188, 61, 0.42);
+            color: var(--gold-200);
+            background: rgba(232, 188, 61, 0.1);
+        }
+
+        .editor-content {
+            flex: 1;
+            width: 100%;
+            min-height: 0;
+            padding: 22px;
+            border: 0;
+            outline: none;
+            resize: none;
+            color: #e9f2ff;
+            background:
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                #020a22;
+            background-size: 58px 100%;
+            font-family: var(--font-code);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            tab-size: 4;
+        }
+
+        .comms-panel {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .voice-channel-container {
+            padding: 14px;
+            border-bottom: 1px solid var(--line);
+            background: rgba(61, 224, 163, 0.07);
+        }
+
+        .voice-channel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .voice-channel-header strong {
+            color: #ddfff0;
+            font-family: var(--font-display);
+        }
+
+        .voice-member {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(120px, 0.8fr);
+            gap: 10px;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.045);
+        }
+
+        .voice-member span, .voice-member .audio-controls {
+            min-width: 0;
+        }
+
+        .voice-member .vol-slider {
+            min-width: 0;
+        }
+
+        .voice-member + .voice-member {
+            margin-top: 8px;
+        }
+
+        .team-progress {
+            padding: 14px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .progress-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            color: var(--muted);
+            font-size: 0.84rem;
+            font-weight: 800;
+        }
+
+        .progress-track {
+            height: 12px;
+            overflow: hidden;
+            margin-top: 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .progress-track span {
+            display: block;
+            width: 33%;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--gold-500), var(--gold-300));
+        }
+
+        .terminal-content {
+            flex: 1;
+            padding: 16px;
+            color: #9bffcf;
+            font-family: var(--font-code);
+            font-size: 0.86rem;
+            line-height: 1.55;
+            white-space: pre-wrap;
+        }
+
+        .ide-chat-area {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: auto;
+            padding: 14px;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(1, 8, 23, 0.72);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            width: min(520px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 24px;
+            background: rgba(4, 17, 52, 0.96);
+        }
+
+        .modal-content.wide {
+            width: min(900px, 100%);
+        }
+
+        .modal-header-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 18px;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 1000;
+        }
+
+        .close-modal {
+            width: 38px;
+            height: 38px;
+            border-radius: 13px;
+            color: #ffd7d7;
+            background: rgba(255, 107, 107, 0.14);
+            font-weight: 1000;
+        }
+
+        .friend-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.055);
+        }
+
+        .friend-item + .friend-item {
+            margin-top: 10px;
+        }
+
+        .stats-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+            gap: 18px;
+        }
+
+        .elo-modal-content {
+            width: min(760px, 100%);
+        }
+
+        .elo-lead {
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .elo-progression {
+            margin-top: 18px;
+            padding: 16px;
+            border: 1px solid rgba(232, 188, 61, 0.28);
+            border-radius: 20px;
+            background: rgba(232, 188, 61, 0.08);
+        }
+
+        .elo-progression strong {
+            display: block;
+            color: var(--gold-200);
+            font-family: var(--font-display);
+            font-size: 1rem;
+        }
+
+        .elo-progression span {
+            display: block;
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+
+        .elo-progress-track {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 7px;
+            margin-top: 14px;
+        }
+
+        .elo-progress-step {
+            height: 11px;
+            border-radius: 999px;
+            background: var(--elo-color);
+            opacity: 0.38;
+        }
+
+        .elo-progress-step.done {
+            opacity: 1;
+            box-shadow: 0 0 18px rgba(232, 188, 61, 0.22);
+        }
+
+        .elo-progress-labels {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 7px;
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 900;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .elo-ladder {
+            display: grid;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .elo-tier {
+            position: relative;
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            gap: 12px;
+            align-items: center;
+            overflow: hidden;
+            padding: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.11);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.055);
+        }
+
+        .elo-tier::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 7px;
+            background: var(--elo-color);
+        }
+
+        .elo-medal {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 16px;
+            color: #06133a;
+            background: linear-gradient(145deg, var(--elo-color-light), var(--elo-color));
+            font-family: var(--font-display);
+            font-weight: 1000;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+        }
+
+        .elo-tier-name {
+            display: block;
+            color: var(--ink);
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 1000;
+        }
+
+        .elo-tier-desc {
+            display: block;
+            margin-top: 3px;
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.35;
+        }
+
+        .elo-rank {
+            min-width: 116px;
+            padding: 8px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.055);
+            font-size: 0.76rem;
+            font-weight: 1000;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .elo-tier.current {
+            border-color: rgba(232, 188, 61, 0.62);
+            background: rgba(232, 188, 61, 0.12);
+        }
+
+        .elo-tier.bronze, .elo-progress-step.bronze {
+            --elo-color: #b87333;
+            --elo-color-light: #e0a66b;
+        }
+
+        .elo-tier.silver, .elo-progress-step.silver {
+            --elo-color: #bfc7d5;
+            --elo-color-light: #f0f4fb;
+        }
+
+        .elo-tier.gold, .elo-progress-step.gold {
+            --elo-color: var(--gold-500);
+            --elo-color-light: var(--gold-300);
+        }
+
+        .elo-tier.platinum, .elo-progress-step.platinum {
+            --elo-color: #58d6d0;
+            --elo-color-light: #c9fffb;
+        }
+
+        .elo-tier.diamond, .elo-progress-step.diamond {
+            --elo-color: #8dd7ff;
+            --elo-color-light: #effaff;
+        }
+
+        .radar-box {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.045);
+        }
+
+        .home-chat-fab {
+            position: fixed;
+            left: clamp(16px, 3vw, 28px);
+            bottom: clamp(16px, 3vw, 28px);
+            z-index: 180;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border: 1px solid rgba(232, 188, 61, 0.62);
+            border-radius: 22px;
+            color: #06133a;
+            background: linear-gradient(145deg, var(--gold-300), var(--gold-500));
+            box-shadow: 0 18px 44px rgba(214, 165, 42, 0.34), 0 10px 42px rgba(0, 0, 0, 0.28);
+        }
+
+        .home-chat-fab:hover {
+            box-shadow: 0 24px 56px rgba(214, 165, 42, 0.44), 0 14px 48px rgba(0, 0, 0, 0.32);
+        }
+
+        .home-chat-fab svg {
+            width: 29px;
+            height: 29px;
+        }
+
+        .home-chat-panel {
+            position: fixed;
+            left: clamp(16px, 3vw, 28px);
+            bottom: calc(clamp(16px, 3vw, 28px) + 76px);
+            z-index: 181;
+            display: none;
+            flex-direction: column;
+            width: min(380px, calc(100vw - 32px));
+            max-height: min(540px, calc(100vh - 130px));
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 26px;
+            background: rgba(4, 17, 52, 0.96);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(18px);
+        }
+
+        .home-chat-panel.active {
+            display: flex;
+            animation: homeChatIn 0.24s ease both;
+        }
+
+        .home-chat-fab[hidden], .home-chat-panel[hidden] {
+            display: none !important;
+        }
+
+        .home-chat-summary {
+            padding: 0 16px 14px;
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.45;
+        }
+
+        .home-chat-friends {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 0 14px 12px;
+        }
+
+        .home-friend-chip {
+            display: inline-flex;
+            flex: 0 0 auto;
+            align-items: center;
+            gap: 8px;
+            min-height: 36px;
+            padding: 7px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.055);
+            font-size: 0.8rem;
+            font-weight: 900;
+        }
+
+        .home-friend-chip.active {
+            border-color: rgba(61, 224, 163, 0.35);
+            color: #ddfff0;
+            background: var(--mint-soft);
+        }
+
+        .home-chat-messages {
+            display: flex;
+            flex: 1;
+            min-height: 190px;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: auto;
+            padding: 14px;
+            border-top: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.035);
+        }
+
+        @keyframes homeChatIn {
+            from { opacity: 0; transform: translateY(10px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 26px;
+            z-index: 300;
+            display: none;
+            transform: translateX(-50%);
+            max-width: min(520px, calc(100vw - 32px));
+            padding: 13px 16px;
+            border: 1px solid rgba(232, 188, 61, 0.42);
+            border-radius: 16px;
+            color: var(--gold-200);
+            background: rgba(3, 15, 46, 0.96);
+            box-shadow: var(--shadow);
+            font-weight: 900;
+        }
+
+        .toast.active {
+            display: block;
+            animation: toastIn 0.25s ease both;
+        }
+
+        @keyframes toastIn {
+            from { opacity: 0; transform: translate(-50%, 8px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
+
+        @media (max-width: 1180px) {
+            .home-grid, .home-paper, .profile-shell, .lobby-grid, .ide-body {
+                grid-template-columns: 1fr;
+            }
+
+            .ide-body {
+                overflow-y: auto;
+            }
+
+            .mission-dock, .editor-panel, .comms-panel {
+                min-height: 420px;
+            }
+
+            .ide-topbar {
+                grid-template-columns: 1fr;
+            }
+
+            .challenge-strip, .ide-header-btns {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 820px) {
+            body {
+                overflow: auto;
+            }
+
+            .app-header {
+                height: auto;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
+            .screen {
+                height: auto;
+                min-height: calc(100vh - 120px);
+                overflow: visible;
+            }
+
+            .hero-panel {
+                min-height: auto;
+            }
+
+            .start-actions {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .lobby-queue-row {
+                grid-template-columns: 1fr;
+                align-items: stretch;
+            }
+
+            .step-row, .project-list, .skill-grid, .team-container, .match-found-card, .stats-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .ide-app {
+                height: auto;
+                min-height: 100vh;
+                overflow: visible;
+            }
+
+            .ide-body {
+                display: flex;
+                flex-direction: column;
+                overflow: visible;
+            }
+
+            .editor-panel {
+                min-height: 560px;
+            }
+
+            .profile-identity, .search-row {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .elo-tier {
+                grid-template-columns: auto minmax(0, 1fr);
+            }
+
+            .elo-rank {
+                grid-column: 1 / -1;
+                justify-self: stretch;
+            }
+
+            .elo-progress-labels {
+                font-size: 0.62rem;
+            }
+
+            .search-bar {
+                max-width: none;
+            }
         }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-300">
-
-    <!-- ===== HEADER ===== -->
-    <header class="bg-slate-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white">Ismael Calixto</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#sobre" class="hover:text-sky-400 transition-colors duration-300">Sobre</a>
-                <a href="#servicos" class="hover:text-sky-400 transition-colors duration-300">Serviços</a>
-                <a href="#portfolio" class="hover:text-sky-400 transition-colors duration-300">Portfólio</a>
-                <a href="#contato" class="hover:text-sky-400 transition-colors duration-300">Contato</a>
-            </nav>
+<body>
+    <header class="app-header" id="main-header">
+        <a class="brand clickable" onclick="navTo('home-screen')" aria-label="Ir para o início">
+            <span class="brand-copy">
+                <span class="brand-title">CodeSquad</span>
+                <span class="brand-subtitle">desafios em equipe</span>
+            </span>
+        </a>
+        <div class="header-actions">
+            <button class="status-pill gold" onclick="openModal('elo-modal')">Elo: Ouro II</button>
+            <button class="avatar-btn" onclick="navTo('profile-screen')" aria-label="Abrir perfil">MV</button>
         </div>
     </header>
 
-    <main>
-        <!-- ===== HERO SECTION ===== -->
-        <section id="home" class="min-h-screen flex items-center justify-center text-center bg-grid-slate-700/20">
-            <div class="container mx-auto px-6">
-                <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-4">
-                    Transformando Ideias em Soluções Digitais
-                </h1>
-                <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-8">
-                    Desenvolvedor Full-Stack e Especialista em Suporte Técnico, apaixonado por programação e por resolver problemas com tecnologia.
-                </p>
-                <a href="https://wa.me/5521998908129?text=Olá,%20Ismael!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar." target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-8 rounded-lg text-lg inline-flex items-center transition-colors duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M12.01 2.011a10.012 10.012 0 0 1 7.437 16.442l-1.484-1.484a8.009 8.009 0 0 0-5.953-13.438zM2.011 12.01a10.012 10.012 0 0 1 16.442-7.437l-1.484 1.484a8.009 8.009 0 0 0-13.438 5.953zM12 3a9 9 0 1 1-9 9 9.01 9.01 0 0 1 9-9zm0 2a7 7 0 1 0 7 7 7 7 0 0 0-7-7zm0 3a4 4 0 1 1-4 4 4 4 0 0 1 4-4z"></path></svg>
-                    Fale comigo no WhatsApp
-                </a>
+    <main id="home-screen" class="screen active">
+        <section class="home-paper">
+            <div class="start-actions">
+                <h1 class="start-actions-title">Resolva um desafio com uma equipe sorteada.</h1>
+                <button class="btn btn-primary btn-start" onclick="navTo('lobby-screen')">INICIAR DESAFIO EM EQUIPE</button>
+                <button class="btn btn-secondary" onclick="openModal('how-it-works-modal')">Como funciona</button>
             </div>
-        </section>
 
-        <!-- ===== SOBRE MIM ===== -->
-        <section id="sobre" class="py-20 bg-slate-800/50">
-            <div class="container mx-auto px-6 max-w-4xl text-center">
-                <h2 class="text-4xl font-bold text-white mb-4">Olá, sou o Ismael Calixto.</h2>
-                <p class="text-lg text-slate-400 mb-6">
-                    Desde que comecei minha jornada na programação, descobri uma paixão por criar coisas novas e, principalmente, por resolver problemas reais. Atualmente, sou estudante de Ciência da Computação na prestigiosa Universidade Federal Fluminense (UFF), onde aprofundo meus conhecimentos para construir soluções cada vez mais robustas e eficientes.
-                </p>
-                <p class="text-lg text-slate-400">
-                    Meu objetivo é simples: usar a tecnologia para facilitar a vida das pessoas e impulsionar negócios. Seja otimizando o seu computador ou construindo um site para sua empresa, meu foco é sempre na qualidade, transparência e no resultado final.
-                </p>
-            </div>
-        </section>
-
-        <!-- ===== SERVIÇOS ===== -->
-        <section id="servicos" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-white text-center mb-12">O Que Eu Faço</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Card 1: Suporte Técnico -->
-                    <div class="bg-slate-800 p-8 rounded-lg transform hover:-translate-y-2 transition-transform duration-300">
-                        <div class="bg-sky-500/10 text-sky-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Suporte Técnico</h3>
-                        <p class="text-slate-400">Formatação, instalação de programas, otimização de sistema, backup seguro e remoção de vírus. Deixo seu computador mais rápido e seguro.</p>
-                    </div>
-                    <!-- Card 2: Sites com WordPress -->
-                    <div class="bg-slate-800 p-8 rounded-lg transform hover:-translate-y-2 transition-transform duration-300">
-                        <div class="bg-sky-500/10 text-sky-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"></path></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Sites com WordPress</h3>
-                        <p class="text-slate-400">Criação de sites institucionais, blogs e landing pages modernos e responsivos. Aumente a presença online da sua empresa com um site profissional.</p>
-                    </div>
-                    <!-- Card 3: Sistemas Sob Medida -->
-                    <div class="bg-slate-800 p-8 rounded-lg transform hover:-translate-y-2 transition-transform duration-300">
-                        <div class="bg-sky-500/10 text-sky-400 rounded-lg w-16 h-16 flex items-center justify-center mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Sistemas Sob Medida</h3>
-                        <p class="text-slate-400">Desenvolvimento de programas e aplicações para desktop ou celular, pensados para automatizar tarefas e otimizar processos do seu negócio.</p>
-                    </div>
+            <section class="panel">
+            <div class="search-row">
+                <div>
+                    <h2 class="section-title">Projetos anteriores</h2>
                 </div>
+                <input type="text" id="search-input" class="search-bar" placeholder="Buscar por tema, status ou linguagem" onkeyup="filterProjects()">
             </div>
-        </section>
-
-        <!-- ===== PORTFÓLIO ===== -->
-        <section id="portfolio" class="py-20 bg-slate-800/50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-white text-center mb-12">Um Pouco do Meu Trabalho</h2>
-                <div class="max-w-4xl mx-auto bg-slate-800 rounded-lg overflow-hidden md:flex">
-                    <div class="md:w-1/2">
-                        <img class="h-full w-full object-cover" src="http://firmiano.com.br/images/extinbras.png" alt="">
-                    </div>
-                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
-                        <h3 class="text-3xl font-bold text-white mb-3">Extinbras - Site Institucional</h3>
-                        <p class="text-slate-400 mb-6">Desenvolvimento de um site institucional completo para a Extinbras, empresa de engenharia de incêndio. O projeto foi criado em WordPress, com foco em um design limpo, profissional e que facilitasse o contato de novos clientes.</p>
-                        <a href="https://extinbras.com.br" target="_blank" class="text-sky-400 hover:text-sky-300 font-semibold inline-flex items-center">
-                            Ver Projeto
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    </div>
-                </div>
+            <div class="project-list" id="project-list">
+                <article class="project-card" onclick="openPastProject(0)">
+                    <span class="status-badge-card badge-success">Concluído</span>
+                    <h3>Jogo Snake Multiplayer</h3>
+                    <p>2 horas atrás - 3 membros - cargo: Frontend</p>
+                    <p>Criar o jogo snake com funcionalidade de multiplayer local.</p>
+                    <div class="card-tags"><span class="tag">Python</span><span class="tag">Comunicação 91%</span></div>
+                </article>
+                <article class="project-card" onclick="openPastProject(1)">
+                    <span class="status-badge-card badge-success">Concluído</span>
+                    <h3>Web Scraper de Arquivo Único</h3>
+                    <p>7 dias atrás - 5 membros - cargo: Backend</p>
+                    <p>Extrair informações de uma página pública e consolidar em CSV.</p>
+                    <div class="card-tags"><span class="tag">Python</span><span class="tag">Elo +18</span></div>
+                </article>
+                <article class="project-card" onclick="openPastProject(2)">
+                    <span class="status-badge-card badge-failed">Incompleto</span>
+                    <h3>Sistema de Estoque para Farmácia</h3>
+                    <p>15 dias atrás - 4 membros - cargo: Coordenadora</p>
+                    <p>Modelagem de requisitos e alertas automáticos por giro de estoque.</p>
+                    <div class="card-tags"><span class="tag">Java</span><span class="tag">Tempo esgotado</span></div>
+                </article>
+                <article class="project-card" onclick="openPastProject(3)">
+                    <span class="status-badge-card badge-success">Concluído</span>
+                    <h3>Simulador de Arquitetura RISC-V</h3>
+                    <p>1 mês atrás - 6 membros - cargo: Backend</p>
+                    <p>Implementação didática do caminho de dados e pipeline.</p>
+                    <div class="card-tags"><span class="tag">C</span><span class="tag">Mentoria +1</span></div>
+                </article>
+                <article class="project-card" onclick="openPastProject(4)">
+                    <span class="status-badge-card badge-failed">Incompleto</span>
+                    <h3>Modelo Preditivo com KNN</h3>
+                    <p>2 meses atrás - 3 membros - cargo: Analista</p>
+                    <p>Avaliação de modelo supervisionado e normalização com Pandas.</p>
+                    <div class="card-tags"><span class="tag">Dados</span><span class="tag">Feedback recebido</span></div>
+                </article>
+                <article class="project-card" onclick="openPastProject(5)">
+                    <span class="status-badge-card badge-success">Concluído</span>
+                    <h3>Plataforma de Desafios de TI</h3>
+                    <p>3 meses atrás - 5 membros - cargo: Designer</p>
+                    <p>Brainstorm e design para conectar estudantes a projetos rápidos.</p>
+                    <div class="card-tags"><span class="tag">IHC</span><span class="tag">Design 84%</span></div>
+                </article>
             </div>
+            </section>
         </section>
-
-        <!-- ===== CONTATO ===== -->
-        <section id="contato" class="py-20">
-            <div class="container mx-auto px-6 text-center max-w-3xl">
-                <h2 class="text-4xl font-bold text-white mb-4">Vamos Conversar?</h2>
-                <p class="text-lg text-slate-400 mb-8">
-                    Se você tem uma ideia, um problema para resolver ou simplesmente quer otimizar sua tecnologia, estou à disposição. Me mande uma mensagem e vamos encontrar a melhor solução juntos.
-                </p>
-                <a href="https://wa.me/5521998908129?text=Olá,%20Ismael!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar." target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-8 rounded-lg text-lg inline-flex items-center transition-colors duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M12.01 2.011a10.012 10.012 0 0 1 7.437 16.442l-1.484-1.484a8.009 8.009 0 0 0-5.953-13.438zM2.011 12.01a10.012 10.012 0 0 1 16.442-7.437l-1.484 1.484a8.009 8.009 0 0 0-13.438 5.953zM12 3a9 9 0 1 1-9 9 9.01 9.01 0 0 1 9-9zm0 2a7 7 0 1 0 7 7 7 7 0 0 0-7-7zm0 3a4 4 0 1 1-4 4 4 4 0 0 1 4-4z"></path></svg>
-                    Iniciar Conversa no WhatsApp
-                </a>
-            </div>
-        </section>
-
     </main>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="bg-slate-800/50 border-t border-slate-700/50">
-        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
-            <p>&copy; 2024 Ismael Calixto. Todos os direitos reservados.</p>
-            <p class="text-sm mt-2">Desenvolvido com paixão e código.</p>
-        </div>
-    </footer>
+    <button class="home-chat-fab" id="home-chat-fab" onclick="toggleHomeChat()" aria-label="Abrir chat com amigos" title="Chat com amigos">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M4 4.75C4 3.78 4.78 3 5.75 3h12.5c.97 0 1.75.78 1.75 1.75v8.5c0 .97-.78 1.75-1.75 1.75H9.7l-4.18 3.48A.92.92 0 0 1 4 17.77V4.75Zm2 0v10.9l2.7-2.25c.18-.15.41-.23.64-.23h8.91V5H6v-.25Z"/>
+        </svg>
+    </button>
 
+    <section class="home-chat-panel" id="home-chat-panel" aria-label="Chat com amigos">
+        <div class="chat-header">
+            <span>Chat com amigos</span>
+            <button class="close-modal" onclick="toggleHomeChat(false)" aria-label="Fechar chat">X</button>
+        </div>
+        <p class="home-chat-summary">Converse rapidamente com amigos antes de entrar em um desafio.</p>
+        <div class="home-chat-friends" aria-label="Amigos recentes">
+            <span class="home-friend-chip active">Jessy325 - online</span>
+            <span class="home-friend-chip">Aline_Linda93 - offline</span>
+            <span class="home-friend-chip">Sasha_Dev - online</span>
+        </div>
+        <div class="home-chat-messages" id="home-chat-messages">
+            <div class="chat-msg"><b>Jessy325:</b> Vi seus projetos recentes. Se entrar em desafio de C, posso revisar a lógica.</div>
+            <div class="chat-msg"><b>Sasha_Dev:</b> Bora depois testar uma integração frontend/backend?</div>
+            <div class="chat-msg" style="align-self: flex-end; background: rgba(61, 224, 163, 0.16); border-color: rgba(61, 224, 163, 0.28);"><b>MegaVitoria:</b> Fechado. Vou iniciar um desafio em equipe.</div>
+        </div>
+        <div class="chat-input-box">
+            <input type="text" id="home-chat-input" placeholder="Mensagem para amigos" onkeypress="handleHomeChatEnter(event)">
+            <button class="btn btn-success" onclick="sendHomeChat()">Enviar</button>
+        </div>
+    </section>
+
+    <section id="profile-screen" class="screen">
+        <button class="btn btn-ghost back-btn" onclick="navTo('home-screen')">Voltar ao início</button>
+        <div class="profile-shell">
+            <aside class="profile-card">
+                <div class="profile-identity">
+                    <div class="profile-avatar-large">MV</div>
+                    <div>
+                        <h1 class="profile-name">MegaVitoria</h1>
+                        <span class="status-pill gold" style="margin-top: 10px;">Ouro II - 1840 pts</span>
+                    </div>
+                </div>
+                <div class="profile-tabs">
+                    <button class="btn btn-secondary" onclick="openModal('stats-modal')">Ver estatísticas</button>
+                    <button class="btn btn-secondary" onclick="openModal('friends-modal')">Gerenciar amigos</button>
+                </div>
+                <div class="profile-info" id="profile-view">
+                    <div class="info-row"><span class="info-label">Email</span><span id="view-email">MegaVitoria@gmail.com</span></div>
+                    <div class="info-row"><span class="info-label">Senha</span><span id="view-senha">•••••••••••••••</span></div>
+                    <div class="info-row"><span class="info-label">Linguagens</span><span id="view-langs">Python, C, Javascript, HTML, CSS</span></div>
+                    <div class="info-row"><span class="info-label">Período</span><span id="view-periodo">4º período</span></div>
+                    <button class="btn btn-primary" onclick="toggleEditProfile(true)">Editar perfil</button>
+                </div>
+                <div class="profile-info" id="profile-edit" style="display: none;">
+                    <label>Email<input type="email" id="edit-email" class="form-input"></label>
+                    <label>Senha<input type="password" id="edit-senha" class="form-input"></label>
+                    <label>Linguagens<input type="text" id="edit-langs" class="form-input"></label>
+                    <label>Período<input type="text" id="edit-periodo" class="form-input"></label>
+                    <div class="profile-actions">
+                        <button class="btn btn-secondary" onclick="toggleEditProfile(false)">Cancelar</button>
+                        <button class="btn btn-success" onclick="saveProfile()">Salvar alterações</button>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="profile-card">
+                <span class="section-kicker">Competências avaliadas</span>
+                <h2 class="section-title">O elo não mede só código</h2>
+                <div class="skill-grid">
+                    <div class="skill-card"><strong>Programação</strong><div class="bar"><span style="width: 86%;"></span></div></div>
+                    <div class="skill-card"><strong>Comunicação</strong><div class="bar"><span style="width: 88%;"></span></div></div>
+                    <div class="skill-card"><strong>Coordenação</strong><div class="bar"><span style="width: 74%;"></span></div></div>
+                    <div class="skill-card"><strong>Design</strong><div class="bar"><span style="width: 68%;"></span></div></div>
+                    <div class="skill-card"><strong>Resolução</strong><div class="bar"><span style="width: 91%;"></span></div></div>
+                    <div class="skill-card"><strong>Mentoria</strong><div class="bar"><span style="width: 80%;"></span></div></div>
+                </div>
+                <div class="voice-priority">
+                    <span class="pulse-dot"></span>
+                    <div>
+                        <strong>Pronta para cargos de liderança situacional</strong>
+                        <span>O sistema pode sortear coordenação quando houver juniors na equipe.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lobby-screen" class="screen">
+        <button class="btn btn-danger back-btn" onclick="navTo('home-screen')">Cancelar e voltar</button>
+        <div class="lobby-grid">
+            <div class="lobby-stage">
+                <div class="lobby-hero">
+                    <h1 id="queue-title">Prepare-se</h1>
+                    <p id="queue-copy">A busca vai montar uma equipe por elo, sortear um desafio amplo e atribuir cargos para que cada pessoa saiba o que deve fazer.</p>
+                </div>
+                <div class="lobby-queue-row" id="lobby-queue-row">
+                    <div class="team-container" id="team-slots">
+                        <div class="user-slot active-user">
+                            <div class="member-top">
+                                <span class="member-avatar">MV</span>
+                                <div><div class="member-name">MegaVitoria (Você)</div><div class="member-role">Aguardando cargo</div></div>
+                            </div>
+                            <div class="audio-controls"><button class="mute-btn" onclick="toggleMute(this)">Voz ON</button><input type="range" min="0" max="100" value="100" class="vol-slider"></div>
+                        </div>
+                    </div>
+                    <div class="lobby-actions">
+                        <button class="btn btn-primary btn-queue" id="lobby-action-btn" onclick="findTeam()">Procurar equipe</button>
+                    </div>
+                </div>
+                <div class="match-found-card" id="match-found-card">
+                    <div class="brief-card"><strong>Desafio sorteado</strong><span>Roteamento de Entregas</span></div>
+                    <div class="brief-card"><strong>Seu cargo</strong><span>Dev Backend</span></div>
+                    <div class="brief-card"><strong>Meta</strong><span>Dijkstra em C</span></div>
+                </div>
+            </div>
+
+            <aside class="lobby-chat-panel">
+                <div class="chat-header">
+                    <span>Chat do lobby</span>
+                </div>
+                <div class="chat-list" id="lobby-chat-area">
+                    <div class="chat-msg" style="align-self: center; text-align: center; background: transparent;">Aguardando equipe. Quando o match fechar, a voz é recomendada para combinar a primeira divisão de tarefas.</div>
+                </div>
+                <div class="chat-input-box">
+                    <input type="text" id="lobby-chat-input" placeholder="Aguardando equipe..." onkeypress="handleLobbyIdeChatEnter(event, 'lobby-chat-input', 'lobby-chat-area')" disabled>
+                    <button class="btn btn-success" id="lobby-chat-send" onclick="sendLobbyIdeChat('lobby-chat-input', 'lobby-chat-area')" disabled>Enviar</button>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section id="ide-screen" class="screen">
+        <div class="ide-app">
+            <header class="ide-topbar">
+                <div class="ide-brand">
+                    <div class="ide-title" id="ide-title">
+                        <strong>Roteamento de Entregas</strong>
+                        <span>Projeto atual - sala colaborativa</span>
+                    </div>
+                </div>
+                <div class="challenge-strip">
+                    <span class="timer-pill" id="challenge-timer">59:42</span>
+                    <span class="role-pill gold" id="ide-role-pill">Cargo: Dev Backend</span>
+                    <span class="status-pill voice">Voz ativa</span>
+                    <span class="status-pill">Equipe 1/3 entregue</span>
+                </div>
+                <div class="ide-header-btns" id="ide-controls-active">
+                    <button class="btn btn-danger" onclick="openModal('report-modal')">Denunciar</button>
+                    <button class="btn btn-danger" onclick="openModal('sair-desafio-modal')">Sair</button>
+                    <button class="btn btn-success" onclick="openModal('concluir-modal')">Concluir minha parte</button>
+                </div>
+                <div class="ide-header-btns" id="ide-controls-past" style="display:none;">
+                    <button class="btn btn-secondary" onclick="navTo('home-screen')">Voltar ao histórico</button>
+                </div>
+            </header>
+
+            <div class="ide-body">
+                <aside class="mission-dock">
+                    <div class="ide-tabs">
+                        <div class="ide-tab active" id="tab-enunciado" onclick="switchIdeLeftPanel('enunciado')">Missão</div>
+                        <div class="ide-tab" id="tab-arquivos" onclick="switchIdeLeftPanel('arquivos')">Arquivos</div>
+                    </div>
+                    <div id="panel-enunciado" class="left-panel-content active">
+                        <div class="mission-card-content" id="ide-mission-text">
+                            <span class="section-kicker">O que fazer agora</span>
+                            <h3>Implementar Dijkstra para rotas logísticas</h3>
+                            <div class="role-brief">
+                                <strong>Seu cargo: Dev Backend</strong>
+                                <span>Modele o grafo, implemente o algoritmo e combine entradas/saídas com a equipe pelo canal de voz.</span>
+                            </div>
+                            <p>A equipe precisa encontrar o caminho mais curto entre depósitos e clientes usando os dados de `mapa.txt`.</p>
+                            <ul>
+                                <li>Ler vértices e pesos do arquivo.</li>
+                                <li>Representar o grafo por matriz de adjacência.</li>
+                                <li>Receber origem e destino pelo terminal.</li>
+                                <li>Imprimir caminho percorrido e custo final.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="panel-arquivos" class="left-panel-content">
+                        <div id="btn-new-file-container"></div>
+                        <div class="file-list" id="ide-file-list"></div>
+                    </div>
+                </aside>
+
+                <section class="editor-panel">
+                    <div class="editor-tabs" id="ide-editor-tabs"></div>
+                    <textarea id="code-editor" class="editor-content" spellcheck="false" oninput="saveEditorContent(this.value)"></textarea>
+                </section>
+
+                <aside class="comms-panel">
+                    <div class="voice-channel-container" id="ide-voice-controls">
+                        <div class="voice-channel-header">
+                            <strong>Canal de voz recomendado</strong>
+                        </div>
+                        <div class="voice-member">
+                            <span>Aline93 - Coordenadora</span>
+                            <div class="audio-controls"><button class="mute-btn" onclick="toggleMute(this)">Voz ON</button><input type="range" min="0" max="100" value="80" class="vol-slider"></div>
+                        </div>
+                        <div class="voice-member">
+                            <span>Sasha_Dev - Frontend</span>
+                            <div class="audio-controls"><button class="mute-btn" onclick="toggleMute(this)">Voz ON</button><input type="range" min="0" max="100" value="60" class="vol-slider"></div>
+                        </div>
+                        <div class="voice-member">
+                            <span>Você - Backend</span>
+                            <div class="audio-controls"><button class="mute-btn" onclick="toggleMute(this)">Voz ON</button><input type="range" min="0" max="100" value="100" class="vol-slider"></div>
+                        </div>
+                    </div>
+                    <div class="team-progress">
+                        <div class="progress-row"><span>Progresso da entrega</span><strong>1/3 partes</strong></div>
+                        <div class="progress-track"><span></span></div>
+                    </div>
+                    <div class="ide-tabs">
+                        <div class="ide-tab active" id="tab-chat" onclick="switchIdeRightPanel('chat')">Chat</div>
+                        <div class="ide-tab" id="tab-terminal" onclick="switchIdeRightPanel('terminal')">Terminal</div>
+                    </div>
+                    <div id="panel-chat" class="right-panel-content active">
+                        <div class="ide-chat-area" id="ide-chat-area"></div>
+                        <div class="chat-input-box" id="ide-chat-input-container">
+                            <input type="text" id="ide-chat-input" placeholder="Texto de apoio, links, etc" onkeypress="handleLobbyIdeChatEnter(event, 'ide-chat-input', 'ide-chat-area')">
+                            <button class="btn btn-success" onclick="sendLobbyIdeChat('ide-chat-input', 'ide-chat-area')">Enviar</button>
+                        </div>
+                    </div>
+                    <div id="panel-terminal" class="right-panel-content terminal-content">
+$ gcc backend.c -o rotas
+$ Aguardando compilação...
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="friends-modal">
+        <div class="modal-content">
+            <div class="modal-header-box">
+                <span>Amigos</span>
+                <button class="close-modal" onclick="closeModal('friends-modal')">X</button>
+            </div>
+            <button class="btn btn-primary" style="width: 100%; margin-bottom: 14px;" onclick="addFriend()">Adicionar amigo</button>
+            <div id="friends-list-content">
+                <div class="friend-item"><div><strong>Jessy325</strong><br><span style="color: var(--mint);">Online - Backend senior</span></div><button class="icon-btn" onclick="removeFriend(this)">X</button></div>
+                <div class="friend-item"><div><strong>Aline_Linda93</strong><br><span style="color: var(--muted);">Offline - Coordenadora</span></div><button class="icon-btn" onclick="removeFriend(this)">X</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="elo-modal">
+        <div class="modal-content elo-modal-content">
+            <div class="modal-header-box">
+                <span>Como funcionam os elos</span>
+                <button class="close-modal" onclick="closeModal('elo-modal')">X</button>
+            </div>
+            <p class="elo-lead">O elo indica experiência em desafios e ajuda o sistema a montar equipes equilibradas. A ordem abaixo é crescente: Diamante é o nível mais alto.</p>
+
+            <div class="elo-progression" aria-label="Progressão geral de elos">
+                <strong>Progressão: Bronze &rarr; Prata &rarr; Ouro &rarr; Platina &rarr; Diamante</strong>
+                <span>Dentro de cada cor, a progressão é III &rarr; II &rarr; I. Ao completar o I, o jogador sobe para o próximo elo.</span>
+                <div class="elo-progress-track" aria-hidden="true">
+                    <span class="elo-progress-step bronze done"></span>
+                    <span class="elo-progress-step silver done"></span>
+                    <span class="elo-progress-step gold done"></span>
+                    <span class="elo-progress-step platinum"></span>
+                    <span class="elo-progress-step diamond"></span>
+                </div>
+                <div class="elo-progress-labels" aria-hidden="true">
+                    <span>Bronze</span>
+                    <span>Prata</span>
+                    <span>Ouro</span>
+                    <span>Platina</span>
+                    <span>Diamante</span>
+                </div>
+            </div>
+
+            <div class="elo-ladder">
+                <div class="elo-tier bronze">
+                    <span class="elo-medal">1</span>
+                    <div>
+                        <strong class="elo-tier-name">Bronze</strong>
+                        <span class="elo-tier-desc">Entrada na plataforma: adaptação aos desafios e colaboração básica.</span>
+                    </div>
+                    <span class="elo-rank">III &rarr; II &rarr; I</span>
+                </div>
+                <div class="elo-tier silver">
+                    <span class="elo-medal">2</span>
+                    <div>
+                        <strong class="elo-tier-name">Prata</strong>
+                        <span class="elo-tier-desc">Mais consistência em entregas simples e comunicação em equipe.</span>
+                    </div>
+                    <span class="elo-rank">III &rarr; II &rarr; I</span>
+                </div>
+                <div class="elo-tier gold current">
+                    <span class="elo-medal">3</span>
+                    <div>
+                        <strong class="elo-tier-name">Ouro - você está aqui</strong>
+                        <span class="elo-tier-desc">Boa autonomia técnica e colaboração confiável. Elo atual: Ouro II.</span>
+                    </div>
+                    <span class="elo-rank">III &rarr; II &rarr; I</span>
+                </div>
+                <div class="elo-tier platinum">
+                    <span class="elo-medal">4</span>
+                    <div>
+                        <strong class="elo-tier-name">Platina</strong>
+                        <span class="elo-tier-desc">Alto desempenho, entregas mais complexas e liderança situacional.</span>
+                    </div>
+                    <span class="elo-rank">III &rarr; II &rarr; I</span>
+                </div>
+                <div class="elo-tier diamond">
+                    <span class="elo-medal">5</span>
+                    <div>
+                        <strong class="elo-tier-name">Diamante</strong>
+                        <span class="elo-tier-desc">Topo da progressão: excelência técnica, comunicação e mentoria.</span>
+                    </div>
+                    <span class="elo-rank">III &rarr; II &rarr; I</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="how-it-works-modal">
+        <div class="modal-content">
+            <div class="modal-header-box">
+                <span>Como funciona</span>
+                <button class="close-modal" onclick="closeModal('how-it-works-modal')">X</button>
+            </div>
+            <p class="section-copy">Ao iniciar, você entra em um desafio com equipe e cargo sorteados. A partida dura em média <strong>1 hora</strong>.</p>
+            <p class="section-copy">A voz é recomendada para coordenar a equipe; o chat texto fica como apoio. A entrega e a comunicação influenciam sua pontuação.</p>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="stats-modal">
+        <div class="modal-content wide">
+            <div class="modal-header-box">
+                <span>Estatísticas e critérios de elo</span>
+                <button class="close-modal" onclick="closeModal('stats-modal')">X</button>
+            </div>
+            <div class="stats-layout">
+                <div class="radar-box">
+                    <svg width="100%" height="100%" viewBox="0 0 360 300" aria-label="Gráfico radar de competências">
+                        <g transform="translate(180 150)" stroke="rgba(255,255,255,0.18)" fill="none">
+                            <polygon points="0,-110 105,-34 65,90 -65,90 -105,-34"></polygon>
+                            <polygon points="0,-82 78,-25 48,67 -48,67 -78,-25"></polygon>
+                            <polygon points="0,-54 51,-17 32,44 -32,44 -51,-17"></polygon>
+                            <line x1="0" y1="0" x2="0" y2="-110"></line>
+                            <line x1="0" y1="0" x2="105" y2="-34"></line>
+                            <line x1="0" y1="0" x2="65" y2="90"></line>
+                            <line x1="0" y1="0" x2="-65" y2="90"></line>
+                            <line x1="0" y1="0" x2="-105" y2="-34"></line>
+                            <polygon points="0,-96 88,-28 58,80 -48,66 -92,-30" fill="rgba(232,188,61,0.28)" stroke="#ffd76b" stroke-width="4"></polygon>
+                        </g>
+                        <g fill="#fff8e3" font-size="12" font-family="Trebuchet MS, sans-serif" font-weight="700">
+                            <text x="180" y="26" text-anchor="middle">Design</text>
+                            <text x="302" y="118" text-anchor="middle">Programação</text>
+                            <text x="256" y="270" text-anchor="middle">Resolução</text>
+                            <text x="104" y="270" text-anchor="middle">Coordenação</text>
+                            <text x="58" y="118" text-anchor="middle">Comunicação</text>
+                        </g>
+                    </svg>
+                </div>
+                <div class="profile-info" style="margin-top: 0;">
+                    <div class="metric-tile"><span class="metric-label">Elo atual</span><strong class="metric-value">Ouro II</strong></div>
+                    <div class="metric-tile"><span class="metric-label">Total de projetos</span><strong class="metric-value">26</strong></div>
+                    <div class="metric-tile"><span class="metric-label">Tempo em desafios</span><strong class="metric-value">24h</strong></div>
+                    <div class="metric-tile"><span class="metric-label">Comunicação</span><strong class="metric-value">88%</strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="report-modal">
+        <div class="modal-content">
+            <div class="modal-header-box">Denunciar membro<button class="close-modal" onclick="closeModal('report-modal')">X</button></div>
+            <p class="section-copy" style="margin-bottom: 14px;">Use denúncia para abuso, ofensa, trollagem ou sabotagem. Bloqueio apenas evita novas interações diretas.</p>
+            <label>Membro<select class="form-input" id="report-select-user"><option>Aline93</option><option>Sasha_Dev</option><option>Jessy325</option><option>Zezinho123</option></select></label>
+            <label>Descrição<textarea class="form-textarea" placeholder="Descreva o que aconteceu e em qual momento da atividade."></textarea></label>
+            <button class="btn btn-primary" style="width: 100%; margin-top: 14px;" onclick="closeModal('report-modal'); showToast('Denúncia enviada para moderação.')">Enviar denúncia</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="concluir-modal">
+        <div class="modal-content" style="text-align: center;">
+            <div class="modal-header-box" style="justify-content: center;">Parte concluída</div>
+            <p class="section-copy">Você marcou sua parte como pronta. A equipe ainda precisa finalizar as outras etapas antes da entrega final.</p>
+            <div class="timer-pill" style="margin: 22px auto; min-width: 150px;">1/3 entregue</div>
+            <button class="btn btn-ghost" style="width: 100%; margin-top: 10px;" onclick="closeModal('concluir-modal')">Voltar ao desafio</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="sair-desafio-modal">
+        <div class="modal-content" style="text-align: center;">
+            <div class="modal-header-box" style="justify-content: center;">Sair do desafio?</div>
+            <p class="section-copy">A equipe ainda não concluiu a entrega final. Sair agora pode prejudicar a colaboração e resultar em penalidade no seu elo.</p>
+            <div class="role-brief" style="text-align: left;">
+                <strong>Status da equipe: 1/3 partes entregues</strong>
+                <span>Se precisar se ausentar, avise a equipe pelo chat antes de sair.</span>
+            </div>
+            <button class="btn btn-danger" style="width: 100%; margin-top: 14px;" onclick="closeModal('sair-desafio-modal'); navTo('home-screen')">Sair mesmo assim</button>
+            <button class="btn btn-ghost" style="width: 100%; margin-top: 10px;" onclick="closeModal('sair-desafio-modal')">Continuar no desafio</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        let ideState = {
+            isReadOnly: false,
+            files: {},
+            openTabs: [],
+            activeTab: null
+        };
+        let challengeTimerId = null;
+        let challengeRemainingSeconds = 0;
+        let homeChatReplyIndex = 0;
+
+        const homeChatReplies = [
+            { sender: 'Jessy325', text: 'Combinado. Se o desafio cair em grafos, manda o rascunho que eu reviso.' },
+            { sender: 'Sasha_Dev', text: 'Eu fico de olho na parte visual. Boa sorte no match!' },
+            { sender: 'Aline_Linda93', text: 'Quando a equipe fechar, confirma o áudio primeiro para evitar retrabalho.' }
+        ];
+
+        const defaultMissionHtml = `
+            <span class="section-kicker">Desafio backend</span>
+            <h3>Roteamento de Entregas com Dijkstra</h3>
+            <div class="role-brief">
+                <strong>Seu cargo: Dev Backend</strong>
+                <span>Você pode editar <code>backend.c</code>, <code>mapa.txt</code> e a documentação técnica. A camada visual fica com o Dev Frontend.</span>
+            </div>
+            <p>Dado um mapa ponderado de rotas entre pontos logísticos, implemente uma função que encontre o menor caminho entre uma origem e um destino usando Dijkstra.</p>
+            <h4>Entrada</h4>
+            <ul>
+                <li>O arquivo <code>mapa.txt</code> contém uma aresta por linha no formato <code>ORIGEM DESTINO CUSTO</code>.</li>
+                <li>O terminal deve receber dois identificadores: ponto de origem e ponto de destino.</li>
+            </ul>
+            <h4>Saída esperada</h4>
+            <ul>
+                <li>Se houver rota, imprima o caminho completo e o custo total.</li>
+                <li>Se não houver rota possível, imprima <code>ROTA INDISPONIVEL</code>.</li>
+            </ul>
+            <h4>Exemplo</h4>
+            <pre><code>mapa.txt
+A B 10
+A C 15
+B D 12
+C D 2
+
+Entrada:
+A D
+
+Saida:
+A -> C -> D
+Custo total: 17</code></pre>
+            <h4>Restrições</h4>
+            <ul>
+                <li>Até <code>100</code> pontos logísticos distintos.</li>
+                <li>Custos inteiros positivos entre <code>1</code> e <code>9999</code>.</li>
+                <li>Use matriz de adjacência em <code>backend.c</code>.</li>
+                <li>Não altere arquivos de interface: essa etapa pertence ao cargo Frontend.</li>
+            </ul>
+            <h4>Critérios de aceite</h4>
+            <ul>
+                <li>Compilar sem erros com <code>gcc backend.c -o rotas</code>.</li>
+                <li>Calcular corretamente o menor caminho para o exemplo e para rotas alternativas.</li>
+                <li>Manter mensagens de terminal claras para a equipe integrar a saída.</li>
+            </ul>`;
+
+        const pastProjectsData = [
+            { title: "Jogo Snake Multiplayer", filename: "main.py", code: "import pygame\n\n# Registro histórico de entrega\ndef start_game():\n    print('Snake multiplayer iniciado')\n", terminal: "Partida finalizada. Vencedor: P1", statusColor: "#3de0a3", chat: ["Aline93: Terminei a colisão!"], role: "Frontend" },
+            { title: "Web Scraper de Arquivo Único", filename: "scraper.py", code: "import requests\n\n# Coleta simplificada de dados públicos\nprint('Extraindo dados...')\n", terminal: "Dados extraídos com sucesso.", statusColor: "#3de0a3", chat: ["MegaVitoria: Missão cumprida!"], role: "Backend" },
+            { title: "Sistema de Estoque para Farmácia", filename: "Inventario.java", code: "public class Inventario {\n    // Faltou a conexão com o banco\n}\n", terminal: "Exception: Falta fazer a conexão com o banco", statusColor: "#ff6b6b", chat: ["MegaVitoria: Não consegui fazer a conexão com o SQL a tempo."], role: "Coordenadora" },
+            { title: "Simulador de Arquitetura RISC-V", filename: "pipeline.c", code: "int main() {\n    return 0;\n}\n", terminal: "Pipeline sincronizado com sucesso.", statusColor: "#3de0a3", chat: ["Jessy325: A máscara de bits funcionou."], role: "Backend" },
+            { title: "Modelo Preditivo com KNN", filename: "modelo.py", code: "import pandas as pd\n# Erro: dados nulos não tratados\n", terminal: "ValueError: Input X contains NaN.", statusColor: "#ff6b6b", chat: ["Aline93: O tempo acabou antes do tratamento dos dados."], role: "Analista" },
+            { title: "Plataforma de Desafios de TI", filename: "index.html", code: "<h1>Hello Squad</h1>", terminal: "UI renderizada.", statusColor: "#3de0a3", chat: ["Sasha_Dev: Frontend entregue!"], role: "Designer" }
+        ];
+
+        function appendChatMessage(area, sender, text, isMine) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'chat-msg';
+            msgDiv.style.alignSelf = isMine ? 'flex-end' : 'flex-start';
+            if (isMine) {
+                msgDiv.style.background = 'rgba(61, 224, 163, 0.16)';
+                msgDiv.style.borderColor = 'rgba(61, 224, 163, 0.28)';
+            }
+            msgDiv.innerHTML = `<b>${sender}:</b> ${text}`;
+            area.appendChild(msgDiv);
+        }
+
+        function formatTimer(seconds) {
+            const minutes = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toString().padStart(2, '0');
+            return `${minutes}:${secs}`;
+        }
+
+        function stopChallengeTimer() {
+            if (challengeTimerId) {
+                clearInterval(challengeTimerId);
+                challengeTimerId = null;
+            }
+        }
+
+        function startChallengeTimer(seconds) {
+            stopChallengeTimer();
+            challengeRemainingSeconds = seconds;
+            document.getElementById('challenge-timer').innerText = formatTimer(challengeRemainingSeconds);
+            challengeTimerId = setInterval(() => {
+                challengeRemainingSeconds = Math.max(0, challengeRemainingSeconds - 1);
+                document.getElementById('challenge-timer').innerText = formatTimer(challengeRemainingSeconds);
+                if (challengeRemainingSeconds === 0) stopChallengeTimer();
+            }, 1000);
+        }
+
+        function findTeam() {
+            const btn = document.getElementById('lobby-action-btn');
+            const teamContainer = document.getElementById('team-slots');
+            const chatArea = document.getElementById('lobby-chat-area');
+            const chatInput = document.getElementById('lobby-chat-input');
+            const chatSend = document.getElementById('lobby-chat-send');
+            const queueRow = document.getElementById('lobby-queue-row');
+            btn.innerText = 'Buscando equipe...';
+            btn.className = 'btn btn-secondary btn-queue';
+            btn.disabled = true;
+            document.getElementById('queue-title').innerText = 'Prepare-se';
+            document.getElementById('queue-copy').innerText = 'A busca vai montar uma equipe por elo, sortear um desafio amplo e atribuir cargos para que cada pessoa saiba o que deve fazer.';
+            chatInput.disabled = true;
+            chatSend.disabled = true;
+            setTimeout(() => {
+                teamContainer.innerHTML = `
+                    <div class="team-member-card"><div class="member-top"><span class="member-avatar mint">AL</span><div><div class="member-name">Aline93</div><div class="member-role">Coordenadora - Ouro III</div></div></div><div class="audio-controls"><button class="mute-btn" onclick="toggleMute(this)">Voz ON</button><input type="range" min="0" max="100" value="80" class="vol-slider"></div></div>
+                    <div class="team-member-card active-user"><div class="member-top"><span class="member-avatar">MV</span><div><div class="member-name">MegaVitoria (Você)</div><div class="member-role">Dev Backend - Ouro II</div></div></div><div class="audio-controls"><button class="mute-btn" onclick="toggleMute(this)">Voz ON</button><input type="range" min="0" max="100" value="100" class="vol-slider"></div></div>
+                    <div class="team-member-card"><div class="member-top"><span class="member-avatar blue">SD</span><div><div class="member-name">Sasha_Dev</div><div class="member-role">Dev Frontend - Prata I</div></div></div><div class="audio-controls"><button class="mute-btn" onclick="toggleMute(this)">Voz ON</button><input type="range" min="0" max="100" value="60" class="vol-slider"></div></div>`;
+                document.getElementById('match-found-card').classList.add('active');
+                queueRow.classList.add('match-ready');
+                document.getElementById('queue-title').innerText = 'Desafio Encontrado.';
+                document.getElementById('queue-copy').innerText = 'Seu cargo é Dev Backend. A voz é recomendada para combinar o plano inicial antes de entrar na sala.';
+                btn.disabled = false;
+                btn.innerText = 'Iniciar Desafio';
+                btn.className = 'btn btn-success btn-queue';
+                btn.onclick = startChallenge;
+                chatInput.disabled = false;
+                chatInput.placeholder = 'Mensagem rápida para a equipe';
+                chatSend.disabled = false;
+                chatArea.innerHTML = `
+                    <div class="chat-msg" style="align-self: center; background: transparent; text-align: center;"><b>Sistema:</b> Equipe encontrada. Voz disponível e recomendada.</div>
+                    <div class="chat-msg"><b>Aline93:</b> Vou coordenar. Primeiro leiam o enunciado e confirmem áudio.</div>
+                    <div class="chat-msg"><b>Sasha_Dev:</b> Áudio ok. Posso cuidar da interface de saída.</div>`;
+                chatArea.scrollTop = chatArea.scrollHeight;
+            }, 900);
+        }
+
+        function startChallenge() {
+            document.getElementById('ide-title').innerHTML = `<strong>Roteamento de Entregas</strong><span>Projeto atual - sala colaborativa</span>`;
+            document.getElementById('ide-controls-past').style.display = 'none';
+            document.getElementById('ide-controls-active').style.display = 'flex';
+            document.getElementById('ide-role-pill').innerText = 'Cargo: Dev Backend';
+            startChallengeTimer(59 * 60 + 42);
+            document.getElementById('ide-voice-controls').style.display = 'block';
+            document.getElementById('ide-chat-input-container').style.display = 'flex';
+            document.getElementById('ide-mission-text').innerHTML = defaultMissionHtml;
+            ideState.isReadOnly = false;
+            ideState.files = {
+                'backend.c': '#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\n#define MAX_NODES 100\n#define INF 999999\n\n// Cargo atual: Dev Backend\n// Este arquivo concentra a lógica de grafo e Dijkstra autorizada para seu cargo.\nint main() {\n    printf("Iniciando cálculo de rotas...\\n");\n    return 0;\n}\n',
+                'mapa.txt': 'A B 10\nA C 15\nB D 12\nC D 2\n',
+                'README.md': '# Roteamento de Entregas\n\nCargo atual: Dev Backend.\n\nEdite backend.c para implementar Dijkstra. A interface e a apresentação final pertencem ao Dev Frontend.\n'
+            };
+            ideState.openTabs = ['backend.c'];
+            ideState.activeTab = 'backend.c';
+            renderFileList();
+            renderTabs();
+            document.getElementById('panel-terminal').innerHTML = '$ gcc backend.c -o rotas\n$ Aguardando compilação...';
+            document.getElementById('ide-chat-area').innerHTML = `
+                <div class="chat-msg"><b>Aline93:</b> Mega, fica com o grafo e Dijkstra?</div>
+                <div class="chat-msg"><b>Sasha_Dev:</b> Eu preparo a impressão do caminho.</div>
+                <div class="chat-msg" style="align-self: center; background: transparent; text-align: center;">Lembrete: voz recomendada para alinhamentos; texto apoia registros rápidos.</div>`;
+            switchIdeLeftPanel('enunciado');
+            switchIdeRightPanel('chat');
+            navTo('ide-screen');
+        }
+
+        function renderFileList() {
+            const listEl = document.getElementById('ide-file-list');
+            const newFileContainer = document.getElementById('btn-new-file-container');
+            if (!listEl || !newFileContainer) return;
+            newFileContainer.innerHTML = ideState.isReadOnly ? '' : `<button class="btn btn-secondary btn-new-file" onclick="createNewFile()">Novo arquivo</button>`;
+            listEl.innerHTML = '';
+            Object.keys(ideState.files).forEach(filename => {
+                const isActive = filename === ideState.activeTab ? 'active' : '';
+                const deleteHtml = ideState.isReadOnly ? '' : `<span class="file-delete-btn" onclick="deleteFile(event, '${filename}')" title="Apagar arquivo">X</span>`;
+                listEl.innerHTML += `<div class="file-item ${isActive}" onclick="openFileInTab('${filename}')"><span>${filename}</span>${deleteHtml}</div>`;
+            });
+        }
+
+        function renderTabs() {
+            const tabsEl = document.getElementById('ide-editor-tabs');
+            if (!tabsEl) return;
+            tabsEl.innerHTML = '';
+            ideState.openTabs.forEach(filename => {
+                const isActive = filename === ideState.activeTab ? 'active' : '';
+                tabsEl.innerHTML += `<div class="editor-tab ${isActive}" onclick="openFileInTab('${filename}')"><span>${filename}</span><span class="tab-close" onclick="closeTab(event, '${filename}')">X</span></div>`;
+            });
+            updateEditorContent();
+        }
+
+        function updateEditorContent() {
+            const editor = document.getElementById('code-editor');
+            if (!editor) return;
+            if (ideState.activeTab && ideState.openTabs.includes(ideState.activeTab)) {
+                editor.value = ideState.files[ideState.activeTab];
+                editor.disabled = false;
+                editor.readOnly = ideState.isReadOnly;
+            } else {
+                editor.value = '';
+                editor.disabled = true;
+            }
+        }
+
+        function saveEditorContent(content) {
+            if (ideState.activeTab && !ideState.isReadOnly) {
+                ideState.files[ideState.activeTab] = content;
+            }
+        }
+
+        function createNewFile() {
+            if (ideState.isReadOnly) return;
+            let count = 1;
+            let cleanName = 'utils.c';
+            while (ideState.files[cleanName]) {
+                count += 1;
+                cleanName = `utils-${count}.c`;
+            }
+            if (!ideState.files[cleanName]) {
+                ideState.files[cleanName] = `// Novo arquivo: ${cleanName}\n`;
+            }
+            openFileInTab(cleanName);
+            showToast(`${cleanName} criado para a simulação.`);
+        }
+
+        function deleteFile(event, filename) {
+            event.stopPropagation();
+            if (ideState.isReadOnly) return;
+            delete ideState.files[filename];
+            ideState.openTabs = ideState.openTabs.filter(tab => tab !== filename);
+            if (ideState.activeTab === filename) {
+                ideState.activeTab = ideState.openTabs.length ? ideState.openTabs[ideState.openTabs.length - 1] : null;
+            }
+            renderFileList();
+            renderTabs();
+            showToast(`${filename} removido da simulação.`);
+        }
+
+        function openFileInTab(filename) {
+            if (!ideState.openTabs.includes(filename)) ideState.openTabs.push(filename);
+            ideState.activeTab = filename;
+            renderFileList();
+            renderTabs();
+        }
+
+        function closeTab(event, filename) {
+            event.stopPropagation();
+            ideState.openTabs = ideState.openTabs.filter(tab => tab !== filename);
+            if (ideState.activeTab === filename) {
+                ideState.activeTab = ideState.openTabs.length ? ideState.openTabs[ideState.openTabs.length - 1] : null;
+            }
+            renderFileList();
+            renderTabs();
+        }
+
+        document.getElementById('code-editor').addEventListener('keydown', function(e) {
+            if (this.readOnly) return;
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                const start = this.selectionStart;
+                const end = this.selectionEnd;
+                this.value = this.value.substring(0, start) + '    ' + this.value.substring(end);
+                this.selectionStart = this.selectionEnd = start + 4;
+                saveEditorContent(this.value);
+            }
+        });
+
+        function openPastProject(index) {
+            stopChallengeTimer();
+            const data = pastProjectsData[index];
+            document.getElementById('ide-title').innerHTML = `<strong>${data.title}</strong><span>Histórico - modo leitura - cargo: ${data.role}</span>`;
+            document.getElementById('ide-controls-active').style.display = 'none';
+            document.getElementById('ide-controls-past').style.display = 'flex';
+            document.getElementById('ide-role-pill').innerText = `Cargo histórico: ${data.role}`;
+            document.getElementById('challenge-timer').innerText = data.statusColor === '#3de0a3' ? 'Concluído' : 'Incompleto';
+            ideState.isReadOnly = true;
+            ideState.files = {
+                [data.filename]: data.code,
+                'README.md': `# ${data.title}\nRegistro de projeto passado.\nCargo exercido: ${data.role}.\n`
+            };
+            ideState.openTabs = [data.filename];
+            ideState.activeTab = data.filename;
+            renderFileList();
+            renderTabs();
+            document.getElementById('panel-terminal').innerHTML = data.terminal;
+            document.getElementById('ide-chat-area').innerHTML = `<div class="chat-msg" style="align-self: center; background: transparent; text-align: center;">Visualizando histórico de mensagens</div>`;
+            data.chat.forEach(msg => {
+                const parts = msg.split(':');
+                appendChatMessage(document.getElementById('ide-chat-area'), parts[0], parts.slice(1).join(':').trim(), false);
+            });
+            document.getElementById('ide-chat-input-container').style.display = 'none';
+            document.getElementById('ide-voice-controls').style.display = 'none';
+            document.getElementById('ide-mission-text').innerHTML = `
+                <span class="section-kicker">Histórico</span>
+                <h3>${data.title}</h3>
+                <div class="role-brief"><strong>Cargo exercido: ${data.role}</strong><span>Este registro mostra código, terminal e comunicação do projeto anterior.</span></div>
+                <p>Os requisitos originais foram arquivados. A visualização está em modo leitura para preservar a entrega.</p>`;
+            switchIdeLeftPanel('arquivos');
+            switchIdeRightPanel('terminal');
+            navTo('ide-screen');
+        }
+
+        function navTo(screenId) {
+            document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+            const header = document.getElementById('main-header');
+            if (screenId === 'ide-screen') {
+                header.style.display = 'none';
+            } else {
+                header.style.display = 'flex';
+                stopChallengeTimer();
+            }
+            setHomeChatVisible(screenId === 'home-screen');
+            if (screenId === 'home-screen') resetLobby();
+        }
+
+        function resetLobby() {
+            const btn = document.getElementById('lobby-action-btn');
+            if (!btn) return;
+            const chatInput = document.getElementById('lobby-chat-input');
+            const chatSend = document.getElementById('lobby-chat-send');
+            const queueRow = document.getElementById('lobby-queue-row');
+            document.getElementById('queue-title').innerText = 'Prepare-se';
+            document.getElementById('queue-copy').innerText = 'A busca vai montar uma equipe por elo, sortear um desafio amplo e atribuir cargos para que cada pessoa saiba o que deve fazer.';
+            document.getElementById('match-found-card').classList.remove('active');
+            queueRow.classList.remove('match-ready');
+            document.getElementById('team-slots').innerHTML = `
+                <div class="user-slot active-user">
+                    <div class="member-top"><span class="member-avatar">MV</span><div><div class="member-name">MegaVitoria (Você)</div><div class="member-role">Aguardando cargo</div></div></div>
+                    <div class="audio-controls"><button class="mute-btn" onclick="toggleMute(this)">Voz ON</button><input type="range" min="0" max="100" value="100" class="vol-slider"></div>
+                </div>`;
+            btn.disabled = false;
+            btn.innerText = 'Procurar equipe';
+            btn.className = 'btn btn-primary btn-queue';
+            btn.onclick = findTeam;
+            chatInput.disabled = true;
+            chatInput.value = '';
+            chatInput.placeholder = 'Aguardando equipe...';
+            chatSend.disabled = true;
+            document.getElementById('lobby-chat-area').innerHTML = `<div class="chat-msg" style="align-self: center; text-align: center; background: transparent;">Aguardando equipe. Quando o match fechar, a voz é recomendada para combinar a primeira divisão de tarefas.</div>`;
+        }
+
+        function filterProjects() {
+            const input = document.getElementById('search-input');
+            if (!input) return;
+            const query = input.value.toLowerCase();
+            const cards = document.getElementsByClassName('project-card');
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].style.display = cards[i].innerText.toLowerCase().includes(query) ? 'block' : 'none';
+            }
+        }
+
+        function sendLobbyIdeChat(inputId, areaId) {
+            const inputEl = document.getElementById(inputId);
+            const areaEl = document.getElementById(areaId);
+            const text = inputEl.value.trim();
+            if (!text) {
+                showToast('Digite uma mensagem antes de enviar.');
+                return;
+            }
+            appendChatMessage(areaEl, 'MegaVitoria', text, true);
+            areaEl.scrollTop = areaEl.scrollHeight;
+            inputEl.value = '';
+        }
+
+        function handleLobbyIdeChatEnter(event, inputId, areaId) {
+            if (event.key === 'Enter') sendLobbyIdeChat(inputId, areaId);
+        }
+
+        function setHomeChatVisible(isVisible) {
+            const fab = document.getElementById('home-chat-fab');
+            const panel = document.getElementById('home-chat-panel');
+            if (!fab || !panel) return;
+            fab.hidden = !isVisible;
+            panel.hidden = !isVisible;
+            if (!isVisible) panel.classList.remove('active');
+        }
+
+        function toggleHomeChat(forceOpen) {
+            const panel = document.getElementById('home-chat-panel');
+            if (!panel || panel.hidden) return;
+            const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : !panel.classList.contains('active');
+            panel.classList.toggle('active', shouldOpen);
+            if (shouldOpen) {
+                const messages = document.getElementById('home-chat-messages');
+                const input = document.getElementById('home-chat-input');
+                if (messages) messages.scrollTop = messages.scrollHeight;
+                if (input) setTimeout(() => input.focus(), 0);
+            }
+        }
+
+        function sendHomeChat() {
+            const input = document.getElementById('home-chat-input');
+            const area = document.getElementById('home-chat-messages');
+            if (!input || !area) return;
+            const text = input.value.trim();
+            if (!text) {
+                showToast('Digite uma mensagem antes de enviar.');
+                return;
+            }
+            appendChatMessage(area, 'MegaVitoria', text, true);
+            area.scrollTop = area.scrollHeight;
+            input.value = '';
+            const reply = homeChatReplies[homeChatReplyIndex % homeChatReplies.length];
+            homeChatReplyIndex += 1;
+            setTimeout(() => {
+                appendChatMessage(area, reply.sender, reply.text, false);
+                area.scrollTop = area.scrollHeight;
+            }, 650);
+        }
+
+        function handleHomeChatEnter(event) {
+            if (event.key === 'Enter') sendHomeChat();
+        }
+
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        function switchIdeLeftPanel(panelName) {
+            document.getElementById('tab-arquivos').classList.toggle('active', panelName === 'arquivos');
+            document.getElementById('tab-enunciado').classList.toggle('active', panelName === 'enunciado');
+            document.getElementById('panel-arquivos').classList.toggle('active', panelName === 'arquivos');
+            document.getElementById('panel-enunciado').classList.toggle('active', panelName === 'enunciado');
+        }
+
+        function switchIdeRightPanel(panelName) {
+            document.getElementById('tab-terminal').classList.toggle('active', panelName === 'terminal');
+            document.getElementById('tab-chat').classList.toggle('active', panelName === 'chat');
+            document.getElementById('panel-terminal').classList.toggle('active', panelName === 'terminal');
+            document.getElementById('panel-chat').classList.toggle('active', panelName === 'chat');
+        }
+
+        function toggleMute(btn) {
+            const muted = btn.classList.toggle('muted');
+            btn.innerText = muted ? 'Mutado' : 'Voz ON';
+        }
+
+        function toggleEditProfile(isEditing) {
+            document.getElementById('profile-view').style.display = isEditing ? 'none' : 'flex';
+            document.getElementById('profile-edit').style.display = isEditing ? 'flex' : 'none';
+            if (isEditing) {
+                document.getElementById('edit-email').value = document.getElementById('view-email').innerText;
+                document.getElementById('edit-senha').value = '';
+                document.getElementById('edit-langs').value = document.getElementById('view-langs').innerText;
+                document.getElementById('edit-periodo').value = document.getElementById('view-periodo').innerText;
+            }
+        }
+
+        function saveProfile() {
+            const email = document.getElementById('edit-email').value.trim();
+            if (!email.includes('@')) {
+                showToast('Informe um email válido para salvar o perfil.');
+                return;
+            }
+            document.getElementById('view-email').innerText = email;
+            document.getElementById('view-senha').innerText = '•••••••••••••••';
+            document.getElementById('view-langs').innerText = document.getElementById('edit-langs').value || 'Não informado';
+            document.getElementById('view-periodo').innerText = document.getElementById('edit-periodo').value || 'Não informado';
+            toggleEditProfile(false);
+            showToast('Perfil atualizado com feedback de validação.');
+        }
+
+        function removeFriend(btn) {
+            btn.closest('.friend-item').remove();
+            showToast('Amigo removido da lista.');
+        }
+
+        function addFriend() {
+            const existing = document.querySelectorAll('#friends-list-content .friend-item').length;
+            const friendName = existing > 2 ? `NovoContato${existing - 1}` : 'NovoContato';
+            const listContainer = document.getElementById('friends-list-content');
+            const newFriendDiv = document.createElement('div');
+            newFriendDiv.className = 'friend-item';
+            newFriendDiv.innerHTML = `<div><strong>${friendName}</strong><br><span style="color: var(--mint);">Online - novo contato</span></div><button class="icon-btn" onclick="removeFriend(this)">X</button>`;
+            listContainer.appendChild(newFriendDiv);
+            showToast(`${friendName} adicionado à lista.`);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.innerText = message;
+            toast.classList.add('active');
+            clearTimeout(window.toastTimer);
+            window.toastTimer = setTimeout(() => toast.classList.remove('active'), 2600);
+        }
+
+        window.onload = function() {
+            navTo('home-screen');
+        };
+    </script>
 </body>
 </html>
-

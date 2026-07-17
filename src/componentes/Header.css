@@ -1,0 +1,33 @@
+header {
+	background-color: green;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px;
+	display: flex;
+	color: white;
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+}
+
+.logo {
+	user-select: none;
+	cursor: pointer;
+	color: white;
+	font-size: 30px;
+}
+
+.item-menu {
+	user-select: none;
+	cursor: pointer;
+	display: inline-block;
+	transition: transform 0.1s ease;
+	margin: 5px;
+	color: white;
+}
+.item-menu:hover {
+	color: papayawhip;
+	transform: scale(1.1);
+}

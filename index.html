@@ -146,6 +146,34 @@
   .cta-band p{color:#D9E6DC; margin-top:12px; font-size:16px;}
   .cta-band .btn-primary{background:#fff; color:var(--forest-deep); margin-top:26px;}
   .cta-band .btn-primary:hover{background:#EFEEE6; box-shadow:0 10px 24px -10px rgba(0,0,0,.35);}
+  /* Contact */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:start;}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-card{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:32px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-size:13.5px; font-weight:600; margin-bottom:7px; color:var(--ink);}
+  .field input, .field textarea{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:9px; font-family:'Inter',sans-serif; font-size:14.5px; background:var(--paper); color:var(--ink); transition:border-color .2s ease, box-shadow .2s ease;}
+  .field input:focus, .field textarea:focus{outline:none; border-color:var(--forest); box-shadow:0 0 0 3px rgba(31,92,64,.14);}
+  .field textarea{resize:vertical; min-height:110px;}
+  .form-note{font-size:12.5px; color:var(--ink-soft); margin-top:12px;}
+  .contact-info{display:flex; flex-direction:column; gap:16px;}
+  .info-row{display:flex; gap:14px; background:var(--white); border:1px solid var(--line); border-radius:14px; padding:20px; align-items:flex-start; transition:border-color .2s ease, transform .2s ease;}
+  .info-row:hover{border-color:var(--forest); transform:translateY(-2px);}
+  .info-icon{width:38px; height:38px; border-radius:10px; background:rgba(31,92,64,.09); color:var(--forest); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .info-row h4{font-size:14.5px; margin-bottom:4px; font-family:'Space Grotesk',sans-serif;}
+  .info-row p{margin:0; font-size:14px; color:var(--ink-soft);}
+  .info-row a.info-link{color:var(--forest); font-weight:600; font-size:13.5px; display:inline-block; margin-top:6px;}
+  .map-box{position:relative; border-radius:14px; overflow:hidden; border:1px solid var(--line); height:190px;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:24px 24px; background-color:#FCFBF7;}
+  .map-box .pin{position:absolute; top:50%; left:50%; transform:translate(-50%,-100%);}
+  .map-box .pin-drop{width:14px; height:14px; border-radius:50% 50% 50% 0; background:var(--forest); transform:rotate(-45deg); box-shadow:0 6px 14px -6px rgba(18,54,38,.6);}
+  .map-box .pin-ring{position:absolute; bottom:-6px; left:50%; transform:translateX(-50%); width:26px; height:8px; border-radius:50%; background:rgba(31,92,64,.18);}
+  .map-box a.open-map{position:absolute; bottom:12px; right:12px; background:rgba(255,255,255,.92); border:1px solid var(--line); font-size:12.5px; font-weight:600; padding:7px 12px; border-radius:100px; color:var(--forest); backdrop-filter:blur(6px);}
+  .wa-float{position:fixed; bottom:22px; right:22px; z-index:60; width:56px; height:56px; border-radius:50%; background:var(--forest); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 14px 28px -10px rgba(18,54,38,.55); transition:transform .2s ease, background .2s ease;}
+  .wa-float:hover{transform:translateY(-3px) scale(1.04); background:var(--forest-deep);}
   /* Footer */
   footer{border-top:1px solid var(--line); padding:56px 0 30px; font-size:14px; color:var(--ink-soft);}
   .foot-grid{display:grid; grid-template-columns:1.4fr repeat(3,1fr); gap:32px;}
@@ -179,6 +207,7 @@
       <a href="#como-funciona">Como funciona</a>
       <a href="#precos">Preços</a>
       <a href="#faq">Perguntas</a>
+      <a href="#contato">Contato</a>
     </div>
     <a href="#precos" class="btn btn-primary nav-cta">Pedir orçamento</a>
   </div>
@@ -384,6 +413,69 @@
   </div>
 </section>
 
+<section id="contato" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Contato</span>
+      <h2 class="section-title">Fale direto com quem vai cuidar do seu site.</h2>
+      <p class="section-sub">Preencha o formulário, chame no WhatsApp ou passe no escritório em Niterói.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <form id="contact-form">
+          <div class="field">
+            <label for="c-name">Nome</label>
+            <input id="c-name" type="text" placeholder="Seu nome" required>
+          </div>
+          <div class="field">
+            <label for="c-email">E-mail</label>
+            <input id="c-email" type="email" placeholder="voce@empresa.com" required>
+          </div>
+          <div class="field">
+            <label for="c-msg">Mensagem</label>
+            <textarea id="c-msg" placeholder="Conte um pouco sobre o site ou sistema que você precisa" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Enviar mensagem →</button>
+          <p class="form-note">Ao enviar, seu aplicativo de e-mail abrirá com a mensagem pronta para <strong>contato@firmiano.com.br</strong>.</p>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div class="info-row">
+          <div class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="none"/><path d="M3 6l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/></svg></div>
+          <div>
+            <h4>E-mail</h4>
+            <p>contato@firmiano.com.br</p>
+            <a class="info-link" href="mailto:contato@firmiano.com.br">Enviar e-mail</a>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p>(21) 99890-8129</p>
+            <a class="info-link" href="https://wa.me/5521998908129" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg></div>
+          <div style="width:100%;">
+            <h4>Endereço</h4>
+            <p>Av. Ernani do Amaral Peixoto, 450 — Sala 505, Centro, Niterói/RJ</p>
+          </div>
+        </div>
+        <div class="map-box">
+          <div class="pin"><div class="pin-drop"></div><div class="pin-ring"></div></div>
+          <a class="open-map" href="https://www.google.com/maps/search/?api=1&query=Avenida+Ernani+do+Amaral+Peixoto%2C+450%2C+Sala+505%2C+Centro%2C+Niter%C3%B3i%2C+RJ" target="_blank" rel="noopener">Abrir no Google Maps ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a class="wa-float" href="https://wa.me/5521998908129" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>
+</a>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -412,11 +504,22 @@
       <div class="socials">
         <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
         <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
-        <a href="#" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
+        <a href="https://wa.me/5521998908129" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </div>
 </footer>
 
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('c-name').value.trim();
+    var email = document.getElementById('c-email').value.trim();
+    var msg = document.getElementById('c-msg').value.trim();
+    var subject = encodeURIComponent('Contato via site — ' + name);
+    var body = encodeURIComponent('Nome: ' + name + '\nE-mail: ' + email + '\n\nMensagem:\n' + msg);
+    window.location.href = 'mailto:contato@firmiano.com.br?subject=' + subject + '&body=' + body;
+  });
+</script>
 </body>
 </html>

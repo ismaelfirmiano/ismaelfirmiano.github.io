@@ -185,6 +185,30 @@
   .plan .was + .price{margin-top:0;}
   .save{display:inline-block; align-self:flex-start; font-size:12px; font-weight:700; color:var(--forest-deep); background:rgba(180,146,47,.2); border-radius:100px; padding:3px 10px; margin:8px 0 4px;}
   .plan.popular .badge{background:var(--forest);}
+  /* Domain checker */
+  .dom-form{display:flex; gap:12px; max-width:640px;}
+  @media(max-width:600px){.dom-form{flex-direction:column;}}
+  .dom-form input{flex:1; min-width:0; padding:14px 16px; border:1px solid var(--line); border-radius:9px; font-family:'Inter',sans-serif; font-size:16px; background:var(--white); color:var(--ink);}
+  .dom-form input:focus{outline:none; border-color:var(--forest); box-shadow:0 0 0 3px rgba(49,78,28,.14);}
+  .dom-form button{border:0; cursor:pointer; justify-content:center; font-family:'Inter',sans-serif;}
+  .dom-form button:disabled{opacity:.7; cursor:wait;}
+  .dom-note{font-size:12.5px; color:var(--ink-soft); margin:12px 0 0; max-width:640px;}
+  .dom-out{margin-top:28px; max-width:760px;}
+  .dom-card{background:var(--white); border:1px solid var(--line); border-radius:14px; padding:22px;}
+  .dom-main{display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;}
+  .dom-name{font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:700; word-break:break-all;}
+  .dom-sub{margin:8px 0 0; font-size:14.5px; color:var(--ink-soft);}
+  .pill{display:inline-block; font-size:12.5px; font-weight:700; padding:4px 11px; border-radius:100px; white-space:nowrap;}
+  .pill.free{background:rgba(49,78,28,.12); color:var(--forest-deep);}
+  .pill.taken{background:rgba(154,59,45,.12); color:#8A3226;}
+  .pill.unk{background:var(--paper-2); color:var(--ink-soft);}
+  .dom-h{font-family:'Space Grotesk',sans-serif; font-size:16px; margin:24px 0 0;}
+  .dom-list{list-style:none; padding:0; margin:10px 0 0; background:var(--white); border:1px solid var(--line); border-radius:14px;}
+  .dom-list li{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 18px; font-size:15px; flex-wrap:wrap;}
+  .dom-list li + li{border-top:1px solid var(--line);}
+  .dom-list .n{word-break:break-all;}
+  .dom-list .r{display:flex; align-items:center; gap:14px;}
+  .dom-want{font-size:13.5px; font-weight:600; color:var(--forest); text-decoration:underline; text-underline-offset:3px;}
   /* Refer */
   .refer{display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:760px;}
   @media(max-width:600px){.refer{grid-template-columns:1fr;}}
@@ -374,6 +398,22 @@
         <p>Depois da entrega você fala direto com quem fez o seu site, por alteração ou com plano mensal de suporte.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="dominio">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Seu endereço na internet</span>
+      <h2 class="section-title">Descubra se o nome da sua empresa está livre.</h2>
+      <p class="section-sub">Digite o nome do seu negócio e veja na hora se o .com.br está disponível. Se não estiver, sugerimos alternativas.</p>
+    </div>
+    <form class="dom-form" id="dom-form" autocomplete="off" novalidate>
+      <input id="dom-input" type="text" inputmode="text" maxlength="60" placeholder="Ex.: Padaria Pão Quente" aria-label="Nome da sua empresa">
+      <button type="submit" class="btn btn-primary" id="dom-btn">Consultar domínio</button>
+    </form>
+    <p class="dom-note">A consulta é feita direto do seu navegador, em serviços públicos de DNS e de registro de domínios. Não guardamos o que você digita.</p>
+    <div class="dom-out" id="dom-out" aria-live="polite"></div>
   </div>
 </section>
 
@@ -653,7 +693,7 @@
       </div>
       <div>
         <h4>Navegação</h4>
-        <ul><li><a href="#servicos">Serviços</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#precos">Preços</a></li><li><a href="#indique">Indique e ganhe</a></li><li><a href="#faq">Perguntas</a></li></ul>
+        <ul><li><a href="#servicos">Serviços</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#dominio">Consultar domínio</a></li><li><a href="#precos">Preços</a></li><li><a href="#indique">Indique e ganhe</a></li><li><a href="#faq">Perguntas</a></li></ul>
       </div>
       <div>
         <h4>Empresa</h4>
@@ -685,6 +725,107 @@
     var body = encodeURIComponent('Nome: ' + name + '\nE-mail: ' + email + '\n\nMensagem:\n' + msg);
     window.location.href = 'mailto:contato@firmiano.com.br?subject=' + subject + '&body=' + body;
   });
+</script>
+<script>
+(function(){
+  var form=document.getElementById('dom-form'), input=document.getElementById('dom-input'),
+      btn=document.getElementById('dom-btn'), out=document.getElementById('dom-out');
+  if(!form) return;
+  var SUF=['oficial','digital','online','web','site','br','brasil'];
+
+  function names(raw){
+    var v=String(raw||'').trim().toLowerCase().replace(/\.(com\.br|net\.br|com|net|org|br)$/,'');
+    v=v.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/&/g,' e ');
+    var words=v.replace(/[^a-z0-9\s-]/g,'').split(/[\s-]+/).filter(Boolean);
+    var joined=words.join('');
+    if(joined.length<2||joined.length>50) return null;
+    return {joined:joined, hyphen:words.length>1?words.join('-'):null};
+  }
+  function tfetch(url,opts){
+    var c=new AbortController(), t=setTimeout(function(){c.abort();},8000);
+    opts=opts||{}; opts.signal=c.signal;
+    return fetch(url,opts).finally(function(){clearTimeout(t);});
+  }
+  function doh(host){
+    return tfetch('https://dns.google/resolve?name='+encodeURIComponent(host)+'&type=NS')
+      .then(function(r){if(!r.ok)throw 0;return r.json();})
+      .catch(function(){return tfetch('https://cloudflare-dns.com/dns-query?name='+encodeURIComponent(host)+'&type=NS',{headers:{Accept:'application/dns-json'}}).then(function(r){if(!r.ok)throw 0;return r.json();});})
+      .then(function(j){return j.Status===3?'free':(j.Status===0?'taken':'unk');})
+      .catch(function(){return 'unk';});
+  }
+  function rdap(url){
+    return tfetch(url,{headers:{Accept:'application/rdap+json, application/json'}})
+      .then(function(r){return r.status===404?'free':(r.status===200?'taken':'unk');})
+      .catch(function(){return 'unk';});
+  }
+  function el(tag,cls,text){var e=document.createElement(tag); if(cls)e.className=cls; if(text!=null)e.textContent=text; return e;}
+  function pill(st,free){
+    var t={free:free||'Disponível',taken:'Já registrado',unk:'Não consegui verificar'}[st];
+    return el('span','pill '+st,t);
+  }
+  function want(domain){
+    var a=el('a','dom-want','Quero este domínio');
+    a.href='https://wa.me/5521998908129?text='+encodeURIComponent('Olá! Quero registrar o domínio '+domain+' e fazer o meu site.');
+    a.target='_blank'; a.rel='noopener'; return a;
+  }
+  function row(domain,st,freeLabel){
+    var li=el('li'); li.appendChild(el('span','n',domain));
+    var r=el('span','r'); r.appendChild(pill(st,freeLabel)); if(st==='free') r.appendChild(want(domain));
+    li.appendChild(r); return li;
+  }
+  function render(base,res,vars){
+    out.textContent='';
+    var main=base+'.com.br', card=el('div','dom-card'), top=el('div','dom-main');
+    top.appendChild(el('div','dom-name',main)); top.appendChild(pill(res.br,'Parece disponível'));
+    card.appendChild(top);
+    var msg={
+      free:'Esse endereço parece livre. Antes de registrar para você, confirmamos a disponibilidade no Registro.br.',
+      taken:'Esse .com.br já tem dono. Veja as alternativas abaixo.',
+      unk:'Não foi possível consultar agora. Tente de novo em instantes ou fale com a gente.'}[res.br];
+    card.appendChild(el('p','dom-sub',msg));
+    if(res.br==='free'){var b=want(main); b.className='btn btn-primary'; b.textContent='Quero este domínio →'; b.style.marginTop='16px'; card.appendChild(b);}
+    out.appendChild(card);
+
+    out.appendChild(el('h3','dom-h','Mesmo nome em outras terminações'));
+    var ul=el('ul','dom-list');
+    ul.appendChild(row(base+'.com',res.com)); ul.appendChild(row(base+'.net',res.net)); ul.appendChild(row(base+'.org',res.org));
+    out.appendChild(ul);
+
+    if(vars){
+      out.appendChild(el('h3','dom-h','Variações disponíveis com .com.br'));
+      if(vars.length){
+        var vl=el('ul','dom-list'); vars.forEach(function(d){vl.appendChild(row(d,'free','Parece disponível'));}); out.appendChild(vl);
+      } else {
+        out.appendChild(el('p','dom-sub','Não encontramos variações livres automaticamente. Fale com a gente que ajudamos a achar um bom nome.'));
+      }
+    }
+  }
+  function run(raw){
+    var n=names(raw);
+    if(!n){
+      out.textContent=''; out.appendChild(el('p','dom-sub','Digite o nome da sua empresa (entre 2 e 50 letras ou números).')); return;
+    }
+    btn.disabled=true; btn.textContent='Consultando...';
+    var base=n.joined;
+    Promise.all([
+      doh(base+'.com.br'),
+      rdap('https://rdap.verisign.com/com/v1/domain/'+encodeURIComponent(base)+'.com'),
+      rdap('https://rdap.verisign.com/net/v1/domain/'+encodeURIComponent(base)+'.net'),
+      rdap('https://rdap.publicinterestregistry.org/rdap/domain/'+encodeURIComponent(base)+'.org')
+    ]).then(function(r){
+      var res={br:r[0],com:r[1],net:r[2],org:r[3]};
+      if(res.br==='free'){render(base,res,null);return;}
+      var cands=[]; if(n.hyphen) cands.push(n.hyphen);
+      SUF.forEach(function(s){cands.push(base+s);});
+      cands=cands.filter(function(c){return c.length<=63;});
+      return Promise.all(cands.map(function(c){return doh(c+'.com.br').then(function(st){return st==='free'?c+'.com.br':null;});}))
+        .then(function(list){render(base,res,list.filter(Boolean).slice(0,6));});
+    }).catch(function(){
+      out.textContent=''; out.appendChild(el('p','dom-sub','Não foi possível consultar agora. Tente de novo em instantes.'));
+    }).finally(function(){btn.disabled=false; btn.textContent='Consultar domínio';});
+  }
+  form.addEventListener('submit',function(e){e.preventDefault(); run(input.value);});
+})();
 </script>
 </body>
 </html>

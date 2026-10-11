@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Firmiano — Criação de sites WordPress em Niterói/RJ</title>
-<meta name="description" content="Firmiano: criação, hospedagem e suporte de sites em WordPress para empresas e instituições em Niterói e todo o Brasil. Super promoção de outubro: landing page + domínio por R$700. Peça seu orçamento.">
+<meta name="description" content="Firmiano: criação, hospedagem e suporte de landing pages e sites WordPress para pequenas empresas em Niterói e todo o Brasil. Promoção de outubro: landing page + domínio por R$700.">
 <link rel="canonical" href="https://firmiano.com.br/">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0B3D2E">
@@ -15,7 +15,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Firmiano">
 <meta property="og:title" content="Firmiano — Criação de sites WordPress em Niterói/RJ">
-<meta property="og:description" content="Super promoção de outubro: landing page + domínio por R$700 e site WordPress de 5 páginas, já com domínio, por R$1.500.">
+<meta property="og:description" content="Promoção de outubro: landing page + domínio por R$700 e site WordPress de 5 páginas, já com domínio, por R$1.500.">
 <meta property="og:url" content="https://firmiano.com.br/">
 <meta property="og:image" content="https://firmiano.com.br/firmiano-identidade/firmiano-icone-quadrado.png">
 <script type="application/ld+json">
@@ -25,7 +25,7 @@
   "name": "Firmiano",
   "url": "https://firmiano.com.br/",
   "logo": "https://firmiano.com.br/firmiano-identidade/firmiano-icone-quadrado.png",
-  "description": "Criação, hospedagem e suporte de sites em WordPress para empresas e instituições.",
+  "description": "Criação, hospedagem e suporte de landing pages e sites em WordPress para pequenas empresas.",
   "email": "contato@firmiano.com.br",
   "telephone": "+55-21-99890-8129",
   "founder": {"@type": "Person", "name": "Ismael Firmiano"},
@@ -45,718 +45,981 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#F3EFE4;
-    --paper-2:#E9E4D6;
-    --ink:#0E1F19;
-    --ink-soft:#4B554D;
-    --forest:#27805F;
-    --forest-deep:#0B3D2E;
-    --signal:#27805F;
-    --line:#D9D4C3;
-    --white:#FFFFFF;
-    padding-top: env(safe-area-inset-top,0px);
-    padding-bottom: env(safe-area-inset-bottom,0px);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth; scroll-padding-top: 84px;}
-  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased;}
-  h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif; letter-spacing:-0.01em; color:var(--ink); margin:0;}
-  a{color:inherit; text-decoration:none;}
-  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
-  .blueprint-bg{
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-  /* NAV */
-  nav{position:sticky; top:0; z-index:50; backdrop-filter: blur(14px); background:rgba(243,239,228,0.82); border-bottom:1px solid var(--line);}
-  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1120px; margin:0 auto;}
-  .logo{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px;}
-  .logo-img{display:block; height:32px; width:auto;}
-  .logo-mark{width:30px; height:30px; border-radius:7px; background:var(--forest); display:flex; align-items:center; justify-content:center;}
-  .nav-links{display:flex; gap:32px; font-size:14.5px; font-weight:500; color:var(--ink-soft);}
-  .nav-links a:hover{color:var(--forest);}
-  .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:9px; font-weight:600; font-size:14.5px; transition:transform .2s ease, box-shadow .2s ease, background .2s ease;}
-  .btn-primary{background:var(--forest); color:#fff; box-shadow:0 1px 0 rgba(0,0,0,.08);}
-  .btn-primary:hover{background:var(--forest-deep); transform:translateY(-1.5px); box-shadow:0 10px 22px -8px rgba(11,61,46,.55);}
-  .btn-ghost{border:1px solid var(--line); color:var(--ink);}
-  .btn-ghost:hover{border-color:var(--forest-deep); color:var(--forest-deep);}
-  #menu-check{display:none;}
-  .burger{display:none; cursor:pointer;}
-  @media(max-width:820px){
-    .nav-links{position:absolute; top:64px; left:0; right:0; background:var(--paper); flex-direction:column; gap:0; border-bottom:1px solid var(--line); max-height:0; overflow:hidden; transition:max-height .25s ease;}
-    .nav-links a{padding:14px 24px; border-top:1px solid var(--line);}
-    #menu-check:checked ~ .nav-links{max-height:400px;}
-    .burger{display:block;}
-    .nav-cta{display:none;}
-  }
-  /* HERO */
-  .hero{padding:76px 0 60px; position:relative; overflow:hidden;}
-  .hero-grid{display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:center;}
-  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;} .hero{padding:48px 0 40px;}}
-  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:13.5px; color:var(--forest-deep); font-weight:600; background:rgba(39,128,95,.08); border:1px solid rgba(39,128,95,.18); padding:6px 12px; border-radius:100px; margin-bottom:22px;}
-  .eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--signal);}
-  h1.headline{font-size:clamp(34px,4.6vw,54px); line-height:1.08; font-weight:700; max-width:15ch;}
-  .headline .accent{color:var(--forest);}
-  .sub{font-size:18px; color:var(--ink-soft); margin-top:22px; max-width:46ch;}
-  .hero-ctas{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
-  .hero-meta{display:flex; gap:26px; margin-top:38px; font-size:13.5px; color:var(--ink-soft); flex-wrap:wrap;}
-  .hero-meta b{color:var(--ink); font-family:'Space Grotesk',sans-serif;}
-  /* Visual: blueprint browser mock */
-  .mock{position:relative; border-radius:16px; border:1px solid var(--line); background:var(--white); box-shadow:0 30px 60px -30px rgba(14,31,25,.35); overflow:hidden;}
-  .mock-bar{display:flex; gap:6px; padding:12px 14px; border-bottom:1px solid var(--line); background:var(--paper-2);}
-  .mock-bar span{width:9px; height:9px; border-radius:50%; background:var(--line);}
-  .mock-body{padding:22px; background:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size:22px 22px; background-color:#FCFBF7;}
-  .mock-card{background:#fff; border:1px dashed var(--forest); border-radius:10px; padding:16px; margin-bottom:12px;}
-  .mock-card .bar{height:9px; border-radius:5px; background:var(--paper-2);}
-  .mock-tag{position:absolute; top:20px; right:-38px; transform:rotate(38deg); background:var(--forest); color:#fff; font-size:11.5px; font-weight:700; padding:5px 46px; letter-spacing:.02em;}
-  /* SECTION helpers */
-  section{padding:76px 0;}
-  .section-head{max-width:560px; margin-bottom:44px;}
-  .section-tag{color:var(--forest-deep); font-weight:600; font-size:13.5px; margin-bottom:10px; display:block;}
-  h2.section-title{font-size:clamp(26px,3vw,36px); font-weight:700;}
-  .section-sub{color:var(--ink-soft); margin-top:12px; font-size:16px;}
-  /* Social proof */
-  .proof{background:var(--forest-deep); color:#F3EFE4; padding:28px 0;}
-  .logo-row{display:flex; flex-wrap:wrap; gap:14px 34px; align-items:center; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.14); opacity:.85; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px;}
-  .metrics{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; padding:44px 0;}
-  @media(max-width:700px){.metrics{grid-template-columns:1fr;}}
-  .metric b{font-family:'Space Grotesk',sans-serif; font-size:32px; display:block; color:#fff;}
-  .metric span{color:#BCD0C6; font-size:14.5px;}
-  .testis{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
-  @media(max-width:700px){.testis{grid-template-columns:1fr;}}
-  .testi{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:26px; backdrop-filter:blur(6px);}
-  .testi p{font-size:15.5px; color:#F3EFE4;}
-  .testi-foot{display:flex; align-items:center; gap:12px; margin-top:18px;}
-  .avatar{width:38px; height:38px; border-radius:50%; background:var(--forest); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-family:'Space Grotesk',sans-serif; font-size:13px; flex-shrink:0;}
-  /* Benefits */
-  .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
-  @media(max-width:900px){.grid3{grid-template-columns:1fr 1fr;}}
-  @media(max-width:600px){.grid3{grid-template-columns:1fr;}}
-  .grid4{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
-  @media(max-width:980px){.grid4{grid-template-columns:1fr 1fr;}}
-  @media(max-width:600px){.grid4{grid-template-columns:1fr;}}
-  .card{background:var(--white); border:1px solid var(--line); border-radius:14px; padding:26px; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;}
-  .card:hover{transform:translateY(-4px); box-shadow:0 20px 40px -24px rgba(14,31,25,.3); border-color:var(--forest);}
-  .icon-box{width:42px; height:42px; border-radius:10px; background:rgba(39,128,95,.09); display:flex; align-items:center; justify-content:center; margin-bottom:16px; color:var(--forest);}
-  .card h3{font-size:17px; margin-bottom:8px;}
-  .card p{font-size:14.5px; color:var(--ink-soft); margin:0;}
-  /* How it works */
-  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; position:relative;}
-  @media(max-width:820px){.steps{grid-template-columns:1fr;}}
-  .step{position:relative; padding-left:0;}
-  .step-num{font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:700; color:var(--forest-deep); border:1.5px solid var(--forest-deep); width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:18px;}
-  .step h3{font-size:18px; margin-bottom:8px;}
-  .step p{color:var(--ink-soft); font-size:14.5px;}
-  .step-line{position:absolute; top:17px; left:calc(100% + 4px); width:calc(28px - 8px); height:1.5px; background:var(--line); display:none;}
-  @media(min-width:821px){.step-line{display:block;}}
-  /* Pricing */
-  .pricing{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:stretch;}
-  @media(max-width:900px){.pricing{grid-template-columns:1fr; max-width:420px; margin:0 auto;}}
-  .plan{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:30px 26px; display:flex; flex-direction:column; position:relative;}
-  .plan.popular{border:2px solid var(--forest); box-shadow:0 0 0 1px var(--forest), 0 24px 50px -26px rgba(39,128,95,.5); transform:translateY(-8px);}
-  @media(max-width:900px){.plan.popular{transform:none;}}
-  .badge{position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--forest); color:#fff; font-size:12px; font-weight:700; padding:5px 14px; border-radius:100px; white-space:nowrap;}
-  .plan h3{font-size:19px;}
-  .plan .price{font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; margin:16px 0 2px;}
-  .plan .price span{font-size:14px; font-weight:500; color:var(--ink-soft); font-family:'Inter',sans-serif;}
-  .plan .desc{font-size:13.5px; color:var(--ink-soft); margin-bottom:20px;}
-  .plan ul{list-style:none; padding:0; margin:0 0 26px; display:flex; flex-direction:column; gap:11px;}
-  .plan li{display:flex; gap:10px; font-size:14.5px; align-items:flex-start;}
-  .plan li svg{flex-shrink:0; margin-top:2px; color:var(--forest);}
-  .plan .btn{width:100%; justify-content:center; margin-top:auto;}
-  /* Promo */
-  .promo-banner{display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; margin:0 auto 44px; max-width:640px; background:rgba(39,128,95,.10); border:1px solid rgba(39,128,95,.40); color:var(--ink); border-radius:12px; padding:12px 18px; font-size:14.5px; text-align:center;}
-  .promo-banner b{font-family:'Space Grotesk',sans-serif;}
-  .price-group + .price-group{margin-top:56px;}
-  .group-head{margin-bottom:26px;}
-  .group-head h3{font-size:22px;}
-  .group-head p{margin:6px 0 0; color:var(--ink-soft); font-size:14.5px;}
-  .plan .was{font-size:14px; color:var(--ink-soft); text-decoration:line-through; margin-top:16px;}
-  .plan .was + .price{margin-top:0;}
-  .save{display:inline-block; align-self:flex-start; font-size:12px; font-weight:700; color:var(--forest-deep); background:rgba(39,128,95,.14); border-radius:100px; padding:3px 10px; margin:8px 0 4px;}
-  .plan.popular .badge{background:var(--forest);}
-  /* Domain checker */
-  .dom-form{display:flex; gap:12px; max-width:640px;}
-  @media(max-width:600px){.dom-form{flex-direction:column;}}
-  .dom-form input{flex:1; min-width:0; padding:14px 16px; border:1px solid var(--line); border-radius:9px; font-family:'Inter',sans-serif; font-size:16px; background:var(--white); color:var(--ink);}
-  .dom-form input:focus{outline:none; border-color:var(--forest); box-shadow:0 0 0 3px rgba(39,128,95,.14);}
-  .dom-form button{border:0; cursor:pointer; justify-content:center; font-family:'Inter',sans-serif;}
-  .dom-form button:disabled{opacity:.7; cursor:wait;}
-  .dom-note{font-size:12.5px; color:var(--ink-soft); margin:12px 0 0; max-width:640px;}
-  .dom-out{margin-top:28px; max-width:760px;}
-  .dom-card{background:var(--white); border:1px solid var(--line); border-radius:14px; padding:22px;}
-  .dom-main{display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;}
-  .dom-name{font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:700; word-break:break-all;}
-  .dom-sub{margin:8px 0 0; font-size:14.5px; color:var(--ink-soft);}
-  .pill{display:inline-block; font-size:12.5px; font-weight:700; padding:4px 11px; border-radius:100px; white-space:nowrap;}
-  .pill.free{background:rgba(39,128,95,.12); color:var(--forest-deep);}
-  .pill.taken{background:rgba(154,59,45,.12); color:#8A3226;}
-  .pill.unk{background:var(--paper-2); color:var(--ink-soft);}
-  .dom-h{font-family:'Space Grotesk',sans-serif; font-size:16px; margin:24px 0 0;}
-  .dom-list{list-style:none; padding:0; margin:10px 0 0; background:var(--white); border:1px solid var(--line); border-radius:14px;}
-  .dom-list li{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 18px; font-size:15px; flex-wrap:wrap;}
-  .dom-list li + li{border-top:1px solid var(--line);}
-  .dom-list .n{word-break:break-all;}
-  .dom-list .r{display:flex; align-items:center; gap:14px;}
-  .dom-want{font-size:13.5px; font-weight:600; color:var(--forest-deep); text-decoration:underline; text-underline-offset:3px;}
-  .price-notes{max-width:760px; margin:44px auto 0; background:var(--white); border:1px solid var(--line); border-radius:14px; padding:22px 26px;}
-  .price-notes h3{font-size:16px; margin-bottom:12px;}
-  .price-notes ul{margin:0; padding-left:20px; color:var(--ink-soft); font-size:14.5px; display:flex; flex-direction:column; gap:8px;}
-  .price-notes b{color:var(--ink);}
-  /* Refer */
-  .refer{display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:760px;}
-  @media(max-width:600px){.refer{grid-template-columns:1fr;}}
-  .refer-card{background:var(--white); border:1px dashed var(--forest); border-radius:14px; padding:26px;}
-  .refer-card b{font-family:'Space Grotesk',sans-serif; font-size:40px; display:block; color:var(--forest); line-height:1.1;}
-  .refer-card span{color:var(--ink-soft); font-size:15px;}
-  .refer-note{max-width:760px; margin-top:20px; color:var(--ink-soft); font-size:14.5px;}
-  /* FAQ */
-  .faq{max-width:760px;}
-  details{border-bottom:1px solid var(--line); padding:20px 0;}
-  summary{cursor:pointer; font-weight:600; font-size:16px; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;}
-  summary::-webkit-details-marker{display:none;}
-  summary .plus{transition:transform .25s ease; flex-shrink:0; color:var(--forest);}
-  details[open] summary .plus{transform:rotate(45deg);}
-  details p{color:var(--ink-soft); font-size:15px; margin:14px 0 0; max-width:64ch;}
-  /* CTA band */
-  .cta-band{background:var(--forest-deep); color:#fff; border-radius:22px; padding:56px 40px; text-align:center;}
-  @media(max-width:600px){.cta-band{padding:40px 24px;}}
-  .cta-band h2{color:#fff; font-size:clamp(24px,3.4vw,34px);}
-  .cta-band p{color:#CFE0D7; margin-top:12px; font-size:16px;}
-  .cta-band .btn-primary{background:#fff; color:var(--forest-deep); margin-top:26px;}
-  .cta-band .btn-primary:hover{background:#F3EFE4; box-shadow:0 10px 24px -10px rgba(0,0,0,.35);}
-  /* Contact */
-  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:start;}
-  @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
-  .contact-card{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:32px;}
-  .field{margin-bottom:18px;}
-  .field label{display:block; font-size:13.5px; font-weight:600; margin-bottom:7px; color:var(--ink);}
-  .field input, .field textarea{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:9px; font-family:'Inter',sans-serif; font-size:14.5px; background:var(--paper); color:var(--ink); transition:border-color .2s ease, box-shadow .2s ease;}
-  .field input:focus, .field textarea:focus{outline:none; border-color:var(--forest); box-shadow:0 0 0 3px rgba(39,128,95,.14);}
-  .field textarea{resize:vertical; min-height:110px;}
-  .form-note{font-size:12.5px; color:var(--ink-soft); margin-top:12px;}
-  .contact-info{display:flex; flex-direction:column; gap:16px;}
-  .info-row{display:flex; gap:14px; background:var(--white); border:1px solid var(--line); border-radius:14px; padding:20px; align-items:flex-start; transition:border-color .2s ease, transform .2s ease;}
-  .info-row:hover{border-color:var(--forest); transform:translateY(-2px);}
-  .info-icon{width:38px; height:38px; border-radius:10px; background:rgba(39,128,95,.09); color:var(--forest); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-  .info-row h4{font-size:14.5px; margin-bottom:4px; font-family:'Space Grotesk',sans-serif;}
-  .info-row p{margin:0; font-size:14px; color:var(--ink-soft);}
-  .info-row a.info-link{color:var(--forest-deep); font-weight:600; font-size:13.5px; display:inline-block; margin-top:6px;}
-  .map-box{position:relative; border-radius:14px; overflow:hidden; border:1px solid var(--line); height:190px;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size:24px 24px; background-color:#FCFBF7;}
-  .map-box .pin{position:absolute; top:50%; left:50%; transform:translate(-50%,-100%);}
-  .map-box .pin-drop{width:14px; height:14px; border-radius:50% 50% 50% 0; background:var(--forest); transform:rotate(-45deg); box-shadow:0 6px 14px -6px rgba(11,61,46,.6);}
-  .map-box .pin-ring{position:absolute; bottom:-6px; left:50%; transform:translateX(-50%); width:26px; height:8px; border-radius:50%; background:rgba(39,128,95,.18);}
-  .map-box a.open-map{position:absolute; bottom:12px; right:12px; background:rgba(255,255,255,.92); border:1px solid var(--line); font-size:12.5px; font-weight:600; padding:7px 12px; border-radius:100px; color:var(--forest-deep); backdrop-filter:blur(6px);}
-  .wa-float{position:fixed; bottom:22px; right:22px; z-index:60; width:56px; height:56px; border-radius:50%; background:var(--forest); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 14px 28px -10px rgba(11,61,46,.55); transition:transform .2s ease, background .2s ease;}
-  .wa-float:hover{transform:translateY(-3px) scale(1.04); background:var(--forest-deep);}
-  /* Footer */
-  footer{border-top:1px solid var(--line); padding:56px 0 30px; font-size:14px; color:var(--ink-soft);}
-  .foot-grid{display:grid; grid-template-columns:1.4fr repeat(3,1fr); gap:32px;}
-  @media(max-width:700px){.foot-grid{grid-template-columns:1fr 1fr;}}
-  .foot-grid h4{font-family:'Space Grotesk',sans-serif; color:var(--ink); font-size:14px; margin-bottom:14px;}
-  .foot-grid ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px;}
-  .foot-grid a:hover{color:var(--forest);}
-  .foot-bottom{margin-top:44px; padding-top:24px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;}
-  .socials{display:flex; gap:14px;}
-  .socials a{width:34px; height:34px; border-radius:9px; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:var(--ink-soft);}
-  .socials a:hover{border-color:var(--forest); color:var(--forest);}
-  @media(prefers-color-scheme: dark){:root:not([data-theme="light"]){}}
+:root{
+  --green:#0B3D2E;      /* Verde Firmiano */
+  --green-ink:#072A20;  /* fundo profundo */
+  --green-2:#0F4A38;    /* superfícies sobre o escuro */
+  --leaf:#27805F;       /* Verde folha */
+  --leaf-hi:#3FA37C;
+  --mint:#A9D9C2;
+  --sand:#F3EFE4;       /* Areia */
+  --sand-2:#E9E4D6;
+  --paper:#FBF9F4;
+  --ink:#0E1F19;        /* Grafite */
+  --ink-2:#4B554D;
+  --line:#D9D4C3;
+  --line-d:rgba(243,239,228,.12);
+  --ease:cubic-bezier(.7,0,.2,1);
+  --ease-out:cubic-bezier(.2,.8,.2,1);
+  --display:'Bricolage Grotesque','Instrument Sans',system-ui,sans-serif;
+  --body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:88px; -webkit-text-size-adjust:100%;}
+body{margin:0; background:var(--sand); color:var(--ink); font-family:var(--body); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+button{font:inherit; color:inherit;}
+:focus-visible{outline:2.5px solid var(--leaf-hi); outline-offset:3px; border-radius:6px;}
+.wrap{max-width:1200px; margin:0 auto; padding:0 24px;}
+h1,h2,h3{font-family:var(--display); margin:0; font-weight:700; letter-spacing:-.025em; line-height:1.04;}
+h2{font-size:clamp(32px,4.4vw,58px); letter-spacing:-.035em; line-height:1;}
+p{margin:0;}
+.sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+/* ---------- Progress ---------- */
+.progress{position:fixed; top:0; left:0; height:3px; width:100%; transform-origin:0 50%; transform:scaleX(0); background:linear-gradient(90deg,var(--leaf),var(--leaf-hi)); z-index:100;}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:15px 24px; border-radius:14px; font-weight:600; font-size:16px; border:0; cursor:pointer; transition:transform .25s var(--ease-out), background .25s, box-shadow .25s, color .25s; will-change:transform;}
+.btn svg{flex-shrink:0;}
+.btn-leaf{background:var(--leaf); color:#fff; box-shadow:0 10px 30px -10px rgba(39,128,95,.7), inset 0 1px 0 rgba(255,255,255,.18);}
+.btn-leaf:hover{background:#2E8F6A; box-shadow:0 16px 40px -12px rgba(39,128,95,.85), inset 0 1px 0 rgba(255,255,255,.2);}
+.btn-line-d{color:var(--sand); box-shadow:inset 0 0 0 1px rgba(243,239,228,.28);}
+.btn-line-d:hover{box-shadow:inset 0 0 0 1px rgba(243,239,228,.6); background:rgba(243,239,228,.05);}
+.btn-line{color:var(--ink); box-shadow:inset 0 0 0 1px var(--line); background:var(--paper);}
+.btn-line:hover{box-shadow:inset 0 0 0 1px var(--green); color:var(--green);}
+.btn-sand{background:var(--sand); color:var(--green);}
+.btn-sand:hover{background:#fff;}
+
+/* ---------- Nav ---------- */
+.nav{position:fixed; top:0; left:0; right:0; z-index:90; transition:background .35s, box-shadow .35s, backdrop-filter .35s;}
+.nav-in{display:flex; align-items:center; justify-content:space-between; gap:24px; height:76px;}
+.logo{position:relative; display:block; width:127px; height:32px;}
+.logo img{position:absolute; inset:0; width:127px; height:32px; transition:opacity .35s;}
+.logo .lg-green{opacity:0;}
+.nav-links{display:flex; gap:30px; font-size:15px; font-weight:500; color:rgba(243,239,228,.78);}
+.nav-links a{position:relative; padding:6px 0; transition:color .25s;}
+.nav-links a::after{content:""; position:absolute; left:0; right:0; bottom:0; height:1.5px; background:currentColor; transform:scaleX(0); transform-origin:left; transition:transform .35s var(--ease-out);}
+.nav-links a:hover{color:var(--sand);}
+.nav-links a:hover::after{transform:scaleX(1);}
+.nav-cta{padding:11px 18px; font-size:15px;}
+.nav.scrolled{background:rgba(243,239,228,.82); backdrop-filter:saturate(1.4) blur(16px); -webkit-backdrop-filter:saturate(1.4) blur(16px); box-shadow:0 1px 0 var(--line);}
+.nav.scrolled .lg-white{opacity:0;}
+.nav.scrolled .lg-green{opacity:1;}
+.nav.scrolled .nav-links{color:var(--ink-2);}
+.nav.scrolled .nav-links a:hover{color:var(--green);}
+.burger{display:none; width:44px; height:44px; border-radius:12px; border:0; background:rgba(243,239,228,.08); cursor:pointer; align-items:center; justify-content:center;}
+.burger span{display:block; width:20px; height:2px; background:var(--sand); border-radius:2px; position:relative; transition:background .25s;}
+.burger span::before,.burger span::after{content:""; position:absolute; left:0; width:20px; height:2px; background:var(--sand); border-radius:2px; transition:transform .35s var(--ease), top .35s var(--ease);}
+.burger span::before{top:-6px;} .burger span::after{top:6px;}
+.nav.scrolled .burger{background:rgba(14,31,25,.06);}
+.nav.scrolled .burger span,.nav.scrolled .burger span::before,.nav.scrolled .burger span::after{background:var(--ink);}
+.nav.open .burger span{background:transparent;}
+.nav.open .burger span::before{top:0; transform:rotate(45deg); background:var(--sand);}
+.nav.open .burger span::after{top:0; transform:rotate(-45deg); background:var(--sand);}
+.menu{position:fixed; inset:0; z-index:-1; background:var(--green-ink); display:flex; flex-direction:column; justify-content:center; padding:96px 28px 40px; gap:6px; clip-path:circle(0 at calc(100% - 46px) 38px); transition:clip-path .7s var(--ease); visibility:hidden;}
+.menu a{font-family:var(--display); font-size:34px; font-weight:600; color:var(--sand); letter-spacing:-.02em; padding:6px 0; opacity:0; transform:translateY(16px); transition:opacity .4s, transform .5s var(--ease-out);}
+.menu .btn{margin-top:22px; font-family:var(--body); font-size:16px; align-self:flex-start;}
+.nav.open .menu{clip-path:circle(150% at calc(100% - 46px) 38px); visibility:visible;}
+.nav.open .menu a{opacity:1; transform:none;}
+.nav.open .menu a:nth-child(2){transition-delay:.05s} .nav.open .menu a:nth-child(3){transition-delay:.1s} .nav.open .menu a:nth-child(4){transition-delay:.15s} .nav.open .menu a:nth-child(5){transition-delay:.2s} .nav.open .menu a:nth-child(6){transition-delay:.25s}
+.nav.open .lg-white{opacity:1 !important;} .nav.open .lg-green{opacity:0 !important;}
+.nav.open{background:transparent !important; box-shadow:none !important; backdrop-filter:none !important;}
+@media(max-width:940px){.nav-links,.nav-cta{display:none;} .burger{display:inline-flex;}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative; background:var(--green-ink); color:var(--sand); overflow:hidden; isolation:isolate; padding:150px 0 0;}
+.hero::before{content:""; position:absolute; inset:-20%; z-index:-2; background:
+  radial-gradient(40% 45% at 78% 35%, rgba(39,128,95,.55), transparent 70%),
+  radial-gradient(35% 40% at 15% 85%, rgba(63,163,124,.22), transparent 70%),
+  radial-gradient(50% 60% at 50% 0%, rgba(11,61,46,.9), transparent 70%);
+  animation:drift 22s ease-in-out infinite alternate;}
+.hero::after{content:""; position:absolute; inset:0; z-index:-1; background-image:linear-gradient(rgba(243,239,228,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(243,239,228,.045) 1px,transparent 1px); background-size:64px 64px; -webkit-mask-image:radial-gradient(70% 70% at 60% 40%,#000 20%,transparent 80%); mask-image:radial-gradient(70% 70% at 60% 40%,#000 20%,transparent 80%);}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1);}100%{transform:translate3d(-4%,3%,0) scale(1.08);}}
+.grain{position:absolute; inset:0; z-index:-1; opacity:.18; mix-blend-mode:overlay; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.hero-grid{display:grid; grid-template-columns:1.05fr 1fr; gap:64px; align-items:center; min-height:calc(100svh - 150px - 92px); padding-bottom:56px;}
+.hero h1{font-size:clamp(40px,5vw,70px); font-weight:700; letter-spacing:-.045em; line-height:.98; color:var(--sand); max-width:16ch;}
+.hero h1 .w{display:inline-block; overflow:hidden; vertical-align:top; padding-bottom:.08em; margin-bottom:-.08em;}
+.hero h1 .w > span{display:inline-block; transform:translateY(105%); transition:transform 1s var(--ease-out);}
+.hero.ready h1 .w > span{transform:none;}
+.hero .lead{margin-top:28px; font-size:clamp(17px,1.5vw,19px); line-height:1.6; color:rgba(243,239,228,.74); max-width:46ch;}
+.hero-ctas{display:flex; flex-wrap:wrap; gap:14px; margin-top:38px;}
+.hero-facts{list-style:none; padding:0; margin:44px 0 0; display:grid; gap:12px; font-size:15px; color:rgba(243,239,228,.7);}
+.hero-facts li{display:flex; align-items:center; gap:12px;}
+.hero-facts svg{color:var(--leaf-hi); flex-shrink:0;}
+.fade-up{opacity:0; transform:translateY(18px); transition:opacity .9s var(--ease-out), transform .9s var(--ease-out);}
+.hero.ready .fade-up{opacity:1; transform:none;}
+.hero.ready .fu1{transition-delay:.45s} .hero.ready .fu2{transition-delay:.6s} .hero.ready .fu3{transition-delay:.75s} .hero.ready .fu4{transition-delay:.3s}
+
+/* Build stage */
+.stage-wrap{perspective:1400px;}
+.stage{position:relative; aspect-ratio:4/3.15; border-radius:22px; background:linear-gradient(180deg,#104C39,#0C3F2F); border:1px solid rgba(243,239,228,.12); box-shadow:0 60px 120px -40px rgba(0,0,0,.7), 0 0 0 1px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.07); overflow:hidden; transform-style:preserve-3d; transition:transform .6s var(--ease-out);}
+.chrome{position:absolute; top:0; left:0; right:0; height:46px; display:flex; align-items:center; gap:7px; padding:0 16px; border-bottom:1px solid rgba(243,239,228,.09); background:rgba(0,0,0,.12);}
+.chrome i{width:10px; height:10px; border-radius:50%; background:rgba(243,239,228,.18);}
+.url{margin-left:14px; flex:1; max-width:300px; height:28px; border-radius:8px; background:rgba(0,0,0,.22); display:flex; align-items:center; gap:7px; padding:0 11px; font-size:13px; color:rgba(243,239,228,.55); white-space:nowrap; overflow:hidden;}
+.url svg{color:var(--leaf-hi); flex-shrink:0;}
+.url b{font-weight:500; color:var(--sand);}
+.caret{display:inline-block; width:1.5px; height:15px; background:var(--leaf-hi); margin-left:1px; animation:blink 1s steps(1) infinite; vertical-align:middle;}
+@keyframes blink{50%{opacity:0;}}
+.canvas{position:absolute; top:46px; left:0; right:0; bottom:0; background-image:linear-gradient(rgba(243,239,228,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(243,239,228,.04) 1px,transparent 1px); background-size:24px 24px;}
+.bar{position:absolute; background:var(--sand); border-radius:16px; transition:left 1.15s var(--ease), top 1.15s var(--ease), width 1.15s var(--ease), height 1.15s var(--ease), border-radius 1.15s var(--ease), background-color .9s .2s;}
+.b1{left:31%; top:19%; width:39%; height:14%;}
+.b2{left:31%; top:41%; width:26%; height:14%;}
+.b3{left:31%; top:63%; width:13.3%; height:14%;}
+.bar::after{content:""; position:absolute; inset:0; border-radius:inherit; opacity:0; transition:opacity .8s .5s;}
+.built .b1{left:6%; top:7%; width:88%; height:37%; border-radius:12px; background-color:var(--leaf);}
+.built .b1::after{opacity:1; background:radial-gradient(80% 120% at 85% 10%, rgba(169,217,194,.45), transparent 60%), linear-gradient(135deg, rgba(255,255,255,.06), transparent 50%);}
+.built .b2{left:6%; top:51%; width:50%; height:8.5%; border-radius:7px;}
+.built .b3{left:6%; top:65%; width:23%; height:9%; border-radius:9px; background-color:var(--leaf-hi);}
+.x{position:absolute; opacity:0; transform:translateY(10px); transition:opacity .7s var(--ease-out), transform .7s var(--ease-out);}
+.details .x{opacity:1; transform:none;}
+.x1{left:10%; top:15%; width:36%; height:4.5%; border-radius:5px; background:rgba(243,239,228,.92);}
+.x2{left:10%; top:23%; width:52%; height:3%; border-radius:4px; background:rgba(243,239,228,.55); transition-delay:.08s;}
+.x3{left:10%; top:29%; width:42%; height:3%; border-radius:4px; background:rgba(243,239,228,.55); transition-delay:.12s;}
+.x4{left:6%; top:79%; width:60%; height:3%; border-radius:4px; background:rgba(243,239,228,.28); transition-delay:.18s;}
+.x5{left:6%; top:85.5%; width:45%; height:3%; border-radius:4px; background:rgba(243,239,228,.28); transition-delay:.22s;}
+.x6{left:62%; top:51%; width:32%; height:42%; border-radius:12px; background:rgba(243,239,228,.06); border:1px solid rgba(243,239,228,.12); transition-delay:.26s; display:flex; flex-direction:column; justify-content:flex-end; gap:6px; padding:10%;}
+.x6 span{display:block; height:6px; border-radius:3px; background:rgba(243,239,228,.3);}
+.x6 span:first-child{width:45%; height:28px; border-radius:8px; background:rgba(63,163,124,.5); margin-bottom:auto;}
+.x6 span:nth-child(3){width:70%;}
+.x7{right:6%; top:12%; width:22px; height:22px; border-radius:50%; background:rgba(243,239,228,.25); transition-delay:.1s;}
+.wa-mini{position:absolute; right:5%; bottom:6%; width:38px; height:38px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 20px -8px rgba(0,0,0,.5); opacity:0; transform:scale(.4); transition:opacity .5s, transform .6s var(--ease-out);}
+.live .wa-mini{opacity:1; transform:none;}
+.status{position:absolute; top:-15px; right:28px; z-index:2; display:inline-flex; align-items:center; gap:8px; padding:6px 12px 6px 10px; border-radius:999px; background:rgba(7,42,32,.85); border:1px solid rgba(63,163,124,.45); color:var(--mint); font-size:12.5px; font-weight:600; opacity:0; transform:translateY(-6px) scale(.95); transition:opacity .5s, transform .6s var(--ease-out); backdrop-filter:blur(6px);}
+.status i{position:relative; width:8px; height:8px; border-radius:50%; background:var(--leaf-hi);}
+.status i::after{content:""; position:absolute; inset:-4px; border-radius:50%; border:1.5px solid var(--leaf-hi); animation:ping 1.6s var(--ease-out) infinite;}
+@keyframes ping{0%{transform:scale(.6); opacity:1;}100%{transform:scale(1.9); opacity:0;}}
+.stage-holder.live .status{opacity:1; transform:none;}
+.stage-glow{position:absolute; inset:-30% -20%; z-index:-1; background:radial-gradient(45% 45% at 50% 50%, rgba(39,128,95,.35), transparent 70%); filter:blur(20px);}
+.stage-holder{position:relative;}
+
+/* Marquee */
+.marquee{position:relative; border-top:1px solid var(--line-d); padding:22px 0; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent); mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);}
+.marquee-track{display:flex; width:max-content; gap:44px; animation:marquee 38s linear infinite;}
+.marquee:hover .marquee-track{animation-play-state:paused;}
+.marquee span{display:inline-flex; align-items:center; gap:44px; font-family:var(--display); font-size:21px; font-weight:500; color:rgba(243,239,228,.62); white-space:nowrap; letter-spacing:-.01em;}
+.marquee span::after{content:""; width:18px; height:18px; flex-shrink:0; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%233FA37C'%3E%3Crect x='3' y='3' width='14' height='5' rx='1.5'/%3E%3Crect x='3' y='10' width='9.5' height='5' rx='1.5'/%3E%3Crect x='3' y='17' width='5' height='5' rx='1.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;}
+@keyframes marquee{to{transform:translateX(-50%);}}
+
+/* ---------- Generic sections ---------- */
+.sec{padding:140px 0;}
+.sec-head{max-width:720px; margin-bottom:64px;}
+.sec-head p{margin-top:20px; font-size:18px; color:var(--ink-2); max-width:56ch;}
+[data-reveal]{opacity:0; transform:translateY(28px); transition:opacity 1s var(--ease-out), transform 1s var(--ease-out); transition-delay:var(--d,0s);}
+[data-reveal].in{opacity:1; transform:none;}
+
+/* ---------- Why ---------- */
+.why{display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;}
+.why h2{font-size:clamp(36px,5vw,68px); position:sticky; top:130px;}
+.why-list{list-style:none; margin:0; padding:0;}
+.why-list li{display:grid; grid-template-columns:44px 1fr; gap:20px; padding:30px 0; border-top:1px solid var(--line);}
+.why-list li:last-child{border-bottom:1px solid var(--line);}
+.why-list h3{font-size:24px; letter-spacing:-.02em; margin-bottom:8px;}
+.why-list p{color:var(--ink-2);}
+.fbars{width:30px; display:grid; grid-auto-rows:6px; gap:4px; align-self:start; align-content:start; padding-top:9px;}
+.fbars i{display:block; height:6px; border-radius:2px; background:var(--leaf); transform-origin:left; transform:scaleX(0); transition:transform .8s var(--ease-out);}
+.fbars i:nth-child(1){width:100%;} .fbars i:nth-child(2){width:66%; transition-delay:.1s;} .fbars i:nth-child(3){width:33%; transition-delay:.2s;}
+.in .fbars i{transform:none;}
+
+/* ---------- Bento ---------- */
+.bento-sec{background:var(--sand-2);}
+.bento{display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:minmax(150px,auto); gap:18px;}
+.tile{position:relative; background:var(--paper); border-radius:22px; padding:30px; overflow:hidden; box-shadow:0 0 0 1px rgba(14,31,25,.06); isolation:isolate; display:flex; flex-direction:column;}
+.tile::before{content:""; position:absolute; inset:0; z-index:-1; opacity:0; transition:opacity .4s; background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%), rgba(39,128,95,.13), transparent 60%);}
+.tile:hover::before{opacity:1;}
+.tile h3{font-size:24px; letter-spacing:-.02em;}
+.tile p{margin-top:10px; color:var(--ink-2); font-size:16px; max-width:40ch;}
+.tile .viz{margin-top:auto; padding-top:26px;}
+.t-design{grid-column:span 4; grid-row:span 2; background:var(--green); color:var(--sand);}
+.t-design p{color:rgba(243,239,228,.72);}
+.t-design::before{background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(63,163,124,.3), transparent 60%);}
+.t-screen{grid-column:span 2; grid-row:span 2;}
+.t-contact,.t-domain,.t-text{grid-column:span 2;}
+.t-person{grid-column:span 6; display:grid; grid-template-columns:1.2fr 1fr; gap:30px; align-items:center;}
+@media(max-width:980px){.bento{grid-template-columns:repeat(2,1fr);} .t-design{grid-column:span 2; grid-row:auto;} .t-screen{grid-column:span 2; grid-row:auto;} .t-contact,.t-domain,.t-text{grid-column:span 1;} .t-person{grid-column:span 2; grid-template-columns:1fr;}}
+@media(max-width:620px){.bento{grid-template-columns:1fr;} .t-design,.t-screen,.t-contact,.t-domain,.t-text,.t-person{grid-column:span 1;}}
+/* design viz */
+.mini-site{border-radius:14px; background:rgba(0,0,0,.18); border:1px solid rgba(243,239,228,.1); padding:16px; display:grid; grid-template-columns:1.4fr 1fr; gap:12px; transform:translateY(8px); transition:transform .6s var(--ease-out);}
+.t-design:hover .mini-site{transform:translateY(0);}
+.mini-site .hd{grid-column:1/-1; display:flex; justify-content:space-between; align-items:center;}
+.mini-site .hd i{display:block; height:8px; width:60px; border-radius:4px; background:rgba(243,239,228,.5);}
+.mini-site .hd em{display:flex; gap:8px;} .mini-site .hd em i{width:26px; background:rgba(243,239,228,.22);}
+.mini-site .hero-b{border-radius:10px; background:linear-gradient(135deg,var(--leaf),#1D6A4E); padding:18px; display:grid; gap:8px; align-content:end; min-height:150px;}
+.mini-site .hero-b i{display:block; height:10px; border-radius:5px; background:rgba(243,239,228,.9); width:80%;}
+.mini-site .hero-b i:nth-child(2){width:55%; background:rgba(243,239,228,.55); height:7px;}
+.mini-site .hero-b b{display:block; width:38%; height:22px; border-radius:6px; background:var(--sand); margin-top:6px;}
+.mini-site .side{display:grid; gap:10px;}
+.mini-site .side i{display:block; border-radius:10px; background:rgba(243,239,228,.08); border:1px solid rgba(243,239,228,.1);}
+/* screens viz */
+.screens{position:relative; height:190px;}
+.scr-d{position:absolute; left:0; top:10px; width:88%; height:150px; border-radius:12px; border:1.5px solid var(--ink); background:#fff; padding:12px; transition:width .7s var(--ease), height .7s var(--ease), left .7s var(--ease);}
+.scr-d i,.scr-m i{display:block; height:7px; border-radius:4px; background:var(--sand-2); margin-bottom:7px;}
+.scr-d i:first-child,.scr-m i:first-child{height:34px; background:var(--leaf); opacity:.85;}
+.scr-m{position:absolute; right:0; bottom:0; width:74px; height:140px; border-radius:16px; border:1.5px solid var(--ink); background:#fff; padding:14px 9px; box-shadow:-10px 10px 30px -12px rgba(14,31,25,.3); transition:transform .7s var(--ease);}
+.t-screen:hover .scr-d{width:70%;}
+.t-screen:hover .scr-m{transform:translateY(-10px) rotate(-3deg);}
+/* contact viz */
+.chat{display:grid; gap:8px;}
+.bubble{justify-self:start; max-width:85%; padding:10px 14px; border-radius:16px 16px 16px 4px; background:var(--sand-2); font-size:14.5px; line-height:1.4;}
+.bubble.me{justify-self:end; background:#D7F0DF; border-radius:16px 16px 4px 16px;}
+.typing{display:inline-flex; gap:4px; padding:12px 14px; border-radius:16px 16px 16px 4px; background:var(--sand-2); justify-self:start;}
+.typing i{width:6px; height:6px; border-radius:50%; background:var(--ink-2); opacity:.4; animation:dot 1.2s infinite;}
+.typing i:nth-child(2){animation-delay:.15s} .typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{30%{opacity:1; transform:translateY(-3px);}}
+/* domain viz */
+.addr{display:grid; gap:10px;}
+.addr div{display:flex; align-items:center; gap:10px; padding:11px 14px; border-radius:12px; background:var(--sand); font-size:14.5px; font-weight:500; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.addr svg{color:var(--leaf); flex-shrink:0;}
+/* text viz */
+.lines{display:grid; gap:9px;}
+.lines i{display:block; height:9px; border-radius:5px; background:var(--sand-2); transform-origin:left; transition:transform .6s var(--ease-out), background .6s;}
+.lines i:nth-child(1){width:90%;} .lines i:nth-child(2){width:100%;} .lines i:nth-child(3){width:70%;} .lines i:nth-child(4){width:82%;}
+.t-text:hover .lines i{background:rgba(39,128,95,.35);}
+.t-text:hover .lines i:nth-child(2){transform:scaleX(.8);} .t-text:hover .lines i:nth-child(3){transform:scaleX(1.2);}
+/* person viz */
+.reply{display:flex; align-items:center; gap:18px; padding:22px; border-radius:18px; background:var(--sand);}
+.reply .clock{width:56px; height:56px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; color:var(--sand); flex-shrink:0;}
+.reply b{display:block; font-family:var(--display); font-size:26px; letter-spacing:-.02em; line-height:1.1;}
+.reply span{font-size:14.5px; color:var(--ink-2);}
+.clock .hand{transform-origin:12px 12px; animation:spin 6s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* ---------- Domain ---------- */
+.dark{background:var(--green); color:var(--sand); position:relative; overflow:hidden; isolation:isolate;}
+.dark::before{content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(50% 70% at 85% 0%, rgba(39,128,95,.45), transparent 70%), radial-gradient(40% 60% at 0% 100%, rgba(7,42,32,.9), transparent 70%);}
+.dark .sec-head p{color:rgba(243,239,228,.72);}
+.dom-bar{display:flex; align-items:center; gap:0; max-width:820px; padding:8px; border-radius:20px; background:rgba(7,42,32,.6); border:1px solid rgba(243,239,228,.16); box-shadow:0 30px 60px -30px rgba(0,0,0,.6); transition:border-color .3s, box-shadow .3s;}
+.dom-bar:focus-within{border-color:rgba(63,163,124,.8); box-shadow:0 0 0 4px rgba(63,163,124,.18), 0 30px 60px -30px rgba(0,0,0,.6);}
+.dom-bar .pre,.dom-bar .suf{font-size:clamp(16px,2vw,22px); font-family:var(--display); color:rgba(243,239,228,.45); padding:0 4px 0 16px; white-space:nowrap;}
+.dom-bar .suf{padding:0 14px 0 0; color:var(--mint);}
+.dom-bar input{flex:1; min-width:0; background:transparent; border:0; outline:none; color:var(--sand); font-family:var(--display); font-size:clamp(18px,2.2vw,24px); font-weight:500; padding:14px 0; letter-spacing:-.01em;}
+.dom-bar input::placeholder{color:rgba(243,239,228,.35);}
+.dom-bar .btn{padding:16px 24px;}
+.dom-bar .btn:disabled{opacity:.75; cursor:wait;}
+.dom-note{margin-top:16px; font-size:14px; color:rgba(243,239,228,.55); max-width:70ch;}
+@media(max-width:640px){.dom-bar{flex-wrap:wrap; padding:10px;} .dom-bar .pre{display:none;} .dom-bar input{padding:12px 0 12px 12px; flex-basis:60%;} .dom-bar .btn{flex-basis:100%; margin-top:6px;}}
+.dom-out{margin-top:36px; max-width:820px;}
+.dom-main{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding:24px 26px; border-radius:20px; background:rgba(243,239,228,.06); border:1px solid rgba(243,239,228,.14); animation:pop .6s var(--ease-out);}
+.dom-name{font-family:var(--display); font-size:clamp(20px,2.4vw,28px); font-weight:600; letter-spacing:-.02em; word-break:break-all;}
+.dom-sub{margin-top:8px; font-size:15px; color:rgba(243,239,228,.7); flex-basis:100%;}
+.dom-main .btn{margin-top:8px;}
+.pill{display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600; padding:5px 12px; border-radius:999px; white-space:nowrap;}
+.pill::before{content:""; width:7px; height:7px; border-radius:50%; background:currentColor;}
+.pill.free{background:rgba(63,163,124,.18); color:#8FE0B8;}
+.pill.taken{background:rgba(232,128,108,.14); color:#F2A595;}
+.pill.unk{background:rgba(243,239,228,.1); color:rgba(243,239,228,.7);}
+.dom-h{font-family:var(--display); font-size:18px; font-weight:600; margin:30px 0 12px;}
+.dom-list{list-style:none; margin:0; padding:0; border-radius:18px; border:1px solid rgba(243,239,228,.14); overflow:hidden;}
+.dom-list li{display:flex; justify-content:space-between; align-items:center; gap:14px; padding:14px 22px; flex-wrap:wrap; animation:pop .5s var(--ease-out) both;}
+.dom-list li + li{border-top:1px solid rgba(243,239,228,.1);}
+.dom-list .n{word-break:break-all; font-size:16px;}
+.dom-list .r{display:flex; align-items:center; gap:16px;}
+.dom-want{font-size:14px; font-weight:600; color:var(--mint); text-decoration:underline; text-underline-offset:4px;}
+.dom-want:hover{color:#fff;}
+@keyframes pop{from{opacity:0; transform:translateY(10px);}to{opacity:1; transform:none;}}
+
+/* ---------- Steps ---------- */
+.steps{position:relative; display:grid; grid-template-columns:repeat(3,1fr); gap:40px;}
+.track{position:absolute; top:27px; left:28px; right:28px; height:2px; background:var(--line);}
+.track i{position:absolute; inset:0; background:var(--leaf); transform-origin:left; transform:scaleX(var(--p,0)); transition:transform .15s linear;}
+.step{position:relative;}
+.step .num{position:relative; z-index:1; width:56px; height:56px; border-radius:16px; background:var(--paper); box-shadow:0 0 0 1px var(--line); display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:700; font-size:22px; color:var(--green); transition:background .4s, color .4s, box-shadow .4s;}
+.step.on .num{background:var(--green); color:var(--sand); box-shadow:0 0 0 6px rgba(39,128,95,.15);}
+.step h3{font-size:26px; letter-spacing:-.02em; margin:28px 0 10px;}
+.step p{color:var(--ink-2); max-width:34ch;}
+@media(max-width:860px){.steps{grid-template-columns:1fr; gap:36px;} .track{top:28px; bottom:28px; left:27px; right:auto; width:2px; height:auto;} .track i{transform-origin:top; transform:scaleY(var(--p,0));} .step{padding-left:84px;} .step .num{position:absolute; left:0; top:0;} .step h3{margin-top:10px;}}
+
+/* ---------- Pricing ---------- */
+.pricing-sec{background:var(--sand-2);}
+.promo{display:inline-flex; align-items:center; gap:12px; flex-wrap:wrap; padding:10px 18px 10px 12px; border-radius:999px; background:var(--green); color:var(--sand); font-size:14.5px; margin-bottom:28px;}
+.promo b{background:var(--leaf); padding:4px 10px; border-radius:999px; font-weight:600;}
+.promo span{color:rgba(243,239,228,.85);}
+.price-top{display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-bottom:48px;}
+.price-top .sec-head{margin-bottom:0;}
+.seg{position:relative; display:inline-flex; padding:6px; border-radius:16px; background:var(--paper); box-shadow:0 0 0 1px var(--line);}
+.seg button{position:relative; z-index:1; border:0; background:transparent; padding:12px 22px; border-radius:11px; font-weight:600; font-size:15.5px; cursor:pointer; color:var(--ink-2); transition:color .35s;}
+.seg button[aria-selected="true"]{color:var(--sand);}
+.seg .ind{position:absolute; top:6px; bottom:6px; left:6px; border-radius:11px; background:var(--green); transition:transform .5s var(--ease), width .5s var(--ease);}
+.plans{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:stretch;}
+.plans[hidden]{display:none;}
+.plans.anim .plan{animation:rise .7s var(--ease-out) both;}
+.plans.anim .plan:nth-child(2){animation-delay:.07s} .plans.anim .plan:nth-child(3){animation-delay:.14s}
+@keyframes rise{from{opacity:0; transform:translateY(24px);}to{opacity:1; transform:none;}}
+@media(max-width:960px){.plans{grid-template-columns:1fr; max-width:480px;}}
+.plan{position:relative; display:flex; flex-direction:column; padding:34px 30px 30px; border-radius:24px; background:var(--paper); box-shadow:0 0 0 1px var(--line);}
+.plan h3{font-size:22px; letter-spacing:-.02em; min-height:2.1em;}
+.plan .was{margin-top:18px; font-size:15px; color:var(--ink-2); text-decoration:line-through; text-decoration-thickness:1.5px;}
+.plan .price{font-family:var(--display); font-size:52px; font-weight:700; letter-spacing:-.045em; line-height:1; margin-top:4px;}
+.plan .price small{font-family:var(--body); font-size:16px; font-weight:500; letter-spacing:0; color:var(--ink-2); margin-left:4px;}
+.save{display:inline-block; align-self:flex-start; margin-top:14px; font-size:13px; font-weight:600; color:var(--green); background:rgba(39,128,95,.12); padding:5px 11px; border-radius:999px;}
+.plan .desc{margin-top:14px; font-size:15px; color:var(--ink-2);}
+.plan ul{list-style:none; padding:0; margin:24px 0 30px; display:grid; gap:12px; font-size:15.5px;}
+.plan li{display:grid; grid-template-columns:20px 1fr; gap:10px; align-items:start;}
+.plan li svg{color:var(--leaf); margin-top:3px;}
+.plan .btn{margin-top:auto; width:100%;}
+.plan.feat{background:var(--green); color:var(--sand); box-shadow:none;}
+.plan.feat::before{content:""; position:absolute; inset:-1.5px; z-index:-1; border-radius:25.5px; background:conic-gradient(from var(--ang,0deg), var(--leaf-hi), rgba(63,163,124,.05) 25%, rgba(63,163,124,.05) 50%, var(--mint) 70%, var(--leaf-hi)); animation:turn 6s linear infinite;}
+.plan.feat{isolation:auto;}
+.plans{isolation:isolate;}
+.plan.feat .was,.plan.feat .desc,.plan.feat .price small{color:rgba(243,239,228,.65);}
+.plan.feat .save{background:rgba(63,163,124,.25); color:#BFEBD6;}
+.plan.feat li svg{color:var(--leaf-hi);}
+.tag{position:absolute; top:-13px; left:30px; padding:5px 12px; border-radius:999px; background:var(--leaf-hi); color:var(--green-ink); font-size:12.5px; font-weight:700;}
+@property --ang{syntax:'<angle>'; initial-value:0deg; inherits:false;}
+@keyframes turn{to{--ang:360deg;}}
+.notes{margin-top:56px; display:grid; grid-template-columns:280px 1fr; gap:40px; padding-top:40px; border-top:1px solid var(--line);}
+.notes h3{font-size:24px; letter-spacing:-.02em;}
+.notes dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:14px 28px; font-size:15.5px;}
+.notes dt{font-weight:600;}
+.notes dd{margin:0; color:var(--ink-2);}
+@media(max-width:860px){.notes{grid-template-columns:1fr; gap:20px;} .notes dl{grid-template-columns:1fr; gap:4px;} .notes dd{margin-bottom:12px;}}
+
+/* ---------- Referral ---------- */
+.refer{display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:center;}
+.refer-amts{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+.amt{border-radius:22px; padding:30px; background:var(--paper); box-shadow:0 0 0 1px var(--line);}
+.amt b{display:block; font-family:var(--display); font-size:clamp(44px,5vw,64px); font-weight:700; letter-spacing:-.045em; line-height:1; color:var(--green);}
+.amt span{display:block; margin-top:12px; font-size:15.5px; color:var(--ink-2);}
+.refer p.note{margin-top:20px; color:var(--ink-2);}
+@media(max-width:860px){.refer{grid-template-columns:1fr; gap:36px;}}
+@media(max-width:480px){.refer-amts{grid-template-columns:1fr;}}
+
+/* ---------- FAQ ---------- */
+.faq-grid{display:grid; grid-template-columns:1fr 1.5fr; gap:80px;}
+.faq-grid .sec-head{position:sticky; top:130px; align-self:start;}
+@media(max-width:860px){.faq-grid{grid-template-columns:1fr; gap:10px;} .faq-grid .sec-head{position:static;}}
+.qa{border-top:1px solid var(--line);}
+.qa:last-child{border-bottom:1px solid var(--line);}
+.qa button{width:100%; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:26px 0; background:none; border:0; cursor:pointer; text-align:left; font-family:var(--display); font-size:21px; font-weight:600; letter-spacing:-.015em;}
+.qa .ic{position:relative; width:32px; height:32px; border-radius:50%; flex-shrink:0; box-shadow:inset 0 0 0 1px var(--line); transition:background .3s, box-shadow .3s;}
+.qa .ic::before,.qa .ic::after{content:""; position:absolute; left:50%; top:50%; width:12px; height:1.8px; background:var(--ink); transform:translate(-50%,-50%); transition:transform .4s var(--ease), background .3s;}
+.qa .ic::after{transform:translate(-50%,-50%) rotate(90deg);}
+.qa.open .ic{background:var(--green); box-shadow:none;}
+.qa.open .ic::before,.qa.open .ic::after{background:var(--sand);}
+.qa.open .ic::after{transform:translate(-50%,-50%) rotate(0deg);}
+.qa .ans{display:grid; grid-template-rows:0fr; transition:grid-template-rows .5s var(--ease);}
+.qa.open .ans{grid-template-rows:1fr;}
+.qa .ans > div{overflow:hidden;}
+.qa .ans p{padding:0 48px 26px 0; color:var(--ink-2); max-width:64ch;}
+
+/* ---------- CTA ---------- */
+.cta{background:var(--green-ink); color:var(--sand); text-align:center; padding:150px 0; position:relative; overflow:hidden; isolation:isolate;}
+.cta::before{content:""; position:absolute; left:50%; top:50%; width:900px; height:900px; transform:translate(-50%,-50%); z-index:-1; background:radial-gradient(closest-side, rgba(39,128,95,.5), transparent); animation:breathe 7s ease-in-out infinite;}
+@keyframes breathe{50%{transform:translate(-50%,-50%) scale(1.15); opacity:.75;}}
+.cta h2{font-size:clamp(40px,7vw,104px); letter-spacing:-.05em; line-height:.95; max-width:14ch; margin:0 auto;}
+.cta p{margin:28px auto 0; max-width:48ch; color:rgba(243,239,228,.72); font-size:18px;}
+.cta .btn{margin-top:44px; padding:20px 32px; font-size:18px; border-radius:18px;}
+
+/* ---------- Contact ---------- */
+.contact h2{font-size:clamp(32px,3.6vw,48px);}
+.contact{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
+@media(max-width:860px){.contact{grid-template-columns:1fr;}}
+.c-list{list-style:none; margin:36px 0 0; padding:0; display:grid; gap:4px;}
+.c-list a,.c-list div{display:flex; align-items:center; gap:16px; padding:16px 0; border-bottom:1px solid var(--line);}
+.c-list a{transition:color .25s, padding .35s var(--ease-out);}
+.c-list a:hover{color:var(--green); padding-left:8px;}
+.c-list .ci{width:44px; height:44px; border-radius:12px; background:var(--paper); box-shadow:0 0 0 1px var(--line); display:flex; align-items:center; justify-content:center; color:var(--green); flex-shrink:0;}
+.c-list small{display:block; font-size:13px; color:var(--ink-2);}
+.c-list strong{font-weight:600; font-size:16.5px;}
+.form{background:var(--paper); border-radius:24px; padding:34px; box-shadow:0 0 0 1px var(--line);}
+.form h3{font-size:24px; letter-spacing:-.02em; margin-bottom:22px;}
+.field{margin-bottom:18px;}
+.field label{display:block; font-size:14px; font-weight:600; margin-bottom:8px;}
+.field input,.field textarea{width:100%; padding:14px 16px; border-radius:12px; border:1px solid var(--line); background:var(--sand); font-family:var(--body); font-size:16px; color:var(--ink); transition:border-color .25s, box-shadow .25s, background .25s;}
+.field input:focus,.field textarea:focus{outline:none; border-color:var(--leaf); background:#fff; box-shadow:0 0 0 4px rgba(39,128,95,.14);}
+.field textarea{min-height:120px; resize:vertical;}
+.form .btn{width:100%;}
+.form-note{margin-top:14px; font-size:13.5px; color:var(--ink-2);}
+
+/* ---------- Footer ---------- */
+footer{background:var(--ink); color:rgba(243,239,228,.66); padding:90px 0 36px; font-size:15px;}
+.f-top{display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:48px;}
+@media(max-width:760px){.f-top{grid-template-columns:1fr 1fr;} .f-brand{grid-column:1/-1;}}
+.f-brand img{width:180px; height:auto;}
+.f-brand p{margin-top:20px; max-width:34ch;}
+footer h4{font-family:var(--display); color:var(--sand); font-size:16px; margin:0 0 16px; font-weight:600;}
+footer ul{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
+footer a:hover{color:var(--sand);}
+.f-bot{margin-top:70px; padding-top:28px; border-top:1px solid rgba(243,239,228,.1); display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:center;}
+.socials{display:flex; gap:10px;}
+.socials a{width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:inset 0 0 0 1px rgba(243,239,228,.16); transition:background .25s, box-shadow .25s, color .25s;}
+.socials a:hover{background:var(--leaf); box-shadow:none; color:#fff;}
+
+/* Floating WhatsApp */
+.wa-float{position:fixed; right:22px; bottom:22px; z-index:80; width:60px; height:60px; border-radius:50%; background:var(--leaf); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 18px 36px -12px rgba(11,61,46,.7); transform:scale(0); transition:transform .5s var(--ease-out), background .25s;}
+.wa-float.show{transform:scale(1);}
+.wa-float:hover{background:#2E8F6A;}
+.wa-float::after{content:""; position:absolute; inset:0; border-radius:50%; box-shadow:0 0 0 0 rgba(39,128,95,.5); animation:halo 2.8s var(--ease-out) infinite;}
+@keyframes halo{0%{box-shadow:0 0 0 0 rgba(39,128,95,.45);}70%,100%{box-shadow:0 0 0 18px rgba(39,128,95,0);}}
+
+@media(max-width:980px){
+  .hero{padding-top:120px;}
+  .hero-grid{grid-template-columns:1fr; gap:56px; min-height:0;}
+  .why{grid-template-columns:1fr; gap:36px;} .why h2{position:static;}
+  .sec{padding:100px 0;}
+}
+@media(max-width:600px){
+  body{font-size:16px;}
+  .sec{padding:84px 0;}
+  .hero-ctas .btn{width:100%;}
+  .plan .price{font-size:46px;}
+  .cta{padding:110px 0;}
+  .form{padding:26px;}
+  .stage{aspect-ratio:4/3.5;}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
+  [data-reveal]{opacity:1; transform:none;}
+  .hero h1 .w > span,.fade-up{transform:none; opacity:1;}
+}
 </style>
 </head>
 <body>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-<nav>
-  <div class="nav-inner">
-    <a class="logo" href="#" aria-label="Firmiano — início"><img src="firmiano-identidade/firmiano-wordmark-verde.svg" alt="Firmiano" class="logo-img" width="127" height="32"></a>
-    <input type="checkbox" id="menu-check">
-    <label for="menu-check" class="burger">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#0E1F19" stroke-width="2" stroke-linecap="round"/></svg>
-    </label>
-    <div class="nav-links">
-      <a href="#servicos">Por que a Firmiano</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#topo" aria-label="Firmiano, ir para o início">
+      <img class="lg-white" src="firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32">
+      <img class="lg-green" src="firmiano-identidade/firmiano-wordmark-verde.svg" alt="" width="127" height="32" aria-hidden="true">
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#por-que">Por que a Firmiano</a>
+      <a href="#dominio">Consultar domínio</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#precos">Preços</a>
-      <a href="#indique">Indique e ganhe</a>
       <a href="#faq">Perguntas</a>
-      <a href="#contato">Contato</a>
-    </div>
-    <a href="#precos" class="btn btn-primary nav-cta">Pedir orçamento</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow"><span class="dot"></span> Desenvolvimento web sob medida</span>
-      <h1 class="headline">Uma base digital <span class="accent">firme</span> para o seu negócio crescer em cima dela.</h1>
-      <p class="sub">A Firmiano projeta e mantém sites profissionais em WordPress para empresas e instituições que precisam de presença digital séria — sem intermediários, sem enrolação, com um responsável técnico do início ao suporte.</p>
-      <div class="hero-ctas">
-        <a href="#precos" class="btn btn-primary">Pedir um orçamento →</a>
-        <a href="#servicos" class="btn btn-ghost">Ver serviços</a>
-      </div>
-    </div>
-    <div class="mock">
-      <span class="mock-tag">no ar</span>
-      <div class="mock-bar"><span></span><span></span><span></span></div>
-      <div class="mock-body">
-        <div class="mock-card"><div class="bar" style="width:40%; height:12px; margin-bottom:10px;"></div><div class="bar" style="width:85%"></div></div>
-        <div class="mock-card"><div class="bar" style="width:60%; height:12px; margin-bottom:10px;"></div><div class="bar" style="width:70%"></div></div>
-        <div class="mock-card" style="margin-bottom:0;"><div class="bar" style="width:30%; height:12px; margin-bottom:10px;"></div><div class="bar" style="width:90%"></div></div>
-      </div>
+    </nav>
+    <a class="btn btn-leaf nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+    <div class="menu" id="menu">
+      <a href="#por-que">Por que a Firmiano</a>
+      <a href="#dominio">Consultar domínio</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#precos">Preços</a>
+      <a href="#faq">Perguntas</a>
+      <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
     </div>
   </div>
 </header>
 
-<section class="proof">
-  <div class="wrap">
-    <div class="metrics">
-      <div class="metric"><b>Poucos dias</b><span>para a sua landing page ir ao ar</span></div>
-      <div class="metric"><b>1 responsável</b><span>do projeto ao suporte, sem repasse para outra equipe</span></div>
-      <div class="metric"><b>Seu endereço</b><span>domínio próprio e e-mail com o nome da sua empresa</span></div>
+<main id="topo">
+<section class="hero" id="hero">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="headline">Sites que fazem o seu negócio parecer tão bom quanto ele é.</h1>
+      <p class="lead fade-up fu1">Landing pages e sites em WordPress para pequenas empresas. Quem cria é quem cuida depois: domínio, e-mail, hospedagem e ajustes, tudo com a mesma pessoa.</p>
+      <div class="hero-ctas fade-up fu2">
+        <a class="btn btn-leaf magnetic" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          Pedir orçamento no WhatsApp</a>
+        <a class="btn btn-line-d" href="#precos">Ver preços</a>
+      </div>
+      <ul class="hero-facts fade-up fu3">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Landing page no ar em poucos dias</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Domínio e e-mail com o nome da sua empresa</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Atendimento direto pelo WhatsApp</li>
+      </ul>
+    </div>
+    <div class="stage-holder fade-up fu4">
+      <div class="stage-glow" aria-hidden="true"></div>
+      <div class="stage-wrap" id="stageWrap">
+        <div class="stage" id="stage" role="img" aria-label="Animação: as três barras do logo da Firmiano se transformam em um site publicado no endereço suaempresa.com.br">
+          <div class="chrome" aria-hidden="true"><i></i><i></i><i></i>
+            <div class="url"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2.4"/><path d="M8 11V8a4 4 0 018 0v3" stroke="currentColor" stroke-width="2.4"/></svg><span>https://</span><b id="typed"></b><span class="caret"></span></div>
+          </div>
+          <div class="canvas" aria-hidden="true">
+            <div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div>
+            <div class="x x1"></div><div class="x x2"></div><div class="x x3"></div>
+            <div class="x x4"></div><div class="x x5"></div>
+            <div class="x x6"><span></span><span></span><span></span><span></span></div>
+            <div class="wa-mini"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="status" aria-hidden="true"><i></i>No ar</div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Landing pages</span><span>Sites WordPress</span><span>Domínio .com.br</span><span>E-mail profissional</span><span>Certificado SSL</span><span>Backups</span><span>Botão de WhatsApp</span><span>Funciona no celular</span>
+      <span>Landing pages</span><span>Sites WordPress</span><span>Domínio .com.br</span><span>E-mail profissional</span><span>Certificado SSL</span><span>Backups</span><span>Botão de WhatsApp</span><span>Funciona no celular</span>
     </div>
   </div>
 </section>
 
-<section id="servicos">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="section-tag">Por que a Firmiano</span>
-      <h2 class="section-title">Cada site é entregue por quem também vai mantê-lo no ar.</h2>
-      <p class="section-sub">Sem agência inflada nem terceirização de suporte. O mesmo responsável projeta, programa e resolve o chamado técnico quando algo falha.</p>
-    </div>
-    <div class="grid4">
-      <div class="card">
-        <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-        <h3>Entrega rápida</h3>
-        <p>Landing page no ar em poucos dias; site institucional completo sem meses de espera.</p>
-      </div>
-      <div class="card">
-        <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>Atendimento direto</h3>
-        <p>Você fala pelo WhatsApp com quem fez o seu site, sem formulário de ticket nem central de atendimento. Resposta em até 1 dia útil.</p>
-      </div>
-      <div class="card">
-        <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <h3>Fácil de atualizar</h3>
-        <p>Feito em WordPress: você troca textos e imagens sozinho, sem depender de programador.</p>
-      </div>
-      <div class="card">
-        <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6 6 1-4.5 4 1 6.5L12 17l-5.5 2.5 1-6.5L3 9l6-1 3-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-        <h3>Preço fechado, sem surpresa</h3>
-        <p>Valor combinado antes de começar. Landing page não precisa de hospedagem; o site WordPress é hospedado pela Firmiano, com mensalidade.</p>
-      </div>
-    </div>
+<section class="sec" id="por-que">
+  <div class="wrap why">
+    <h2 data-reveal>Quem faz o seu site é quem cuida dele depois.</h2>
+    <ul class="why-list">
+      <li data-reveal><div class="fbars" aria-hidden="true"><i></i><i></i><i></i></div><div><h3>Entrega rápida</h3><p>Landing page no ar em poucos dias. Site completo sem meses de espera.</p></div></li>
+      <li data-reveal style="--d:.08s"><div class="fbars" aria-hidden="true"><i></i><i></i><i></i></div><div><h3>Atendimento direto</h3><p>Você fala pelo WhatsApp com quem fez o seu site, sem formulário de ticket nem central de atendimento. Resposta em até 1 dia útil.</p></div></li>
+      <li data-reveal style="--d:.16s"><div class="fbars" aria-hidden="true"><i></i><i></i><i></i></div><div><h3>Fácil de atualizar</h3><p>Feito em WordPress: você troca textos e imagens sozinho, sem depender de programador.</p></div></li>
+      <li data-reveal style="--d:.24s"><div class="fbars" aria-hidden="true"><i></i><i></i><i></i></div><div><h3>Preço fechado</h3><p>Valor combinado antes de começar. Sem surpresa no meio do caminho.</p></div></li>
+    </ul>
   </div>
 </section>
 
-<section id="recebe" style="background:var(--paper-2);">
+<section class="sec bento-sec" id="recebe">
   <div class="wrap">
-    <div class="section-head">
-      <span class="section-tag">O que você recebe</span>
-      <h2 class="section-title">Tudo para o seu negócio ser levado a sério na internet.</h2>
-      <p class="section-sub">Sem pacote complicado: o essencial para o cliente encontrar, confiar e chamar você.</p>
+    <div class="sec-head" data-reveal>
+      <h2>Tudo o que o seu cliente precisa para confiar em você.</h2>
+      <p>O essencial para ser encontrado, passar credibilidade e receber contatos, sem pacote complicado.</p>
     </div>
-    <div class="grid3">
-      <div class="card">
-        <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 21h8M12 18v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="bento">
+      <article class="tile t-design spot" data-reveal>
         <h3>Design profissional</h3>
         <p>Visual limpo e organizado, com a cara do seu negócio, para passar confiança logo no primeiro olhar.</p>
-      </div>
-      <div class="card">
-        <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="viz" aria-hidden="true">
+          <div class="mini-site">
+            <div class="hd"><i></i><em><i></i><i></i><i></i></em></div>
+            <div class="hero-b"><i></i><i></i><b></b></div>
+            <div class="side"><i></i><i></i></div>
+          </div>
+        </div>
+      </article>
+      <article class="tile t-screen spot" data-reveal style="--d:.08s">
         <h3>Funciona em qualquer tela</h3>
         <p>Celular, tablet ou computador: o seu cliente lê e entra em contato sem esforço.</p>
-      </div>
-      <div class="card">
-        <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="viz" aria-hidden="true">
+          <div class="screens"><div class="scr-d"><i></i><i></i><i style="width:70%"></i></div><div class="scr-m"><i></i><i></i><i style="width:60%"></i></div></div>
+        </div>
+      </article>
+      <article class="tile t-contact spot" data-reveal>
         <h3>Contato com um clique</h3>
         <p>Botão de WhatsApp e e-mail à vista, para quem se interessou falar com você na hora.</p>
-      </div>
-      <div class="card">
-        <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="viz" aria-hidden="true">
+          <div class="chat"><div class="bubble me">Oi! Vi o seu site e quero um orçamento.</div><div class="typing"><i></i><i></i><i></i></div></div>
+        </div>
+      </article>
+      <article class="tile t-domain spot" data-reveal style="--d:.08s">
         <h3>Seu próprio endereço</h3>
-        <p>Domínio com o nome da sua empresa e e-mail profissional, como contato@suaempresa.com.br.</p>
-      </div>
-      <div class="card">
-        <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <p>Domínio com o nome da sua empresa e e-mail profissional.</p>
+        <div class="viz" aria-hidden="true">
+          <div class="addr">
+            <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18" stroke="currentColor" stroke-width="2"/></svg>suaempresa.com.br</div>
+            <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>contato@suaempresa.com.br</div>
+          </div>
+        </div>
+      </article>
+      <article class="tile t-text spot" data-reveal style="--d:.16s">
         <h3>Textos claros</h3>
-        <p>Ajudamos a organizar o que dizer, com apoio de IA, para explicar bem o que você faz e por que escolher você.</p>
-      </div>
-      <div class="card">
-        <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Alguém para chamar</h3>
-        <p>Depois da entrega você fala direto com quem fez o seu site, por alteração ou com plano mensal de suporte.</p>
-      </div>
+        <p>Ajudamos a organizar o que dizer, com apoio de IA, para explicar bem o que você faz.</p>
+        <div class="viz" aria-hidden="true"><div class="lines"><i></i><i></i><i></i><i></i></div></div>
+      </article>
+      <article class="tile t-person spot" data-reveal>
+        <div>
+          <h3>Alguém para chamar</h3>
+          <p>Depois da entrega você fala direto com quem fez o seu site, por e-mail ou WhatsApp em horário comercial, por alteração ou com o plano mensal de suporte.</p>
+        </div>
+        <div class="reply" aria-hidden="true">
+          <div class="clock"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path class="hand" d="M12 12V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 12h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div><b>Até 1 dia útil</b><span>para responder o seu pedido</span></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="dominio">
+<section class="sec dark" id="dominio">
   <div class="wrap">
-    <div class="section-head">
-      <span class="section-tag">Seu endereço na internet</span>
-      <h2 class="section-title">Descubra se o nome da sua empresa está livre.</h2>
-      <p class="section-sub">Digite o nome do seu negócio e veja na hora se o .com.br está disponível. Se não estiver, sugerimos alternativas.</p>
+    <div class="sec-head" data-reveal>
+      <h2>O nome da sua empresa ainda está livre?</h2>
+      <p>Digite o nome do seu negócio e veja na hora se o .com.br está disponível. Se não estiver, sugerimos alternativas.</p>
     </div>
-    <form class="dom-form" id="dom-form" autocomplete="off" novalidate>
-      <input id="dom-input" type="text" inputmode="text" maxlength="60" placeholder="Ex.: Padaria Pão Quente" aria-label="Nome da sua empresa">
-      <button type="submit" class="btn btn-primary" id="dom-btn">Consultar domínio</button>
+    <form class="dom-bar" id="dom-form" autocomplete="off" novalidate data-reveal style="--d:.1s">
+      <span class="pre" aria-hidden="true">https://</span>
+      <label for="dom-input" class="sr-only">Nome da sua empresa</label>
+      <input id="dom-input" type="text" maxlength="60" placeholder="padaria pão quente">
+      <span class="suf" aria-hidden="true">.com.br</span>
+      <button type="submit" class="btn btn-leaf" id="dom-btn">Consultar</button>
     </form>
     <p class="dom-note">A consulta é feita direto do seu navegador, em serviços públicos de DNS e de registro de domínios. Não guardamos o que você digita.</p>
     <div class="dom-out" id="dom-out" aria-live="polite"></div>
   </div>
 </section>
 
-<section id="como-funciona">
+<section class="sec" id="como-funciona">
   <div class="wrap">
-    <div class="section-head">
-      <span class="section-tag">Como funciona</span>
-      <h2 class="section-title">Do primeiro contato ao site no ar, em três etapas.</h2>
+    <div class="sec-head" data-reveal>
+      <h2>Do primeiro contato ao site no ar.</h2>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-line"></div>
-        <h3>Escopo e proposta</h3>
-        <p>Conversamos sobre o objetivo do site — landing page ou institucional — e fechamos escopo e valor.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-line"></div>
-        <h3>Design e desenvolvimento</h3>
-        <p>Conteúdo, estrutura e programação em WordPress, com apoio de IA para acelerar textos e ideias.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Publicação e suporte</h3>
-        <p>Site no ar. Os sites WordPress ficam hospedados pela Firmiano, com suporte técnico contínuo para manter tudo funcionando.</p>
-      </div>
+    <div class="steps" id="steps">
+      <div class="track" aria-hidden="true"><i></i></div>
+      <div class="step" data-reveal><div class="num">1</div><h3>Conversa e proposta</h3><p>Entendemos o objetivo do site, landing page ou WordPress, e fechamos escopo e valor antes de começar.</p></div>
+      <div class="step" data-reveal style="--d:.1s"><div class="num">2</div><h3>Criação</h3><p>Conteúdo, estrutura e design, com apoio de IA para acelerar textos e ideias. Você acompanha e aprova.</p></div>
+      <div class="step" data-reveal style="--d:.2s"><div class="num">3</div><h3>Publicação e cuidado</h3><p>Site no ar com o seu domínio. Os sites WordPress ficam hospedados pela Firmiano, com suporte contínuo.</p></div>
     </div>
   </div>
 </section>
 
-<section id="precos" style="background:var(--paper-2);">
+<section class="sec pricing-sec" id="precos">
   <div class="wrap">
-    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center; max-width:600px;">
-      <span class="section-tag">Super promoção de outubro</span>
-      <h2 class="section-title">Preços claros, sem letra miúda.</h2>
-      <p class="section-sub">Escolha o formato que combina com o seu negócio. Pagamento único pelo desenvolvimento; landing page não precisa de hospedagem e o site WordPress é hospedado pela Firmiano.</p>
-    </div>
-    <div class="promo-banner"><b>Promoção de outubro</b> · válida para projetos fechados até 31/10/2026</div>
-
-    <div class="price-group">
-      <div class="group-head">
-        <h3>Landing page</h3>
-        <p>Ideal para apresentar um serviço ou uma oferta de forma direta e começar a receber contatos rápido.</p>
+    <div class="promo" data-reveal><b>Promoção de outubro</b><span id="countdown">Válida para projetos fechados até 31/10/2026</span></div>
+    <div class="price-top">
+      <div class="sec-head" data-reveal>
+        <h2>Preços fechados, sem letra miúda.</h2>
+        <p>Pagamento único pelo desenvolvimento. Landing page não precisa de hospedagem; o site WordPress é hospedado pela Firmiano.</p>
       </div>
-      <div class="pricing">
-      <div class="plan">
+      <div class="seg" role="tablist" aria-label="Tipo de site" data-reveal style="--d:.1s">
+        <span class="ind" aria-hidden="true"></span>
+        <button role="tab" id="tab-lp" aria-selected="true" aria-controls="plans-lp">Landing page</button>
+        <button role="tab" id="tab-wp" aria-selected="false" aria-controls="plans-wp" tabindex="-1">Site WordPress</button>
+      </div>
+    </div>
+
+    <div class="plans" id="plans-lp" role="tabpanel" aria-labelledby="tab-lp">
+      <article class="plan">
         <h3>Landing + domínio</h3>
         <div class="was">De R$1.000</div>
         <div class="price">R$700</div>
         <span class="save">Economize R$300</span>
-        <div class="desc">Pagamento único · 1 página</div>
+        <p class="desc">Pagamento único, 1 página. Não precisa de hospedagem.</p>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>1 página, com design e programação</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro do domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Textos estruturados com apoio de IA</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Não precisa de hospedagem</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>1 página, com design e programação</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro do domínio</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Textos organizados com apoio de IA</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Botão de WhatsApp</li>
         </ul>
-        <a href="https://wa.me/5521998908129?text=Ol%C3%A1%21%20Quero%20a%20promo%C3%A7%C3%A3o%20de%20Landing%20page%20%2B%20dom%C3%ADnio%20%28R%24700%29." target="_blank" rel="noopener" class="btn btn-ghost">Pedir orçamento</a>
-      </div>
-      <div class="plan popular">
-        <span class="badge">Mais completo</span>
+        <a class="btn btn-line" href="https://wa.me/5521998908129" data-wa="Olá! Quero a promoção de Landing page + domínio (R$700)." target="_blank" rel="noopener">Quero este plano</a>
+      </article>
+      <article class="plan feat">
+        <span class="tag">Mais completo</span>
         <h3>Landing + domínio + e-mails</h3>
         <div class="was">De R$1.500</div>
         <div class="price">R$1.000</div>
         <span class="save">Economize R$500</span>
-        <div class="desc">Pagamento único · 1 página</div>
+        <p class="desc">Pagamento único, 1 página. Não precisa de hospedagem.</p>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>1 página, com design e programação</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro do domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Configuração dos e-mails com o seu domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Não precisa de hospedagem</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>1 página, com design e programação</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro do domínio</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Configuração dos e-mails com o seu domínio</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Botão de WhatsApp</li>
         </ul>
-        <a href="https://wa.me/5521998908129?text=Ol%C3%A1%21%20Quero%20a%20promo%C3%A7%C3%A3o%20de%20Landing%20page%20%2B%20dom%C3%ADnio%20%2B%20e-mails%20%28R%241.000%29." target="_blank" rel="noopener" class="btn btn-primary">Pedir orçamento</a>
-      </div>
-      <div class="plan">
+        <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Quero a promoção de Landing page + domínio + e-mails (R$1.000)." target="_blank" rel="noopener">Quero este plano</a>
+      </article>
+      <article class="plan">
         <h3>Suporte após a entrega</h3>
-        <div class="was">De R$100/alteração</div>
-        <div class="price">R$50<span>/alteração</span></div>
-        <span class="save">Economize R$50/alteração</span>
-        <div class="desc">Você paga só quando precisar</div>
+        <div class="was">De R$100 por alteração</div>
+        <div class="price">R$50<small>por alteração</small></div>
+        <span class="save">Economize R$50 por alteração</span>
+        <p class="desc">Você paga só quando precisar.</p>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Alterações depois que o site foi entregue</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Sem mensalidade</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Valor por alteração solicitada</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Alterações depois que o site foi entregue</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Sem mensalidade</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Valor por alteração solicitada</li>
         </ul>
-        <a href="https://wa.me/5521998908129?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20o%20suporte%20por%20altera%C3%A7%C3%A3o%20%28R%2450%29." target="_blank" rel="noopener" class="btn btn-ghost">Saber mais</a>
-      </div>
-      </div>
+        <a class="btn btn-line" href="https://wa.me/5521998908129" data-wa="Olá! Quero saber mais sobre o suporte por alteração (R$50)." target="_blank" rel="noopener">Saber mais</a>
+      </article>
     </div>
 
-    <div class="price-group">
-      <div class="group-head">
-        <h3>Site WordPress</h3>
-        <p>Ideal para quem precisa de mais espaço (serviços, sobre, contato) e quer atualizar textos e imagens sozinho. A hospedagem na Firmiano é obrigatória (R$149,90/mês na promoção, no último plano).</p>
-      </div>
-      <div class="pricing">
-      <div class="plan">
+    <div class="plans" id="plans-wp" role="tabpanel" aria-labelledby="tab-wp" hidden>
+      <article class="plan">
         <h3>WordPress 5 páginas + domínio</h3>
         <div class="was">De R$2.000</div>
         <div class="price">R$1.500</div>
         <span class="save">Economize R$500</span>
-        <div class="desc">Pagamento único · até 5 páginas · + hospedagem R$149,90/mês</div>
+        <p class="desc">Pagamento único, até 5 páginas. Hospedagem obrigatória de R$149,90 por mês.</p>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Até 5 páginas, design completo</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro do domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Estrutura pensada para o seu negócio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Publicação e ativação assistidas</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Até 5 páginas, design completo</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro do domínio</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Estrutura pensada para o seu negócio</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Publicação e ativação assistidas</li>
         </ul>
-        <a href="https://wa.me/5521998908129?text=Ol%C3%A1%21%20Quero%20a%20promo%C3%A7%C3%A3o%20de%20site%20WordPress%20com%205%20p%C3%A1ginas%20%2B%20dom%C3%ADnio%20%28R%241.500%29." target="_blank" rel="noopener" class="btn btn-ghost">Pedir orçamento</a>
-      </div>
-      <div class="plan popular">
-        <span class="badge">Mais completo</span>
+        <a class="btn btn-line" href="https://wa.me/5521998908129" data-wa="Olá! Quero a promoção de site WordPress com 5 páginas + domínio (R$1.500)." target="_blank" rel="noopener">Quero este plano</a>
+      </article>
+      <article class="plan feat">
+        <span class="tag">Mais completo</span>
         <h3>WordPress 5 páginas + e-mails</h3>
         <div class="was">De R$2.500</div>
         <div class="price">R$1.800</div>
         <span class="save">Economize R$700</span>
-        <div class="desc">Pagamento único · até 5 páginas · + hospedagem R$149,90/mês</div>
+        <p class="desc">Pagamento único, até 5 páginas. Hospedagem obrigatória de R$149,90 por mês.</p>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Até 5 páginas, design completo</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro do domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Configuração dos e-mails com o seu domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Publicação e ativação assistidas</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Até 5 páginas, design completo</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro do domínio</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Configuração dos e-mails com o seu domínio</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Publicação e ativação assistidas</li>
         </ul>
-        <a href="https://wa.me/5521998908129?text=Ol%C3%A1%21%20Quero%20a%20promo%C3%A7%C3%A3o%20de%20WordPress%205%20p%C3%A1ginas%20%2B%20dom%C3%ADnio%20%2B%20e-mails%20%28R%241.800%29." target="_blank" rel="noopener" class="btn btn-primary">Pedir orçamento</a>
-      </div>
-      <div class="plan">
-        <h3>Hospedagem &amp; Suporte</h3>
-        <div class="was">De R$199,90/mês</div>
-        <div class="price">R$149,90<span>/mês</span></div>
-        <span class="save">Economize R$50/mês</span>
-        <div class="desc">Obrigatória · para o site WordPress</div>
+        <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Quero a promoção de WordPress 5 páginas + domínio + e-mails (R$1.800)." target="_blank" rel="noopener">Quero este plano</a>
+      </article>
+      <article class="plan">
+        <h3>Hospedagem e suporte</h3>
+        <div class="was">De R$199,90 por mês</div>
+        <div class="price">R$149,90<small>por mês</small></div>
+        <span class="save">Economize R$50 por mês</span>
+        <p class="desc">Obrigatória para o site WordPress.</p>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Hospedagem e certificado SSL</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Backups periódicos</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Atualizações e correções técnicas</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Monitoramento básico do site</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Até 1 hora de pequenas alterações por mês</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Suporte por e-mail ou WhatsApp em horário comercial</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Hospedagem e certificado SSL</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Backups periódicos</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Atualizações e correções técnicas</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Monitoramento básico do site</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Até 1 hora de pequenas alterações por mês</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Suporte por e-mail ou WhatsApp em horário comercial</li>
         </ul>
-        <a href="https://wa.me/5521998908129?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20Hospedagem%20e%20Suporte%20%28R%24149%2C90/m%C3%AAs%29." target="_blank" rel="noopener" class="btn btn-ghost">Saber mais</a>
-      </div>
-      </div>
+        <a class="btn btn-line" href="https://wa.me/5521998908129" data-wa="Olá! Quero saber mais sobre Hospedagem e Suporte (R$149,90/mês)." target="_blank" rel="noopener">Saber mais</a>
+      </article>
     </div>
 
-    <div class="price-notes">
+    <div class="notes" data-reveal>
       <h3>O que vale saber antes de contratar</h3>
-      <ul>
-        <li><b>Domínio:</b> o registro está incluso nos planos com domínio e o domínio fica no nome do cliente. A renovação anual é por conta do cliente e cobrada pelo Registro.br (hoje cerca de R$ 40 por ano para .com.br).</li>
-        <li><b>E-mails:</b> configuramos os e-mails no seu domínio em um serviço de e-mail profissional. Planos gratuitos desses serviços têm limite de usuários.</li>
-        <li><b>Hospedagem (WordPress):</b> o site WordPress é hospedado pela Firmiano. A mensalidade é de R$149,90 na promoção de outubro (depois, R$199,90) e inclui hospedagem com SSL, backups, atualizações, monitoramento e até 1 hora de pequenas alterações por mês. Quem fechar até 31/10/2026 não sofre reajuste.</li>
-        <li><b>Suporte:</b> por e-mail ou WhatsApp em horário comercial, com resposta em até 1 dia útil.</li>
-        <li><b>Promoção:</b> os valores promocionais valem para projetos fechados até 31/10/2026.</li>
+      <dl>
+        <dt>Domínio</dt><dd>O registro está incluso nos planos com domínio e o domínio fica no nome do cliente. A renovação anual é por conta do cliente e cobrada pelo Registro.br (hoje cerca de R$ 40 por ano para .com.br).</dd>
+        <dt>E-mails</dt><dd>Configuramos os e-mails no seu domínio em um serviço de e-mail profissional. Planos gratuitos desses serviços têm limite de usuários.</dd>
+        <dt>Hospedagem</dt><dd>O site WordPress é hospedado pela Firmiano. A mensalidade é de R$149,90 na promoção de outubro (depois, R$199,90) e inclui hospedagem com SSL, backups, atualizações, monitoramento e até 1 hora de pequenas alterações por mês. Quem fechar até 31/10/2026 não sofre reajuste.</dd>
+        <dt>Suporte</dt><dd>Por e-mail ou WhatsApp em horário comercial, com resposta em até 1 dia útil.</dd>
+        <dt>Promoção</dt><dd>Os valores promocionais valem para projetos fechados até 31/10/2026.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="indique">
+  <div class="wrap refer">
+    <div data-reveal>
+      <h2>Virou cliente? Indique e ganhe.</h2>
+      <p class="note">Quando uma indicação sua fechar e o projeto for concluído, você recebe o valor abaixo. Vale para quem já é cliente Firmiano; para indicar, é só chamar no WhatsApp.</p>
+    </div>
+    <div class="refer-amts">
+      <div class="amt" data-reveal><b>R$50</b><span>por indicação que fechar e concluir uma landing page</span></div>
+      <div class="amt" data-reveal style="--d:.1s"><b>R$100</b><span>por indicação que fechar e concluir um site WordPress</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:40px;">
+  <div class="wrap faq-grid">
+    <div class="sec-head" data-reveal>
+      <h2>Perguntas frequentes</h2>
+      <p>Não achou a sua? Chame no WhatsApp que a gente responde.</p>
+    </div>
+    <div class="faq" data-reveal style="--d:.1s">
+      <div class="qa open"><button aria-expanded="true">Quanto tempo leva para o site ficar pronto?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Uma landing page costuma ficar pronta em poucos dias após o alinhamento de escopo. Um site de até 5 páginas leva um pouco mais, dependendo do volume de conteúdo a ser produzido.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">A hospedagem é obrigatória?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Landing page não precisa de hospedagem. O site WordPress é hospedado pela Firmiano: a mensalidade de hospedagem e suporte é de R$149,90 na promoção de outubro (depois, R$199,90). Inclui certificado SSL, backups periódicos, atualizações e correções técnicas, monitoramento básico e até 1 hora de pequenas alterações por mês. Quem fechar até 31/10/2026 não sofre reajuste.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Até quando vale a promoção?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Os valores promocionais valem para projetos fechados até 31 de outubro de 2026.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">O domínio fica no meu nome? E a renovação?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Sim. O domínio é registrado no nome do cliente. O registro está incluso nos planos com domínio; a renovação anual é por conta do cliente e cobrada pelo Registro.br (hoje cerca de R$ 40 por ano para .com.br).</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Quem cuida do meu site depois de publicado?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>A mesma pessoa que desenvolveu o projeto. Não há repasse para outra equipe de suporte: quem entende do seu site é quem atende o pedido.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Como funciona a indicação?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Quem já é cliente Firmiano pode indicar outras pessoas. Se a indicação fechar e o projeto for concluído, você ganha R$50 por uma landing page ou R$100 por um site WordPress.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">Que tipo de empresa vocês atendem?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Qualquer empresa, profissional autônomo ou instituição que precise de um site. Conte o que você precisa e a gente diz se faz sentido e quanto custa.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">É possível pedir um sistema além de um site em WordPress?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Estamos abrindo espaço para os primeiros clientes de sistemas sob medida em nuvem, como controle de estoque, biblioteca ou ERP simplificado. Fale com a gente para entender se o seu caso já pode entrar nessa fase.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2 data-reveal>Vamos colocar o seu negócio no ar?</h2>
+    <p data-reveal style="--d:.1s">Conte o que você precisa. A gente responde com uma proposta clara, sem compromisso.</p>
+    <a class="btn btn-sand magnetic" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero colocar o meu negócio no ar." target="_blank" rel="noopener" data-reveal style="--d:.2s">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      Conversar no WhatsApp</a>
+  </div>
+</section>
+
+<section class="sec" id="contato">
+  <div class="wrap contact">
+    <div data-reveal>
+      <h2>Fale direto com quem vai cuidar do seu site.</h2>
+      <ul class="c-list">
+        <li><a href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site." target="_blank" rel="noopener"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><span><small>WhatsApp</small><strong>(21) 99890-8129</strong></span></a></li>
+        <li><a href="mailto:contato@firmiano.com.br"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><span><small>E-mail</small><strong>contato@firmiano.com.br</strong></span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+Ernani+do+Amaral+Peixoto%2C+450%2C+Sala+505%2C+Centro%2C+Niter%C3%B3i%2C+RJ" target="_blank" rel="noopener"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg></span><span><small>Endereço</small><strong>Av. Ernani do Amaral Peixoto, 450, sala 505, Centro, Niterói/RJ</strong></span></a></li>
+        <li><a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><span><small>Instagram</small><strong>@firmiano.oficial</strong></span></a></li>
       </ul>
     </div>
+    <form class="form" id="contact-form" data-reveal style="--d:.1s">
+      <h3>Ou mande uma mensagem</h3>
+      <div class="field"><label for="c-name">Nome</label><input id="c-name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="c-email">E-mail</label><input id="c-email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="c-msg">Mensagem</label><textarea id="c-msg" placeholder="Conte um pouco sobre o site que você precisa" required></textarea></div>
+      <button type="submit" class="btn btn-leaf">Enviar mensagem</button>
+      <p class="form-note">Ao enviar, o seu aplicativo de e-mail abre com a mensagem pronta para contato@firmiano.com.br.</p>
+    </form>
   </div>
 </section>
-
-<section id="indique">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="section-tag">Indique e ganhe</span>
-      <h2 class="section-title">Virou cliente? Indique e ganhe.</h2>
-      <p class="section-sub">Quando uma indicação sua fechar e concluir o projeto, você recebe:</p>
-    </div>
-    <div class="refer">
-      <div class="refer-card"><b>R$50</b><span>por indicação que fechar e concluir uma landing page</span></div>
-      <div class="refer-card"><b>R$100</b><span>por indicação que fechar e concluir um site WordPress</span></div>
-    </div>
-    <p class="refer-note">Vale para quem já é cliente Firmiano. Para indicar, é só chamar no WhatsApp.</p>
-  </div>
-</section>
-
-<section id="faq" style="background:var(--paper-2);">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="section-tag">Perguntas frequentes</span>
-      <h2 class="section-title">Antes de fechar, tire suas dúvidas.</h2>
-    </div>
-    <div class="faq">
-      <details open>
-        <summary>Quanto tempo leva para o site ficar pronto? <span class="plus">+</span></summary>
-        <p>Uma landing page costuma ficar pronta em poucos dias após o alinhamento de escopo. Um site padrão de até 5 páginas leva um pouco mais, dependendo do volume de conteúdo a ser produzido.</p>
-      </details>
-      <details>
-        <summary>A hospedagem é obrigatória? <span class="plus">+</span></summary>
-        <p>Landing page não precisa de hospedagem. O site WordPress é hospedado pela Firmiano: a mensalidade de hospedagem e suporte é de R$149,90 na promoção de outubro (depois, R$199,90). Inclui certificado SSL, backups periódicos, atualizações e correções técnicas, monitoramento básico e até 1 hora de pequenas alterações por mês. Quem fechar até 31/10/2026 não sofre reajuste.</p>
-      </details>
-      <details>
-        <summary>Até quando vale a promoção? <span class="plus">+</span></summary>
-        <p>Os valores promocionais valem para projetos fechados até 31 de outubro de 2026.</p>
-      </details>
-      <details>
-        <summary>O domínio fica no meu nome? E a renovação? <span class="plus">+</span></summary>
-        <p>Sim. O domínio é registrado no nome do cliente. O registro está incluso nos planos com domínio; a renovação anual é por conta do cliente e cobrada pelo Registro.br (hoje cerca de R$ 40 por ano para .com.br).</p>
-      </details>
-      <details>
-        <summary>Quem cuida do meu site depois de publicado? <span class="plus">+</span></summary>
-        <p>A mesma pessoa que desenvolveu o projeto. Não há repasse para outra equipe de suporte — quem entende do seu site é quem atende o chamado.</p>
-      </details>
-      <details>
-        <summary>Como funciona a indicação? <span class="plus">+</span></summary>
-        <p>Quem já é cliente Firmiano pode indicar outras pessoas. Se a indicação fechar e o projeto for concluído, você ganha R$50 por uma landing page ou R$100 por um site WordPress.</p>
-      </details>
-      <details>
-        <summary>Que tipo de empresa vocês atendem? <span class="plus">+</span></summary>
-        <p>Qualquer empresa, profissional autônomo ou instituição que precise de um site. Conte o que você precisa e a gente diz se faz sentido e quanto custa.</p>
-      </details>
-      <details>
-        <summary>É possível pedir um sistema além de um site em WordPress? <span class="plus">+</span></summary>
-        <p>Estamos abrindo espaço para os primeiros clientes de sistemas sob medida em nuvem — como controle de estoque, biblioteca ou ERP simplificado. Fale com a gente para entender se seu caso já pode entrar nessa fase.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="cta-band">
-      <h2>Seu site pode estar no ar essa semana.</h2>
-      <p>Sem proposta genérica, sem agência terceirizando o suporte. Fale direto com quem vai construir e manter o seu site.</p>
-      <a href="#precos" class="btn btn-primary">Pedir orçamento agora →</a>
-    </div>
-  </div>
-</section>
-
-<section id="contato" style="background:var(--paper-2);">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="section-tag">Contato</span>
-      <h2 class="section-title">Fale direto com quem vai cuidar do seu site.</h2>
-      <p class="section-sub">Preencha o formulário, chame no WhatsApp ou passe no escritório em Niterói.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <form id="contact-form">
-          <div class="field">
-            <label for="c-name">Nome</label>
-            <input id="c-name" type="text" placeholder="Seu nome" required>
-          </div>
-          <div class="field">
-            <label for="c-email">E-mail</label>
-            <input id="c-email" type="email" placeholder="voce@empresa.com" required>
-          </div>
-          <div class="field">
-            <label for="c-msg">Mensagem</label>
-            <textarea id="c-msg" placeholder="Conte um pouco sobre o site ou sistema que você precisa" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Enviar mensagem →</button>
-          <p class="form-note">Ao enviar, seu aplicativo de e-mail abrirá com a mensagem pronta para <strong>contato@firmiano.com.br</strong>.</p>
-        </form>
-      </div>
-      <div class="contact-info">
-        <div class="info-row">
-          <div class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="none"/><path d="M3 6l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/></svg></div>
-          <div>
-            <h4>E-mail</h4>
-            <p>contato@firmiano.com.br</p>
-            <a class="info-link" href="mailto:contato@firmiano.com.br">Enviar e-mail</a>
-          </div>
-        </div>
-        <div class="info-row">
-          <div class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
-          <div>
-            <h4>WhatsApp</h4>
-            <p>(21) 99890-8129</p>
-            <a class="info-link" href="https://wa.me/5521998908129" target="_blank" rel="noopener">Chamar no WhatsApp</a>
-          </div>
-        </div>
-        <div class="info-row">
-          <div class="info-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg></div>
-          <div style="width:100%;">
-            <h4>Endereço</h4>
-            <p>Av. Ernani do Amaral Peixoto, 450 — Sala 505, Centro, Niterói/RJ</p>
-          </div>
-        </div>
-        <div class="map-box">
-          <div class="pin"><div class="pin-drop"></div><div class="pin-ring"></div></div>
-          <a class="open-map" href="https://www.google.com/maps/search/?api=1&query=Avenida+Ernani+do+Amaral+Peixoto%2C+450%2C+Sala+505%2C+Centro%2C+Niter%C3%B3i%2C+RJ" target="_blank" rel="noopener">Abrir no Google Maps ↗</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<a class="wa-float" href="https://wa.me/5521998908129" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>
-</a>
+</main>
 
 <footer>
   <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <a class="logo" href="#" aria-label="Firmiano — início" style="margin-bottom:12px; display:inline-flex;"><img src="firmiano-identidade/firmiano-wordmark-verde.svg" alt="Firmiano" class="logo-img" width="127" height="32"></a>
-        <p style="max-width:32ch; margin-top:8px;">Desenvolvimento e manutenção de sites, com um caminho claro rumo a sistemas sob medida em nuvem.</p>
+    <div class="f-top">
+      <div class="f-brand">
+        <img src="firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="180" height="45">
+        <p>Criação, hospedagem e suporte de sites para pequenas empresas. Niterói/RJ, atendendo todo o Brasil.</p>
       </div>
       <div>
         <h4>Navegação</h4>
-        <ul><li><a href="#servicos">Serviços</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#dominio">Consultar domínio</a></li><li><a href="#precos">Preços</a></li><li><a href="#indique">Indique e ganhe</a></li><li><a href="#faq">Perguntas</a></li></ul>
+        <ul><li><a href="#por-que">Por que a Firmiano</a></li><li><a href="#dominio">Consultar domínio</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#precos">Preços</a></li><li><a href="#indique">Indique e ganhe</a></li><li><a href="#faq">Perguntas</a></li></ul>
       </div>
       <div>
-        <h4>Empresa</h4>
-        <ul><li><a href="#">Sobre Ismael Firmiano</a></li><li><a href="#contato">Contato</a></li></ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul><li><a href="#">Termos de uso</a></li><li><a href="#">Política de privacidade</a></li></ul>
+        <h4>Contato</h4>
+        <ul><li><a href="https://wa.me/5521998908129" target="_blank" rel="noopener">(21) 99890-8129</a></li><li><a href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a></li><li>Niterói/RJ</li></ul>
       </div>
     </div>
-    <div class="foot-bottom">
+    <div class="f-bot">
       <span>© 2026 Firmiano. Todos os direitos reservados.</span>
       <div class="socials">
-        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
-        <a href="https://wa.me/5521998908129" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
+        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+        <a href="https://wa.me/5521998908129" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </div>
 </footer>
 
+<a class="wa-float" id="waFloat" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+</a>
+
 <script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer = window.matchMedia('(pointer: fine)').matches;
+
+  /* WhatsApp links */
+  document.querySelectorAll('[data-wa]').forEach(function(a){
+    a.href = 'https://wa.me/5521998908129?text=' + encodeURIComponent(a.getAttribute('data-wa'));
+  });
+
+  /* Nav, progress, floating button */
+  var nav = document.getElementById('nav'), prog = document.getElementById('progress'), waF = document.getElementById('waFloat');
+  var hero = document.getElementById('hero');
+  function onScroll(){
+    var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
+    nav.classList.toggle('scrolled', y > hero.offsetHeight - 90);
+    prog.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
+    waF.classList.toggle('show', y > innerHeight * .6);
+    stepsProgress();
+  }
+  var burger = document.getElementById('burger');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  document.querySelectorAll('#menu a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); document.body.style.overflow=''; }); });
+
+  /* Headline split */
+  var h1 = document.getElementById('headline');
+  if (!reduce) {
+    var words = h1.textContent.trim().split(/\s+/);
+    h1.setAttribute('aria-label', h1.textContent.trim());
+    h1.innerHTML = words.map(function(w, i){ return '<span class="w" aria-hidden="true"><span style="transition-delay:' + (0.08 + i * 0.055).toFixed(3) + 's">' + w + '</span></span>'; }).join(' ');
+  }
+
+  /* Hero build sequence */
+  var stage = document.getElementById('stage'), typed = document.getElementById('typed');
+  var URL_TXT = 'suaempresa.com.br';
+  function finish(){ stage.classList.add('built','details','live'); stage.closest('.stage-holder').classList.add('live'); typed.textContent = URL_TXT; }
+  function play(){
+    hero.classList.add('ready');
+    if (reduce) { finish(); return; }
+    setTimeout(function(){ stage.classList.add('built'); }, 1300);
+    setTimeout(function(){ stage.classList.add('details'); }, 2300);
+    setTimeout(function(){
+      var i = 0; (function t(){ typed.textContent = URL_TXT.slice(0, ++i); if (i < URL_TXT.length) setTimeout(t, 55); else setTimeout(function(){ stage.classList.add('live'); stage.closest('.stage-holder').classList.add('live'); }, 250); })();
+    }, 2700);
+  }
+  if (document.fonts && document.fonts.ready) { Promise.race([document.fonts.ready, new Promise(function(r){ setTimeout(r, 900); })]).then(function(){ requestAnimationFrame(play); }); }
+  else { requestAnimationFrame(play); }
+
+  /* Tilt */
+  var sw = document.getElementById('stageWrap');
+  if (finePointer && !reduce) {
+    sw.addEventListener('pointermove', function(e){
+      var r = sw.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      stage.style.transform = 'rotateY(' + (x * 10).toFixed(2) + 'deg) rotateX(' + (-y * 8).toFixed(2) + 'deg)';
+    });
+    sw.addEventListener('pointerleave', function(){ stage.style.transform = ''; });
+  }
+
+  /* Spotlight tiles */
+  if (finePointer) document.querySelectorAll('.spot').forEach(function(el){
+    el.addEventListener('pointermove', function(e){ var r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
+  });
+
+  /* Magnetic buttons */
+  if (finePointer && !reduce) document.querySelectorAll('.magnetic').forEach(function(b){
+    b.addEventListener('pointermove', function(e){ var r = b.getBoundingClientRect(); b.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * .22).toFixed(1) + 'px,' + ((e.clientY - r.top - r.height / 2) * .3).toFixed(1) + 'px)'; });
+    b.addEventListener('pointerleave', function(){ b.style.transform = ''; });
+  });
+
+  /* Reveal */
+  var rev = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px', threshold:.12});
+    rev.forEach(function(el){ io.observe(el); });
+  } else rev.forEach(function(el){ el.classList.add('in'); });
+
+  /* Steps progress */
+  var stepsEl = document.getElementById('steps'), stepEls = stepsEl.querySelectorAll('.step'), track = stepsEl.querySelector('.track i');
+  function stepsProgress(){
+    var r = stepsEl.getBoundingClientRect(), vh = innerHeight;
+    var p = Math.min(1, Math.max(0, (vh * .75 - r.top) / (r.height + vh * .2)));
+    if (reduce) p = 1;
+    track.parentNode.style.setProperty('--p', p.toFixed(3));
+    stepEls.forEach(function(s, i){ s.classList.toggle('on', p >= i / (stepEls.length - 1) - 0.02); });
+  }
+
+  /* Pricing tabs */
+  var tabs = [document.getElementById('tab-lp'), document.getElementById('tab-wp')], ind = document.querySelector('.seg .ind');
+  function placeInd(t){ ind.style.width = t.offsetWidth + 'px'; ind.style.transform = 'translateX(' + (t.offsetLeft - 6) + 'px)'; }
+  function select(t){
+    tabs.forEach(function(x){
+      var on = x === t, panel = document.getElementById(x.getAttribute('aria-controls'));
+      x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; panel.hidden = !on;
+      if (on && !reduce) { panel.classList.remove('anim'); void panel.offsetWidth; panel.classList.add('anim'); }
+    });
+    placeInd(t);
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(t); });
+    t.addEventListener('keydown', function(e){ if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { var n = tabs[(i + 1) % 2]; select(n); n.focus(); } });
+  });
+  placeInd(tabs[0]);
+  window.addEventListener('resize', function(){ placeInd(tabs.filter(function(t){ return t.getAttribute('aria-selected') === 'true'; })[0]); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ placeInd(tabs.filter(function(t){ return t.getAttribute('aria-selected') === 'true'; })[0]); });
+
+  /* Countdown */
+  var cd = document.getElementById('countdown'), END = new Date('2026-10-31T23:59:59-03:00').getTime();
+  function tick(){
+    var ms = END - Date.now();
+    if (ms <= 0) { cd.textContent = 'A promoção de outubro terminou.'; return; }
+    var d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60;
+    cd.textContent = 'Termina em ' + (d ? d + (d === 1 ? ' dia, ' : ' dias, ') : '') + h + (h === 1 ? ' hora e ' : ' horas e ') + m + (m === 1 ? ' minuto' : ' minutos');
+  }
+  tick(); setInterval(tick, 30000);
+
+  /* FAQ */
+  document.querySelectorAll('.qa button').forEach(function(b){
+    b.addEventListener('click', function(){ var q = b.parentNode, open = q.classList.toggle('open'); b.setAttribute('aria-expanded', open); });
+  });
+
+  /* Contact form */
   document.getElementById('contact-form').addEventListener('submit', function(e){
     e.preventDefault();
-    var name = document.getElementById('c-name').value.trim();
-    var email = document.getElementById('c-email').value.trim();
-    var msg = document.getElementById('c-msg').value.trim();
-    var subject = encodeURIComponent('Contato via site — ' + name);
-    var body = encodeURIComponent('Nome: ' + name + '\nE-mail: ' + email + '\n\nMensagem:\n' + msg);
-    window.location.href = 'mailto:contato@firmiano.com.br?subject=' + subject + '&body=' + body;
+    var n = document.getElementById('c-name').value.trim(), em = document.getElementById('c-email').value.trim(), m = document.getElementById('c-msg').value.trim();
+    location.href = 'mailto:contato@firmiano.com.br?subject=' + encodeURIComponent('Contato via site: ' + n) + '&body=' + encodeURIComponent('Nome: ' + n + '\nE-mail: ' + em + '\n\nMensagem:\n' + m);
   });
+
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
 </script>
+
 <script>
 (function(){
   var form=document.getElementById('dom-form'), input=document.getElementById('dom-input'),
       btn=document.getElementById('dom-btn'), out=document.getElementById('dom-out');
   if(!form) return;
   var SUF=['oficial','digital','online','web','site','br','brasil'];
-
   function names(raw){
-    var v=String(raw||'').trim().toLowerCase().replace(/\.(com\.br|net\.br|com|net|org|br)$/,'');
-    v=v.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/&/g,' e ');
+    var v=String(raw||'').trim().toLowerCase().replace(/^https?:\/\//,'').replace(/^www\./,'').replace(/\.(com\.br|net\.br|com|net|org|br)$/,'');
+    v=v.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/&/g,' e ');
     var words=v.replace(/[^a-z0-9\s-]/g,'').split(/[\s-]+/).filter(Boolean);
     var joined=words.join('');
     if(joined.length<2||joined.length>50) return null;
@@ -780,53 +1043,41 @@
       .catch(function(){return 'unk';});
   }
   function el(tag,cls,text){var e=document.createElement(tag); if(cls)e.className=cls; if(text!=null)e.textContent=text; return e;}
-  function pill(st,free){
-    var t={free:free||'Disponível',taken:'Já registrado',unk:'Não consegui verificar'}[st];
-    return el('span','pill '+st,t);
-  }
+  function pill(st,free){ return el('span','pill '+st,{free:free||'Disponível',taken:'Já registrado',unk:'Não foi possível verificar'}[st]); }
   function want(domain){
     var a=el('a','dom-want','Quero este domínio');
     a.href='https://wa.me/5521998908129?text='+encodeURIComponent('Olá! Quero registrar o domínio '+domain+' e fazer o meu site.');
     a.target='_blank'; a.rel='noopener'; return a;
   }
-  function row(domain,st,freeLabel){
-    var li=el('li'); li.appendChild(el('span','n',domain));
+  function row(domain,st,freeLabel,i){
+    var li=el('li'); li.style.animationDelay=(i||0)*0.05+'s'; li.appendChild(el('span','n',domain));
     var r=el('span','r'); r.appendChild(pill(st,freeLabel)); if(st==='free') r.appendChild(want(domain));
     li.appendChild(r); return li;
   }
   function render(base,res,vars){
     out.textContent='';
-    var main=base+'.com.br', card=el('div','dom-card'), top=el('div','dom-main');
-    top.appendChild(el('div','dom-name',main)); top.appendChild(pill(res.br,'Parece disponível'));
-    card.appendChild(top);
-    var msg={
+    var main=base+'.com.br', card=el('div','dom-main');
+    card.appendChild(el('div','dom-name',main)); card.appendChild(pill(res.br,'Parece disponível'));
+    card.appendChild(el('p','dom-sub',{
       free:'Esse endereço parece livre. Antes de registrar para você, confirmamos a disponibilidade no Registro.br.',
       taken:'Esse .com.br já tem dono. Veja as alternativas abaixo.',
-      unk:'Não foi possível consultar agora. Tente de novo em instantes ou fale com a gente.'}[res.br];
-    card.appendChild(el('p','dom-sub',msg));
-    if(res.br==='free'){var b=want(main); b.className='btn btn-primary'; b.textContent='Quero este domínio →'; b.style.marginTop='16px'; card.appendChild(b);}
+      unk:'Não foi possível consultar agora. Tente de novo em instantes ou fale com a gente.'}[res.br]));
+    if(res.br==='free'){var b=want(main); b.className='btn btn-leaf'; b.textContent='Quero este domínio'; card.appendChild(b);}
     out.appendChild(card);
-
     out.appendChild(el('h3','dom-h','Mesmo nome em outras terminações'));
     var ul=el('ul','dom-list');
-    ul.appendChild(row(base+'.com',res.com)); ul.appendChild(row(base+'.net',res.net)); ul.appendChild(row(base+'.org',res.org));
+    ul.appendChild(row(base+'.com',res.com,null,0)); ul.appendChild(row(base+'.net',res.net,null,1)); ul.appendChild(row(base+'.org',res.org,null,2));
     out.appendChild(ul);
-
     if(vars){
       out.appendChild(el('h3','dom-h','Variações disponíveis com .com.br'));
-      if(vars.length){
-        var vl=el('ul','dom-list'); vars.forEach(function(d){vl.appendChild(row(d,'free','Parece disponível'));}); out.appendChild(vl);
-      } else {
-        out.appendChild(el('p','dom-sub','Não encontramos variações livres automaticamente. Fale com a gente que ajudamos a achar um bom nome.'));
-      }
+      if(vars.length){ var vl=el('ul','dom-list'); vars.forEach(function(d,i){vl.appendChild(row(d,'free','Parece disponível',i));}); out.appendChild(vl); }
+      else out.appendChild(el('p','dom-sub','Não encontramos variações livres automaticamente. Fale com a gente que ajudamos a achar um bom nome.'));
     }
   }
   function run(raw){
     var n=names(raw);
-    if(!n){
-      out.textContent=''; out.appendChild(el('p','dom-sub','Digite o nome da sua empresa (entre 2 e 50 letras ou números).')); return;
-    }
-    btn.disabled=true; btn.textContent='Consultando...';
+    if(!n){ out.textContent=''; out.appendChild(el('p','dom-sub','Digite o nome da sua empresa, com 2 a 50 letras ou números.')); input.focus(); return; }
+    btn.disabled=true; btn.textContent='Consultando…';
     var base=n.joined;
     Promise.all([
       doh(base+'.com.br'),
@@ -843,7 +1094,7 @@
         .then(function(list){render(base,res,list.filter(Boolean).slice(0,6));});
     }).catch(function(){
       out.textContent=''; out.appendChild(el('p','dom-sub','Não foi possível consultar agora. Tente de novo em instantes.'));
-    }).finally(function(){btn.disabled=false; btn.textContent='Consultar domínio';});
+    }).finally(function(){btn.disabled=false; btn.textContent='Consultar';});
   }
   form.addEventListener('submit',function(e){e.preventDefault(); run(input.value);});
 })();

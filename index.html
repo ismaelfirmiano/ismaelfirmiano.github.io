@@ -359,9 +359,6 @@ p{margin:0;}
 .seg .ind{position:absolute; top:6px; bottom:6px; left:6px; border-radius:11px; background:var(--green); transition:transform .5s var(--ease), width .5s var(--ease);}
 .plans{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:stretch;}
 .plans[hidden]{display:none;}
-.plans.anim .plan{animation:rise .7s var(--ease-out) both;}
-.plans.anim .plan:nth-child(2){animation-delay:.07s} .plans.anim .plan:nth-child(3){animation-delay:.14s}
-@keyframes rise{from{opacity:0; transform:translateY(24px);}to{opacity:1; transform:none;}}
 @media(max-width:960px){.plans{grid-template-columns:1fr; max-width:480px;}}
 .plan{position:relative; display:flex; flex-direction:column; padding:34px 30px 30px; border-radius:24px; background:var(--paper); box-shadow:0 0 0 1px var(--line);}
 .plan h3{font-size:22px; letter-spacing:-.02em; min-height:2.1em;}
@@ -1022,7 +1019,6 @@ footer a:hover{color:var(--sand);}
     tabs.forEach(function(x){
       var on = x === t, panel = document.getElementById(x.getAttribute('aria-controls'));
       x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; panel.hidden = !on;
-      if (on && !reduce) { panel.classList.remove('anim'); void panel.offsetWidth; panel.classList.add('anim'); }
     });
     placeInd(t);
   }

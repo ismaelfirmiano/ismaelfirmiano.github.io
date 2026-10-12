@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Forno da Vila — Projeto conceitual Firmiano</title>
+<meta name="description" content="Projeto conceitual da Firmiano: landing page para uma padaria artesanal fictícia.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#B4532A">
+<link rel="icon" type="image/svg+xml" href="../firmiano-identidade/firmiano-icone-quadrado.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F5EBDD; --cream-2:#EEDFCB; --paper:#FBF6EE; --terra:#B4532A; --terra-hi:#C9633A; --crust:#7A3E1D; --brown:#3B2416; --olive:#5E6B33; --ink-2:#6E5646; --line:#E3D2BC; --serif:'Fraunces',Georgia,serif;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:110px;}
+body{margin:0; font-family:'DM Sans',system-ui,sans-serif; color:var(--brown); background:var(--paper); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;}
+a{color:inherit; text-decoration:none;}
+h1,h2,h3{margin:0; font-family:var(--serif); font-weight:700; line-height:1; letter-spacing:-.02em;}
+p{margin:0;}
+:focus-visible{outline:2.5px solid var(--terra); outline-offset:3px; border-radius:6px;}
+.wrap{max-width:1160px; margin:0 auto; padding:0 24px;}
+
+.concept{background:#0B3D2E; color:#F3EFE4; font-size:14px; font-family:system-ui,sans-serif;}
+.concept .wrap{display:flex; align-items:center; justify-content:space-between; gap:12px 20px; padding-top:10px; padding-bottom:10px; flex-wrap:wrap;}
+.concept a{text-decoration:underline; text-underline-offset:3px;}
+.concept .c-cta{background:#27805F; color:#fff; text-decoration:none; padding:7px 14px; border-radius:10px; font-weight:600; white-space:nowrap;}
+
+.nav{position:sticky; top:0; z-index:20; background:rgba(251,246,238,.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--line);}
+.nav .wrap{display:flex; align-items:center; justify-content:space-between; height:74px; gap:20px;}
+.brand{font-family:var(--serif); font-size:26px; font-weight:800; color:var(--terra); font-style:italic; letter-spacing:-.03em;}
+.links{display:flex; gap:28px; font-weight:500; font-size:15px; color:var(--ink-2);}
+.links a:hover{color:var(--terra);}
+.btn{display:inline-flex; align-items:center; gap:10px; padding:15px 24px; border-radius:16px; font-weight:700; font-size:15.5px; border:0; cursor:pointer; font-family:inherit; transition:transform .2s, background .2s;}
+.btn:hover{transform:translateY(-1px);}
+.btn-terra{background:var(--terra); color:#fff; box-shadow:0 12px 24px -12px rgba(180,83,42,.8);}
+.btn-terra:hover{background:var(--terra-hi);}
+.btn-ghost{color:var(--brown); box-shadow:inset 0 0 0 1.5px var(--line); background:var(--paper);}
+.nav .btn{padding:11px 18px;}
+
+.hero{background:var(--cream); padding:72px 0 0; overflow:hidden;}
+.hero .wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:end;}
+.hero .txt{padding-bottom:88px;}
+.stamp{display:inline-block; font-size:13px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--olive); border:1.5px solid var(--olive); padding:6px 12px; border-radius:999px;}
+.hero h1{font-size:clamp(48px,7.4vw,96px); margin-top:24px; font-weight:800;}
+.hero h1 em{color:var(--terra); font-style:italic; font-weight:600;}
+.hero .lead{margin-top:24px; max-width:44ch; color:var(--ink-2); font-size:19px;}
+.ctas{display:flex; gap:12px; flex-wrap:wrap; margin-top:32px;}
+.oven{position:relative; height:100%; min-height:440px;}
+.loaf{position:absolute; border-radius:50%; background:radial-gradient(60% 50% at 40% 35%, #E2A066, #B8672F 55%, #8A4520); box-shadow:inset -12px -16px 30px rgba(60,25,8,.35), 0 30px 40px -24px rgba(60,25,8,.6);}
+.loaf::after{content:""; position:absolute; left:22%; right:22%; top:38%; height:8%; border-radius:999px; background:#F1D2A8; transform:rotate(-18deg); box-shadow:0 26px 0 -2px #F1D2A8, 0 -26px 0 -2px #F1D2A8; opacity:.85;}
+.l1{width:78%; aspect-ratio:1.45/1; right:4%; bottom:-14%;}
+.l2{width:40%; aspect-ratio:1/1; left:2%; bottom:26%; background:radial-gradient(60% 50% at 40% 35%, #EBB57A, #C27A3E 55%, #95522A);}
+.l2::after{transform:rotate(30deg);}
+.tag{position:absolute; right:6%; top:10%; background:var(--paper); border-radius:18px; padding:14px 18px; box-shadow:0 20px 40px -20px rgba(60,25,8,.5); font-size:14px;}
+.tag b{display:block; font-family:var(--serif); font-size:22px; color:var(--terra);}
+
+.strip{background:var(--brown); color:var(--cream); font-family:var(--serif); font-size:20px; font-style:italic; overflow:hidden; white-space:nowrap;}
+.strip div{display:inline-block; padding:16px 0; animation:roll 30s linear infinite;}
+.strip span{margin:0 26px;}
+.strip span::after{content:"✻"; margin-left:52px; color:var(--terra-hi); font-style:normal;}
+@keyframes roll{to{transform:translateX(-50%);}}
+
+section{padding:104px 0;}
+.head{display:flex; justify-content:space-between; align-items:end; gap:24px; flex-wrap:wrap; margin-bottom:48px;}
+.head h2{font-size:clamp(38px,5vw,64px);}
+.head p{max-width:42ch; color:var(--ink-2);}
+.menu{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+.item{background:var(--cream); border-radius:26px; padding:26px; display:flex; flex-direction:column; transition:transform .25s;}
+.item:hover{transform:rotate(-.6deg) translateY(-4px);}
+.plate{height:150px; border-radius:18px; background:var(--cream-2); display:grid; place-items:center; margin-bottom:22px; position:relative; overflow:hidden;}
+.plate i{display:block; border-radius:50%;}
+.p-bread i{width:62%; aspect-ratio:1.5/1; background:radial-gradient(60% 50% at 40% 35%, #E2A066, #B8672F 55%, #8A4520);}
+.p-crois i{width:52%; aspect-ratio:2/1; border-radius:50% 50% 40% 40%; background:linear-gradient(100deg,#C9813F 0 18%,#E3AA62 18% 34%,#C9813F 34% 50%,#E3AA62 50% 66%,#C9813F 66% 82%,#E3AA62 82%); transform:rotate(-8deg);}
+.p-cake i{width:46%; aspect-ratio:1/1; background:radial-gradient(circle at 50% 50%, var(--cream-2) 0 22%, #E9A23B 23% 100%);}
+.p-cheese i{width:24%; aspect-ratio:1/1; background:radial-gradient(60% 50% at 40% 35%, #F3D08A, #DFA548); box-shadow:60px 10px 0 -4px #E7B45F, -58px 14px 0 -6px #E2AE58;}
+.p-foc i{width:64%; aspect-ratio:1.6/1; border-radius:14px; background:radial-gradient(circle at 25% 35%, var(--olive) 0 5%, transparent 6%), radial-gradient(circle at 65% 60%, var(--olive) 0 5%, transparent 6%), radial-gradient(circle at 45% 25%, #C2462A 0 4%, transparent 5%), linear-gradient(#E9BF7A,#D9A35A);}
+.p-coffee i{width:30%; aspect-ratio:1/1; background:radial-gradient(circle, #5A3420 0 52%, #fff 53% 66%, transparent 67%); box-shadow:0 0 0 14px var(--cream-2), 0 0 0 16px #D9C3A5;}
+.item h3{font-size:26px;}
+.item p{margin-top:8px; color:var(--ink-2); font-size:15.5px;}
+.price{margin-top:auto; padding-top:18px; display:flex; justify-content:space-between; align-items:baseline; font-weight:700;}
+.price b{font-family:var(--serif); font-size:24px; color:var(--terra);}
+.price span{font-size:13.5px; color:var(--ink-2); font-weight:500;}
+
+.orders{background:var(--terra); color:#fff; border-radius:36px; margin:0 24px; padding:80px 0;}
+.orders .wrap{display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:center;}
+.orders h2{font-size:clamp(38px,5vw,62px);}
+.orders p{margin-top:18px; color:rgba(255,255,255,.85); max-width:46ch;}
+.orders .btn{background:var(--cream); color:var(--terra); margin-top:30px;}
+.checks{list-style:none; margin:0; padding:0; display:grid; gap:14px;}
+.checks li{background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:18px; padding:18px 20px; display:flex; gap:14px; align-items:flex-start;}
+.checks b{display:block; font-family:var(--serif); font-size:20px;}
+.checks span{font-size:15px; color:rgba(255,255,255,.8);}
+
+.visit{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+.box{border-radius:28px; padding:36px; background:var(--cream);}
+.box h3{font-size:32px;}
+.hours{margin:20px 0 0; padding:0; list-style:none;}
+.hours li{display:flex; justify-content:space-between; padding:13px 0; border-bottom:1px dashed var(--line);}
+.hours li span:last-child{font-weight:700;}
+.today{display:inline-flex; gap:8px; align-items:center; margin-top:20px; font-weight:700; color:var(--olive);}
+.today i{width:9px; height:9px; border-radius:50%; background:#4F9A3B; box-shadow:0 0 0 4px rgba(79,154,59,.2);}
+.box p{margin-top:12px; color:var(--ink-2);}
+
+footer{background:var(--brown); color:rgba(245,235,221,.65); font-size:14.5px; padding:36px 0; margin-top:104px;}
+footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+footer a{color:var(--cream); text-decoration:underline; text-underline-offset:3px;}
+
+.toast{position:fixed; left:50%; bottom:24px; transform:translate(-50%,140%); background:#0B3D2E; color:#F3EFE4; padding:16px 20px; border-radius:16px; box-shadow:0 20px 40px -12px rgba(0,0,0,.4); font-size:15px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; max-width:calc(100% - 32px); transition:transform .35s cubic-bezier(.2,.8,.2,1); z-index:50;}
+.toast:not(.show){visibility:hidden; transition:transform .35s cubic-bezier(.2,.8,.2,1), visibility 0s .35s;}
+.toast.show{transform:translate(-50%,0);}
+.toast a{background:#27805F; color:#fff; padding:8px 14px; border-radius:10px; font-weight:600; white-space:nowrap;}
+
+@media(max-width:900px){
+  .links{display:none;}
+  .hero .wrap,.orders .wrap,.visit{grid-template-columns:1fr;}
+  .hero .txt{padding-bottom:0;}
+  .oven{min-height:320px;}
+  .menu{grid-template-columns:1fr 1fr;}
+  section{padding:80px 0;}
+  .orders{margin:0 12px; padding:64px 0;}
+}
+@media(max-width:600px){ .menu{grid-template-columns:1fr;} .nav .btn{display:none;} .ctas .btn{width:100%; justify-content:center;} }
+@media (prefers-reduced-motion: reduce){*{transition:none !important; animation:none !important; scroll-behavior:auto !important;}}
+</style>
+</head>
+<body>
+
+<div class="concept" role="note">
+  <div class="wrap">
+    <span>Projeto conceitual da <a href="../">Firmiano</a>. A padaria, os produtos e os preços desta página são fictícios.</span>
+    <a class="c-cta" href="https://wa.me/5521998908129?text=Ol%C3%A1!%20Vi%20o%20exemplo%20da%20padaria%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Quero um site assim</a>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#topo">Forno da Vila</a>
+    <nav class="links" aria-label="Principal"><a href="#cardapio">Cardápio</a><a href="#encomendas">Encomendas</a><a href="#visite">Horários</a></nav>
+    <a class="btn btn-terra demo" href="#">Encomendar</a>
+  </div>
+</header>
+
+<main id="topo">
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="txt">
+      <span class="stamp">Padaria artesanal · Santa Rosa</span>
+      <h1>Pão de verdade, saindo do forno <em>às 7h</em>.</h1>
+      <p class="lead">Fermentação natural de 24 horas, farinha selecionada e nada de conservantes. Passe para tomar um café ou encomende pelo WhatsApp.</p>
+      <div class="ctas">
+        <a class="btn btn-terra demo" href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Encomendar pelo WhatsApp</a>
+        <a class="btn btn-ghost" href="#cardapio">Ver cardápio</a>
+      </div>
+    </div>
+    <div class="oven" aria-hidden="true">
+      <div class="loaf l2"></div>
+      <div class="loaf l1"></div>
+      <div class="tag"><b>Fornada 2</b>pronta às 16h</div>
+    </div>
+  </div>
+</section>
+<div class="strip" aria-hidden="true"><div><span>Fermentação natural</span><span>Café coado na hora</span><span>Encomendas para festas</span><span>Retirada ou entrega no bairro</span><span>Fermentação natural</span><span>Café coado na hora</span><span>Encomendas para festas</span><span>Retirada ou entrega no bairro</span></div></div>
+
+<section id="cardapio">
+  <div class="wrap">
+    <div class="head"><h2>Do forno de hoje</h2><p>Os favoritos da casa. O cardápio completo muda conforme a estação.</p></div>
+    <div class="menu">
+      <article class="item"><div class="plate p-bread" aria-hidden="true"><i></i></div><h3>Pão de fermentação natural</h3><p>Casca crocante e miolo úmido, 24 horas de fermentação.</p><div class="price"><b>R$ 24</b><span>unidade, 800 g</span></div></article>
+      <article class="item"><div class="plate p-crois" aria-hidden="true"><i></i></div><h3>Croissant de manteiga</h3><p>Massa folhada feita na casa, com manteiga de verdade.</p><div class="price"><b>R$ 11</b><span>unidade</span></div></article>
+      <article class="item"><div class="plate p-cake" aria-hidden="true"><i></i></div><h3>Bolo de laranja</h3><p>Com calda de laranja-pera. Inteiro ou em fatia.</p><div class="price"><b>R$ 42</b><span>inteiro</span></div></article>
+      <article class="item"><div class="plate p-cheese" aria-hidden="true"><i></i></div><h3>Pão de queijo</h3><p>Queijo canastra meia-cura, assado na hora.</p><div class="price"><b>R$ 64</b><span>por kg</span></div></article>
+      <article class="item"><div class="plate p-foc" aria-hidden="true"><i></i></div><h3>Focaccia da casa</h3><p>Azeitonas, tomate-cereja e alecrim.</p><div class="price"><b>R$ 29</b><span>unidade</span></div></article>
+      <article class="item"><div class="plate p-coffee" aria-hidden="true"><i></i></div><h3>Café coado</h3><p>Grãos de pequenos produtores da Mantiqueira.</p><div class="price"><b>R$ 8</b><span>xícara</span></div></article>
+    </div>
+  </div>
+</section>
+
+<div class="orders" id="encomendas">
+  <div class="wrap">
+    <div>
+      <h2>Encomendas para festas e cafés da manhã</h2>
+      <p>Kits de café da manhã, mesas de aniversário e bolos sob encomenda. Peça com 48 horas de antecedência.</p>
+      <a class="btn demo" href="#">Fazer encomenda</a>
+    </div>
+    <ul class="checks">
+      <li><div><b>Retirada na loja</b><span>No horário que você escolher.</span></div></li>
+      <li><div><b>Entrega no bairro</b><span>Santa Rosa, Icaraí e Vital Brazil.</span></div></li>
+      <li><div><b>Pagamento por Pix ou cartão</b><span>Confirmação na hora pelo WhatsApp.</span></div></li>
+    </ul>
+  </div>
+</div>
+
+<section id="visite">
+  <div class="wrap visit">
+    <div class="box">
+      <h3>Horários</h3>
+      <ul class="hours">
+        <li><span>Terça a sexta</span><span>7h às 19h</span></li>
+        <li><span>Sábado e domingo</span><span>7h às 14h</span></li>
+        <li><span>Segunda</span><span>Fechado</span></li>
+      </ul>
+      <span class="today"><i></i>Aberto agora</span>
+    </div>
+    <div class="box">
+      <h3>Venha tomar um café</h3>
+      <p>Santa Rosa, Niterói/RJ. Endereço fictício para este exemplo.</p>
+      <p>Mesas na calçada, Wi-Fi e espaço para carrinho de bebê.</p>
+      <div class="ctas"><a class="btn btn-terra demo" href="#">Como chegar</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer style="margin-top:0">
+  <div class="wrap">
+    <span>Forno da Vila é uma padaria fictícia. Página criada pela Firmiano como projeto conceitual.</span>
+    <a href="../#exemplos">Ver outros exemplos</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><span>Neste exemplo, o botão abriria o WhatsApp ou o mapa da padaria.</span><a href="https://wa.me/5521998908129?text=Ol%C3%A1!%20Vi%20o%20exemplo%20da%20padaria%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Quero um site assim</a></div>
+<script>
+(function(){var t=document.getElementById('toast'),h;document.querySelectorAll('.demo').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();t.classList.add('show');clearTimeout(h);h=setTimeout(function(){t.classList.remove('show');},5000);});});})();
+</script>
+</body>
+</html>

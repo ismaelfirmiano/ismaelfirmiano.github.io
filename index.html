@@ -127,10 +127,12 @@ p{margin:0;}
 .menu .btn{margin-top:22px; font-family:var(--body); font-size:16px; align-self:flex-start;}
 .nav.open .menu{clip-path:circle(150% at calc(100% - 46px) 38px); visibility:visible;}
 .nav.open .menu a{opacity:1; transform:none;}
-.nav.open .menu a:nth-child(2){transition-delay:.05s} .nav.open .menu a:nth-child(3){transition-delay:.1s} .nav.open .menu a:nth-child(4){transition-delay:.15s} .nav.open .menu a:nth-child(5){transition-delay:.2s} .nav.open .menu a:nth-child(6){transition-delay:.25s}
+.nav.open .menu a:nth-child(2){transition-delay:.05s} .nav.open .menu a:nth-child(3){transition-delay:.1s} .nav.open .menu a:nth-child(4){transition-delay:.15s} .nav.open .menu a:nth-child(5){transition-delay:.2s} .nav.open .menu a:nth-child(6){transition-delay:.25s} .nav.open .menu a:nth-child(7){transition-delay:.3s}
 .nav.open .lg-white{opacity:1 !important;} .nav.open .lg-green{opacity:0 !important;}
 .nav.open{background:transparent !important; box-shadow:none !important; backdrop-filter:none !important;}
-@media(max-width:940px){.nav-links,.nav-cta{display:none;} .burger{display:inline-flex;}}
+.nav-links a{white-space:nowrap;}
+@media(max-width:1240px){.nav-links{gap:22px;}}
+@media(max-width:1100px){.nav-links,.nav-cta{display:none;} .burger{display:inline-flex;}}
 
 /* ---------- Hero ---------- */
 .hero{position:relative; background:var(--green-ink); color:var(--sand); overflow:hidden; isolation:isolate; padding:150px 0 0;}
@@ -288,6 +290,57 @@ p{margin:0;}
 .reply span{font-size:14.5px; color:var(--ink-2);}
 .clock .hand{transform-origin:12px 12px; animation:spin 6s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
+
+/* ---------- Exemplos ---------- */
+.work-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+.work{display:flex; flex-direction:column; background:var(--paper); border-radius:24px; overflow:hidden; box-shadow:0 0 0 1px rgba(14,31,25,.07); transition:transform .45s var(--ease-out), box-shadow .45s var(--ease-out);}
+.work:hover{transform:translateY(-6px); box-shadow:0 0 0 1px rgba(14,31,25,.07), 0 30px 50px -30px rgba(11,61,46,.45);}
+.shot{aspect-ratio:4/3; padding:22px 22px 0; display:flex; align-items:flex-end; overflow:hidden;}
+.frame{width:100%; height:100%; border-radius:12px 12px 0 0; overflow:hidden; box-shadow:0 18px 40px -18px rgba(0,0,0,.35); transition:transform .6s var(--ease-out); transform-origin:50% 100%; display:flex; flex-direction:column;}
+.work:hover .frame{transform:translateY(-4px) scale(1.015);}
+.fchrome{height:22px; flex-shrink:0; display:flex; gap:5px; align-items:center; padding:0 10px; background:rgba(255,255,255,.85);}
+.fchrome i{width:7px; height:7px; border-radius:50%; background:rgba(0,0,0,.15);}
+.fbody{flex:1; padding:14px 16px; position:relative; overflow:hidden;}
+.fnav{display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;}
+.fnav b{font-size:11px; font-weight:800; letter-spacing:-.01em;}
+.fnav span{display:flex; gap:6px;} .fnav span i{width:16px; height:3px; border-radius:2px; background:currentColor; opacity:.3;}
+.fh{font-weight:800; letter-spacing:-.03em; line-height:1.02; font-size:clamp(15px,1.7vw,21px); max-width:11ch;}
+.fl{display:block; height:4px; border-radius:2px; background:currentColor; opacity:.22; margin-top:7px;}
+.fbtn{display:inline-block; margin-top:12px; height:16px; width:70px; border-radius:999px;}
+/* odontologia */
+.s-odonto{background:#D7EEF0;}
+.s-odonto .fbody{background:linear-gradient(180deg,#F3F8F8,#fff); color:#0E4F5C;}
+.s-odonto .fbtn{background:#F07A5F;}
+.s-odonto .fart{position:absolute; right:14px; bottom:-14px; width:38%; aspect-ratio:1; border-radius:22px; background:radial-gradient(120% 90% at 20% 10%,#1B7A8D,#0E4F5C 60%);}
+.s-odonto .fart::after{content:""; position:absolute; left:-16px; top:30%; width:60px; height:20px; border-radius:7px; background:#fff; box-shadow:0 6px 14px -6px rgba(0,0,0,.3);}
+/* advocacia */
+.s-adv{background:#E2DACB;}
+.s-adv .fchrome{background:#1A2740;} .s-adv .fchrome i{background:rgba(246,241,231,.25);}
+.s-adv .fbody{background:#111B2E; color:#F6F1E7; background-image:repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),rgba(246,241,231,.06) calc(25% - 1px) 25%);}
+.s-adv .fh{font-family:Georgia,'Times New Roman',serif; font-weight:400; letter-spacing:-.01em; font-size:clamp(17px,1.9vw,24px);}
+.s-adv .fh em{color:#C9A56E;}
+.s-adv .fbtn{background:#B08D57; border-radius:0;}
+.s-adv .fbar{position:absolute; left:16px; right:16px; bottom:12px; border-top:1px solid rgba(246,241,231,.18); display:grid; grid-template-columns:repeat(3,1fr); gap:10px; padding-top:9px;}
+.s-adv .fbar i{height:4px; border-radius:2px; background:rgba(246,241,231,.3);}
+/* padaria */
+.s-pad{background:#EEDFCB;}
+.s-pad .fbody{background:#F5EBDD; color:#3B2416;}
+.s-pad .fnav b{color:#B4532A; font-style:italic; font-family:Georgia,serif;}
+.s-pad .fh{font-family:Georgia,serif; font-size:clamp(16px,1.8vw,22px);}
+.s-pad .fh em{color:#B4532A;}
+.s-pad .fbtn{background:#B4532A; border-radius:7px;}
+.s-pad .floaf{position:absolute; right:-6%; bottom:-16%; width:52%; aspect-ratio:1.45/1; border-radius:50%; background:radial-gradient(60% 50% at 40% 35%,#E2A066,#B8672F 55%,#8A4520);}
+.s-pad .floaf::after{content:""; position:absolute; left:24%; right:24%; top:40%; height:8%; border-radius:9px; background:#F1D2A8; transform:rotate(-18deg); box-shadow:0 12px 0 -1px #F1D2A8, 0 -12px 0 -1px #F1D2A8;}
+.work-info{padding:24px 26px 28px; display:flex; flex-direction:column; flex:1;}
+.work-info .kind{font-size:13px; font-weight:600; letter-spacing:.04em; color:var(--leaf);}
+.work-info h3{font-size:25px; letter-spacing:-.02em; margin-top:8px;}
+.work-info p{margin-top:10px; color:var(--ink-2); font-size:15.5px;}
+.work-info .more{margin-top:auto; padding-top:20px; font-weight:600; color:var(--green); display:inline-flex; align-items:center; gap:8px;}
+.work-info .more svg{transition:transform .35s var(--ease-out);}
+.work:hover .more svg{transform:translateX(4px);}
+.work-note{margin-top:28px; font-size:14.5px; color:var(--ink-2); max-width:72ch;}
+@media(max-width:980px){.work-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.work-grid{grid-template-columns:1fr;}}
 
 /* ---------- Domain ---------- */
 .dark{background:var(--green); color:var(--sand); position:relative; overflow:hidden; isolation:isolate;}
@@ -508,6 +561,7 @@ footer a:hover{color:var(--sand);}
     </a>
     <nav class="nav-links" aria-label="Principal">
       <a href="#por-que">Por que a Firmiano</a>
+      <a href="#exemplos">Exemplos</a>
       <a href="#dominio">Consultar domínio</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#precos">Preços</a>
@@ -517,6 +571,7 @@ footer a:hover{color:var(--sand);}
     <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
     <div class="menu" id="menu">
       <a href="#por-que">Por que a Firmiano</a>
+      <a href="#exemplos">Exemplos</a>
       <a href="#dominio">Consultar domínio</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#precos">Preços</a>
@@ -642,6 +697,60 @@ footer a:hover{color:var(--sand);}
         </div>
       </article>
     </div>
+  </div>
+</section>
+
+<section class="sec" id="exemplos">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <h2>Veja como fica um site pronto.</h2>
+      <p>Três projetos conceituais, feitos para segmentos diferentes, mostram o padrão de design, texto e organização que você recebe. Abra e navegue como o seu cliente navegaria.</p>
+    </div>
+    <div class="work-grid">
+      <a class="work" href="exemplos/odontologia.html" data-reveal>
+        <div class="shot s-odonto" aria-hidden="true"><div class="frame"><div class="fchrome"><i></i><i></i><i></i></div><div class="fbody">
+          <div class="fnav"><b>Lumen</b><span><i></i><i></i><i></i></span></div>
+          <div class="fh">Cuidar do sorriso pode ser tranquilo.</div>
+          <span class="fl" style="width:46%"></span><span class="fl" style="width:38%"></span>
+          <span class="fbtn"></span><div class="fart"></div>
+        </div></div></div>
+        <div class="work-info">
+          <span class="kind">Clínica odontológica · Landing page</span>
+          <h3>Lumen Odontologia</h3>
+          <p>Agendamento pelo WhatsApp, tratamentos explicados com clareza, horários e localização.</p>
+          <span class="more">Ver o exemplo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="work" href="exemplos/advocacia.html" data-reveal style="--d:.08s">
+        <div class="shot s-adv" aria-hidden="true"><div class="frame"><div class="fchrome"><i></i><i></i><i></i></div><div class="fbody">
+          <div class="fnav"><b style="font-family:Georgia,serif;font-weight:400;font-size:12px">Prado Teixeira</b><span><i></i><i></i><i></i></span></div>
+          <div class="fh">Orientação jurídica com <em>linguagem clara</em>.</div>
+          <span class="fbtn"></span>
+          <div class="fbar"><i></i><i></i><i></i></div>
+        </div></div></div>
+        <div class="work-info">
+          <span class="kind">Escritório de advocacia · Site institucional</span>
+          <h3>Prado Teixeira Advocacia</h3>
+          <p>Áreas de atuação, etapas do atendimento e texto sóbrio, sem promessa de resultado.</p>
+          <span class="more">Ver o exemplo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="work" href="exemplos/padaria.html" data-reveal style="--d:.16s">
+        <div class="shot s-pad" aria-hidden="true"><div class="frame"><div class="fchrome"><i></i><i></i><i></i></div><div class="fbody">
+          <div class="fnav"><b>Forno da Vila</b><span><i></i><i></i><i></i></span></div>
+          <div class="fh">Pão de verdade, saindo do forno <em>às 7h</em>.</div>
+          <span class="fl" style="width:40%"></span>
+          <span class="fbtn"></span><div class="floaf"></div>
+        </div></div></div>
+        <div class="work-info">
+          <span class="kind">Padaria artesanal · Landing page</span>
+          <h3>Forno da Vila</h3>
+          <p>Cardápio com preços, encomendas pelo WhatsApp e horário de funcionamento à vista.</p>
+          <span class="more">Ver o exemplo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+    </div>
+    <p class="work-note" data-reveal>As empresas desses exemplos são fictícias. O seu site é criado do zero com a identidade, os textos e as fotos do seu negócio.</p>
   </div>
 </section>
 
@@ -850,9 +959,8 @@ footer a:hover{color:var(--sand);}
       <div class="qa"><button aria-expanded="false">O domínio fica no meu nome? E a renovação?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Sim. O domínio é registrado no nome do cliente. O registro está incluso nos planos com domínio; a renovação anual é por conta do cliente e cobrada pelo Registro.br (hoje cerca de R$ 40 por ano para .com.br).</p></div></div></div>
       <div class="qa"><button aria-expanded="false">Quem cuida do meu site depois de publicado?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>A mesma pessoa que desenvolveu o projeto. Não há repasse para outra equipe de suporte: quem entende do seu site é quem atende o pedido.</p></div></div></div>
       <div class="qa"><button aria-expanded="false">Como funciona a indicação?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Quem já é cliente Firmiano pode indicar outras pessoas. Se a indicação fechar e o projeto for concluído, você ganha R$50 por uma landing page ou R$100 por um site WordPress.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">Vocês usam inteligência artificial?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Usamos IA como ferramenta de apoio, por exemplo para acelerar rascunhos e testar ideias de texto. A estrutura, o design e o texto final são decididos e revisados por uma pessoa, e nada é publicado sem a sua aprovação.</p></div></div></div>
       <div class="qa"><button aria-expanded="false">Que tipo de empresa vocês atendem?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Qualquer empresa, profissional autônomo ou instituição que precise de um site. Conte o que você precisa e a gente diz se faz sentido e quanto custa.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">É possível pedir um sistema além de um site em WordPress?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Estamos abrindo espaço para os primeiros clientes de sistemas sob medida em nuvem, como controle de estoque, biblioteca ou ERP simplificado. Fale com a gente para entender se o seu caso já pode entrar nessa fase.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false">É possível pedir um sistema além de um site em WordPress?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Sim. Além de sites, a Firmiano desenvolve sistemas sob medida em nuvem, como controle de estoque, gestão de biblioteca ou um ERP simplificado para a rotina da sua empresa. Escopo, prazo e valor são definidos depois de entender o seu processo. Conte no WhatsApp o que você precisa.</p></div></div></div>
     </div>
   </div>
 </section>
@@ -901,7 +1009,7 @@ footer a:hover{color:var(--sand);}
       </div>
       <div>
         <h4>Navegação</h4>
-        <ul><li><a href="#por-que">Por que a Firmiano</a></li><li><a href="#dominio">Consultar domínio</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#precos">Preços</a></li><li><a href="#indique">Indique e ganhe</a></li><li><a href="#faq">Perguntas</a></li></ul>
+        <ul><li><a href="#por-que">Por que a Firmiano</a></li><li><a href="#exemplos">Exemplos</a></li><li><a href="#dominio">Consultar domínio</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#precos">Preços</a></li><li><a href="#indique">Indique e ganhe</a></li><li><a href="#faq">Perguntas</a></li></ul>
       </div>
       <div>
         <h4>Contato</h4>

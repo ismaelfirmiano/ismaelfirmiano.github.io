@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lumen Odontologia — Projeto conceitual Firmiano</title>
+<meta name="description" content="Projeto conceitual da Firmiano: landing page para uma clínica odontológica fictícia.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0E4F5C">
+<link rel="icon" type="image/svg+xml" href="../firmiano-identidade/firmiano-icone-quadrado.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0E4F5C; --teal-2:#13697A; --aqua:#D7EEF0; --mist:#F3F8F8; --coral:#F07A5F; --ink:#14262B; --ink-2:#526368; --line:#DCE7E8; --white:#fff;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top:120px;}
+body{margin:0; font-family:'Manrope',system-ui,sans-serif; color:var(--ink); background:var(--white); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;}
+a{color:inherit; text-decoration:none;}
+h1,h2,h3{margin:0; letter-spacing:-.03em; line-height:1.08;}
+p{margin:0;}
+:focus-visible{outline:2.5px solid var(--coral); outline-offset:3px; border-radius:6px;}
+.wrap{max-width:1160px; margin:0 auto; padding:0 24px;}
+
+/* Faixa de projeto conceitual */
+.concept{background:#0B3D2E; color:#F3EFE4; font-size:14px; font-family:system-ui,sans-serif;}
+.concept .wrap{display:flex; align-items:center; justify-content:space-between; gap:12px 20px; padding-top:10px; padding-bottom:10px; flex-wrap:wrap;}
+.concept a{text-decoration:underline; text-underline-offset:3px;}
+.concept .c-cta{background:#27805F; color:#fff; text-decoration:none; padding:7px 14px; border-radius:10px; font-weight:600; white-space:nowrap;}
+
+.nav{position:sticky; top:0; z-index:20; background:rgba(255,255,255,.9); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line);}
+.nav .wrap{display:flex; align-items:center; justify-content:space-between; height:72px; gap:20px;}
+.brand{display:flex; align-items:center; gap:10px; font-weight:800; font-size:20px; letter-spacing:-.02em; color:var(--teal);}
+.brand .mk{width:34px; height:34px; border-radius:11px; background:var(--teal); display:grid; place-items:center;}
+.links{display:flex; gap:28px; font-weight:500; font-size:15px; color:var(--ink-2);}
+.links a:hover{color:var(--teal);}
+.btn{display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:999px; font-weight:700; font-size:15.5px; border:0; cursor:pointer; font-family:inherit; transition:transform .2s, background .2s;}
+.btn:hover{transform:translateY(-1px);}
+.btn-coral{background:var(--coral); color:#fff; box-shadow:0 10px 24px -10px rgba(240,122,95,.8);}
+.btn-coral:hover{background:#E46A4F;}
+.btn-ghost{background:var(--white); color:var(--teal); box-shadow:inset 0 0 0 1.5px var(--line);}
+.nav .btn{padding:11px 18px;}
+
+.hero{background:linear-gradient(180deg,var(--mist),#fff); padding:80px 0 96px; overflow:hidden;}
+.hero .wrap{display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:center;}
+.eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:var(--teal-2); background:var(--aqua); padding:7px 14px; border-radius:999px;}
+.eyebrow i{width:7px; height:7px; border-radius:50%; background:#2BB673;}
+.hero h1{font-size:clamp(40px,5.6vw,68px); margin-top:22px; color:var(--teal); font-weight:800;}
+.hero h1 em{font-style:normal; color:var(--coral);}
+.hero p.lead{margin-top:22px; font-size:19px; color:var(--ink-2); max-width:46ch;}
+.ctas{display:flex; gap:12px; flex-wrap:wrap; margin-top:32px;}
+.facts{display:flex; gap:28px; flex-wrap:wrap; margin-top:36px; padding:0; list-style:none; font-size:15px; color:var(--ink-2);}
+.facts b{display:block; font-size:22px; color:var(--teal); letter-spacing:-.02em;}
+.art{position:relative; aspect-ratio:1/1.02; border-radius:40px; background:radial-gradient(120% 90% at 20% 10%, #1B7A8D, var(--teal) 60%); box-shadow:0 40px 80px -40px rgba(14,79,92,.6); display:grid; place-items:center;}
+.art::before{content:""; position:absolute; inset:28px; border-radius:30px; border:1px dashed rgba(255,255,255,.22);}
+.art svg.tooth{width:46%; height:auto;}
+.float{position:absolute; background:#fff; border-radius:18px; padding:14px 18px; box-shadow:0 20px 40px -18px rgba(20,38,43,.35); font-size:14px; display:flex; gap:12px; align-items:center;}
+.float b{display:block; font-size:15px;}
+.float span{color:var(--ink-2);}
+.float .dot{width:38px; height:38px; border-radius:12px; display:grid; place-items:center; background:var(--aqua); color:var(--teal); flex-shrink:0;}
+.f1{left:-22px; bottom:16%;}
+.f2{right:-14px; top:12%;}
+
+section{padding:104px 0;}
+.head{max-width:640px; margin-bottom:52px;}
+.head h2{font-size:clamp(32px,4vw,48px); color:var(--teal); font-weight:800;}
+.head p{margin-top:16px; color:var(--ink-2); font-size:18px;}
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+.card{border-radius:24px; padding:30px; background:var(--mist); border:1px solid var(--line); transition:transform .25s, box-shadow .25s;}
+.card:hover{transform:translateY(-4px); box-shadow:0 24px 40px -28px rgba(14,79,92,.45);}
+.card .ic{width:48px; height:48px; border-radius:14px; background:#fff; display:grid; place-items:center; color:var(--teal); box-shadow:0 0 0 1px var(--line);}
+.card h3{font-size:21px; margin-top:22px;}
+.card p{margin-top:8px; color:var(--ink-2); font-size:15.5px;}
+
+.first{background:var(--teal); color:#fff;}
+.first .head h2{color:#fff;}
+.first .head p{color:rgba(255,255,255,.75);}
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; counter-reset:s;}
+.step{padding:30px; border-radius:24px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12);}
+.step::before{counter-increment:s; content:"0" counter(s); font-weight:800; font-size:15px; color:var(--coral);}
+.step h3{font-size:22px; margin-top:14px;}
+.step p{margin-top:8px; color:rgba(255,255,255,.75); font-size:15.5px;}
+
+.split{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+.panel{border-radius:28px; padding:36px; border:1px solid var(--line);}
+.panel h3{font-size:24px; color:var(--teal);}
+.hours{margin:20px 0 0; padding:0; list-style:none;}
+.hours li{display:flex; justify-content:space-between; padding:13px 0; border-bottom:1px solid var(--line); font-size:16px;}
+.hours li span:last-child{font-weight:700;}
+.map{margin-top:20px; height:180px; border-radius:18px; background:
+  linear-gradient(90deg,transparent 48%,#fff 48%,#fff 52%,transparent 52%),
+  linear-gradient(0deg,transparent 46%,#fff 46%,#fff 50%,transparent 50%),
+  linear-gradient(35deg,transparent 60%,#fff 60%,#fff 63%,transparent 63%), var(--aqua); position:relative;}
+.map::after{content:""; position:absolute; left:50%; top:46%; width:22px; height:22px; border-radius:50% 50% 50% 0; background:var(--coral); transform:translate(-50%,-100%) rotate(-45deg); box-shadow:0 6px 12px rgba(0,0,0,.2);}
+.chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+.chips span{padding:9px 14px; border-radius:999px; background:var(--mist); border:1px solid var(--line); font-size:14.5px; font-weight:600; color:var(--ink-2);}
+
+.faq{max-width:780px;}
+details{border-bottom:1px solid var(--line); padding:20px 0;}
+summary{cursor:pointer; font-weight:700; font-size:18px; list-style:none; display:flex; justify-content:space-between; gap:20px;}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+"; font-size:24px; line-height:1; color:var(--coral);}
+details[open] summary::after{content:"–";}
+details p{margin-top:12px; color:var(--ink-2);}
+
+.cta{background:var(--mist); text-align:center;}
+.cta h2{font-size:clamp(32px,4.4vw,52px); color:var(--teal); font-weight:800; max-width:18ch; margin:0 auto;}
+.cta p{margin:18px auto 0; color:var(--ink-2); max-width:48ch;}
+.cta .ctas{justify-content:center;}
+
+footer{background:var(--ink); color:rgba(255,255,255,.65); font-size:14.5px; padding:40px 0;}
+footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+footer a{color:#fff; text-decoration:underline; text-underline-offset:3px;}
+
+.toast{position:fixed; left:50%; bottom:24px; transform:translate(-50%,140%); background:#0B3D2E; color:#F3EFE4; padding:16px 20px; border-radius:16px; box-shadow:0 20px 40px -12px rgba(0,0,0,.4); font-size:15px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; max-width:calc(100% - 32px); transition:transform .35s cubic-bezier(.2,.8,.2,1); z-index:50;}
+.toast:not(.show){visibility:hidden; transition:transform .35s cubic-bezier(.2,.8,.2,1), visibility 0s .35s;}
+.toast.show{transform:translate(-50%,0);}
+.toast a{background:#27805F; color:#fff; padding:8px 14px; border-radius:10px; font-weight:600; white-space:nowrap;}
+
+@media(max-width:900px){
+  .links{display:none;}
+  .hero .wrap,.split{grid-template-columns:1fr;}
+  .grid,.steps{grid-template-columns:1fr;}
+  .art{max-width:440px; width:100%; margin:0 auto;}
+  .f1{left:8px;} .f2{right:8px;}
+  section{padding:80px 0;}
+}
+@media(max-width:520px){ .nav .btn{display:none;} .ctas .btn{width:100%; justify-content:center;} }
+@media (prefers-reduced-motion: reduce){*{transition:none !important; scroll-behavior:auto !important;}}
+</style>
+</head>
+<body>
+
+<div class="concept" role="note">
+  <div class="wrap">
+    <span>Projeto conceitual da <a href="../">Firmiano</a>. A clínica e os dados desta página são fictícios.</span>
+    <a class="c-cta" href="https://wa.me/5521998908129?text=Ol%C3%A1!%20Vi%20o%20exemplo%20da%20cl%C3%ADnica%20odontol%C3%B3gica%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Quero um site assim</a>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#topo"><span class="mk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.5 3.5 1 6 2.5 6s1.8-3 2.5-5.5c.3-1 1.7-1 2 0 .7 2.5 1 5.5 2.5 5.5s2-2.5 2.5-6c.5-3 2-4.5 2-7.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></span>Lumen</a>
+    <nav class="links" aria-label="Principal"><a href="#tratamentos">Tratamentos</a><a href="#primeira">Primeira consulta</a><a href="#clinica">A clínica</a><a href="#duvidas">Dúvidas</a></nav>
+    <a class="btn btn-coral demo" href="#">Agendar avaliação</a>
+  </div>
+</header>
+
+<main id="topo">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><i></i>Horários livres esta semana em Icaraí</span>
+      <h1>Cuidar do sorriso pode ser <em>tranquilo</em>.</h1>
+      <p class="lead">Clínica odontológica em Niterói com atendimento sem pressa, explicação clara de cada etapa e orçamento antes de começar.</p>
+      <div class="ctas">
+        <a class="btn btn-coral demo" href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Agendar pelo WhatsApp</a>
+        <a class="btn btn-ghost" href="#tratamentos">Ver tratamentos</a>
+      </div>
+      <ul class="facts">
+        <li><b>Seg a sáb</b>8h às 19h</li>
+        <li><b>Urgência</b>no mesmo dia</li>
+        <li><b>Até 10x</b>no cartão</li>
+      </ul>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg class="tooth" viewBox="0 0 24 24" fill="none"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7.5.5 3.5 1 6 2.5 6s1.8-3 2.5-5.5c.3-1 1.7-1 2 0 .7 2.5 1 5.5 2.5 5.5s2-2.5 2.5-6c.5-3 2-4.5 2-7.5C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/><path d="M8.5 7.5c.8-.8 2-1 3.5-.5" stroke="#F07A5F" stroke-width="1.2" stroke-linecap="round"/></svg>
+      <div class="float f1"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><div><b>Próximo horário</b><span>Hoje, 16h30</span></div></div>
+      <div class="float f2"><span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><b>Orçamento</b><span>antes de começar</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="tratamentos">
+  <div class="wrap">
+    <div class="head"><h2>Tratamentos</h2><p>Do check-up à reabilitação completa, com o plano explicado em linguagem simples.</p></div>
+    <div class="grid">
+      <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Limpeza e prevenção</h3><p>Avaliação completa, limpeza e orientação para manter os dentes saudáveis entre as consultas.</p></article>
+      <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Clareamento</h3><p>Clareamento em consultório ou caseiro supervisionado, com avaliação prévia da sensibilidade.</p></article>
+      <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 8h16M4 16h16M8 4v16M16 4v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Ortodontia e alinhadores</h3><p>Aparelho fixo ou alinhadores transparentes, com planejamento digital do resultado.</p></article>
+      <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v10M8 9l4 4 4-4M6 21h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Implantes</h3><p>Reposição de dentes perdidos com implantes, da avaliação com tomografia até a prótese final.</p></article>
+      <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Tratamento de canal</h3><p>Endodontia com anestesia eficaz e atendimento de urgência para dor de dente no mesmo dia.</p></article>
+      <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Odontopediatria</h3><p>Primeira consulta das crianças em um ambiente pensado para que elas se sintam à vontade.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="first" id="primeira">
+  <div class="wrap">
+    <div class="head"><h2>Como é a primeira consulta</h2><p>Você sai sabendo exatamente o que precisa, quanto custa e em quanto tempo.</p></div>
+    <div class="steps">
+      <div class="step"><h3>Agende pelo WhatsApp</h3><p>Escolha o melhor horário. Confirmamos na hora e mandamos um lembrete na véspera.</p></div>
+      <div class="step"><h3>Avaliação completa</h3><p>Exame clínico e, se necessário, radiografias. Tudo mostrado na tela e explicado com calma.</p></div>
+      <div class="step"><h3>Plano e orçamento</h3><p>Você recebe o plano de tratamento por escrito, com valores e opções de parcelamento.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="clinica">
+  <div class="wrap">
+    <div class="head"><h2>A clínica</h2><p>Em Icaraí, perto da praia e com estacionamento conveniado.</p></div>
+    <div class="split">
+      <div class="panel">
+        <h3>Horários</h3>
+        <ul class="hours">
+          <li><span>Segunda a sexta</span><span>8h às 19h</span></li>
+          <li><span>Sábado</span><span>8h às 13h</span></li>
+          <li><span>Domingo e feriados</span><span>Fechado</span></li>
+        </ul>
+        <div class="chips"><span>Acessível para cadeira de rodas</span><span>Wi-Fi</span><span>Estacionamento conveniado</span></div>
+      </div>
+      <div class="panel">
+        <h3>Onde estamos</h3>
+        <p style="margin-top:12px;color:var(--ink-2)">Icaraí, Niterói/RJ. Endereço fictício para este exemplo.</p>
+        <div class="map" role="img" aria-label="Mapa ilustrativo"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="duvidas" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2>Dúvidas frequentes</h2></div>
+    <div class="faq">
+      <details open><summary>Vocês atendem convênio?</summary><p>Atendemos os principais convênios odontológicos. Mande o nome do seu plano pelo WhatsApp que confirmamos a cobertura antes da consulta.</p></details>
+      <details><summary>Quanto custa a avaliação?</summary><p>A avaliação inicial tem valor fixo e é abatida do tratamento se você decidir começar com a gente.</p></details>
+      <details><summary>Atendem urgência?</summary><p>Sim. Em caso de dor, chame no WhatsApp: reservamos horários todos os dias para urgências.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Vamos marcar a sua avaliação?</h2>
+    <p>Respondemos em poucos minutos no horário de atendimento.</p>
+    <div class="ctas"><a class="btn btn-coral demo" href="#">Agendar pelo WhatsApp</a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Lumen Odontologia é uma empresa fictícia. Página criada pela Firmiano como projeto conceitual.</span>
+    <a href="../#exemplos">Ver outros exemplos</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><span>Neste exemplo, o botão abriria o WhatsApp da clínica.</span><a href="https://wa.me/5521998908129?text=Ol%C3%A1!%20Vi%20o%20exemplo%20da%20cl%C3%ADnica%20odontol%C3%B3gica%20e%20quero%20um%20site%20assim." target="_blank" rel="noopener">Quero um site assim</a></div>
+<script>
+(function(){var t=document.getElementById('toast'),h;document.querySelectorAll('.demo').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();t.classList.add('show');clearTimeout(h);h=setTimeout(function(){t.classList.remove('show');},5000);});});})();
+</script>
+</body>
+</html>

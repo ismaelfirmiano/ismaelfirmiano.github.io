@@ -46,547 +46,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --green:#0B3D2E;      /* Verde Firmiano */
-  --green-ink:#072A20;  /* fundo profundo */
-  --green-2:#0F4A38;    /* superfícies sobre o escuro */
-  --leaf:#27805F;       /* Verde folha */
-  --leaf-hi:#3FA37C;
-  --mint:#A9D9C2;
-  --sand:#F3EFE4;       /* Areia */
-  --sand-2:#E9E4D6;
-  --paper:#FBF9F4;
-  --ink:#0E1F19;        /* Grafite */
-  --ink-2:#4B554D;
-  --line:#D9D4C3;
-  --line-d:rgba(243,239,228,.12);
-  --ease:cubic-bezier(.7,0,.2,1);
-  --ease-out:cubic-bezier(.2,.8,.2,1);
-  --display:'Bricolage Grotesque','Instrument Sans',system-ui,sans-serif;
-  --body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
-}
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth; scroll-padding-top:88px; -webkit-text-size-adjust:100%;}
-body{margin:0; background:var(--sand); color:var(--ink); font-family:var(--body); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
-img{max-width:100%; display:block;}
-a{color:inherit; text-decoration:none;}
-button{font:inherit; color:inherit;}
-:focus-visible{outline:2.5px solid var(--leaf-hi); outline-offset:3px; border-radius:6px;}
-.wrap{max-width:1200px; margin:0 auto; padding:0 24px;}
-h1,h2,h3{font-family:var(--display); margin:0; font-weight:700; letter-spacing:-.025em; line-height:1.04;}
-h2{font-size:clamp(32px,4.4vw,58px); letter-spacing:-.035em; line-height:1;}
-p{margin:0;}
-.sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
-
-/* ---------- Progress ---------- */
-.progress{position:fixed; top:0; left:0; height:3px; width:100%; transform-origin:0 50%; transform:scaleX(0); background:linear-gradient(90deg,var(--leaf),var(--leaf-hi)); z-index:100;}
-
-/* ---------- Buttons ---------- */
-.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:15px 24px; border-radius:14px; font-weight:600; font-size:16px; border:0; cursor:pointer; transition:transform .25s var(--ease-out), background .25s, box-shadow .25s, color .25s; will-change:transform;}
-.btn svg{flex-shrink:0;}
-.btn-leaf{background:var(--leaf); color:#fff; box-shadow:0 10px 30px -10px rgba(39,128,95,.7), inset 0 1px 0 rgba(255,255,255,.18);}
-.btn-leaf:hover{background:#2E8F6A; box-shadow:0 16px 40px -12px rgba(39,128,95,.85), inset 0 1px 0 rgba(255,255,255,.2);}
-.btn-line-d{color:var(--sand); box-shadow:inset 0 0 0 1px rgba(243,239,228,.28);}
-.btn-line-d:hover{box-shadow:inset 0 0 0 1px rgba(243,239,228,.6); background:rgba(243,239,228,.05);}
-.btn-line{color:var(--ink); box-shadow:inset 0 0 0 1px var(--line); background:var(--paper);}
-.btn-line:hover{box-shadow:inset 0 0 0 1px var(--green); color:var(--green);}
-.btn-sand{background:var(--sand); color:var(--green);}
-.btn-sand:hover{background:#fff;}
-
-/* ---------- Nav ---------- */
-.nav{position:fixed; top:0; left:0; right:0; z-index:90; transition:background .35s, box-shadow .35s, backdrop-filter .35s;}
-.nav-in{display:flex; align-items:center; justify-content:space-between; gap:24px; height:76px;}
-.logo{position:relative; display:block; width:127px; height:32px;}
-.logo img{position:absolute; inset:0; width:127px; height:32px; transition:opacity .35s;}
-.logo .lg-green{opacity:0;}
-.nav-links{display:flex; gap:30px; font-size:15px; font-weight:500; color:rgba(243,239,228,.78);}
-.nav-links a{position:relative; padding:6px 0; transition:color .25s;}
-.nav-links a::after{content:""; position:absolute; left:0; right:0; bottom:0; height:1.5px; background:currentColor; transform:scaleX(0); transform-origin:left; transition:transform .35s var(--ease-out);}
-.nav-links a:hover{color:var(--sand);}
-.nav-links a:hover::after{transform:scaleX(1);}
-.nav-cta{padding:11px 18px; font-size:15px;}
-.nav.glass{background:rgba(7,42,32,.8); backdrop-filter:saturate(1.3) blur(22px); -webkit-backdrop-filter:saturate(1.3) blur(22px); box-shadow:0 1px 0 rgba(243,239,228,.1);}
-.nav.glass .nav-links{color:rgba(243,239,228,.88);}
-.nav.scrolled{background:rgba(243,239,228,.82); backdrop-filter:saturate(1.4) blur(16px); -webkit-backdrop-filter:saturate(1.4) blur(16px); box-shadow:0 1px 0 var(--line);}
-.nav.scrolled .lg-white{opacity:0;}
-.nav.scrolled .lg-green{opacity:1;}
-.nav.scrolled .nav-links{color:var(--ink-2);}
-.nav.scrolled .nav-links a:hover{color:var(--green);}
-.burger{display:none; width:44px; height:44px; border-radius:12px; border:0; background:rgba(243,239,228,.08); cursor:pointer; align-items:center; justify-content:center;}
-.burger span{display:block; width:20px; height:2px; background:var(--sand); border-radius:2px; position:relative; transition:background .25s;}
-.burger span::before,.burger span::after{content:""; position:absolute; left:0; width:20px; height:2px; background:var(--sand); border-radius:2px; transition:transform .35s var(--ease), top .35s var(--ease);}
-.burger span::before{top:-6px;} .burger span::after{top:6px;}
-.nav.scrolled .burger{background:rgba(14,31,25,.06);}
-.nav.scrolled .burger span,.nav.scrolled .burger span::before,.nav.scrolled .burger span::after{background:var(--ink);}
-.nav.open .burger span{background:transparent;}
-.nav.open .burger span::before{top:0; transform:rotate(45deg); background:var(--sand);}
-.nav.open .burger span::after{top:0; transform:rotate(-45deg); background:var(--sand);}
-.menu{position:fixed; inset:0; z-index:-1; background:var(--green-ink); display:flex; flex-direction:column; justify-content:center; padding:96px 28px 40px; gap:6px; clip-path:circle(0 at calc(100% - 46px) 38px); transition:clip-path .7s var(--ease); visibility:hidden;}
-.menu a{font-family:var(--display); font-size:34px; font-weight:600; color:var(--sand); letter-spacing:-.02em; padding:6px 0; opacity:0; transform:translateY(16px); transition:opacity .4s, transform .5s var(--ease-out);}
-.menu .btn{margin-top:22px; font-family:var(--body); font-size:16px; align-self:flex-start;}
-.nav.open .menu{clip-path:circle(150% at calc(100% - 46px) 38px); visibility:visible;}
-.nav.open .menu a{opacity:1; transform:none;}
-.nav.open .menu a:nth-child(2){transition-delay:.05s} .nav.open .menu a:nth-child(3){transition-delay:.1s} .nav.open .menu a:nth-child(4){transition-delay:.15s} .nav.open .menu a:nth-child(5){transition-delay:.2s} .nav.open .menu a:nth-child(6){transition-delay:.25s} .nav.open .menu a:nth-child(7){transition-delay:.3s} .nav.open .menu a:nth-child(8){transition-delay:.35s}
-.nav.open .lg-white{opacity:1 !important;} .nav.open .lg-green{opacity:0 !important;}
-.nav.open{background:transparent !important; box-shadow:none !important; backdrop-filter:none !important;}
-.nav-links a{white-space:nowrap;}
-@media(max-width:1240px){.nav-links{gap:22px;}}
-@media(max-width:1100px){.nav-links,.nav-cta{display:none;} .burger{display:inline-flex;}}
-
-/* ---------- Hero ---------- */
-.hero{position:relative; background:var(--green-ink); color:var(--sand); overflow:hidden; isolation:isolate; padding:150px 0 0;}
-.hero::before{content:""; position:absolute; inset:-20%; z-index:-2; background:
-  radial-gradient(40% 45% at 78% 35%, rgba(39,128,95,.55), transparent 70%),
-  radial-gradient(35% 40% at 15% 85%, rgba(63,163,124,.22), transparent 70%),
-  radial-gradient(50% 60% at 50% 0%, rgba(11,61,46,.9), transparent 70%);
-  animation:drift 22s ease-in-out infinite alternate;}
-.hero::after{content:""; position:absolute; inset:0; z-index:-1; background-image:linear-gradient(rgba(243,239,228,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(243,239,228,.045) 1px,transparent 1px); background-size:64px 64px; -webkit-mask-image:radial-gradient(70% 70% at 60% 40%,#000 20%,transparent 80%); mask-image:radial-gradient(70% 70% at 60% 40%,#000 20%,transparent 80%);}
-@keyframes drift{0%{transform:translate3d(0,0,0) scale(1);}100%{transform:translate3d(-4%,3%,0) scale(1.08);}}
-.grain{position:absolute; inset:0; z-index:-1; opacity:.18; mix-blend-mode:overlay; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
-.hero-grid{display:grid; grid-template-columns:1.05fr 1fr; gap:64px; align-items:center; min-height:calc(100svh - 150px - 92px); padding-bottom:56px;}
-.hero h1{font-size:clamp(40px,5vw,70px); font-weight:700; letter-spacing:-.045em; line-height:.98; color:var(--sand); max-width:16ch;}
-.hero h1 .w{display:inline-block; overflow:hidden; vertical-align:top; padding-bottom:.08em; margin-bottom:-.08em;}
-.hero h1 .w > span{display:inline-block; transform:translateY(105%); transition:transform 1s var(--ease-out);}
-.hero.ready h1 .w > span{transform:none;}
-.hero .lead{margin-top:28px; font-size:clamp(17px,1.5vw,19px); line-height:1.6; color:rgba(243,239,228,.74); max-width:46ch;}
-.hero-ctas{display:flex; flex-wrap:wrap; gap:14px; margin-top:38px;}
-.hero-facts{list-style:none; padding:0; margin:44px 0 0; display:grid; gap:12px; font-size:15px; color:rgba(243,239,228,.7);}
-.hero-facts li{display:flex; align-items:center; gap:12px;}
-.hero-facts svg{color:var(--leaf-hi); flex-shrink:0;}
-.fade-up{opacity:0; transform:translateY(18px); transition:opacity .9s var(--ease-out), transform .9s var(--ease-out);}
-.hero.ready .fade-up{opacity:1; transform:none;}
-.hero.ready .fu1{transition-delay:.45s} .hero.ready .fu2{transition-delay:.6s} .hero.ready .fu3{transition-delay:.75s} .hero.ready .fu4{transition-delay:.3s}
-
-/* Build stage */
-.stage-wrap{perspective:1400px;}
-.stage{position:relative; aspect-ratio:4/3.15; border-radius:22px; background:linear-gradient(180deg,#104C39,#0C3F2F); border:1px solid rgba(243,239,228,.12); box-shadow:0 60px 120px -40px rgba(0,0,0,.7), 0 0 0 1px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.07); overflow:hidden; transform-style:preserve-3d; transition:transform .6s var(--ease-out);}
-.chrome{position:absolute; top:0; left:0; right:0; height:46px; display:flex; align-items:center; gap:7px; padding:0 16px; border-bottom:1px solid rgba(243,239,228,.09); background:rgba(0,0,0,.12);}
-.chrome i{width:10px; height:10px; border-radius:50%; background:rgba(243,239,228,.18);}
-.url{margin-left:14px; flex:1; max-width:300px; height:28px; border-radius:8px; background:rgba(0,0,0,.22); display:flex; align-items:center; gap:7px; padding:0 11px; font-size:13px; color:rgba(243,239,228,.55); white-space:nowrap; overflow:hidden;}
-.url svg{color:var(--leaf-hi); flex-shrink:0;}
-.url b{font-weight:500; color:var(--sand);}
-.caret{display:inline-block; width:1.5px; height:15px; background:var(--leaf-hi); margin-left:1px; animation:blink 1s steps(1) infinite; vertical-align:middle;}
-@keyframes blink{50%{opacity:0;}}
-.canvas{position:absolute; top:46px; left:0; right:0; bottom:0; background-image:linear-gradient(rgba(243,239,228,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(243,239,228,.04) 1px,transparent 1px); background-size:24px 24px;}
-.bar{position:absolute; background:var(--sand); border-radius:16px; transition:left 1.15s var(--ease), top 1.15s var(--ease), width 1.15s var(--ease), height 1.15s var(--ease), border-radius 1.15s var(--ease), background-color .9s .2s;}
-.b1{left:31%; top:19%; width:39%; height:14%;}
-.b2{left:31%; top:41%; width:26%; height:14%;}
-.b3{left:31%; top:63%; width:13.3%; height:14%;}
-.bar::after{content:""; position:absolute; inset:0; border-radius:inherit; opacity:0; transition:opacity .8s .5s;}
-.built .b1{left:6%; top:7%; width:88%; height:37%; border-radius:12px; background-color:var(--leaf);}
-.built .b1::after{opacity:1; background:radial-gradient(80% 120% at 85% 10%, rgba(169,217,194,.45), transparent 60%), linear-gradient(135deg, rgba(255,255,255,.06), transparent 50%);}
-.built .b2{left:6%; top:51%; width:50%; height:8.5%; border-radius:7px;}
-.built .b3{left:6%; top:65%; width:23%; height:9%; border-radius:9px; background-color:var(--leaf-hi);}
-.x{position:absolute; opacity:0; transform:translateY(10px); transition:opacity .7s var(--ease-out), transform .7s var(--ease-out);}
-.details .x{opacity:1; transform:none;}
-.x1{left:10%; top:15%; width:36%; height:4.5%; border-radius:5px; background:rgba(243,239,228,.92);}
-.x2{left:10%; top:23%; width:52%; height:3%; border-radius:4px; background:rgba(243,239,228,.55); transition-delay:.08s;}
-.x3{left:10%; top:29%; width:42%; height:3%; border-radius:4px; background:rgba(243,239,228,.55); transition-delay:.12s;}
-.x4{left:6%; top:79%; width:60%; height:3%; border-radius:4px; background:rgba(243,239,228,.28); transition-delay:.18s;}
-.x5{left:6%; top:85.5%; width:45%; height:3%; border-radius:4px; background:rgba(243,239,228,.28); transition-delay:.22s;}
-.x6{left:62%; top:51%; width:32%; height:42%; border-radius:12px; background:rgba(243,239,228,.06); border:1px solid rgba(243,239,228,.12); transition-delay:.26s; display:flex; flex-direction:column; justify-content:flex-end; gap:6px; padding:10%;}
-.x6 span{display:block; height:6px; border-radius:3px; background:rgba(243,239,228,.3);}
-.x6 span:first-child{width:45%; height:28px; border-radius:8px; background:rgba(63,163,124,.5); margin-bottom:auto;}
-.x6 span:nth-child(3){width:70%;}
-.x7{right:6%; top:12%; width:22px; height:22px; border-radius:50%; background:rgba(243,239,228,.25); transition-delay:.1s;}
-.wa-mini{position:absolute; right:5%; bottom:6%; width:38px; height:38px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 20px -8px rgba(0,0,0,.5); opacity:0; transform:scale(.4); transition:opacity .5s, transform .6s var(--ease-out);}
-.live .wa-mini{opacity:1; transform:none;}
-.status{position:absolute; top:-15px; right:28px; z-index:2; display:inline-flex; align-items:center; gap:8px; padding:6px 12px 6px 10px; border-radius:999px; background:rgba(7,42,32,.85); border:1px solid rgba(63,163,124,.45); color:var(--mint); font-size:12.5px; font-weight:600; opacity:0; transform:translateY(-6px) scale(.95); transition:opacity .5s, transform .6s var(--ease-out); backdrop-filter:blur(6px);}
-.status i{position:relative; width:8px; height:8px; border-radius:50%; background:var(--leaf-hi);}
-.status i::after{content:""; position:absolute; inset:-4px; border-radius:50%; border:1.5px solid var(--leaf-hi); animation:ping 1.6s var(--ease-out) infinite;}
-@keyframes ping{0%{transform:scale(.6); opacity:1;}100%{transform:scale(1.9); opacity:0;}}
-.stage-holder.live .status{opacity:1; transform:none;}
-.stage-glow{position:absolute; inset:-30% -20%; z-index:-1; background:radial-gradient(45% 45% at 50% 50%, rgba(39,128,95,.35), transparent 70%); filter:blur(20px);}
-.stage-holder{position:relative;}
-
-/* Marquee */
-.marquee{position:relative; border-top:1px solid var(--line-d); padding:22px 0; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent); mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);}
-.marquee-track{display:flex; width:max-content; gap:44px; animation:marquee 38s linear infinite;}
-.marquee:hover .marquee-track{animation-play-state:paused;}
-.marquee span{display:inline-flex; align-items:center; gap:44px; font-family:var(--display); font-size:21px; font-weight:500; color:rgba(243,239,228,.62); white-space:nowrap; letter-spacing:-.01em;}
-.marquee span::after{content:""; width:18px; height:18px; flex-shrink:0; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%233FA37C'%3E%3Crect x='3' y='3' width='14' height='5' rx='1.5'/%3E%3Crect x='3' y='10' width='9.5' height='5' rx='1.5'/%3E%3Crect x='3' y='17' width='5' height='5' rx='1.5'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;}
-@keyframes marquee{to{transform:translateX(-50%);}}
-
-/* ---------- Generic sections ---------- */
-.sec{padding:140px 0;}
-.sec-head{max-width:720px; margin-bottom:64px;}
-.sec-head p{margin-top:20px; font-size:18px; color:var(--ink-2); max-width:56ch;}
-[data-reveal]{opacity:0; transform:translateY(28px); transition:opacity 1s var(--ease-out), transform 1s var(--ease-out); transition-delay:var(--d,0s);}
-[data-reveal].in{opacity:1; transform:none;}
-
-/* ---------- Why ---------- */
-.why{display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;}
-.why h2{font-size:clamp(36px,5vw,68px); position:sticky; top:130px;}
-.why-list{list-style:none; margin:0; padding:0;}
-.why-list li{display:grid; grid-template-columns:44px 1fr; gap:20px; padding:30px 0; border-top:1px solid var(--line);}
-.why-list li:last-child{border-bottom:1px solid var(--line);}
-.why-list h3{font-size:24px; letter-spacing:-.02em; margin-bottom:8px;}
-.why-list p{color:var(--ink-2);}
-.fbars{width:30px; display:grid; grid-auto-rows:6px; gap:4px; align-self:start; align-content:start; padding-top:9px;}
-.fbars i{display:block; height:6px; border-radius:2px; background:var(--leaf); transform-origin:left; transform:scaleX(0); transition:transform .8s var(--ease-out);}
-.fbars i:nth-child(1){width:100%;} .fbars i:nth-child(2){width:66%; transition-delay:.1s;} .fbars i:nth-child(3){width:33%; transition-delay:.2s;}
-.in .fbars i{transform:none;}
-
-/* ---------- Bento ---------- */
-.bento-sec{background:var(--sand-2);}
-.bento{display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:minmax(150px,auto); gap:18px;}
-.tile{position:relative; background:var(--paper); border-radius:22px; padding:30px; overflow:hidden; box-shadow:0 0 0 1px rgba(14,31,25,.06); isolation:isolate; display:flex; flex-direction:column;}
-.tile::before{content:""; position:absolute; inset:0; z-index:-1; opacity:0; transition:opacity .4s; background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%), rgba(39,128,95,.13), transparent 60%);}
-.tile:hover::before{opacity:1;}
-.tile h3{font-size:24px; letter-spacing:-.02em;}
-.tile p{margin-top:10px; color:var(--ink-2); font-size:16px; max-width:40ch;}
-.tile .viz{margin-top:auto; padding-top:26px;}
-.t-design{grid-column:span 4; grid-row:span 2; background:var(--green); color:var(--sand);}
-.t-design p{color:rgba(243,239,228,.72);}
-.t-design::before{background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(63,163,124,.3), transparent 60%);}
-.t-screen{grid-column:span 2; grid-row:span 2;}
-.t-contact,.t-domain,.t-text{grid-column:span 2;}
-.t-person{grid-column:span 6; display:grid; grid-template-columns:1.2fr 1fr; gap:30px; align-items:center;}
-@media(max-width:980px){.bento{grid-template-columns:repeat(2,1fr);} .t-design{grid-column:span 2; grid-row:auto;} .t-screen{grid-column:span 2; grid-row:auto;} .t-contact,.t-domain,.t-text{grid-column:span 1;} .t-person{grid-column:span 2; grid-template-columns:1fr;}}
-@media(max-width:620px){.bento{grid-template-columns:1fr;} .t-design,.t-screen,.t-contact,.t-domain,.t-text,.t-person{grid-column:span 1;}}
-/* design viz */
-.mini-site{border-radius:14px; background:rgba(0,0,0,.18); border:1px solid rgba(243,239,228,.1); padding:16px; display:grid; grid-template-columns:1.4fr 1fr; gap:12px; transform:translateY(8px); transition:transform .6s var(--ease-out);}
-.t-design:hover .mini-site{transform:translateY(0);}
-.mini-site .hd{grid-column:1/-1; display:flex; justify-content:space-between; align-items:center;}
-.mini-site .hd i{display:block; height:8px; width:60px; border-radius:4px; background:rgba(243,239,228,.5);}
-.mini-site .hd em{display:flex; gap:8px;} .mini-site .hd em i{width:26px; background:rgba(243,239,228,.22);}
-.mini-site .hero-b{border-radius:10px; background:linear-gradient(135deg,var(--leaf),#1D6A4E); padding:18px; display:grid; gap:8px; align-content:end; min-height:150px;}
-.mini-site .hero-b i{display:block; height:10px; border-radius:5px; background:rgba(243,239,228,.9); width:80%;}
-.mini-site .hero-b i:nth-child(2){width:55%; background:rgba(243,239,228,.55); height:7px;}
-.mini-site .hero-b b{display:block; width:38%; height:22px; border-radius:6px; background:var(--sand); margin-top:6px;}
-.mini-site .side{display:grid; gap:10px;}
-.mini-site .side i{display:block; border-radius:10px; background:rgba(243,239,228,.08); border:1px solid rgba(243,239,228,.1);}
-/* screens viz */
-.screens{position:relative; height:190px;}
-.scr-d{position:absolute; left:0; top:10px; width:88%; height:150px; border-radius:12px; border:1.5px solid var(--ink); background:#fff; padding:12px; transition:width .7s var(--ease), height .7s var(--ease), left .7s var(--ease);}
-.scr-d i,.scr-m i{display:block; height:7px; border-radius:4px; background:var(--sand-2); margin-bottom:7px;}
-.scr-d i:first-child,.scr-m i:first-child{height:34px; background:var(--leaf); opacity:.85;}
-.scr-m{position:absolute; right:0; bottom:0; width:74px; height:140px; border-radius:16px; border:1.5px solid var(--ink); background:#fff; padding:14px 9px; box-shadow:-10px 10px 30px -12px rgba(14,31,25,.3); transition:transform .7s var(--ease);}
-.t-screen:hover .scr-d{width:70%;}
-.t-screen:hover .scr-m{transform:translateY(-10px) rotate(-3deg);}
-/* contact viz */
-.chat{display:grid; gap:8px;}
-.bubble{justify-self:start; max-width:85%; padding:10px 14px; border-radius:16px 16px 16px 4px; background:var(--sand-2); font-size:14.5px; line-height:1.4;}
-.bubble.me{justify-self:end; background:#D7F0DF; border-radius:16px 16px 4px 16px;}
-.typing{display:inline-flex; gap:4px; padding:12px 14px; border-radius:16px 16px 16px 4px; background:var(--sand-2); justify-self:start;}
-.typing i{width:6px; height:6px; border-radius:50%; background:var(--ink-2); opacity:.4; animation:dot 1.2s infinite;}
-.typing i:nth-child(2){animation-delay:.15s} .typing i:nth-child(3){animation-delay:.3s}
-@keyframes dot{30%{opacity:1; transform:translateY(-3px);}}
-/* domain viz */
-.addr{display:grid; gap:10px;}
-.addr div{display:flex; align-items:center; gap:10px; padding:11px 14px; border-radius:12px; background:var(--sand); font-size:14.5px; font-weight:500; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
-.addr svg{color:var(--leaf); flex-shrink:0;}
-/* text viz */
-.lines{display:grid; gap:9px;}
-.lines i{display:block; height:9px; border-radius:5px; background:var(--sand-2); transform-origin:left; transition:transform .6s var(--ease-out), background .6s;}
-.lines i:nth-child(1){width:90%;} .lines i:nth-child(2){width:100%;} .lines i:nth-child(3){width:70%;} .lines i:nth-child(4){width:82%;}
-.t-text:hover .lines i{background:rgba(39,128,95,.35);}
-.t-text:hover .lines i:nth-child(2){transform:scaleX(.8);} .t-text:hover .lines i:nth-child(3){transform:scaleX(1.2);}
-/* person viz */
-.reply{display:flex; align-items:center; gap:18px; padding:22px; border-radius:18px; background:var(--sand);}
-.reply .clock{width:56px; height:56px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; color:var(--sand); flex-shrink:0;}
-.reply b{display:block; font-family:var(--display); font-size:26px; letter-spacing:-.02em; line-height:1.1;}
-.reply span{font-size:14.5px; color:var(--ink-2);}
-.clock .hand{transform-origin:12px 12px; animation:spin 6s linear infinite;}
-@keyframes spin{to{transform:rotate(360deg);}}
-
-/* ---------- Exemplos ---------- */
-.work-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-.work{display:flex; flex-direction:column; background:var(--paper); border-radius:24px; overflow:hidden; box-shadow:0 0 0 1px rgba(14,31,25,.07); transition:transform .45s var(--ease-out), box-shadow .45s var(--ease-out);}
-.work:hover{transform:translateY(-6px); box-shadow:0 0 0 1px rgba(14,31,25,.07), 0 30px 50px -30px rgba(11,61,46,.45);}
-.shot{aspect-ratio:4/3; padding:22px 22px 0; display:flex; align-items:flex-end; overflow:hidden;}
-.frame{width:100%; height:100%; border-radius:12px 12px 0 0; overflow:hidden; box-shadow:0 18px 40px -18px rgba(0,0,0,.35); transition:transform .6s var(--ease-out); transform-origin:50% 100%; display:flex; flex-direction:column;}
-.work:hover .frame{transform:translateY(-4px) scale(1.015);}
-.fchrome{height:22px; flex-shrink:0; display:flex; gap:5px; align-items:center; padding:0 10px; background:rgba(255,255,255,.85);}
-.fchrome i{width:7px; height:7px; border-radius:50%; background:rgba(0,0,0,.15);}
-.fbody{flex:1; padding:14px 16px; position:relative; overflow:hidden;}
-.fnav{display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;}
-.fnav b{font-size:11px; font-weight:800; letter-spacing:-.01em;}
-.fnav span{display:flex; gap:6px;} .fnav span i{width:16px; height:3px; border-radius:2px; background:currentColor; opacity:.3;}
-.fh{font-weight:800; letter-spacing:-.03em; line-height:1.02; font-size:clamp(15px,1.7vw,21px); max-width:11ch;}
-.fl{display:block; height:4px; border-radius:2px; background:currentColor; opacity:.22; margin-top:7px;}
-.fbtn{display:inline-block; margin-top:12px; height:16px; width:70px; border-radius:999px;}
-/* odontologia */
-.s-odonto{background:#D7EEF0;}
-.s-odonto .fbody{background:linear-gradient(180deg,#F3F8F8,#fff); color:#0E4F5C;}
-.s-odonto .fbtn{background:#F07A5F;}
-.s-odonto .fart{position:absolute; right:14px; bottom:-14px; width:38%; aspect-ratio:1; border-radius:22px; background:radial-gradient(120% 90% at 20% 10%,#1B7A8D,#0E4F5C 60%);}
-.s-odonto .fart::after{content:""; position:absolute; left:-16px; top:30%; width:60px; height:20px; border-radius:7px; background:#fff; box-shadow:0 6px 14px -6px rgba(0,0,0,.3);}
-/* advocacia */
-.s-adv{background:#E2DACB;}
-.s-adv .fchrome{background:#1A2740;} .s-adv .fchrome i{background:rgba(246,241,231,.25);}
-.s-adv .fbody{background:#111B2E; color:#F6F1E7; background-image:repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),rgba(246,241,231,.06) calc(25% - 1px) 25%);}
-.s-adv .fh{font-family:Georgia,'Times New Roman',serif; font-weight:400; letter-spacing:-.01em; font-size:clamp(17px,1.9vw,24px);}
-.s-adv .fh em{color:#C9A56E;}
-.s-adv .fbtn{background:#B08D57; border-radius:0;}
-.s-adv .fbar{position:absolute; left:16px; right:16px; bottom:12px; border-top:1px solid rgba(246,241,231,.18); display:grid; grid-template-columns:repeat(3,1fr); gap:10px; padding-top:9px;}
-.s-adv .fbar i{height:4px; border-radius:2px; background:rgba(246,241,231,.3);}
-/* padaria */
-.s-pad{background:#EEDFCB;}
-.s-pad .fbody{background:#F5EBDD; color:#3B2416;}
-.s-pad .fnav b{color:#B4532A; font-style:italic; font-family:Georgia,serif;}
-.s-pad .fh{font-family:Georgia,serif; font-size:clamp(16px,1.8vw,22px);}
-.s-pad .fh em{color:#B4532A;}
-.s-pad .fbtn{background:#B4532A; border-radius:7px;}
-.s-pad .floaf{position:absolute; right:-6%; bottom:-16%; width:52%; aspect-ratio:1.45/1; border-radius:50%; background:radial-gradient(60% 50% at 40% 35%,#E2A066,#B8672F 55%,#8A4520);}
-.s-pad .floaf::after{content:""; position:absolute; left:24%; right:24%; top:40%; height:8%; border-radius:9px; background:#F1D2A8; transform:rotate(-18deg); box-shadow:0 12px 0 -1px #F1D2A8, 0 -12px 0 -1px #F1D2A8;}
-.work-info{padding:24px 26px 28px; display:flex; flex-direction:column; flex:1;}
-.work-info .kind{font-size:13px; font-weight:600; letter-spacing:.04em; color:var(--leaf);}
-.work-info h3{font-size:25px; letter-spacing:-.02em; margin-top:8px;}
-.work-info p{margin-top:10px; color:var(--ink-2); font-size:15.5px;}
-.work-info .more{margin-top:auto; padding-top:20px; font-weight:600; color:var(--green); display:inline-flex; align-items:center; gap:8px;}
-.work-info .more svg{transition:transform .35s var(--ease-out);}
-.work:hover .more svg{transform:translateX(4px);}
-.work-note{margin-top:28px; font-size:14.5px; color:var(--ink-2); max-width:72ch;}
-@media(max-width:980px){.work-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:640px){.work-grid{grid-template-columns:1fr;}}
-
-/* ---------- Domain ---------- */
-.dark{background:var(--green); color:var(--sand); position:relative; overflow:hidden; isolation:isolate;}
-.dark::before{content:""; position:absolute; inset:0; z-index:-1; background:radial-gradient(50% 70% at 85% 0%, rgba(39,128,95,.45), transparent 70%), radial-gradient(40% 60% at 0% 100%, rgba(7,42,32,.9), transparent 70%);}
-.dark .sec-head p{color:rgba(243,239,228,.72);}
-.dom-bar{display:flex; align-items:center; gap:0; max-width:820px; padding:8px; border-radius:20px; background:rgba(7,42,32,.6); border:1px solid rgba(243,239,228,.16); box-shadow:0 30px 60px -30px rgba(0,0,0,.6); transition:border-color .3s, box-shadow .3s;}
-.dom-bar:focus-within{border-color:rgba(63,163,124,.8); box-shadow:0 0 0 4px rgba(63,163,124,.18), 0 30px 60px -30px rgba(0,0,0,.6);}
-.dom-bar .pre,.dom-bar .suf{font-size:clamp(16px,2vw,22px); font-family:var(--display); color:rgba(243,239,228,.45); padding:0 4px 0 16px; white-space:nowrap;}
-.dom-bar .suf{padding:0 14px 0 0; color:var(--mint);}
-.dom-bar input{flex:1; min-width:0; background:transparent; border:0; outline:none; color:var(--sand); font-family:var(--display); font-size:clamp(18px,2.2vw,24px); font-weight:500; padding:14px 0; letter-spacing:-.01em;}
-.dom-bar input::placeholder{color:rgba(243,239,228,.35);}
-.dom-bar .btn{padding:16px 24px;}
-.dom-bar .btn:disabled{opacity:.75; cursor:wait;}
-.dom-note{margin-top:16px; font-size:14px; color:rgba(243,239,228,.55); max-width:70ch;}
-.dom-note a{color:var(--mint); text-decoration:underline; text-underline-offset:3px;}
-@media(max-width:640px){.dom-bar{flex-wrap:wrap; padding:10px;} .dom-bar .pre{display:none;} .dom-bar input{padding:12px 0 12px 12px; flex-basis:60%;} .dom-bar .btn{flex-basis:100%; margin-top:6px;}}
-.dom-out{margin-top:36px; max-width:820px;}
-.dom-main{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding:24px 26px; border-radius:20px; background:rgba(243,239,228,.06); border:1px solid rgba(243,239,228,.14); animation:pop .6s var(--ease-out);}
-.dom-name{font-family:var(--display); font-size:clamp(20px,2.4vw,28px); font-weight:600; letter-spacing:-.02em; word-break:break-all;}
-.dom-sub{margin-top:8px; font-size:15px; color:rgba(243,239,228,.7); flex-basis:100%;}
-.dom-main .btn{margin-top:8px;}
-.pill{display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600; padding:5px 12px; border-radius:999px; white-space:nowrap;}
-.pill::before{content:""; width:7px; height:7px; border-radius:50%; background:currentColor;}
-.pill.free{background:rgba(63,163,124,.18); color:#8FE0B8;}
-.pill.taken{background:rgba(232,128,108,.14); color:#F2A595;}
-.pill.unk{background:rgba(243,239,228,.1); color:rgba(243,239,228,.7);}
-.dom-h{font-family:var(--display); font-size:18px; font-weight:600; margin:30px 0 12px;}
-.dom-list{list-style:none; margin:0; padding:0; border-radius:18px; border:1px solid rgba(243,239,228,.14); overflow:hidden;}
-.dom-list li{display:flex; justify-content:space-between; align-items:center; gap:14px; padding:14px 22px; flex-wrap:wrap; animation:pop .5s var(--ease-out) both;}
-.dom-list li + li{border-top:1px solid rgba(243,239,228,.1);}
-.dom-list .n{word-break:break-all; font-size:16px;}
-.dom-list .r{display:flex; align-items:center; gap:16px;}
-.dom-want{font-size:14px; font-weight:600; color:var(--mint); text-decoration:underline; text-underline-offset:4px;}
-.dom-want:hover{color:#fff;}
-@keyframes pop{from{opacity:0; transform:translateY(10px);}to{opacity:1; transform:none;}}
-
-/* ---------- Steps ---------- */
-.steps{position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:32px;}
-.track{position:absolute; top:27px; left:28px; right:28px; height:2px; background:var(--line);}
-.track i{position:absolute; inset:0; background:var(--leaf); transform-origin:left; transform:scaleX(var(--p,0)); transition:transform .15s linear;}
-.step{position:relative;}
-.step .num{position:relative; z-index:1; width:56px; height:56px; border-radius:16px; background:var(--paper); box-shadow:0 0 0 1px var(--line); display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:700; font-size:22px; color:var(--green); transition:background .4s, color .4s, box-shadow .4s;}
-.step.on .num{background:var(--green); color:var(--sand); box-shadow:0 0 0 6px rgba(39,128,95,.15);}
-.step h3{font-size:26px; letter-spacing:-.02em; margin:28px 0 10px;}
-.step p{color:var(--ink-2); max-width:34ch; font-size:16px;}
-.deliver{margin-top:80px; display:grid; grid-template-columns:1fr 1fr; gap:56px; padding:44px; border-radius:28px; background:var(--paper); box-shadow:0 0 0 1px var(--line);}
-.deliver h3{font-size:24px; letter-spacing:-.02em; margin-bottom:18px;}
-.deliver ul{list-style:none; margin:0; padding:0; display:grid; gap:12px; font-size:16px;}
-.deliver li{display:grid; grid-template-columns:20px 1fr; gap:10px;}
-.deliver li svg{color:var(--leaf); margin-top:4px;}
-.deliver-note{margin-top:18px; font-size:15px; color:var(--ink-2);}
-.deliver dl{margin:0; display:grid; gap:0;}
-.deliver dt{font-family:var(--display); font-weight:600; font-size:18px; padding-top:18px; border-top:1px solid var(--line);}
-.deliver dt:first-child{padding-top:0; border-top:0;}
-.deliver dd{margin:4px 0 18px; color:var(--ink-2);}
-@media(max-width:860px){.deliver{grid-template-columns:1fr; gap:36px; padding:28px;}}
-@media(max-width:860px){.steps{grid-template-columns:1fr; gap:36px;} .track{top:28px; bottom:28px; left:27px; right:auto; width:2px; height:auto;} .track i{transform-origin:top; transform:scaleY(var(--p,0));} .step{padding-left:84px;} .step .num{position:absolute; left:0; top:0;} .step h3{margin-top:10px;}}
-
-.sec-head + .steps{margin-top:0;}
-.step .get{margin-top:16px; padding-top:14px; border-top:1px dashed var(--line); font-size:15px; color:var(--ink);}
-.step .get b{display:block; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--leaf); margin-bottom:4px;}
-.deliver li span b{font-weight:600;}
-.serp{padding:16px 18px; border-radius:14px; background:var(--sand); font-size:13.5px; line-height:1.45;}
-.serp small{display:block; color:var(--ink-2); font-size:12.5px;}
-.serp b{display:block; color:var(--green); font-family:var(--display); font-size:17px; letter-spacing:-.01em; margin:2px 0 4px;}
-.serp span{color:var(--ink-2);}
-a.inline{color:var(--green); font-weight:600; text-decoration:underline; text-underline-offset:3px; white-space:nowrap;}
-
-/* ---------- Pricing ---------- */
-.pricing-sec{background:var(--sand-2);}
-.promo{display:inline-flex; align-items:center; gap:12px; flex-wrap:wrap; padding:10px 18px 10px 12px; border-radius:999px; background:var(--green); color:var(--sand); font-size:14.5px; margin-bottom:28px;}
-.promo b{background:var(--leaf); padding:4px 10px; border-radius:999px; font-weight:600;}
-.promo span{color:rgba(243,239,228,.85);}
-.price-top{display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-bottom:48px;}
-.price-top .sec-head{margin-bottom:0;}
-.seg{position:relative; display:inline-flex; padding:6px; border-radius:16px; background:var(--paper); box-shadow:0 0 0 1px var(--line);}
-.seg button{position:relative; z-index:1; border:0; background:transparent; padding:12px 22px; border-radius:11px; font-weight:600; font-size:15.5px; cursor:pointer; color:var(--ink-2); transition:color .35s;}
-.seg button[aria-selected="true"]{color:var(--sand);}
-.seg .ind{position:absolute; top:6px; bottom:6px; left:6px; border-radius:11px; background:var(--green); transition:transform .5s var(--ease), width .5s var(--ease);}
-.plans{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:stretch;}
-.plans[hidden]{display:none;}
-@media(max-width:960px){.plans{grid-template-columns:1fr; max-width:480px;}}
-.plan{position:relative; display:flex; flex-direction:column; padding:34px 30px 30px; border-radius:24px; background:var(--paper); box-shadow:0 0 0 1px var(--line);}
-.plan h3{font-size:22px; letter-spacing:-.02em; min-height:2.1em;}
-.plan .was{margin-top:18px; font-size:15px; color:var(--ink-2); text-decoration:line-through; text-decoration-thickness:1.5px;}
-.plan .price{font-family:var(--display); font-size:52px; font-weight:700; letter-spacing:-.045em; line-height:1; margin-top:4px;}
-.plan .price small{font-family:var(--body); font-size:16px; font-weight:500; letter-spacing:0; color:var(--ink-2); margin-left:4px;}
-.save{display:inline-block; align-self:flex-start; margin-top:14px; font-size:13px; font-weight:600; color:var(--green); background:rgba(39,128,95,.12); padding:5px 11px; border-radius:999px;}
-.plan .desc{margin-top:14px; font-size:15px; color:var(--ink-2);}
-.plan ul{list-style:none; padding:0; margin:24px 0 30px; display:grid; gap:12px; font-size:15.5px;}
-.plan li{display:grid; grid-template-columns:20px 1fr; gap:10px; align-items:start;}
-.plan li svg{color:var(--leaf); margin-top:3px;}
-.plan .btn{margin-top:auto; width:100%;}
-.plan.feat{background:var(--green); color:var(--sand); box-shadow:0 0 0 1.5px var(--leaf), 0 30px 60px -30px rgba(11,61,46,.55);}
-.plan.feat{isolation:auto;}
-.plans{isolation:isolate;}
-.plan.feat .was,.plan.feat .desc,.plan.feat .price small{color:rgba(243,239,228,.65);}
-.plan.feat .save{background:rgba(63,163,124,.25); color:#BFEBD6;}
-.plan.feat li svg{color:var(--leaf-hi);}
-.tag{position:absolute; top:-13px; left:30px; padding:5px 12px; border-radius:999px; background:var(--leaf-hi); color:var(--green-ink); font-size:12.5px; font-weight:700;}
-.notes{margin-top:56px; display:grid; grid-template-columns:280px 1fr; gap:40px; padding-top:40px; border-top:1px solid var(--line);}
-.notes h3{font-size:24px; letter-spacing:-.02em;}
-.notes dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:14px 28px; font-size:15.5px;}
-.notes dt{font-weight:600;}
-.notes dd{margin:0; color:var(--ink-2);}
-@media(max-width:860px){.notes{grid-template-columns:1fr; gap:20px;} .notes dl{grid-template-columns:1fr; gap:4px;} .notes dd{margin-bottom:12px;}}
-
-/* ---------- Referral ---------- */
-.refer{display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:center;}
-.refer-amts{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
-.amt{border-radius:22px; padding:30px; background:var(--paper); box-shadow:0 0 0 1px var(--line);}
-.amt b{display:block; font-family:var(--display); font-size:clamp(44px,5vw,64px); font-weight:700; letter-spacing:-.045em; line-height:1; color:var(--green);}
-.amt span{display:block; margin-top:12px; font-size:15.5px; color:var(--ink-2);}
-.refer p.note{margin-top:20px; color:var(--ink-2);}
-@media(max-width:860px){.refer{grid-template-columns:1fr; gap:36px;}}
-@media(max-width:480px){.refer-amts{grid-template-columns:1fr;}}
-
-/* ---------- FAQ ---------- */
-.faq-grid{display:grid; grid-template-columns:1fr 1.5fr; gap:80px;}
-.faq-grid .sec-head{position:sticky; top:130px; align-self:start;}
-@media(max-width:860px){.faq-grid{grid-template-columns:1fr; gap:10px;} .faq-grid .sec-head{position:static;}}
-.qa{border-top:1px solid var(--line);}
-.qa:last-child{border-bottom:1px solid var(--line);}
-.qa button{width:100%; display:flex; justify-content:space-between; align-items:center; gap:20px; padding:26px 0; background:none; border:0; cursor:pointer; text-align:left; font-family:var(--display); font-size:21px; font-weight:600; letter-spacing:-.015em;}
-.qa .ic{position:relative; width:32px; height:32px; border-radius:50%; flex-shrink:0; box-shadow:inset 0 0 0 1px var(--line); transition:background .3s, box-shadow .3s;}
-.qa .ic::before,.qa .ic::after{content:""; position:absolute; left:50%; top:50%; width:12px; height:1.8px; background:var(--ink); transform:translate(-50%,-50%); transition:transform .4s var(--ease), background .3s;}
-.qa .ic::after{transform:translate(-50%,-50%) rotate(90deg);}
-.qa.open .ic{background:var(--green); box-shadow:none;}
-.qa.open .ic::before,.qa.open .ic::after{background:var(--sand);}
-.qa.open .ic::after{transform:translate(-50%,-50%) rotate(0deg);}
-.qa .ans{display:grid; grid-template-rows:0fr; transition:grid-template-rows .5s var(--ease);}
-.qa.open .ans{grid-template-rows:1fr;}
-.qa .ans > div{overflow:hidden;}
-.qa .ans p{padding:0 48px 26px 0; color:var(--ink-2); max-width:64ch;}
-
-/* ---------- CTA ---------- */
-.cta{background:var(--green-ink); color:var(--sand); text-align:center; padding:150px 0; position:relative; overflow:hidden; isolation:isolate;}
-.cta::before{content:""; position:absolute; left:50%; top:50%; width:900px; height:900px; transform:translate(-50%,-50%); z-index:-1; background:radial-gradient(closest-side, rgba(39,128,95,.5), transparent); animation:breathe 7s ease-in-out infinite;}
-@keyframes breathe{50%{transform:translate(-50%,-50%) scale(1.15); opacity:.75;}}
-.cta h2{font-size:clamp(40px,7vw,104px); letter-spacing:-.05em; line-height:.95; max-width:14ch; margin:0 auto;}
-.cta p{margin:28px auto 0; max-width:48ch; color:rgba(243,239,228,.72); font-size:18px;}
-.cta .btn{margin-top:44px; padding:20px 32px; font-size:18px; border-radius:18px;}
-
-/* ---------- Contact ---------- */
-.contact h2{font-size:clamp(32px,3.6vw,48px);}
-.contact{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
-@media(max-width:860px){.contact{grid-template-columns:1fr;}}
-.c-list{list-style:none; margin:36px 0 0; padding:0; display:grid; gap:4px;}
-.c-list a,.c-list div{display:flex; align-items:center; gap:16px; padding:16px 0; border-bottom:1px solid var(--line);}
-.c-list a{transition:color .25s, padding .35s var(--ease-out);}
-.c-list a:hover{color:var(--green); padding-left:8px;}
-.c-list .ci{width:44px; height:44px; border-radius:12px; background:var(--paper); box-shadow:0 0 0 1px var(--line); display:flex; align-items:center; justify-content:center; color:var(--green); flex-shrink:0;}
-.c-list small{display:block; font-size:13px; color:var(--ink-2);}
-.c-list strong{font-weight:600; font-size:16.5px;}
-.form{background:var(--paper); border-radius:24px; padding:34px; box-shadow:0 0 0 1px var(--line);}
-.form h3{font-size:24px; letter-spacing:-.02em; margin-bottom:22px;}
-.field{margin-bottom:18px;}
-.field label{display:block; font-size:14px; font-weight:600; margin-bottom:8px;}
-.field input,.field textarea{width:100%; padding:14px 16px; border-radius:12px; border:1px solid var(--line); background:var(--sand); font-family:var(--body); font-size:16px; color:var(--ink); transition:border-color .25s, box-shadow .25s, background .25s;}
-.field input:focus,.field textarea:focus{outline:none; border-color:var(--leaf); background:#fff; box-shadow:0 0 0 4px rgba(39,128,95,.14);}
-.field textarea{min-height:120px; resize:vertical;}
-.form .btn{width:100%;}
-.form-note{margin-top:14px; font-size:13.5px; color:var(--ink-2);}
-.form-note a{color:var(--green); text-decoration:underline; text-underline-offset:3px;}
-.hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
-.form{position:relative;}
-.form-status{margin-top:14px; font-size:15px; font-weight:500; min-height:0;}
-.form-status:empty{display:none;}
-.form-status.ok{padding:14px 16px; border-radius:12px; background:rgba(39,128,95,.12); color:var(--green);}
-.form-status.err{padding:14px 16px; border-radius:12px; background:rgba(176,64,48,.1); color:#8A3226;}
-.form-status a{text-decoration:underline; text-underline-offset:3px; font-weight:600;}
-.field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:#B04030;}
-.btn:disabled{opacity:.7; cursor:wait;}
-
-/* ---------- Footer ---------- */
-footer{background:var(--ink); color:rgba(243,239,228,.66); padding:90px 0 36px; font-size:15px;}
-.f-top{display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:48px;}
-@media(max-width:760px){.f-top{grid-template-columns:1fr 1fr;} .f-brand{grid-column:1/-1;}}
-.f-brand img{width:180px; height:auto;}
-.f-brand p{margin-top:20px; max-width:34ch;}
-footer h4{font-family:var(--display); color:var(--sand); font-size:16px; margin:0 0 16px; font-weight:600;}
-footer ul{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
-footer a:hover{color:var(--sand);}
-.f-bot{margin-top:70px; padding-top:28px; border-top:1px solid rgba(243,239,228,.1); display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:center;}
-.f-legal{display:flex; flex-wrap:wrap; gap:8px 24px;}
-.f-legal a{text-decoration:underline; text-underline-offset:3px;}
-.socials{display:flex; gap:10px;}
-.socials a{width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:inset 0 0 0 1px rgba(243,239,228,.16); transition:background .25s, box-shadow .25s, color .25s;}
-.socials a:hover{background:var(--leaf); box-shadow:none; color:#fff;}
-
-/* Floating WhatsApp */
-.wa-float{position:fixed; right:22px; bottom:22px; z-index:80; width:60px; height:60px; border-radius:50%; background:var(--leaf); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 18px 36px -12px rgba(11,61,46,.7); transform:scale(0); transition:transform .5s var(--ease-out), background .25s;}
-.wa-float.show{transform:scale(1);}
-.wa-float:hover{background:#2E8F6A;}
-.wa-float::after{content:""; position:absolute; inset:0; border-radius:50%; box-shadow:0 0 0 0 rgba(39,128,95,.5); animation:halo 2.8s var(--ease-out) infinite;}
-@keyframes halo{0%{box-shadow:0 0 0 0 rgba(39,128,95,.45);}70%,100%{box-shadow:0 0 0 18px rgba(39,128,95,0);}}
-
-@media(max-width:980px){
-  .hero{padding-top:120px;}
-  .hero-grid{grid-template-columns:1fr; gap:56px; min-height:0;}
-  .why{grid-template-columns:1fr; gap:36px;} .why h2{position:static;}
-  .sec{padding:100px 0;}
-}
-@media(max-width:600px){
-  body{font-size:16px;}
-  .sec{padding:84px 0;}
-  .hero-ctas .btn{width:100%;}
-  .plan .price{font-size:46px;}
-  .cta{padding:110px 0;}
-  .form{padding:26px;}
-  .stage{aspect-ratio:4/3.5;}
-}
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
-  [data-reveal]{opacity:1; transform:none;}
-  .hero h1 .w > span,.fade-up{transform:none; opacity:1;}
-}
-</style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="#topo" aria-label="Firmiano, ir para o início">
-      <img class="lg-white" src="firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32">
-      <img class="lg-green" src="firmiano-identidade/firmiano-wordmark-verde.svg" alt="" width="127" height="32" aria-hidden="true">
+    <a class="logo" href="/" aria-label="Firmiano, ir para o início">
+      <img class="lg-white" src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32">
+      <img class="lg-green" src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="" width="127" height="32" aria-hidden="true">
     </a>
     <nav class="nav-links" aria-label="Principal">
-      <a href="#por-que">Por que a Firmiano</a>
-      <a href="#exemplos">Exemplos</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#precos">Preços</a>
-      <a href="#faq">Perguntas</a>
+      <a href="/servicos/">Serviços</a>
+      <a href="/exemplos/">Exemplos</a>
       <a href="/quem-somos">Quem somos</a>
+      <a href="/contato">Contato</a>
     </nav>
     <a class="btn btn-leaf nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
     <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
     <div class="menu" id="menu">
-      <a href="#por-que">Por que a Firmiano</a>
-      <a href="#exemplos">Exemplos</a>
-      <a href="#dominio">Consultar domínio</a>
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#precos">Preços</a>
-      <a href="#faq">Perguntas</a>
+      <a href="/">Início</a>
+      <a href="/servicos/">Serviços</a>
+      <a href="/exemplos/">Exemplos</a>
       <a href="/quem-somos">Quem somos</a>
+      <a href="/contato">Contato</a>
       <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
     </div>
   </div>
@@ -603,7 +87,7 @@ footer a:hover{color:var(--sand);}
         <a class="btn btn-leaf magnetic" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
           Pedir orçamento no WhatsApp</a>
-        <a class="btn btn-line-d" href="#precos">Ver preços</a>
+        <a class="btn btn-line-d" href="/servicos/">Ver serviços</a>
       </div>
       <ul class="hero-facts fade-up fu3">
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Domínio registrado no nome da sua empresa</li>
@@ -647,6 +131,41 @@ footer a:hover{color:var(--sand);}
       <li data-reveal style="--d:.16s"><div class="fbars" aria-hidden="true"><i></i><i></i><i></i></div><div><h3>Tudo no seu nome</h3><p>O domínio é registrado no nome da sua empresa e a landing page fica numa conta sua. Você não fica preso ao fornecedor.</p></div></li>
       <li data-reveal style="--d:.24s"><div class="fbars" aria-hidden="true"><i></i><i></i><i></i></div><div><h3>Manutenção com escopo definido</h3><p>Quem fez o site é quem atende depois. Alteração avulsa ou plano mensal com 1 hora incluída: você sabe o custo antes de pedir.</p></div></li>
     </ul>
+  </div>
+</section>
+
+<section class="sec" id="servicos" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <h2>Serviços</h2>
+      <p>Do primeiro site ao aplicativo, com domínio no seu nome e suporte de quem fez o projeto.</p>
+    </div>
+    <div class="svc-grid">
+      <a class="svc" href="/servicos/landing-page" data-reveal>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Landing page</h3>
+        <p>Um site de uma página, direto ao ponto, para apresentar o negócio e levar o cliente até o WhatsApp. Sem mensalidade de hospedagem.</p>
+        <div class="foot"><span class="from">a partir de<b>R$699</b></span><span class="go">Conhecer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </a>
+      <a class="svc feat" href="/servicos/site-wordpress" data-reveal style="--d:.08s">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 9h18M8 4v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Site WordPress</h3>
+        <p>Site completo de até 5 páginas, que você consegue atualizar sozinho, com hospedagem, segurança e suporte.</p>
+        <div class="foot"><span class="from">a partir de<b>R$1.499</b></span><span class="go">Conhecer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </a>
+      <a class="svc" href="/servicos/email-profissional" data-reveal>
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>E-mail profissional</h3>
+        <p>contato@suaempresa.com.br configurado no celular e no computador, com proteção contra spam.</p>
+        <div class="foot"><span class="from">junto com o site<b>ou avulso</b></span><span class="go">Conhecer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </a>
+      <a class="svc" href="/servicos/aplicativos" data-reveal style="--d:.08s">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 18.5h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Aplicativos</h3>
+        <p>O aplicativo da sua empresa na App Store e no Google Play, do agendamento ao cartão fidelidade.</p>
+        <div class="foot"><span class="from">orçamento<b>sob medida</b></span><span class="go">Conhecer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -718,7 +237,7 @@ footer a:hover{color:var(--sand);}
       <p>Três projetos conceituais, feitos para segmentos diferentes, mostram o padrão de design, texto e organização que você recebe. Abra e navegue como o seu cliente navegaria.</p>
     </div>
     <div class="work-grid">
-      <a class="work" href="exemplos/odontologia.html" data-reveal>
+      <a class="work" href="/exemplos/odontologia" data-reveal>
         <div class="shot s-odonto" aria-hidden="true"><div class="frame"><div class="fchrome"><i></i><i></i><i></i></div><div class="fbody">
           <div class="fnav"><b>Lumen</b><span><i></i><i></i><i></i></span></div>
           <div class="fh">Cuidar do sorriso pode ser tranquilo.</div>
@@ -732,7 +251,7 @@ footer a:hover{color:var(--sand);}
           <span class="more">Ver o exemplo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </a>
-      <a class="work" href="exemplos/advocacia.html" data-reveal style="--d:.08s">
+      <a class="work" href="/exemplos/advocacia" data-reveal style="--d:.08s">
         <div class="shot s-adv" aria-hidden="true"><div class="frame"><div class="fchrome"><i></i><i></i><i></i></div><div class="fbody">
           <div class="fnav"><b style="font-family:Georgia,serif;font-weight:400;font-size:12px">Prado Teixeira</b><span><i></i><i></i><i></i></span></div>
           <div class="fh">Orientação jurídica com <em>linguagem clara</em>.</div>
@@ -746,7 +265,7 @@ footer a:hover{color:var(--sand);}
           <span class="more">Ver o exemplo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </div>
       </a>
-      <a class="work" href="exemplos/padaria.html" data-reveal style="--d:.16s">
+      <a class="work" href="/exemplos/padaria" data-reveal style="--d:.16s">
         <div class="shot s-pad" aria-hidden="true"><div class="frame"><div class="fchrome"><i></i><i></i><i></i></div><div class="fbody">
           <div class="fnav"><b>Forno da Vila</b><span><i></i><i></i><i></i></span></div>
           <div class="fh">Pão de verdade, saindo do forno <em>às 7h</em>.</div>
@@ -762,24 +281,6 @@ footer a:hover{color:var(--sand);}
       </a>
     </div>
     <p class="work-note" data-reveal>As empresas desses exemplos são fictícias. O seu site é criado do zero com a identidade, os textos e as fotos do seu negócio.</p>
-  </div>
-</section>
-
-<section class="sec dark" id="dominio">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <h2>O nome da sua empresa ainda está livre?</h2>
-      <p>Digite o nome do seu negócio e veja na hora se o .com.br está disponível. Se não estiver, sugerimos alternativas.</p>
-    </div>
-    <form class="dom-bar" id="dom-form" autocomplete="off" novalidate data-reveal style="--d:.1s">
-      <span class="pre" aria-hidden="true">https://</span>
-      <label for="dom-input" class="sr-only">Nome da sua empresa</label>
-      <input id="dom-input" type="text" maxlength="60" placeholder="padaria pão quente">
-      <span class="suf" aria-hidden="true">.com.br</span>
-      <button type="submit" class="btn btn-leaf" id="dom-btn">Consultar</button>
-    </form>
-    <p class="dom-note">A consulta é feita direto do seu navegador, em serviços públicos de DNS e de registro de domínios. Não guardamos o que você digita. Saiba mais na <a href="privacidade.html">Política de privacidade</a>.</p>
-    <div class="dom-out" id="dom-out" aria-live="polite"></div>
   </div>
 </section>
 
@@ -823,124 +324,6 @@ footer a:hover{color:var(--sand);}
   </div>
 </section>
 
-<section class="sec pricing-sec" id="precos">
-  <div class="wrap">
-    <div class="price-top">
-      <div class="sec-head" data-reveal>
-        <h2>Preços fechados, sem letra miúda.</h2>
-        <p>Escopo definido em cada plano e valor combinado antes de começar. Valores promocionais para projetos fechados até 31/10/2026.</p>
-      </div>
-      <div class="seg" role="tablist" aria-label="Tipo de site" data-reveal style="--d:.1s">
-        <span class="ind" aria-hidden="true"></span>
-        <button role="tab" id="tab-lp" aria-selected="true" aria-controls="plans-lp">Landing page</button>
-        <button role="tab" id="tab-wp" aria-selected="false" aria-controls="plans-wp" tabindex="-1">Site WordPress</button>
-      </div>
-    </div>
-
-    <div class="plans" id="plans-lp" role="tabpanel" aria-labelledby="tab-lp">
-      <article class="plan">
-        <h3>Landing + domínio</h3>
-        <div class="was">De R$999</div>
-        <div class="price">R$699</div>
-        <p class="desc">1 página, sem mensalidade de hospedagem.</p>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>1 página, com design e programação</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro do domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Textos organizados e revisados</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Botão de WhatsApp</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Publicação no GitHub Pages da sua conta</li>
-        </ul>
-        <a class="btn btn-line" href="https://wa.me/5521998908129" data-wa="Olá! Quero o plano Landing page + domínio (R$699)." target="_blank" rel="noopener">Quero este plano</a>
-      </article>
-      <article class="plan feat">
-        <span class="tag">Mais completo</span>
-        <h3>Landing + domínio + e-mails</h3>
-        <div class="was">De R$1.499</div>
-        <div class="price">R$999</div>
-        <p class="desc">1 página, sem mensalidade de hospedagem.</p>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>1 página, com design e programação</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro do domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Configuração dos e-mails com o seu domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Botão de WhatsApp</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Publicação no GitHub Pages da sua conta</li>
-        </ul>
-        <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Quero o plano Landing page + domínio + e-mails (R$999)." target="_blank" rel="noopener">Quero este plano</a>
-      </article>
-      <article class="plan">
-        <h3>Suporte após a entrega</h3>
-        <div class="was">De R$99 por alteração</div>
-        <div class="price">R$49<small>por alteração</small></div>
-        <p class="desc">Você paga só quando precisar.</p>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Alterações depois que o site foi entregue</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Sem mensalidade</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Valor por alteração solicitada</li>
-        </ul>
-        <a class="btn btn-line" href="https://wa.me/5521998908129" data-wa="Olá! Quero saber mais sobre o suporte por alteração (R$49)." target="_blank" rel="noopener">Saber mais</a>
-      </article>
-    </div>
-
-    <div class="plans" id="plans-wp" role="tabpanel" aria-labelledby="tab-wp" hidden>
-      <article class="plan">
-        <h3>WordPress 5 páginas + domínio</h3>
-        <div class="was">De R$1.999</div>
-        <div class="price">R$1.499</div>
-        <p class="desc">Até 5 páginas. Hospedagem e suporte mensal à parte.</p>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Até 5 páginas, design completo</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro do domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Estrutura pensada para o seu negócio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Publicação e ativação assistidas</li>
-        </ul>
-        <a class="btn btn-line" href="https://wa.me/5521998908129" data-wa="Olá! Quero o plano site WordPress com 5 páginas + domínio (R$1.499)." target="_blank" rel="noopener">Quero este plano</a>
-      </article>
-      <article class="plan feat">
-        <span class="tag">Mais completo</span>
-        <h3>WordPress 5 páginas + e-mails</h3>
-        <div class="was">De R$2.499</div>
-        <div class="price">R$1.799</div>
-        <p class="desc">Até 5 páginas. Hospedagem e suporte mensal à parte.</p>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Até 5 páginas, design completo</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Registro do domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Configuração dos e-mails com o seu domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Publicação e ativação assistidas</li>
-        </ul>
-        <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Quero o plano WordPress 5 páginas + domínio + e-mails (R$1.799)." target="_blank" rel="noopener">Quero este plano</a>
-      </article>
-      <article class="plan">
-        <h3>Hospedagem e suporte</h3>
-        <div class="was">De R$199 por mês</div>
-        <div class="price">R$149<small>por mês</small></div>
-        <p class="desc">Obrigatória para o site WordPress.</p>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Hospedagem e certificado SSL</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Backups periódicos</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Atualizações e correções técnicas</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Monitoramento básico do site</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Até 1 hora de pequenas alterações por mês</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Suporte por e-mail ou WhatsApp em horário comercial</li>
-        </ul>
-        <a class="btn btn-line" href="https://wa.me/5521998908129" data-wa="Olá! Quero saber mais sobre Hospedagem e Suporte (R$149/mês)." target="_blank" rel="noopener">Saber mais</a>
-      </article>
-    </div>
-
-    <div class="notes" data-reveal>
-      <h3>O que vale saber antes de contratar</h3>
-      <dl>
-        <dt>Domínio</dt><dd>O registro está incluso nos planos com domínio e o domínio fica no nome do cliente. A renovação anual é por conta do cliente e cobrada pelo Registro.br (hoje cerca de R$ 40 por ano para .com.br).</dd>
-        <dt>E-mails</dt><dd>Configuramos os e-mails no seu domínio em um serviço de e-mail profissional. Planos gratuitos desses serviços têm limite de usuários.</dd>
-        <dt>Landing page</dt><dd>Fica hospedada no GitHub Pages, serviço gratuito do GitHub, numa conta no nome do cliente. Se você ainda não tem conta, ajudamos a criar e configurar. A estrutura é mantida pelo GitHub; a Firmiano entrega o site publicado e cuida das alterações que você pedir.</dd>
-        <dt>Site WordPress</dt><dd>É hospedado pela Firmiano. A mensalidade inclui hospedagem com SSL, backups, atualizações, monitoramento e até 1 hora de pequenas alterações por mês. Quem fechar até 31/10/2026 mantém o valor promocional.</dd>
-        <dt>Suporte</dt><dd>Por e-mail ou WhatsApp em horário comercial, com resposta em até 1 dia útil.</dd>
-        <dt>Pequenas alterações</dt><dd>Troca de textos, imagens, preços, horários ou contatos. Páginas novas, mudança de layout ou funcionalidades novas são orçadas à parte.</dd>
-        <dt>Pagamento</dt><dd>Os serviços do projeto (site, domínio e e-mails) são pagos em duas partes: 50% para começar e 50% na entrega do site pronto. A hospedagem do WordPress é mensal.</dd>
-      </dl>
-    </div>
-  </div>
-</section>
-
 <section class="sec" id="indique">
   <div class="wrap refer">
     <div data-reveal>
@@ -979,52 +362,34 @@ footer a:hover{color:var(--sand);}
     <a class="btn btn-sand magnetic" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero colocar o meu negócio no ar." target="_blank" rel="noopener" data-reveal style="--d:.2s">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
       Conversar no WhatsApp</a>
+    <p class="cta-alt" data-reveal style="--d:.25s">Prefere e-mail ou formulário? <a href="/contato">Veja todas as formas de contato</a>.</p>
   </div>
 </section>
 
-<section class="sec" id="contato">
-  <div class="wrap contact">
-    <div data-reveal>
-      <h2>Fale direto com quem vai cuidar do seu site.</h2>
-      <ul class="c-list">
-        <li><a href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site." target="_blank" rel="noopener"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><span><small>WhatsApp</small><strong>(21) 99890-8129</strong></span></a></li>
-        <li><a href="mailto:contato@firmiano.com.br"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><span><small>E-mail</small><strong>contato@firmiano.com.br</strong></span></a></li>
-        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+Ernani+do+Amaral+Peixoto%2C+450%2C+Sala+505%2C+Centro%2C+Niter%C3%B3i%2C+RJ" target="_blank" rel="noopener"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg></span><span><small>Endereço</small><strong>Av. Ernani do Amaral Peixoto, 450, sala 505, Centro, Niterói/RJ</strong></span></a></li>
-        <li><a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener"><span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><span><small>Instagram</small><strong>@firmiano.oficial</strong></span></a></li>
-      </ul>
-    </div>
-    <form class="form" id="contact-form" data-reveal style="--d:.1s" novalidate>
-      <h3>Ou mande uma mensagem</h3>
-      <div class="field"><label for="c-name">Nome</label><input id="c-name" name="nome" type="text" autocomplete="name" maxlength="100" required></div>
-      <div class="field"><label for="c-email">E-mail</label><input id="c-email" name="email" type="email" autocomplete="email" maxlength="150" required></div>
-      <div class="field"><label for="c-msg">Mensagem</label><textarea id="c-msg" name="mensagem" maxlength="3000" placeholder="Conte um pouco sobre o site que você precisa" required></textarea></div>
-      <div class="hp" aria-hidden="true"><label for="c-site">Não preencha este campo</label><input id="c-site" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
-      <button type="submit" class="btn btn-leaf" id="c-btn">Enviar mensagem</button>
-      <p class="form-status" id="c-status" role="status" aria-live="polite"></p>
-      <p class="form-note">A mensagem chega direto no nosso e-mail e respondemos em até 1 dia útil. Seus dados são usados só para responder o seu contato, conforme a <a href="privacidade.html">Política de privacidade</a>.</p>
-    </form>
-  </div>
-</section>
 </main>
 
 <footer>
   <div class="wrap">
     <div class="f-top">
       <div class="f-brand">
-        <img src="firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="180" height="45">
+        <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="180" height="45">
         <p>Criação, hospedagem e suporte de sites para pequenas empresas. Niterói/RJ, atendendo todo o Brasil.</p>
       </div>
       <div>
-        <h4>Navegação</h4>
-        <ul><li><a href="#por-que">Por que a Firmiano</a></li><li><a href="#exemplos">Exemplos</a></li><li><a href="#dominio">Consultar domínio</a></li><li><a href="#como-funciona">Como funciona</a></li><li><a href="#precos">Preços</a></li><li><a href="#indique">Indique e ganhe</a></li><li><a href="#faq">Perguntas</a></li><li><a href="/quem-somos">Quem somos</a></li></ul>
+        <h4>Serviços</h4>
+        <ul><li><a href="/servicos/landing-page">Landing page</a></li><li><a href="/servicos/site-wordpress">Site WordPress</a></li><li><a href="/servicos/email-profissional">E-mail profissional</a></li><li><a href="/servicos/aplicativos">Aplicativos</a></li></ul>
+      </div>
+      <div>
+        <h4>Firmiano</h4>
+        <ul><li><a href="/exemplos/">Exemplos</a></li><li><a href="/quem-somos">Quem somos</a></li><li><a href="/#como-funciona">Como funciona</a></li><li><a href="/#indique">Indique e ganhe</a></li><li><a href="/#faq">Perguntas</a></li></ul>
       </div>
       <div>
         <h4>Contato</h4>
-        <ul><li><a href="https://wa.me/5521998908129" target="_blank" rel="noopener">(21) 99890-8129</a></li><li><a href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a></li><li>Av. Ernani do Amaral Peixoto, 450, sala 505, Centro, Niterói/RJ</li><li><a href="privacidade.html">Política de privacidade</a></li></ul>
+        <ul><li><a href="https://wa.me/5521998908129" target="_blank" rel="noopener">(21) 99890-8129</a></li><li><a href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a></li><li>Av. Ernani do Amaral Peixoto, 450, sala 505, Centro, Niterói/RJ</li><li><a href="/contato">Todas as formas de contato</a></li></ul>
       </div>
     </div>
     <div class="f-bot">
-      <div class="f-legal"><span>© 2026 Firmiano. Responsável: Ismael Firmiano, Niterói/RJ.</span><a href="privacidade.html">Política de privacidade</a></div>
+      <div class="f-legal"><span>© 2026 Firmiano. Responsável: Ismael Firmiano, Niterói/RJ.</span><a href="/privacidade.html">Política de privacidade</a></div>
       <div class="socials">
         <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
         <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
@@ -1038,241 +403,6 @@ footer a:hover{color:var(--sand);}
   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
 </a>
 
-<script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var finePointer = window.matchMedia('(pointer: fine)').matches;
-
-  /* WhatsApp links */
-  document.querySelectorAll('[data-wa]').forEach(function(a){
-    a.href = 'https://wa.me/5521998908129?text=' + encodeURIComponent(a.getAttribute('data-wa'));
-  });
-
-  /* Nav, progress, floating button */
-  var nav = document.getElementById('nav'), prog = document.getElementById('progress'), waF = document.getElementById('waFloat');
-  var hero = document.getElementById('hero');
-  function onScroll(){
-    var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
-    var past = y > hero.offsetHeight - 90;
-    nav.classList.toggle('scrolled', past);
-    nav.classList.toggle('glass', !past && y > 8);
-    prog.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
-    waF.classList.toggle('show', y > innerHeight * .6);
-    stepsProgress();
-  }
-  var burger = document.getElementById('burger');
-  burger.addEventListener('click', function(){
-    var open = nav.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-  document.querySelectorAll('#menu a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded', false); document.body.style.overflow=''; }); });
-
-  /* Headline split */
-  var h1 = document.getElementById('headline');
-  if (!reduce) {
-    var words = h1.textContent.trim().split(/\s+/);
-    h1.setAttribute('aria-label', h1.textContent.trim());
-    h1.innerHTML = words.map(function(w, i){ return '<span class="w" aria-hidden="true"><span style="transition-delay:' + (0.08 + i * 0.055).toFixed(3) + 's">' + w + '</span></span>'; }).join(' ');
-  }
-
-  /* Hero build sequence */
-  var stage = document.getElementById('stage'), typed = document.getElementById('typed');
-  var URL_TXT = 'suaempresa.com.br';
-  function finish(){ stage.classList.add('built','details','live'); stage.closest('.stage-holder').classList.add('live'); typed.textContent = URL_TXT; }
-  function play(){
-    hero.classList.add('ready');
-    if (reduce) { finish(); return; }
-    setTimeout(function(){ stage.classList.add('built'); }, 1300);
-    setTimeout(function(){ stage.classList.add('details'); }, 2300);
-    setTimeout(function(){
-      var i = 0; (function t(){ typed.textContent = URL_TXT.slice(0, ++i); if (i < URL_TXT.length) setTimeout(t, 55); else setTimeout(function(){ stage.classList.add('live'); stage.closest('.stage-holder').classList.add('live'); }, 250); })();
-    }, 2700);
-  }
-  if (document.fonts && document.fonts.ready) { Promise.race([document.fonts.ready, new Promise(function(r){ setTimeout(r, 900); })]).then(function(){ requestAnimationFrame(play); }); }
-  else { requestAnimationFrame(play); }
-
-  /* Tilt */
-  var sw = document.getElementById('stageWrap');
-  if (finePointer && !reduce) {
-    sw.addEventListener('pointermove', function(e){
-      var r = sw.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-      stage.style.transform = 'rotateY(' + (x * 10).toFixed(2) + 'deg) rotateX(' + (-y * 8).toFixed(2) + 'deg)';
-    });
-    sw.addEventListener('pointerleave', function(){ stage.style.transform = ''; });
-  }
-
-  /* Spotlight tiles */
-  if (finePointer) document.querySelectorAll('.spot').forEach(function(el){
-    el.addEventListener('pointermove', function(e){ var r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
-  });
-
-  /* Magnetic buttons */
-  if (finePointer && !reduce) document.querySelectorAll('.magnetic').forEach(function(b){
-    b.addEventListener('pointermove', function(e){ var r = b.getBoundingClientRect(); b.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * .22).toFixed(1) + 'px,' + ((e.clientY - r.top - r.height / 2) * .3).toFixed(1) + 'px)'; });
-    b.addEventListener('pointerleave', function(){ b.style.transform = ''; });
-  });
-
-  /* Reveal */
-  var rev = document.querySelectorAll('[data-reveal]');
-  if ('IntersectionObserver' in window && !reduce) {
-    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px', threshold:.12});
-    rev.forEach(function(el){ io.observe(el); });
-  } else rev.forEach(function(el){ el.classList.add('in'); });
-
-  /* Steps progress */
-  var stepsEl = document.getElementById('steps'), stepEls = stepsEl.querySelectorAll('.step'), track = stepsEl.querySelector('.track i');
-  function stepsProgress(){
-    var r = stepsEl.getBoundingClientRect(), vh = innerHeight;
-    var p = Math.min(1, Math.max(0, (vh * .75 - r.top) / (r.height + vh * .2)));
-    if (reduce) p = 1;
-    track.parentNode.style.setProperty('--p', p.toFixed(3));
-    stepEls.forEach(function(s, i){ s.classList.toggle('on', p >= i / (stepEls.length - 1) - 0.02); });
-  }
-
-  /* Pricing tabs */
-  var tabs = [document.getElementById('tab-lp'), document.getElementById('tab-wp')], ind = document.querySelector('.seg .ind');
-  function placeInd(t){ ind.style.width = t.offsetWidth + 'px'; ind.style.transform = 'translateX(' + (t.offsetLeft - 6) + 'px)'; }
-  function select(t){
-    tabs.forEach(function(x){
-      var on = x === t, panel = document.getElementById(x.getAttribute('aria-controls'));
-      x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; panel.hidden = !on;
-    });
-    placeInd(t);
-  }
-  tabs.forEach(function(t, i){
-    t.addEventListener('click', function(){ select(t); });
-    t.addEventListener('keydown', function(e){ if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { var n = tabs[(i + 1) % 2]; select(n); n.focus(); } });
-  });
-  placeInd(tabs[0]);
-  window.addEventListener('resize', function(){ placeInd(tabs.filter(function(t){ return t.getAttribute('aria-selected') === 'true'; })[0]); });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ placeInd(tabs.filter(function(t){ return t.getAttribute('aria-selected') === 'true'; })[0]); });
-
-  /* FAQ */
-  document.querySelectorAll('.qa button').forEach(function(b){
-    b.addEventListener('click', function(){ var q = b.parentNode, open = q.classList.toggle('open'); b.setAttribute('aria-expanded', open); });
-  });
-
-  /* Contact form: envio direto (FormSubmit) */
-  var cf = document.getElementById('contact-form'), cBtn = document.getElementById('c-btn'), cSt = document.getElementById('c-status'), t0 = Date.now();
-  function status(type, html){ cSt.className = 'form-status ' + type; cSt.innerHTML = html; }
-  var FALLBACK = ' Se preferir, chame no <a href="https://wa.me/5521998908129" target="_blank" rel="noopener">WhatsApp</a> ou escreva para <a href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a>.';
-  cf.addEventListener('submit', function(e){
-    e.preventDefault();
-    var fN = document.getElementById('c-name'), fE = document.getElementById('c-email'), fM = document.getElementById('c-msg');
-    var n = fN.value.trim(), em = fE.value.trim(), m = fM.value.trim(), bad = null;
-    [fN, fE, fM].forEach(function(f){ f.removeAttribute('aria-invalid'); });
-    if (!n) bad = [fN, 'Escreva o seu nome.'];
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) bad = [fE, 'Escreva um e-mail válido, como voce@empresa.com.br.'];
-    else if (m.length < 5) bad = [fM, 'Escreva a sua mensagem.'];
-    if (bad) { bad[0].setAttribute('aria-invalid', 'true'); bad[0].focus(); status('err', bad[1]); return; }
-    if (document.getElementById('c-site').value || Date.now() - t0 < 3000) { status('ok', 'Mensagem enviada. Respondemos em até 1 dia útil.'); cf.reset(); return; }
-    cBtn.disabled = true; cBtn.textContent = 'Enviando…'; status('', '');
-    fetch('https://formsubmit.co/ajax/contato@firmiano.com.br', {
-      method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify({nome: n, email: em, mensagem: m, _subject: 'Contato pelo site: ' + n, _replyto: em, _template: 'table', _captcha: 'false'})
-    }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return {ok: r.ok, j: j}; }); })
-      .then(function(res){
-        if (res.ok && String(res.j.success) === 'true') { status('ok', 'Mensagem enviada. Respondemos no e-mail ' + em.replace(/[<>&"]/g, '') + ' em até 1 dia útil.'); cf.reset(); }
-        else status('err', 'A mensagem não foi enviada.' + FALLBACK);
-      })
-      .catch(function(){ status('err', 'A mensagem não foi enviada porque a conexão falhou.' + FALLBACK); })
-      .finally(function(){ cBtn.disabled = false; cBtn.textContent = 'Enviar mensagem'; });
-  });
-
-  window.addEventListener('scroll', onScroll, {passive:true});
-  window.addEventListener('resize', onScroll);
-  onScroll();
-})();
-</script>
-
-<script>
-(function(){
-  var form=document.getElementById('dom-form'), input=document.getElementById('dom-input'),
-      btn=document.getElementById('dom-btn'), out=document.getElementById('dom-out');
-  if(!form) return;
-  var SUF=['oficial','digital','online','web','site','br','brasil'];
-  function names(raw){
-    var v=String(raw||'').trim().toLowerCase().replace(/^https?:\/\//,'').replace(/^www\./,'').replace(/\.(com\.br|net\.br|com|net|org|br)$/,'');
-    v=v.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/&/g,' e ');
-    var words=v.replace(/[^a-z0-9\s-]/g,'').split(/[\s-]+/).filter(Boolean);
-    var joined=words.join('');
-    if(joined.length<2||joined.length>50) return null;
-    return {joined:joined, hyphen:words.length>1?words.join('-'):null};
-  }
-  function tfetch(url,opts){
-    var c=new AbortController(), t=setTimeout(function(){c.abort();},8000);
-    opts=opts||{}; opts.signal=c.signal;
-    return fetch(url,opts).finally(function(){clearTimeout(t);});
-  }
-  function doh(host){
-    return tfetch('https://dns.google/resolve?name='+encodeURIComponent(host)+'&type=NS')
-      .then(function(r){if(!r.ok)throw 0;return r.json();})
-      .catch(function(){return tfetch('https://cloudflare-dns.com/dns-query?name='+encodeURIComponent(host)+'&type=NS',{headers:{Accept:'application/dns-json'}}).then(function(r){if(!r.ok)throw 0;return r.json();});})
-      .then(function(j){return j.Status===3?'free':(j.Status===0?'taken':'unk');})
-      .catch(function(){return 'unk';});
-  }
-  function rdap(url){
-    return tfetch(url,{headers:{Accept:'application/rdap+json, application/json'}})
-      .then(function(r){return r.status===404?'free':(r.status===200?'taken':'unk');})
-      .catch(function(){return 'unk';});
-  }
-  function el(tag,cls,text){var e=document.createElement(tag); if(cls)e.className=cls; if(text!=null)e.textContent=text; return e;}
-  function pill(st,free){ return el('span','pill '+st,{free:free||'Disponível',taken:'Já registrado',unk:'Não foi possível verificar'}[st]); }
-  function want(domain){
-    var a=el('a','dom-want','Quero este domínio');
-    a.href='https://wa.me/5521998908129?text='+encodeURIComponent('Olá! Quero registrar o domínio '+domain+' e fazer o meu site.');
-    a.target='_blank'; a.rel='noopener'; return a;
-  }
-  function row(domain,st,freeLabel,i){
-    var li=el('li'); li.style.animationDelay=(i||0)*0.05+'s'; li.appendChild(el('span','n',domain));
-    var r=el('span','r'); r.appendChild(pill(st,freeLabel)); if(st==='free') r.appendChild(want(domain));
-    li.appendChild(r); return li;
-  }
-  function render(base,res,vars){
-    out.textContent='';
-    var main=base+'.com.br', card=el('div','dom-main');
-    card.appendChild(el('div','dom-name',main)); card.appendChild(pill(res.br,'Parece disponível'));
-    card.appendChild(el('p','dom-sub',{
-      free:'Esse endereço parece livre. Antes de registrar para você, confirmamos a disponibilidade no Registro.br.',
-      taken:'Esse .com.br já tem dono. Veja as alternativas abaixo.',
-      unk:'Não foi possível consultar agora. Tente de novo em instantes ou fale com a gente.'}[res.br]));
-    if(res.br==='free'){var b=want(main); b.className='btn btn-leaf'; b.textContent='Quero este domínio'; card.appendChild(b);}
-    out.appendChild(card);
-    out.appendChild(el('h3','dom-h','Mesmo nome em outras terminações'));
-    var ul=el('ul','dom-list');
-    ul.appendChild(row(base+'.com',res.com,null,0)); ul.appendChild(row(base+'.net',res.net,null,1)); ul.appendChild(row(base+'.org',res.org,null,2));
-    out.appendChild(ul);
-    if(vars){
-      out.appendChild(el('h3','dom-h','Variações disponíveis com .com.br'));
-      if(vars.length){ var vl=el('ul','dom-list'); vars.forEach(function(d,i){vl.appendChild(row(d,'free','Parece disponível',i));}); out.appendChild(vl); }
-      else out.appendChild(el('p','dom-sub','Não encontramos variações livres automaticamente. Fale com a gente que ajudamos a achar um bom nome.'));
-    }
-  }
-  function run(raw){
-    var n=names(raw);
-    if(!n){ out.textContent=''; out.appendChild(el('p','dom-sub','Digite o nome da sua empresa, com 2 a 50 letras ou números.')); input.focus(); return; }
-    btn.disabled=true; btn.textContent='Consultando…';
-    var base=n.joined;
-    Promise.all([
-      doh(base+'.com.br'),
-      rdap('https://rdap.verisign.com/com/v1/domain/'+encodeURIComponent(base)+'.com'),
-      rdap('https://rdap.verisign.com/net/v1/domain/'+encodeURIComponent(base)+'.net'),
-      rdap('https://rdap.publicinterestregistry.org/rdap/domain/'+encodeURIComponent(base)+'.org')
-    ]).then(function(r){
-      var res={br:r[0],com:r[1],net:r[2],org:r[3]};
-      if(res.br==='free'){render(base,res,null);return;}
-      var cands=[]; if(n.hyphen) cands.push(n.hyphen);
-      SUF.forEach(function(s){cands.push(base+s);});
-      cands=cands.filter(function(c){return c.length<=63;});
-      return Promise.all(cands.map(function(c){return doh(c+'.com.br').then(function(st){return st==='free'?c+'.com.br':null;});}))
-        .then(function(list){render(base,res,list.filter(Boolean).slice(0,6));});
-    }).catch(function(){
-      out.textContent=''; out.appendChild(el('p','dom-sub','Não foi possível consultar agora. Tente de novo em instantes.'));
-    }).finally(function(){btn.disabled=false; btn.textContent='Consultar';});
-  }
-  form.addEventListener('submit',function(e){e.preventDefault(); run(input.value);});
-})();
-</script>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

@@ -4,16 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Quem somos — Firmiano</title>
-<meta name="description" content="Conheça Ismael Firmiano, fundador da Firmiano: quem projeta, programa e cuida do seu site do começo ao fim, em Niterói/RJ.">
+<meta name="description" content="Conheça Ismael Firmiano, fundador da Firmiano, e como cuidamos do seu site do começo ao fim, em Niterói/RJ.">
 <link rel="canonical" href="https://firmiano.com.br/quem-somos">
+<meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0B3D2E">
 <link rel="icon" type="image/svg+xml" href="/firmiano-identidade/firmiano-icone-quadrado.svg">
+<link rel="icon" type="image/png" sizes="1024x1024" href="/firmiano-identidade/firmiano-icone-quadrado.png">
 <link rel="apple-touch-icon" href="/firmiano-identidade/firmiano-icone-quadrado.png">
-<meta property="og:type" content="profile">
+<meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Firmiano">
 <meta property="og:title" content="Quem está por trás da Firmiano">
-<meta property="og:description" content="Ismael Firmiano projeta, programa e cuida do seu site do começo ao fim.">
+<meta property="og:description" content="Conheça quem está por trás da Firmiano.">
 <meta property="og:url" content="https://firmiano.com.br/quem-somos">
 <meta property="og:image" content="https://firmiano.com.br/firmiano-identidade/firmiano-icone-quadrado.png">
 <script type="application/ld+json">
@@ -32,205 +34,157 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://firmiano.com.br/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Quem somos",
+      "item": "https://firmiano.com.br/quem-somos"
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
-<style>
-:root{--green:#0B3D2E; --green-ink:#072A20; --leaf:#27805F; --leaf-hi:#3FA37C; --sand:#F3EFE4; --sand-2:#E9E4D6; --paper:#FBF9F4; --ink:#0E1F19; --ink-2:#4B554D; --line:#D9D4C3;
-  --display:'Bricolage Grotesque','Instrument Sans',system-ui,sans-serif; --body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif; --ease-out:cubic-bezier(.2,.8,.2,1);}
-*{box-sizing:border-box;}
-html{-webkit-text-size-adjust:100%;}
-body{margin:0; background:var(--sand); color:var(--ink); font-family:var(--body); font-size:18px; line-height:1.7; -webkit-font-smoothing:antialiased;}
-a{color:inherit;}
-img{display:block; max-width:100%;}
-:focus-visible{outline:2.5px solid var(--leaf-hi); outline-offset:3px; border-radius:6px;}
-.wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
-h1,h2,h3{font-family:var(--display); margin:0; font-weight:700; letter-spacing:-.03em; line-height:1.04;}
-p{margin:0;}
-
-.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:15px 24px; border-radius:14px; font-weight:600; font-size:16px; text-decoration:none; transition:transform .25s var(--ease-out), background .25s, box-shadow .25s;}
-.btn:hover{transform:translateY(-1px);}
-.btn-leaf{background:var(--leaf); color:#fff; box-shadow:0 10px 30px -10px rgba(39,128,95,.7), inset 0 1px 0 rgba(255,255,255,.18);}
-.btn-leaf:hover{background:#2E8F6A;}
-.btn-sand{background:var(--sand); color:var(--green);}
-.btn-sand:hover{background:#fff;}
-
-/* Topo */
-header{background:var(--green-ink);}
-.top{display:flex; align-items:center; justify-content:space-between; gap:20px; height:76px;}
-.top .logo img{width:127px; height:32px;}
-.top nav{display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500;}
-.top nav a{color:rgba(243,239,228,.8); text-decoration:none;}
-.top nav a:hover{color:var(--sand);}
-.top nav a[aria-current]{color:var(--sand);}
-.top .btn{padding:11px 18px; font-size:15px;}
-
-/* Abertura */
-.intro{background:var(--green-ink); color:var(--sand); padding:72px 0 0; position:relative; overflow:hidden;}
-.intro::before{content:""; position:absolute; inset:0; background:radial-gradient(50% 70% at 85% 0%, rgba(39,128,95,.4), transparent 70%); pointer-events:none;}
-.intro-grid{position:relative;}
-.intro-text{padding-bottom:80px; max-width:820px;}
-.intro h1{font-size:clamp(42px,6.2vw,76px); letter-spacing:-.04em; line-height:.98; margin-top:18px;}
-.kicker{display:inline-block; font-size:14px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--leaf-hi);}
-.bio{margin-top:40px; display:grid; grid-template-columns:150px 1fr; gap:28px; align-items:start;}
-.bio img{width:150px; height:200px; object-fit:cover; border-radius:16px; box-shadow:0 0 0 4px rgba(243,239,228,.12), 0 20px 40px -20px rgba(0,0,0,.6);}
-.hello{font-family:var(--display); font-size:clamp(24px,2.6vw,30px); font-weight:600; letter-spacing:-.02em; line-height:1.2;}
-.intro .lead{margin-top:14px; font-size:19px; color:rgba(243,239,228,.78); max-width:52ch;}
-
-/* Conteúdo */
-main section{padding:96px 0 0;}
-.story{display:grid; grid-template-columns:280px 1fr; gap:56px; padding-top:40px; border-top:1px solid var(--line);}
-.story h2{font-size:clamp(28px,3.2vw,38px); position:sticky; top:32px; align-self:start;}
-.story .num{display:block; font-family:var(--display); font-size:15px; font-weight:700; color:var(--leaf); letter-spacing:.04em; margin-bottom:10px;}
-.story .body p{max-width:62ch; color:var(--ink-2);}
-.story .body p + p{margin-top:18px;}
-.story .body a{color:var(--green); font-weight:600; text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1.5px;}
-.story .body a:hover{color:var(--leaf);}
-.story strong{color:var(--ink); font-weight:600;}
-.facts{margin-top:28px; display:flex; flex-wrap:wrap; gap:10px; padding:0; list-style:none;}
-.facts li{font-size:14.5px; font-weight:600; color:var(--green); background:var(--paper); box-shadow:0 0 0 1px var(--line); padding:8px 14px; border-radius:999px;}
-
-.expect-head{display:flex; justify-content:space-between; align-items:end; gap:24px; flex-wrap:wrap; padding-top:40px; border-top:1px solid var(--line);}
-.expect-head h2{font-size:clamp(32px,4.2vw,52px);}
-.cards{margin-top:40px; display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
-.card{background:var(--paper); border-radius:22px; padding:28px; box-shadow:0 0 0 1px rgba(14,31,25,.06);}
-.card .ic{width:44px; height:44px; border-radius:13px; background:rgba(39,128,95,.12); color:var(--leaf); display:grid; place-items:center;}
-.card h3{font-size:21px; letter-spacing:-.02em; line-height:1.15; margin-top:20px;}
-.card p{margin-top:8px; font-size:15.5px; line-height:1.6; color:var(--ink-2);}
-
-.cta{margin-top:110px; background:var(--green); color:var(--sand); padding:96px 0; text-align:center; position:relative; overflow:hidden;}
-.cta::before{content:""; position:absolute; inset:0; background:radial-gradient(50% 80% at 50% 0%, rgba(63,163,124,.35), transparent 70%); pointer-events:none;}
-.cta .wrap{position:relative;}
-.cta h2{font-size:clamp(36px,5vw,64px); letter-spacing:-.04em;}
-.cta p{margin:20px auto 0; max-width:52ch; color:rgba(243,239,228,.78);}
-.cta .btn{margin-top:34px;}
-
-footer{background:var(--ink); color:rgba(243,239,228,.66); font-size:15px;}
-footer .in{display:flex; justify-content:space-between; gap:16px 24px; flex-wrap:wrap; padding:36px 24px;}
-footer nav{display:flex; gap:20px; flex-wrap:wrap;}
-footer a{color:var(--sand); text-decoration:none;}
-footer a:hover{text-decoration:underline; text-underline-offset:3px;}
-
-@media(max-width:1000px){ .cards{grid-template-columns:1fr 1fr;} }
-@media(max-width:880px){
-  .top nav a:not(.btn){display:none;}
-  .intro{padding-top:48px;}
-  .intro-text{padding-bottom:64px;}
-  .story{grid-template-columns:1fr; gap:16px;}
-  .story h2{position:static;}
-  main section{padding-top:72px;}
-}
-@media(max-width:560px){
-  .bio{grid-template-columns:96px 1fr; gap:18px; margin-top:32px;}
-  .bio img{width:96px; height:128px; border-radius:12px;}
-  .intro .lead{font-size:17px;}
-  body{font-size:17px;}
-  .cards{grid-template-columns:1fr;}
-  .cta{margin-top:80px; padding:72px 0;}
-  .cta .btn{width:100%;}
-}
-@media (prefers-reduced-motion: reduce){*{transition:none !important;}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-<header>
-  <div class="wrap top">
-    <a class="logo" href="/" aria-label="Firmiano, ir para o início"><img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32"></a>
-    <nav aria-label="Principal">
-      <a href="/">Início</a>
-      <a href="/#exemplos">Exemplos</a>
-      <a href="/#precos">Preços</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="/" aria-label="Firmiano, ir para o início">
+      <img class="lg-white" src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32">
+      <img class="lg-green" src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="" width="127" height="32" aria-hidden="true">
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="/servicos/">Serviços</a>
+      <a href="/exemplos/">Exemplos</a>
       <a href="/quem-somos" aria-current="page">Quem somos</a>
-      <a class="btn btn-leaf" href="https://wa.me/5521998908129?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20Quem%20somos%20e%20quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener">Fale com a gente</a>
+      <a href="/contato">Contato</a>
     </nav>
+    <a class="btn btn-leaf nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+    <div class="menu" id="menu">
+      <a href="/">Início</a>
+      <a href="/servicos/">Serviços</a>
+      <a href="/exemplos/">Exemplos</a>
+      <a href="/quem-somos">Quem somos</a>
+      <a href="/contato">Contato</a>
+      <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+    </div>
   </div>
 </header>
 
 <main>
-  <div class="intro">
-    <div class="wrap intro-grid">
-      <div class="intro-text">
-        <span class="kicker">Quem somos</span>
-        <h1>Quem está por trás da Firmiano</h1>
-        <div class="bio">
-          <picture>
-            <source srcset="/img/ismael-firmiano.webp" type="image/webp">
-            <img src="/img/ismael-firmiano.jpg" alt="Foto de Ismael Firmiano, fundador da Firmiano" width="300" height="400">
-          </picture>
-          <div>
-            <p class="hello">Oi, eu sou o Ismael Firmiano.</p>
-            <p class="lead">Sou o fundador da Firmiano e acompanho cada projeto do começo ao fim, da primeira conversa ao suporte depois que o site vai ao ar.</p>
-            <p class="lead">Em dezembro de 2026 me formo em Ciência da Computação pela Universidade Federal Fluminense (UFF).</p>
-          </div>
-        </div>
+<section class="page-hero" id="hero">
+  <div class="wrap">
+    <ol class="crumbs" aria-label="Você está em"><li><a href="/">Início</a></li><li aria-current="page">Quem somos</li></ol>
+    <h1>Quem está por trás da Firmiano</h1>
+    <div class="bio">
+      <picture>
+        <source srcset="/img/ismael-firmiano.webp" type="image/webp">
+        <img src="/img/ismael-firmiano.jpg" alt="Foto de Ismael Firmiano, fundador da Firmiano" width="300" height="400">
+      </picture>
+      <div>
+        <p class="hello">Oi, eu sou o Ismael Firmiano.</p>
+        <p class="lead">Sou o fundador da Firmiano e acompanho cada projeto do começo ao fim, da primeira conversa ao suporte depois que o site vai ao ar.</p>
+        <p class="lead">Em dezembro de 2026 me formo em Ciência da Computação pela Universidade Federal Fluminense (UFF).</p>
       </div>
     </div>
   </div>
+</section>
 
-  <section>
-    <div class="wrap story">
-      <h2><span class="num">01</span>Onde tudo começou</h2>
-      <div class="body">
-        <p>Meu interesse por sites nasceu em 2019, quando eu era supervisor de logística de uma empresa no Espírito Santo. Percebi que ela precisava de presença na internet e, em vez de esperar alguém resolver, fui lá e fiz o site: o <a href="https://extinbras.com.br" target="_blank" rel="noopener">extinbras.com.br</a>.</p>
-        <p>Ver aquele site no ar, trabalhando pela empresa, mudou meus planos. Gostei tanto que decidi estudar Ciência da Computação e vim morar em Niterói para cursar na UFF.</p>
-      </div>
-    </div>
-  </section>
+<section class="sec">
+  <div class="wrap split">
+    <h2 data-reveal><span class="num">01</span>Onde tudo começou</h2>
+    <div class="prose" data-reveal style="--d:.08s"><p>Meu interesse por sites nasceu em 2019, quando eu era supervisor de logística de uma empresa no Espírito Santo. Percebi que ela precisava de presença na internet e, em vez de esperar alguém resolver, fui lá e fiz o site: o <a href="https://extinbras.com.br" target="_blank" rel="noopener">extinbras.com.br</a>.</p> <p>Ver aquele site no ar, trabalhando pela empresa, mudou meus planos. Gostei tanto que decidi estudar Ciência da Computação e vim morar em Niterói para cursar na UFF.</p></div>
+  </div>
+</section>
 
-  <section>
-    <div class="wrap story">
-      <h2><span class="num">02</span>O que aprendi na prática</h2>
-      <div class="body">
-        <p>Na universidade, o que eu fazia por curiosidade virou responsabilidade. Trabalhei em sites importantes da própria UFF, como o da <strong>Agência de Inovação (AGIR)</strong> e o do <strong>Escritório de Transferência de Conhecimento (ETCO)</strong>. Hoje sou o responsável por desenvolvê-los e mantê-los, incluindo a criação de plugins sob medida.</p>
-        <p>Disciplinas como Interface Humano-Máquina me ensinaram que um site bonito não basta: ele precisa ser fácil de usar. Aprendi a pensar na experiência de quem visita, para que a pessoa encontre o que procura sem esforço e se sinta confiante em entrar em contato.</p>
-        <ul class="facts" aria-label="Resumo">
-          <li>Sites desde 2019</li>
-          <li>Ciência da Computação · UFF</li>
-          <li>WordPress e plugins sob medida</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+<section class="sec alt">
+  <div class="wrap split">
+    <h2 data-reveal><span class="num">02</span>O que aprendi na prática</h2>
+    <div class="prose" data-reveal style="--d:.08s"><p>Na universidade, o que eu fazia por curiosidade virou responsabilidade. Trabalhei em sites importantes da própria UFF, como o da <strong>Agência de Inovação (AGIR)</strong> e o do <strong>Escritório de Transferência de Conhecimento (ETCO)</strong>. Hoje sou o responsável por desenvolvê-los e mantê-los, incluindo a criação de plugins sob medida.</p> <p>Disciplinas como Interface Humano-Máquina me ensinaram que um site bonito não basta: ele precisa ser fácil de usar. Aprendi a pensar na experiência de quem visita, para que a pessoa encontre o que procura sem esforço e se sinta confiante em entrar em contato.</p> <ul class="facts" aria-label="Resumo"> <li>Sites desde 2019</li> <li>Ciência da Computação · UFF</li> <li>WordPress e plugins sob medida</li> </ul></div>
+  </div>
+</section>
 
-  <section>
-    <div class="wrap story">
-      <h2><span class="num">03</span>Por que criei a Firmiano</h2>
-      <div class="body">
-        <p>Criei a Firmiano porque gosto de fazer isso: pegar uma ideia, um negócio ou uma instituição e transformar em um site que representa bem quem eles são.</p>
-        <p>Na Firmiano, você fala direto com quem cuida do seu projeto, sem intermediários nem equipes que se revezam. Entendemos o seu projeto, construímos o site e ficamos por perto depois que ele vai ao ar, com hospedagem e suporte contínuos.</p>
-      </div>
-    </div>
-  </section>
+<section class="sec">
+  <div class="wrap split">
+    <h2 data-reveal><span class="num">03</span>Por que criei a Firmiano</h2>
+    <div class="prose" data-reveal style="--d:.08s"><p>Criei a Firmiano porque gosto de fazer isso: pegar uma ideia, um negócio ou uma instituição e transformar em um site que representa bem quem eles são.</p> <p>Na Firmiano, você fala direto com quem cuida do seu projeto, sem intermediários nem equipes que se revezam. Entendemos o seu projeto, construímos o site e ficamos por perto depois que ele vai ao ar, com hospedagem e suporte contínuos.</p></div>
+  </div>
+</section>
 
-  <section>
-    <div class="wrap">
-      <div class="expect-head"><h2>O que você pode esperar</h2></div>
-      <div class="cards">
-        <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Feito para o seu negócio</h3><p>Um site pensado para você, não um modelo genérico com o seu logo.</p></article>
-        <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Navegação simples</h3><p>Pensada para quem visita encontrar o que procura sem esforço.</p></article>
-        <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Atendimento pessoal</h3><p>Com alguém que conhece o seu projeto por dentro.</p></article>
-        <article class="card"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Suporte depois da entrega</h3><p>Porque o site não termina quando é publicado.</p></article>
-      </div>
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head" data-reveal><h2>O que você pode esperar</h2></div>
+    <div class="cards four">
+      <article class="card" data-reveal style="--d:0.00s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Feito para o seu negócio</h3><p>Um site pensado para você, não um modelo genérico com o seu logo.</p></article>
+      <article class="card" data-reveal style="--d:0.06s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Navegação simples</h3><p>Pensada para quem visita encontrar o que procura sem esforço.</p></article>
+      <article class="card" data-reveal style="--d:0.12s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M5 21c1-4 4-6 7-6s6 2 7 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Atendimento pessoal</h3><p>Com alguém que conhece o seu projeto por dentro.</p></article>
+      <article class="card" data-reveal style="--d:0.18s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Suporte depois da entrega</h3><p>Porque o site não termina quando é publicado.</p></article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="cta">
-    <div class="wrap">
-      <h2>Vamos conversar?</h2>
-      <p>Se você quer colocar sua empresa ou instituição na internet, ou renovar um site que ficou para trás, fale com a gente. Vamos gostar de ouvir a sua ideia e mostrar como ela pode ficar.</p>
-      <a class="btn btn-sand" href="https://wa.me/5521998908129?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20Quem%20somos%20e%20quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-        Fale com a gente</a>
-    </div>
-  </section>
+<section class="cta">
+  <div class="wrap">
+    <h2 data-reveal>Vamos conversar?</h2>
+    <p data-reveal style="--d:.1s">Se você quer colocar sua empresa ou instituição na internet, ou renovar um site que ficou para trás, fale com a gente. Vamos gostar de ouvir a sua ideia e mostrar como ela pode ficar.</p>
+    <a class="btn btn-sand magnetic" href="https://wa.me/5521998908129" data-wa="Olá! Vi a página Quem somos e quero conversar sobre um site." target="_blank" rel="noopener" data-reveal style="--d:.2s">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      Fale com a gente</a>
+  </div>
+</section>
 </main>
 
 <footer>
-  <div class="wrap in">
-    <span>© 2026 Firmiano. Responsável: Ismael Firmiano, Niterói/RJ.</span>
-    <nav aria-label="Rodapé"><a href="/">Início</a><a href="/#exemplos">Exemplos</a><a href="/#precos">Preços</a><a href="privacidade.html">Política de privacidade</a></nav>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-brand">
+        <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="180" height="45">
+        <p>Criação, hospedagem e suporte de sites para pequenas empresas. Niterói/RJ, atendendo todo o Brasil.</p>
+      </div>
+      <div>
+        <h4>Serviços</h4>
+        <ul><li><a href="/servicos/landing-page">Landing page</a></li><li><a href="/servicos/site-wordpress">Site WordPress</a></li><li><a href="/servicos/email-profissional">E-mail profissional</a></li><li><a href="/servicos/aplicativos">Aplicativos</a></li></ul>
+      </div>
+      <div>
+        <h4>Firmiano</h4>
+        <ul><li><a href="/exemplos/">Exemplos</a></li><li><a href="/quem-somos">Quem somos</a></li><li><a href="/#como-funciona">Como funciona</a></li><li><a href="/#indique">Indique e ganhe</a></li><li><a href="/#faq">Perguntas</a></li></ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul><li><a href="https://wa.me/5521998908129" target="_blank" rel="noopener">(21) 99890-8129</a></li><li><a href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a></li><li>Av. Ernani do Amaral Peixoto, 450, sala 505, Centro, Niterói/RJ</li><li><a href="/contato">Todas as formas de contato</a></li></ul>
+      </div>
+    </div>
+    <div class="f-bot">
+      <div class="f-legal"><span>© 2026 Firmiano. Responsável: Ismael Firmiano, Niterói/RJ.</span><a href="/privacidade.html">Política de privacidade</a></div>
+      <div class="socials">
+        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+        <a href="https://wa.me/5521998908129" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
   </div>
 </footer>
+
+<a class="wa-float" id="waFloat" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+</a>
+
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

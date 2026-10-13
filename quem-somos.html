@@ -15,7 +15,7 @@
 <meta property="og:title" content="Quem está por trás da Firmiano">
 <meta property="og:description" content="Ismael Firmiano projeta, programa e cuida do seu site do começo ao fim.">
 <meta property="og:url" content="https://firmiano.com.br/quem-somos">
-<meta property="og:image" content="https://firmiano.com.br/img/ismael-firmiano.jpg">
+<meta property="og:image" content="https://firmiano.com.br/firmiano-identidade/firmiano-icone-quadrado.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,18 +68,14 @@ header{background:var(--green-ink);}
 /* Abertura */
 .intro{background:var(--green-ink); color:var(--sand); padding:72px 0 0; position:relative; overflow:hidden;}
 .intro::before{content:""; position:absolute; inset:0; background:radial-gradient(50% 70% at 85% 0%, rgba(39,128,95,.4), transparent 70%); pointer-events:none;}
-.intro-grid{position:relative; display:grid; grid-template-columns:1.15fr .85fr; gap:64px; align-items:end;}
-.kicker{display:inline-block; font-size:14px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--leaf-hi);}
+.intro-grid{position:relative;}
+.intro-text{padding-bottom:80px; max-width:820px;}
 .intro h1{font-size:clamp(42px,6.2vw,76px); letter-spacing:-.04em; line-height:.98; margin-top:18px;}
-.hello{margin-top:32px; font-family:var(--display); font-size:clamp(24px,2.6vw,30px); font-weight:600; letter-spacing:-.02em; line-height:1.2;}
-.intro .lead{margin-top:16px; font-size:19px; color:rgba(243,239,228,.78); max-width:52ch;}
-.intro .lead + .lead{margin-top:14px;}
-.intro-text{padding-bottom:80px;}
-.portrait{position:relative; align-self:end;}
-.portrait picture img{width:100%; aspect-ratio:1/1.08; object-fit:cover; object-position:50% 30%; border-radius:28px 28px 0 0;}
-.portrait figcaption{position:absolute; left:20px; bottom:20px; background:rgba(7,42,32,.82); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); padding:12px 16px; border-radius:14px; font-size:14px; line-height:1.4;}
-.portrait figcaption b{display:block; font-family:var(--display); font-size:17px; color:var(--sand);}
-.portrait figcaption span{color:rgba(243,239,228,.72);}
+.kicker{display:inline-block; font-size:14px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--leaf-hi);}
+.bio{margin-top:40px; display:grid; grid-template-columns:150px 1fr; gap:28px; align-items:start;}
+.bio img{width:150px; height:200px; object-fit:cover; border-radius:16px; box-shadow:0 0 0 4px rgba(243,239,228,.12), 0 20px 40px -20px rgba(0,0,0,.6);}
+.hello{font-family:var(--display); font-size:clamp(24px,2.6vw,30px); font-weight:600; letter-spacing:-.02em; line-height:1.2;}
+.intro .lead{margin-top:14px; font-size:19px; color:rgba(243,239,228,.78); max-width:52ch;}
 
 /* Conteúdo */
 main section{padding:96px 0 0;}
@@ -119,14 +115,15 @@ footer a:hover{text-decoration:underline; text-underline-offset:3px;}
 @media(max-width:880px){
   .top nav a:not(.btn){display:none;}
   .intro{padding-top:48px;}
-  .intro-grid{grid-template-columns:1fr; gap:40px;}
-  .intro-text{padding-bottom:0;}
-  .portrait{max-width:440px;}
+  .intro-text{padding-bottom:64px;}
   .story{grid-template-columns:1fr; gap:16px;}
   .story h2{position:static;}
   main section{padding-top:72px;}
 }
 @media(max-width:560px){
+  .bio{grid-template-columns:96px 1fr; gap:18px; margin-top:32px;}
+  .bio img{width:96px; height:128px; border-radius:12px;}
+  .intro .lead{font-size:17px;}
   body{font-size:17px;}
   .cards{grid-template-columns:1fr;}
   .cta{margin-top:80px; padding:72px 0;}
@@ -145,7 +142,7 @@ footer a:hover{text-decoration:underline; text-underline-offset:3px;}
       <a href="/#exemplos">Exemplos</a>
       <a href="/#precos">Preços</a>
       <a href="/quem-somos" aria-current="page">Quem somos</a>
-      <a class="btn btn-leaf" href="https://wa.me/5521998908129?text=Ol%C3%A1%2C%20Ismael!%20Vi%20a%20p%C3%A1gina%20Quem%20somos%20e%20quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener">Fale comigo</a>
+      <a class="btn btn-leaf" href="https://wa.me/5521998908129?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20Quem%20somos%20e%20quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener">Fale com a gente</a>
     </nav>
   </div>
 </header>
@@ -156,17 +153,18 @@ footer a:hover{text-decoration:underline; text-underline-offset:3px;}
       <div class="intro-text">
         <span class="kicker">Quem somos</span>
         <h1>Quem está por trás da Firmiano</h1>
-        <p class="hello">Oi, eu sou o Ismael Firmiano.</p>
-        <p class="lead">Sou o fundador da Firmiano e a pessoa que vai projetar, programar e cuidar do seu site do começo ao fim.</p>
-        <p class="lead">Em dezembro de 2026 me formo em Ciência da Computação pela Universidade Federal Fluminense (UFF).</p>
+        <div class="bio">
+          <picture>
+            <source srcset="/img/ismael-firmiano.webp" type="image/webp">
+            <img src="/img/ismael-firmiano.jpg" alt="Foto de Ismael Firmiano, fundador da Firmiano" width="300" height="400">
+          </picture>
+          <div>
+            <p class="hello">Oi, eu sou o Ismael Firmiano.</p>
+            <p class="lead">Sou o fundador da Firmiano e acompanho cada projeto do começo ao fim, da primeira conversa ao suporte depois que o site vai ao ar.</p>
+            <p class="lead">Em dezembro de 2026 me formo em Ciência da Computação pela Universidade Federal Fluminense (UFF).</p>
+          </div>
+        </div>
       </div>
-      <figure class="portrait" style="margin:0">
-        <picture>
-          <source srcset="/img/ismael-firmiano.webp" type="image/webp">
-          <img src="/img/ismael-firmiano.jpg" alt="Ismael Firmiano sorrindo, com a Baía de Guanabara ao fundo" width="533" height="533">
-        </picture>
-        <figcaption><b>Ismael Firmiano</b><span>Fundador · Niterói/RJ</span></figcaption>
-      </figure>
     </div>
   </div>
 
@@ -199,8 +197,8 @@ footer a:hover{text-decoration:underline; text-underline-offset:3px;}
     <div class="wrap story">
       <h2><span class="num">03</span>Por que criei a Firmiano</h2>
       <div class="body">
-        <p>Criei a Firmiano porque gosto de fazer isso. Gosto de pegar uma ideia, um negócio ou uma instituição e transformar em um site que representa bem quem eles são.</p>
-        <p>A empresa é nova, e isso tem uma vantagem: você fala direto comigo. Não há intermediários nem equipes que se revezam. Eu entendo o seu projeto, construo o site e fico por perto depois que ele vai ao ar, com hospedagem e suporte contínuos.</p>
+        <p>Criei a Firmiano porque gosto de fazer isso: pegar uma ideia, um negócio ou uma instituição e transformar em um site que representa bem quem eles são.</p>
+        <p>Na Firmiano, você fala direto com quem cuida do seu projeto, sem intermediários nem equipes que se revezam. Entendemos o seu projeto, construímos o site e ficamos por perto depois que ele vai ao ar, com hospedagem e suporte contínuos.</p>
       </div>
     </div>
   </section>
@@ -220,10 +218,10 @@ footer a:hover{text-decoration:underline; text-underline-offset:3px;}
   <section class="cta">
     <div class="wrap">
       <h2>Vamos conversar?</h2>
-      <p>Se você quer colocar sua empresa ou instituição na internet, ou renovar um site que ficou para trás, me chama. Vou gostar de ouvir sua ideia e mostrar como ela pode ficar.</p>
-      <a class="btn btn-sand" href="https://wa.me/5521998908129?text=Ol%C3%A1%2C%20Ismael!%20Vi%20a%20p%C3%A1gina%20Quem%20somos%20e%20quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener">
+      <p>Se você quer colocar sua empresa ou instituição na internet, ou renovar um site que ficou para trás, fale com a gente. Vamos gostar de ouvir a sua ideia e mostrar como ela pode ficar.</p>
+      <a class="btn btn-sand" href="https://wa.me/5521998908129?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20Quem%20somos%20e%20quero%20conversar%20sobre%20um%20site." target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-        Fale comigo</a>
+        Fale com a gente</a>
     </div>
   </section>
 </main>

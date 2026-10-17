@@ -616,3 +616,35 @@ a.svc.feat .ic{background:rgba(63,163,124,.22); color:var(--mint);}
 .facts{margin:28px 0 0; display:flex; flex-wrap:wrap; gap:10px; padding:0; list-style:none;}
 .facts li{font-size:14.5px; font-weight:600; color:var(--green); background:var(--paper); box-shadow:0 0 0 1px var(--line); padding:8px 14px; border-radius:999px;}
 @media(max-width:560px){.bio{grid-template-columns:96px 1fr; gap:18px; margin-top:32px;} .bio img{width:96px; height:128px; border-radius:12px;} .bio .lead{font-size:17px;}}
+
+/* ---------- Outubro Rosa (só na home, enquanto o body tiver .rosa) ---------- */
+.rosa-msg{display:none;}
+body.rosa .rosa-msg{display:flex; gap:16px; align-items:flex-start; max-width:600px; margin-bottom:32px; padding:16px 20px 16px 16px; border-radius:18px; background:rgba(255,255,255,.07); border:1px solid rgba(244,155,190,.35); font-size:14.5px; line-height:1.55; color:rgba(251,226,236,.85);}
+body.rosa .rosa-msg .ribbon{flex-shrink:0; filter:drop-shadow(0 6px 12px rgba(0,0,0,.35));}
+body.rosa .rosa-msg b{color:#FBD3E2; font-weight:700;}
+body.rosa .rosa-msg a{color:#FBD3E2; font-weight:600; text-decoration:underline; text-underline-offset:3px; white-space:nowrap;}
+body.rosa .hero{background:#3A0E26;}
+body.rosa .hero::before{background:
+  radial-gradient(40% 45% at 78% 35%, rgba(224,87,139,.55), transparent 70%),
+  radial-gradient(35% 40% at 15% 85%, rgba(244,155,190,.22), transparent 70%),
+  radial-gradient(50% 60% at 50% 0%, rgba(92,24,60,.9), transparent 70%);}
+body.rosa .hero .lead,body.rosa .hero-facts{color:rgba(251,226,236,.78);}
+body.rosa .hero-facts svg{color:#F49BBE;}
+body.rosa .hero .btn-leaf,body.rosa .nav:not(.scrolled) .btn-leaf{background:#D9487F; box-shadow:0 10px 30px -10px rgba(217,72,127,.8), inset 0 1px 0 rgba(255,255,255,.18);}
+body.rosa .hero .btn-leaf:hover,body.rosa .nav:not(.scrolled) .btn-leaf:hover{background:#E4618F;}
+body.rosa .nav.glass{background:rgba(58,14,38,.82);}
+body.rosa .progress{background:linear-gradient(90deg,#D9487F,#F49BBE);}
+body.rosa .stage{background:linear-gradient(180deg,#5C1A3E,#47122F);}
+body.rosa .built .b1{background-color:#D9487F;}
+body.rosa .built .b1::after{background:radial-gradient(80% 120% at 85% 10%, rgba(251,211,226,.45), transparent 60%), linear-gradient(135deg, rgba(255,255,255,.06), transparent 50%);}
+body.rosa .built .b3{background-color:#F49BBE;}
+body.rosa .x6 span:first-child{background:rgba(244,155,190,.5);}
+body.rosa .url svg{color:#F49BBE;}
+body.rosa .caret{background:#F49BBE;}
+body.rosa .status{background:rgba(58,14,38,.85); border-color:rgba(244,155,190,.5); color:#FBD3E2;}
+body.rosa .status i,body.rosa .status i::after{background:#F49BBE; border-color:#F49BBE;}
+body.rosa .status i::after{background:none;}
+body.rosa .stage-glow{background:radial-gradient(45% 45% at 50% 50%, rgba(224,87,139,.35), transparent 70%);}
+body.rosa .marquee span{color:rgba(251,226,236,.65);}
+body.rosa .marquee span::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23F49BBE'%3E%3Crect x='3' y='3' width='14' height='5' rx='1.5'/%3E%3Crect x='3' y='10' width='9.5' height='5' rx='1.5'/%3E%3Crect x='3' y='17' width='5' height='5' rx='1.5'/%3E%3C/g%3E%3C/svg%3E");}
+@media(max-width:600px){body.rosa .rosa-msg{font-size:14px; padding:14px; gap:12px;} body.rosa .rosa-msg .ribbon{width:26px; height:38px;}}

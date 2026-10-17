@@ -48,7 +48,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body>
+<body class="rosa">
+<script>/* Outubro Rosa: desliga sozinho a partir de 1º de novembro */ if (Date.now() >= Date.parse("2026-11-01T00:00:00-03:00")) document.body.classList.remove("rosa");</script>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
@@ -81,6 +82,10 @@
   <div class="grain" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div>
+      <aside class="rosa-msg fade-up fu1" aria-label="Outubro Rosa">
+        <svg class="ribbon" width="34" height="50" viewBox="0 0 64 96" fill="none" aria-hidden="true"><path d="M28 56 C20 42 18 30 22 19 C25 10 39 10 42 19 C46 30 44 42 36 56 L48 90" stroke="#E0578B" stroke-width="11"/><path d="M36 56 L16 90" stroke="#F49BBE" stroke-width="11"/><path d="M28 56 C20 42 18 30 22 19" stroke="#F49BBE" stroke-width="11"/></svg>
+        <p><b>Outubro Rosa.</b> A Firmiano apoia a conscientização sobre o câncer de mama. Conheça o seu corpo, fique atenta a qualquer alteração nas mamas e converse com um profissional de saúde sobre os exames indicados para você. O diagnóstico precoce salva vidas. <a href="https://www.gov.br/inca/pt-br/assuntos/cancer/tipos/mama" target="_blank" rel="noopener">Saiba mais no INCA</a></p>
+      </aside>
       <h1 id="headline">Seu negócio encontrado no Google e chamado no WhatsApp.</h1>
       <p class="lead fade-up fu1">Landing pages e sites em WordPress para negócios locais, com textos pensados para quem procura o seu serviço na cidade, contato a um toque no celular e manutenção com escopo definido.</p>
       <div class="hero-ctas fade-up fu2">

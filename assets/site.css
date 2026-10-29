@@ -601,3 +601,12 @@ a:hover .arrow{transform:translateX(4px);}
 .page-hero .dom-bar,.page-hero .dom-note,.page-hero .dom-out{grid-column:1 / -1;}
 .page-hero .dom-bar{max-width:none;}
 .dom-page h1{max-width:none;}
+
+/* Início: chamada para o portfólio e "quem somos" sem foto */
+.work-cta{padding-bottom:var(--gap);}
+.work-cta .work-head{margin-bottom:0;}
+.work-cta-r{grid-column:8 / -1; display:flex; flex-direction:column; align-items:flex-start; gap:28px;}
+.work-cta-r p{font-size:var(--step-lead); line-height:1.4;}
+.about{min-height:0;}
+.bio.no-photo{grid-template-columns:1fr;}
+@media(max-width:1080px){.work-cta-r{grid-column:1 / -1;}}

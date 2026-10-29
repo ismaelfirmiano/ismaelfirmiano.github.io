@@ -7,7 +7,7 @@
 <meta name="description" content="Configuração de e-mail profissional com o domínio da sua empresa (contato@suaempresa.com.br), com autenticação contra spam e acesso no celular e no computador.">
 <link rel="canonical" href="https://firmiano.com.br/servicos/email-profissional">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0B3D2E">
+<meta name="theme-color" content="#EFEFEA">
 <link rel="icon" type="image/svg+xml" href="/firmiano-identidade/firmiano-icone-quadrado.svg">
 <link rel="icon" type="image/png" sizes="1024x1024" href="/firmiano-identidade/firmiano-icone-quadrado.png">
 <link rel="apple-touch-icon" href="/firmiano-identidade/firmiano-icone-quadrado.png">
@@ -46,19 +46,17 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300&family=Stack+Sans+Text:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.add('js')</script>
 <script src="/assets/analytics.js"></script>
 </head>
-<body>
-<div class="progress" id="progress" aria-hidden="true"></div>
+<body id="top">
 
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="/" aria-label="Firmiano, ir para o início">
-      <img class="lg-white" src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32">
-      <img class="lg-green" src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="" width="127" height="32" aria-hidden="true">
-    </a>
+    <a class="logo" href="/" aria-label="Firmiano, ir para o início"><img src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="Firmiano" width="127" height="32"></a>
     <nav class="nav-links" aria-label="Principal">
       <a href="/servicos/" aria-current="page">Serviços</a>
       <a href="/portfolio/">Portfólio</a>
@@ -66,45 +64,44 @@
       <a href="/dominio">Domínio</a>
       <a href="/contato">Contato</a>
     </nav>
-    <a class="btn btn-leaf nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
-    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
-    <div class="menu" id="menu">
-      <a href="/">Início</a>
-      <a href="/servicos/">Serviços</a>
-      <a href="/portfolio/">Portfólio</a>
-      <a href="/quem-somos">Quem somos</a>
-      <a href="/dominio">Consultar domínio</a>
-      <a href="/contato">Contato</a>
-      <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
-    </div>
+    <a class="btn nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+  <div class="menu" id="menu">
+    <a href="/">Início</a>
+    <a href="/servicos/" aria-current="page">Serviços</a>
+    <a href="/portfolio/">Portfólio</a>
+    <a href="/quem-somos">Quem somos</a>
+    <a href="/dominio">Domínio</a>
+    <a href="/contato">Contato</a>
+    <a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
   </div>
 </header>
 
-<main>
+<main id="conteudo">
 <section class="page-hero" id="hero">
   <div class="wrap">
-    <ol class="crumbs" aria-label="Você está em"><li><a href="/">Início</a></li><li><a href="/servicos/">Serviços</a></li><li aria-current="page">E-mail profissional</li></ol>
-    <h1>contato@suaempresa.com.br no lugar do @gmail.</h1>
-    <p class="lead">E-mail com o domínio da sua empresa passa confiança, chega com menos risco de cair no spam e organiza o atendimento por pessoa ou setor. Nós configuramos tudo e deixamos funcionando no seu celular e no computador.</p>
-    <div class="ctas"><a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Quero configurar e-mail profissional para a minha empresa." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Quero e-mail profissional</a></div>
+    <h1 data-reveal>E-mail com o nome da empresa</h1>
+    <p class="lead" data-reveal>E-mail com o domínio da sua empresa passa confiança, chega com menos risco de cair no spam e organiza o atendimento por pessoa ou setor. Nós configuramos tudo e deixamos funcionando no seu celular e no computador.</p>
+    <div class="ctas"><a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Quero configurar e-mail profissional para a minha empresa." target="_blank" rel="noopener">Quero e-mail profissional</a></div>
   </div>
 </section>
 
-<section class="sec">
+<section class="sec f-green">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <h2>Por que usar e-mail com o seu domínio</h2>
     </div>
     <div class="cards four">
-      <article class="card" data-reveal style="--d:0.00s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Mais confiança</h3><p>Um orçamento enviado por contato@suaempresa.com.br transmite muito mais seriedade do que um endereço gratuito.</p></article>
-      <article class="card" data-reveal style="--d:0.06s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Menos spam</h3><p>Configuramos a autenticação do domínio (SPF, DKIM e DMARC), que ajuda as suas mensagens a chegarem na caixa de entrada.</p></article>
-      <article class="card" data-reveal style="--d:0.12s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5M16 4.5a3.5 3.5 0 010 7M18 14.8c2 .7 3.2 2.5 3.6 5.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Organizado por pessoa ou setor</h3><p>Endereços como contato@, financeiro@ ou o nome de cada pessoa da equipe, cada um com a sua caixa.</p></article>
-      <article class="card" data-reveal style="--d:0.18s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="8" cy="15" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 12l9-9M17 6l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>O endereço é da empresa</h3><p>Se alguém sai da equipe ou você troca de serviço de e-mail, o endereço continua o mesmo.</p></article>
+      <article class="card" data-reveal style="--d:0.00s"><h3>Mais confiança</h3><p>Um orçamento enviado por contato@suaempresa.com.br transmite muito mais seriedade do que um endereço gratuito.</p></article>
+      <article class="card" data-reveal style="--d:0.06s"><h3>Menos spam</h3><p>Configuramos a autenticação do domínio (SPF, DKIM e DMARC), que ajuda as suas mensagens a chegarem na caixa de entrada.</p></article>
+      <article class="card" data-reveal style="--d:0.12s"><h3>Organizado por pessoa ou setor</h3><p>Endereços como contato@, financeiro@ ou o nome de cada pessoa da equipe, cada um com a sua caixa.</p></article>
+      <article class="card" data-reveal style="--d:0.18s"><h3>O endereço é da empresa</h3><p>Se alguém sai da equipe ou você troca de serviço de e-mail, o endereço continua o mesmo.</p></article>
     </div>
   </div>
 </section>
 
-<section class="sec alt">
+<section class="sec f-paper">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <h2>Como funciona</h2>
@@ -118,16 +115,16 @@
       <li data-reveal style="--d:0.24s"><h3>Teste</h3><p>Enviamos e recebemos mensagens de teste para confirmar que tudo funciona antes de entregar.</p></li>
     </ol>
     <div class="box-note" data-reveal>
-      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 11v5M12 8v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      
       <div><h3>Quanto custa por mês?</h3><p>Depende do serviço escolhido. Nos planos gratuitos não há mensalidade, mas existe limite de contas e de recursos. Nos planos pagos, a mensalidade é cobrada direto pelo provedor, no nome da sua empresa.</p></div>
     </div>
   </div>
 </section>
 
-<section class="sec dark" id="dominio">
+<section class="sec f-deep" id="dominio">
   <div class="wrap">
     <div class="sec-head" data-reveal>
-      <h2>Primeiro passo: o domínio da sua empresa</h2>
+      <h2>Primeiro, o domínio</h2>
       <p>O e-mail profissional usa o mesmo endereço do seu site. Digite o nome do negócio e veja se o .com.br está disponível.</p>
     </div>
     <form class="dom-bar" id="dom-form" autocomplete="off" novalidate data-reveal style="--d:.1s">
@@ -135,97 +132,93 @@
       <label for="dom-input" class="sr-only">Nome da sua empresa</label>
       <input id="dom-input" type="text" maxlength="60" placeholder="padaria pão quente">
       <span class="suf" aria-hidden="true">.com.br</span>
-      <button type="submit" class="btn btn-leaf" id="dom-btn">Consultar</button>
+      <button type="submit" class="btn" id="dom-btn">Consultar</button>
     </form>
     <p class="dom-note">A consulta é feita direto do seu navegador, em serviços públicos de DNS e de registro de domínios. Não guardamos o que você digita. Saiba mais na <a href="/privacidade.html">Política de privacidade</a>.</p>
     <div class="dom-out" id="dom-out" aria-live="polite"></div>
   </div>
 </section>
 
-<section class="sec" id="contratar">
+<section class="sec f-mint" id="contratar">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <h2>Como contratar</h2>
       <p>O e-mail profissional pode vir junto com o seu site ou ser configurado sozinho, para quem já tem domínio.</p>
     </div>
     <div class="svc-grid">
-      <a class="svc" href="/servicos/landing-page#precos" data-reveal>
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <a class="svc" data-reveal href="/servicos/landing-page#precos">
+        
         <h3>Landing page + e-mails</h3>
         <p>Landing page e e-mails profissionais configurados no mesmo projeto.</p>
-        <div class="foot"><span class="from">a partir de<b>R$990</b></span><span class="go">Ver plano <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="foot"><span class="from">a partir de <b>R$990</b></span><span class="go">Ver plano <span class="arrow" aria-hidden="true">→</span></span></div>
       </a>
-      <a class="svc" href="/servicos/site-wordpress#precos" data-reveal style="--d:.08s">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 9h18M8 4v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <a class="svc" data-reveal href="/servicos/site-wordpress#precos" style="--d:.08s">
+        
         <h3>Site WordPress + e-mails</h3>
         <p>Site completo de até 5 páginas, domínio e e-mails configurados.</p>
-        <div class="foot"><span class="from">a partir de<b>R$1.700</b></span><span class="go">Ver plano <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="foot"><span class="from">a partir de <b>R$1.700</b></span><span class="go">Ver plano <span class="arrow" aria-hidden="true">→</span></span></div>
       </a>
     </div>
-    <div class="inline-cta" data-reveal><a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Já tenho domínio e quero configurar só o e-mail profissional." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Quero só o e-mail profissional</a><span>Já tem domínio e quer só o e-mail? Fale com a gente e enviamos o orçamento.</span></div>
+    <div class="inline-cta" data-reveal><a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Já tenho domínio e quero configurar só o e-mail profissional." target="_blank" rel="noopener">Quero só o e-mail profissional</a><span>Já tem domínio e quer só o e-mail? Fale com a gente e enviamos o orçamento.</span></div>
   </div>
 </section>
 
-<section class="sec" id="faq">
-  <div class="wrap faq-grid">
-    <div class="sec-head" data-reveal>
-      <h2>Dúvidas sobre e-mail profissional</h2>
-      <p>Não achou a sua? Chame no WhatsApp que a gente responde.</p>
-    </div>
-    <div class="faq" data-reveal style="--d:.1s">
-      <div class="qa open"><button aria-expanded="true">Consigo usar no celular?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Sim. Configuramos no aplicativo de e-mail do seu celular, como Gmail ou Outlook, e no computador.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">Já tenho domínio. Precisa registrar outro?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Não. Usamos o domínio que você já tem. Só precisamos de acesso à conta onde ele está registrado, como o Registro.br.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">Quantas contas posso ter?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Depende do serviço escolhido. Planos gratuitos têm limite de usuários; nos pagos, cada conta tem um valor mensal. Indicamos a melhor opção para o tamanho da sua equipe.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">Perco os e-mails antigos?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Se você já usa e-mail no domínio e vai trocar de serviço, avaliamos a migração das mensagens antes de mudar.</p></div></div></div>
-    </div>
-  </div>
+<section class="faq-bands" id="faq" aria-labelledby="faq-h">
+  <div class="faq-head"><div class="wrap"><h2 id="faq-h">Dúvidas sobre e-mail profissional</h2><p>Não achou a sua? <a href="https://wa.me/5521998908129" data-wa="Olá! Tenho uma dúvida." target="_blank" rel="noopener">Pergunte no WhatsApp</a>.</p></div></div>
+  <div class="qa" data-reveal><div class="wrap"><h3>Consigo usar no celular?</h3><div class="ans"><p>Sim. Configuramos no aplicativo de e-mail do seu celular, como Gmail ou Outlook, e no computador.</p></div></div></div>
+  <div class="qa" data-reveal><div class="wrap"><h3>Já tenho domínio. Precisa registrar outro?</h3><div class="ans"><p>Não. Usamos o domínio que você já tem. Só precisamos de acesso à conta onde ele está registrado, como o Registro.br.</p></div></div></div>
+  <div class="qa" data-reveal><div class="wrap"><h3>Quantas contas posso ter?</h3><div class="ans"><p>Depende do serviço escolhido. Planos gratuitos têm limite de usuários; nos pagos, cada conta tem um valor mensal. Indicamos a melhor opção para o tamanho da sua equipe.</p></div></div></div>
+  <div class="qa" data-reveal><div class="wrap"><h3>Perco os e-mails antigos?</h3><div class="ans"><p>Se você já usa e-mail no domínio e vai trocar de serviço, avaliamos a migração das mensagens antes de mudar.</p></div></div></div>
 </section>
 
 <section class="cta">
   <div class="wrap">
-    <h2 data-reveal>Quer o seu e-mail com o nome da empresa?</h2>
+    <h2 data-reveal>Vamos configurar?</h2>
     <p data-reveal style="--d:.1s">Conte quantas pessoas vão usar e se você já tem domínio. Respondemos com a melhor opção.</p>
-    <a class="btn btn-sand magnetic" href="https://wa.me/5521998908129" data-wa="Olá! Quero e-mail profissional para a minha empresa." target="_blank" rel="noopener" data-reveal style="--d:.2s">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    <a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Quero e-mail profissional para a minha empresa." target="_blank" rel="noopener" data-reveal style="--d:.2s">
       Conversar no WhatsApp</a>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="f-top">
-      <div class="f-brand">
-        <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="180" height="45">
-        <p>Criação, hospedagem e suporte de sites para pequenas empresas. Niterói/RJ, atendendo todo o Brasil.</p>
-      </div>
-      <div>
-        <h4>Serviços</h4>
-        <ul><li><a href="/servicos/landing-page">Landing page</a></li><li><a href="/servicos/site-wordpress">Site WordPress</a></li><li><a href="/servicos/email-profissional">E-mail profissional</a></li><li><a href="/servicos/aplicativos">Aplicativos</a></li></ul>
-      </div>
-      <div>
-        <h4>Firmiano</h4>
-        <ul><li><a href="/portfolio/">Portfólio</a></li><li><a href="/quem-somos">Quem somos</a></li><li><a href="/#como-funciona">Como funciona</a></li><li><a href="/#indique">Indique e ganhe</a></li><li><a href="/#faq">Perguntas</a></li></ul>
-      </div>
-      <div>
-        <h4>Contato</h4>
-        <ul><li><a href="https://wa.me/5521998908129" target="_blank" rel="noopener">(21) 99890-8129</a></li><li><a href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a></li><li>Av. Ernani do Amaral Peixoto, 450, sala 505, Centro, Niterói/RJ</li><li><a href="/dominio">Consultar domínio</a></li><li><a href="/contato">Todas as formas de contato</a></li></ul>
-      </div>
+<footer class="site-foot">
+  <div class="reel" aria-hidden="true">
+    <div class="reel-track">
+      <img src="/img/portfolio/fonoalice.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/niteroi/estacao-das-barcas.jpg" alt="" width="1280" height="849" loading="lazy"><img src="/img/portfolio/studiohope.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/fisioequilibrio.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/niteroi/boa-viagem-niteroi.jpg" alt="" width="1280" height="960" loading="lazy"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/animalultrapet.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy">
+      <img src="/img/portfolio/fonoalice.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/niteroi/estacao-das-barcas.jpg" alt="" width="1280" height="849" loading="lazy"><img src="/img/portfolio/studiohope.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/fisioequilibrio.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/niteroi/boa-viagem-niteroi.jpg" alt="" width="1280" height="960" loading="lazy"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/animalultrapet.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy">
     </div>
-    <div class="f-bot">
-      <div class="f-legal"><span>© 2026 Firmiano. Responsável: Ismael Firmiano, Niterói/RJ.</span><a href="/privacidade.html">Política de privacidade</a></div>
-      <div class="socials">
-        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
-        <a href="https://wa.me/5521998908129" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-      </div>
+  </div>
+  <div class="wrap">
+    <div class="foot-top" data-reveal>
+      <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32" loading="lazy">
+      <p>Av. Ernani do Amaral Peixoto, 450, sala 505<br>Centro, Niterói/RJ. Atendemos todo o Brasil.</p>
+      <p>Segunda a sexta, em horário comercial.<br>Resposta em até 1 dia útil.</p>
+      <a class="foot-up" href="#top">Voltar ao topo</a>
+    </div>
+    <div class="foot-big" data-reveal>
+      <a href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="WhatsApp (21) 99890-8129">(21) 99890-8129</a>
+      <a class="mail" href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a>
+    </div>
+    <div class="foot-meta" data-reveal>
+      <nav aria-label="Rodapé">
+        <a href="/servicos/landing-page">Landing page</a>
+        <a href="/servicos/site-wordpress">Site WordPress</a>
+        <a href="/servicos/email-profissional">E-mail profissional</a>
+        <a href="/servicos/aplicativos">Aplicativos</a>
+        <a href="/portfolio/">Portfólio</a>
+        <a href="/quem-somos">Quem somos</a>
+        <a href="/#indique">Indique e ganhe</a>
+        <a href="/dominio">Consultar domínio</a>
+        <a href="/contato">Contato</a>
+        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <p class="credits">Fotos de Niterói: <a href="https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_das_Barcas_em_Niter%C3%B3i_15_06_2007.jpg" target="_blank" rel="noopener">Estação das Barcas</a>, por Al Lemos, e <a href="https://commons.wikimedia.org/wiki/File:Boa_Viagem_Niter%C3%B3i.JPG" target="_blank" rel="noopener">Boa Viagem</a>, por DiMonteiro, ambas em domínio público, via Wikimedia Commons.</p>
+      <p class="legal-line">© 2026 Firmiano · Ismael Firmiano, Niterói/RJ<br><a href="/privacidade.html">Política de privacidade</a></p>
     </div>
   </div>
 </footer>
 
-<a class="wa-float" id="waFloat" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
-</a>
 
 <script src="/assets/site.js" defer></script>
 </body>

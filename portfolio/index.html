@@ -7,7 +7,7 @@
 <meta name="description" content="Portfólio: landing pages para clínicas e estúdios em Niterói, aplicativo de agendamento para pet shop e os sites da Agência de Inovação (AGIR) e do ETCO da UFF.">
 <link rel="canonical" href="https://firmiano.com.br/portfolio/">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0B3D2E">
+<meta name="theme-color" content="#EFEFEA">
 <link rel="icon" type="image/svg+xml" href="/firmiano-identidade/firmiano-icone-quadrado.svg">
 <link rel="icon" type="image/png" sizes="1024x1024" href="/firmiano-identidade/firmiano-icone-quadrado.png">
 <link rel="apple-touch-icon" href="/firmiano-identidade/firmiano-icone-quadrado.png">
@@ -40,19 +40,17 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300&family=Stack+Sans+Text:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.add('js')</script>
 <script src="/assets/analytics.js"></script>
 </head>
-<body>
-<div class="progress" id="progress" aria-hidden="true"></div>
+<body id="top">
 
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="/" aria-label="Firmiano, ir para o início">
-      <img class="lg-white" src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32">
-      <img class="lg-green" src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="" width="127" height="32" aria-hidden="true">
-    </a>
+    <a class="logo" href="/" aria-label="Firmiano, ir para o início"><img src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="Firmiano" width="127" height="32"></a>
     <nav class="nav-links" aria-label="Principal">
       <a href="/servicos/">Serviços</a>
       <a href="/portfolio/" aria-current="page">Portfólio</a>
@@ -60,96 +58,89 @@
       <a href="/dominio">Domínio</a>
       <a href="/contato">Contato</a>
     </nav>
-    <a class="btn btn-leaf nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
-    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
-    <div class="menu" id="menu">
-      <a href="/">Início</a>
-      <a href="/servicos/">Serviços</a>
-      <a href="/portfolio/">Portfólio</a>
-      <a href="/quem-somos">Quem somos</a>
-      <a href="/dominio">Consultar domínio</a>
-      <a href="/contato">Contato</a>
-      <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
-    </div>
+    <a class="btn nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+  <div class="menu" id="menu">
+    <a href="/">Início</a>
+    <a href="/servicos/">Serviços</a>
+    <a href="/portfolio/" aria-current="page">Portfólio</a>
+    <a href="/quem-somos">Quem somos</a>
+    <a href="/dominio">Domínio</a>
+    <a href="/contato">Contato</a>
+    <a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
   </div>
 </header>
 
-<main>
+<main id="conteudo">
 <section class="page-hero" id="hero">
   <div class="wrap">
-    <ol class="crumbs" aria-label="Você está em"><li><a href="/">Início</a></li><li aria-current="page">Portfólio</li></ol>
-    <h1>Projetos que já estão no ar.</h1>
-    <p class="lead">Landing pages, aplicativo e sites institucionais. Clique em qualquer projeto para ver o site funcionando, no computador ou no celular.</p>
+    <h1 data-reveal>Projetos que já estão no ar</h1>
+    <p class="lead" data-reveal>Landing pages, aplicativo e sites institucionais. Clique em qualquer projeto para ver o site funcionando, no computador ou no celular.</p>
   </div>
 </section>
 
-<section class="sec">
+<section class="sec f-stone">
   <div class="wrap">
     <div class="pf-grid">
-      <a class="pf" href="https://fonoalice.firmiano.com.br" target="_blank" rel="noopener" data-reveal style="--d:0.00s">
-        <div class="pf-shot"><div class="pf-frame"><div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span>fonoalice.firmiano.com.br</span></div><img src="/img/portfolio/fonoalice.webp" alt="Página inicial do site Alice Guedes · Fonoaudióloga" width="1200" height="750" loading="lazy"></div><div class="pf-phone" aria-hidden="true"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"></div></div>
+      <a class="pf" data-reveal href="https://fonoalice.firmiano.com.br" target="_blank" rel="noopener" style="--d:0.00s">
+        <div class="pf-shot"><div class="pf-frame"><img src="/img/portfolio/fonoalice.webp" alt="Página inicial do site Alice Guedes · Fonoaudióloga" width="1200" height="750" loading="lazy"></div><div class="pf-phone" aria-hidden="true"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"></div></div>
         <div class="pf-info">
-          <span class="pf-kind">Landing page</span>
           <h3>Alice Guedes · Fonoaudióloga</h3>
-          <span class="where">Icaraí, Niterói/RJ</span>
+          <span class="where">Landing page · Icaraí, Niterói/RJ</span>
           <p class="desc">Página para uma fonoaudióloga infantil, com os atendimentos explicados para os pais, formação, depoimentos e agendamento pelo WhatsApp.</p>
           <ul class="pf-tags"><li>Saúde</li><li>WhatsApp</li><li>Celular</li></ul>
-          <span class="pf-link">Visitar o site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="pf-link">Visitar o site <span class="arrow" aria-hidden="true">→</span></span>
         </div>
       </a>
-      <a class="pf" href="https://fisioequilibrio.firmiano.com.br" target="_blank" rel="noopener" data-reveal style="--d:0.08s">
-        <div class="pf-shot"><div class="pf-frame"><div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span>fisioequilibrio.firmiano.com.br</span></div><img src="/img/portfolio/fisioequilibrio.webp" alt="Página inicial do site Fisioequilíbrio" width="1200" height="750" loading="lazy"></div><div class="pf-phone" aria-hidden="true"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"></div></div>
+      <a class="pf" data-reveal href="https://fisioequilibrio.firmiano.com.br" target="_blank" rel="noopener" style="--d:0.08s">
+        <div class="pf-shot"><div class="pf-frame"><img src="/img/portfolio/fisioequilibrio.webp" alt="Página inicial do site Fisioequilíbrio" width="1200" height="750" loading="lazy"></div><div class="pf-phone" aria-hidden="true"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"></div></div>
         <div class="pf-info">
-          <span class="pf-kind">Landing page</span>
           <h3>Fisioequilíbrio</h3>
-          <span class="where">Centro, Niterói/RJ</span>
+          <span class="where">Landing page · Centro, Niterói/RJ</span>
           <p class="desc">Estúdio de pilates, RPG, acupuntura e fisioterapia: serviços, fotos do espaço, avaliações e agendamento de avaliação pelo WhatsApp.</p>
           <ul class="pf-tags"><li>Saúde</li><li>Pilates</li><li>WhatsApp</li></ul>
-          <span class="pf-link">Visitar o site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="pf-link">Visitar o site <span class="arrow" aria-hidden="true">→</span></span>
         </div>
       </a>
-      <a class="pf" href="https://studiohope.firmiano.com.br" target="_blank" rel="noopener" data-reveal style="--d:0.00s">
-        <div class="pf-shot"><div class="pf-frame"><div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span>studiohope.firmiano.com.br</span></div><img src="/img/portfolio/studiohope.webp" alt="Página inicial do site Studio Hope" width="1200" height="750" loading="lazy"></div><div class="pf-phone" aria-hidden="true"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"></div></div>
+      <a class="pf" data-reveal href="https://studiohope.firmiano.com.br" target="_blank" rel="noopener" style="--d:0.00s">
+        <div class="pf-shot"><div class="pf-frame"><img src="/img/portfolio/studiohope.webp" alt="Página inicial do site Studio Hope" width="1200" height="750" loading="lazy"></div><div class="pf-phone" aria-hidden="true"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"></div></div>
         <div class="pf-info">
-          <span class="pf-kind">Landing page</span>
           <h3>Studio Hope</h3>
-          <span class="where">Icaraí, Niterói e Piabetá, Magé</span>
+          <span class="where">Landing page · Icaraí, Niterói e Piabetá, Magé</span>
           <p class="desc">Estúdio com duas unidades: serviços, convênios aceitos, fotos do espaço e agendamento de sessão pelo WhatsApp.</p>
           <ul class="pf-tags"><li>Saúde</li><li>Duas unidades</li><li>WhatsApp</li></ul>
-          <span class="pf-link">Visitar o site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="pf-link">Visitar o site <span class="arrow" aria-hidden="true">→</span></span>
         </div>
       </a>
-      <a class="pf" href="https://animalultrapet.firmiano.com.br" target="_blank" rel="noopener" data-reveal style="--d:0.08s">
-        <div class="pf-shot"><div class="pf-frame"><div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span>animalultrapet.firmiano.com.br</span></div><img src="/img/portfolio/animalultrapet.webp" alt="Página inicial do site Aurora Animal UltraPet" width="1200" height="750" loading="lazy"></div><div class="pf-phone" aria-hidden="true"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy"></div></div>
+      <a class="pf" data-reveal href="https://animalultrapet.firmiano.com.br" target="_blank" rel="noopener" style="--d:0.08s">
+        <div class="pf-shot"><div class="pf-frame"><img src="/img/portfolio/animalultrapet.webp" alt="Página inicial do site Aurora Animal UltraPet" width="1200" height="750" loading="lazy"></div><div class="pf-phone" aria-hidden="true"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy"></div></div>
         <div class="pf-info">
-          <span class="pf-kind">Aplicativo web · demonstração</span>
           <h3>Aurora Animal UltraPet</h3>
-          <span class="where">Centro, Niterói/RJ</span>
+          <span class="where">Aplicativo web · demonstração · Centro, Niterói/RJ</span>
           <p class="desc">Agendamento de banho e tosa em poucos passos, com pagamento antecipado, vitrine de produtos e área do cliente. Pode ser instalado no celular como aplicativo.</p>
           <ul class="pf-tags"><li>Agendamento</li><li>Pagamento</li><li>Aplicativo</li></ul>
-          <span class="pf-link">Visitar o site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="pf-link">Visitar o site <span class="arrow" aria-hidden="true">→</span></span>
         </div>
       </a>
-      <a class="pf" href="https://agir.uff.br" target="_blank" rel="noopener" data-reveal style="--d:0.00s">
-        <div class="pf-shot"><div class="pf-frame"><div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span>agir.uff.br</span></div><div class="pf-mock" style="--uff:#0B3E7A;--uff2:#1C6FC4" aria-hidden="true"><div class="top"><b>AGIR · UFF</b><em><i></i><i></i><i></i></em></div><div class="body"><div class="hero-m"><small>Agência de Inovação</small><strong>Inovação, empreendedorismo e desenvolvimento social</strong></div><div class="side"><i></i><i></i><i></i></div><div class="row"><i></i><i></i><i></i></div></div></div></div></div>
+      <a class="pf" data-reveal href="https://agir.uff.br" target="_blank" rel="noopener" style="--d:0.00s">
+        <div class="pf-shot"><div class="pf-frame"><div class="pf-mock" style="--uff:#0B3E7A;--uff2:#1C6FC4" aria-hidden="true"><div class="top"><b>AGIR · UFF</b><em><i></i><i></i><i></i></em></div><div class="body"><div class="hero-m"><strong>Inovação, empreendedorismo e desenvolvimento social</strong></div><div class="side"><i></i><i></i><i></i></div><div class="row"><i></i><i></i><i></i></div></div></div></div></div>
         <div class="pf-info">
-          <span class="pf-kind">Site institucional · WordPress</span>
-          <h3>AGIR · Agência de Inovação da UFF</h3>
-          <span class="where">Universidade Federal Fluminense</span>
+          <h3>AGIR · UFF</h3>
+          <span class="where">Site institucional · WordPress · Universidade Federal Fluminense</span>
           <p class="desc">Desenvolvimento e manutenção do site institucional, com notícias, editais e bolsas, eventos e oportunidades, incluindo plugins WordPress sob medida.</p>
           <ul class="pf-tags"><li>WordPress</li><li>Plugins sob medida</li><li>Instituição</li></ul>
-          <span class="pf-link">Visitar o site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="pf-link">Visitar o site <span class="arrow" aria-hidden="true">→</span></span>
         </div>
       </a>
-      <a class="pf" href="https://etco.uff.br" target="_blank" rel="noopener" data-reveal style="--d:0.08s">
-        <div class="pf-shot"><div class="pf-frame"><div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span>etco.uff.br</span></div><div class="pf-mock" style="--uff:#0A4F5C;--uff2:#1B8A8F" aria-hidden="true"><div class="top"><b>ETCO · UFF</b><em><i></i><i></i><i></i></em></div><div class="body"><div class="hero-m"><small>Escritório de Transferência de Conhecimento</small><strong>Pesquisa da universidade a serviço da sociedade</strong></div><div class="side"><i></i><i></i><i></i></div><div class="row"><i></i><i></i><i></i></div></div></div></div></div>
+      <a class="pf" data-reveal href="https://etco.uff.br" target="_blank" rel="noopener" style="--d:0.08s">
+        <div class="pf-shot"><div class="pf-frame"><div class="pf-mock" style="--uff:#0A4F5C;--uff2:#1B8A8F" aria-hidden="true"><div class="top"><b>ETCO · UFF</b><em><i></i><i></i><i></i></em></div><div class="body"><div class="hero-m"><strong>Pesquisa da universidade a serviço da sociedade</strong></div><div class="side"><i></i><i></i><i></i></div><div class="row"><i></i><i></i><i></i></div></div></div></div></div>
         <div class="pf-info">
-          <span class="pf-kind">Site institucional · WordPress</span>
-          <h3>ETCO · Escritório de Transferência de Conhecimento da UFF</h3>
-          <span class="where">Universidade Federal Fluminense</span>
+          <h3>ETCO · UFF</h3>
+          <span class="where">Site institucional · WordPress · Universidade Federal Fluminense</span>
           <p class="desc">Desenvolvimento e manutenção do site do escritório em WordPress multisite, incluindo plugins sob medida.</p>
           <ul class="pf-tags"><li>WordPress</li><li>Multisite</li><li>Instituição</li></ul>
-          <span class="pf-link">Visitar o site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="pf-link">Visitar o site <span class="arrow" aria-hidden="true">→</span></span>
         </div>
       </a>
     </div>
@@ -160,47 +151,50 @@
   <div class="wrap">
     <h2 data-reveal>O próximo pode ser o seu.</h2>
     <p data-reveal style="--d:.1s">Conte o seu segmento e o que o site precisa fazer. Criamos do zero com a identidade, os textos e as fotos da sua empresa.</p>
-    <a class="btn btn-sand magnetic" href="https://wa.me/5521998908129" data-wa="Olá! Vi o portfólio e quero um site para o meu negócio." target="_blank" rel="noopener" data-reveal style="--d:.2s">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    <a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Vi o portfólio e quero um site para o meu negócio." target="_blank" rel="noopener" data-reveal style="--d:.2s">
       Conversar no WhatsApp</a>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="f-top">
-      <div class="f-brand">
-        <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="180" height="45">
-        <p>Criação, hospedagem e suporte de sites para pequenas empresas. Niterói/RJ, atendendo todo o Brasil.</p>
-      </div>
-      <div>
-        <h4>Serviços</h4>
-        <ul><li><a href="/servicos/landing-page">Landing page</a></li><li><a href="/servicos/site-wordpress">Site WordPress</a></li><li><a href="/servicos/email-profissional">E-mail profissional</a></li><li><a href="/servicos/aplicativos">Aplicativos</a></li></ul>
-      </div>
-      <div>
-        <h4>Firmiano</h4>
-        <ul><li><a href="/portfolio/">Portfólio</a></li><li><a href="/quem-somos">Quem somos</a></li><li><a href="/#como-funciona">Como funciona</a></li><li><a href="/#indique">Indique e ganhe</a></li><li><a href="/#faq">Perguntas</a></li></ul>
-      </div>
-      <div>
-        <h4>Contato</h4>
-        <ul><li><a href="https://wa.me/5521998908129" target="_blank" rel="noopener">(21) 99890-8129</a></li><li><a href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a></li><li>Av. Ernani do Amaral Peixoto, 450, sala 505, Centro, Niterói/RJ</li><li><a href="/dominio">Consultar domínio</a></li><li><a href="/contato">Todas as formas de contato</a></li></ul>
-      </div>
+<footer class="site-foot">
+  <div class="reel" aria-hidden="true">
+    <div class="reel-track">
+      <img src="/img/portfolio/fonoalice.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/niteroi/estacao-das-barcas.jpg" alt="" width="1280" height="849" loading="lazy"><img src="/img/portfolio/studiohope.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/fisioequilibrio.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/niteroi/boa-viagem-niteroi.jpg" alt="" width="1280" height="960" loading="lazy"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/animalultrapet.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy">
+      <img src="/img/portfolio/fonoalice.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/niteroi/estacao-das-barcas.jpg" alt="" width="1280" height="849" loading="lazy"><img src="/img/portfolio/studiohope.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/fisioequilibrio.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/niteroi/boa-viagem-niteroi.jpg" alt="" width="1280" height="960" loading="lazy"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/animalultrapet.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy">
     </div>
-    <div class="f-bot">
-      <div class="f-legal"><span>© 2026 Firmiano. Responsável: Ismael Firmiano, Niterói/RJ.</span><a href="/privacidade.html">Política de privacidade</a></div>
-      <div class="socials">
-        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
-        <a href="https://wa.me/5521998908129" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-      </div>
+  </div>
+  <div class="wrap">
+    <div class="foot-top" data-reveal>
+      <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32" loading="lazy">
+      <p>Av. Ernani do Amaral Peixoto, 450, sala 505<br>Centro, Niterói/RJ. Atendemos todo o Brasil.</p>
+      <p>Segunda a sexta, em horário comercial.<br>Resposta em até 1 dia útil.</p>
+      <a class="foot-up" href="#top">Voltar ao topo</a>
+    </div>
+    <div class="foot-big" data-reveal>
+      <a href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="WhatsApp (21) 99890-8129">(21) 99890-8129</a>
+      <a class="mail" href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a>
+    </div>
+    <div class="foot-meta" data-reveal>
+      <nav aria-label="Rodapé">
+        <a href="/servicos/landing-page">Landing page</a>
+        <a href="/servicos/site-wordpress">Site WordPress</a>
+        <a href="/servicos/email-profissional">E-mail profissional</a>
+        <a href="/servicos/aplicativos">Aplicativos</a>
+        <a href="/portfolio/">Portfólio</a>
+        <a href="/quem-somos">Quem somos</a>
+        <a href="/#indique">Indique e ganhe</a>
+        <a href="/dominio">Consultar domínio</a>
+        <a href="/contato">Contato</a>
+        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <p class="credits">Fotos de Niterói: <a href="https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_das_Barcas_em_Niter%C3%B3i_15_06_2007.jpg" target="_blank" rel="noopener">Estação das Barcas</a>, por Al Lemos, e <a href="https://commons.wikimedia.org/wiki/File:Boa_Viagem_Niter%C3%B3i.JPG" target="_blank" rel="noopener">Boa Viagem</a>, por DiMonteiro, ambas em domínio público, via Wikimedia Commons.</p>
+      <p class="legal-line">© 2026 Firmiano · Ismael Firmiano, Niterói/RJ<br><a href="/privacidade.html">Política de privacidade</a></p>
     </div>
   </div>
 </footer>
 
-<a class="wa-float" id="waFloat" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
-</a>
 
 <script src="/assets/site.js" defer></script>
 </body>

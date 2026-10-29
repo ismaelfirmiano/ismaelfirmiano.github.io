@@ -7,7 +7,7 @@
 <meta name="description" content="Desenvolvimento de aplicativos para empresas, publicados na App Store e no Google Play. Agendamento, fidelidade, pedidos, área do aluno, ordens de serviço e mais. Orçamento conforme as funções.">
 <link rel="canonical" href="https://firmiano.com.br/servicos/aplicativos">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0B3D2E">
+<meta name="theme-color" content="#EFEFEA">
 <link rel="icon" type="image/svg+xml" href="/firmiano-identidade/firmiano-icone-quadrado.svg">
 <link rel="icon" type="image/png" sizes="1024x1024" href="/firmiano-identidade/firmiano-icone-quadrado.png">
 <link rel="apple-touch-icon" href="/firmiano-identidade/firmiano-icone-quadrado.png">
@@ -46,19 +46,17 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300&family=Stack+Sans+Text:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.add('js')</script>
 <script src="/assets/analytics.js"></script>
 </head>
-<body>
-<div class="progress" id="progress" aria-hidden="true"></div>
+<body id="top">
 
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="/" aria-label="Firmiano, ir para o início">
-      <img class="lg-white" src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32">
-      <img class="lg-green" src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="" width="127" height="32" aria-hidden="true">
-    </a>
+    <a class="logo" href="/" aria-label="Firmiano, ir para o início"><img src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="Firmiano" width="127" height="32"></a>
     <nav class="nav-links" aria-label="Principal">
       <a href="/servicos/" aria-current="page">Serviços</a>
       <a href="/portfolio/">Portfólio</a>
@@ -66,36 +64,35 @@
       <a href="/dominio">Domínio</a>
       <a href="/contato">Contato</a>
     </nav>
-    <a class="btn btn-leaf nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
-    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
-    <div class="menu" id="menu">
-      <a href="/">Início</a>
-      <a href="/servicos/">Serviços</a>
-      <a href="/portfolio/">Portfólio</a>
-      <a href="/quem-somos">Quem somos</a>
-      <a href="/dominio">Consultar domínio</a>
-      <a href="/contato">Contato</a>
-      <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
-    </div>
+    <a class="btn nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+  <div class="menu" id="menu">
+    <a href="/">Início</a>
+    <a href="/servicos/" aria-current="page">Serviços</a>
+    <a href="/portfolio/">Portfólio</a>
+    <a href="/quem-somos">Quem somos</a>
+    <a href="/dominio">Domínio</a>
+    <a href="/contato">Contato</a>
+    <a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
   </div>
 </header>
 
-<main>
+<main id="conteudo">
 <section class="page-hero" id="hero">
   <div class="wrap">
-    <ol class="crumbs" aria-label="Você está em"><li><a href="/">Início</a></li><li><a href="/servicos/">Serviços</a></li><li aria-current="page">Aplicativos</li></ol>
-    <h1>O aplicativo da sua empresa na App Store e no Google Play.</h1>
-    <p class="lead">Ter um aplicativo próprio está mais perto do que parece. Não é coisa só de empresa grande: um bom aplicativo pode começar com poucas funções, bem resolvidas, e crescer junto com o negócio.</p>
-    <div class="ctas"><a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Tenho uma ideia de aplicativo para a minha empresa." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Contar a minha ideia</a></div>
+    <h1 data-reveal>O aplicativo da sua empresa</h1>
+    <p class="lead" data-reveal>Ter um aplicativo próprio está mais perto do que parece. Não é coisa só de empresa grande: um bom aplicativo pode começar com poucas funções, bem resolvidas, e crescer junto com o negócio.</p>
+    <div class="ctas"><a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Tenho uma ideia de aplicativo para a minha empresa." target="_blank" rel="noopener">Contar a minha ideia</a></div>
   </div>
 </section>
 
-<section class="sec">
+<section class="sec f-green">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <h2>Mais perto do que parece</h2>
     </div>
-    <div class="split" style="margin-top:-24px">
+    <div class="split">
       <div class="prose" data-reveal>
         <p>Muita gente acha que aplicativo é coisa de banco ou de grande rede de lojas. Na prática, <strong>qualquer empresa pode ter o seu</strong>, com o nome e a marca do negócio, para baixar na App Store (iPhone) e no Google Play (Android).</p>
         <p>O segredo é começar pelo que mais gera valor para os seus clientes ou para a sua equipe. Um aplicativo com duas ou três funções bem feitas já resolve muito, e novas funções podem ser adicionadas depois.</p>
@@ -107,27 +104,27 @@
   </div>
 </section>
 
-<section class="sec">
+<section class="sec f-paper">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <h2>Ideias de aplicativo para a sua empresa</h2>
       <p>Alguns exemplos do que um aplicativo próprio pode fazer pelo seu negócio.</p>
     </div>
     <div class="cards">
-      <article class="card" data-reveal style="--d:0.00s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Agendamento</h3><p>O cliente escolhe o serviço, o profissional e o horário, e recebe lembrete antes.</p><span class="who">Salões, barbearias, clínicas, estúdios</span></article>
-      <article class="card" data-reveal style="--d:0.06s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6-5.4-3-5.4 3 1.1-6L3.2 9.4l6.1-.8L12 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Cartão fidelidade</h3><p>Pontos a cada compra e recompensas, sem cartão de papel para perder.</p><span class="who">Cafeterias, padarias, lava-jatos</span></article>
-      <article class="card" data-reveal style="--d:0.12s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 016 0v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Cardápio e pedidos</h3><p>Pedidos para retirar ou entregar, direto com você, sem comissão de plataforma.</p><span class="who">Restaurantes, lanchonetes, delivery</span></article>
-      <article class="card" data-reveal style="--d:0.18s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 9l9-4 9 4-9 4-9-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 11v5c3 2 7 2 10 0v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Área do aluno</h3><p>Horários, treinos, materiais, avisos e mensalidades na palma da mão.</p><span class="who">Escolas, cursos, academias</span></article>
-      <article class="card" data-reveal style="--d:0.00s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 005.4-5.4l-2.5 2.5-2.5-2.5 2.5-2.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Ordens de serviço</h3><p>A equipe em campo registra o serviço, tira fotos e coleta a assinatura do cliente.</p><span class="who">Técnicos, manutenção, instalações</span></article>
-      <article class="card" data-reveal style="--d:0.06s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Catálogo para vendedores</h3><p>Produtos, preços e pedidos sempre atualizados para a equipe comercial.</p><span class="who">Distribuidoras, representantes</span></article>
-      <article class="card" data-reveal style="--d:0.12s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1v-9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Condomínio</h3><p>Reserva de áreas comuns, avisos, encomendas e comunicação com a portaria.</p><span class="who">Condomínios e administradoras</span></article>
-      <article class="card" data-reveal style="--d:0.18s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5M16 4.5a3.5 3.5 0 010 7M18 14.8c2 .7 3.2 2.5 3.6 5.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Comunidade e membros</h3><p>Agenda de eventos, avisos, inscrições e contribuições.</p><span class="who">Igrejas, associações, clubes</span></article>
-      <article class="card" data-reveal style="--d:0.00s"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Controle interno</h3><p>Estoque, checklists e relatórios da operação em tempo real.</p><span class="who">Lojas, indústrias, escritórios</span></article>
+      <article class="card" data-reveal style="--d:0.00s"><h3>Agendamento</h3><p>O cliente escolhe o serviço, o profissional e o horário, e recebe lembrete antes.</p><span class="who">Salões, barbearias, clínicas, estúdios</span></article>
+      <article class="card" data-reveal style="--d:0.06s"><h3>Cartão fidelidade</h3><p>Pontos a cada compra e recompensas, sem cartão de papel para perder.</p><span class="who">Cafeterias, padarias, lava-jatos</span></article>
+      <article class="card" data-reveal style="--d:0.12s"><h3>Cardápio e pedidos</h3><p>Pedidos para retirar ou entregar, direto com você, sem comissão de plataforma.</p><span class="who">Restaurantes, lanchonetes, delivery</span></article>
+      <article class="card" data-reveal style="--d:0.18s"><h3>Área do aluno</h3><p>Horários, treinos, materiais, avisos e mensalidades na palma da mão.</p><span class="who">Escolas, cursos, academias</span></article>
+      <article class="card" data-reveal style="--d:0.00s"><h3>Ordens de serviço</h3><p>A equipe em campo registra o serviço, tira fotos e coleta a assinatura do cliente.</p><span class="who">Técnicos, manutenção, instalações</span></article>
+      <article class="card" data-reveal style="--d:0.06s"><h3>Catálogo para vendedores</h3><p>Produtos, preços e pedidos sempre atualizados para a equipe comercial.</p><span class="who">Distribuidoras, representantes</span></article>
+      <article class="card" data-reveal style="--d:0.12s"><h3>Condomínio</h3><p>Reserva de áreas comuns, avisos, encomendas e comunicação com a portaria.</p><span class="who">Condomínios e administradoras</span></article>
+      <article class="card" data-reveal style="--d:0.18s"><h3>Comunidade e membros</h3><p>Agenda de eventos, avisos, inscrições e contribuições.</p><span class="who">Igrejas, associações, clubes</span></article>
+      <article class="card" data-reveal style="--d:0.00s"><h3>Controle interno</h3><p>Estoque, checklists e relatórios da operação em tempo real.</p><span class="who">Lojas, indústrias, escritórios</span></article>
     </div>
   </div>
 </section>
 
-<section class="sec alt">
+<section class="sec f-mint">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <h2>Como é feito o orçamento</h2>
@@ -141,72 +138,68 @@
       <li data-reveal style="--d:0.24s"><h3>Publicação</h3><p>Publicamos na App Store e no Google Play, na conta da sua empresa, e seguimos com o suporte.</p></li>
     </ol>
     <div class="box-note" data-reveal>
-      <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 11v5M12 8v.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      
       <div><h3>Contas nas lojas de aplicativos</h3><p>Para publicar, a empresa precisa de uma conta de desenvolvedor em cada loja, no próprio nome. Hoje a Apple cobra US$ 99 por ano e o Google cobra uma taxa única de US$ 25. O cadastro como empresa passa por uma verificação que pode levar algumas semanas, e ajudamos em todo o processo.</p></div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="faq">
-  <div class="wrap faq-grid">
-    <div class="sec-head" data-reveal>
-      <h2>Dúvidas sobre aplicativos</h2>
-      <p>Não achou a sua? Chame no WhatsApp que a gente responde.</p>
-    </div>
-    <div class="faq" data-reveal style="--d:.1s">
-      <div class="qa open"><button aria-expanded="true">Quanto custa um aplicativo?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Depende das funções. Um aplicativo simples, com poucas telas, custa bem menos do que um com pagamentos, várias integrações e painel de gestão. Depois da conversa inicial, você recebe uma proposta com valor fechado.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">O aplicativo funciona no iPhone e no Android?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Sim. Desenvolvemos para os dois sistemas e publicamos nas duas lojas.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">Preciso de um site também?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Não é obrigatório, mas ajuda: o site é onde as pessoas encontram a sua empresa no Google e o link para baixar o aplicativo.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">E depois que o aplicativo for publicado?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Seguimos com o suporte, as correções e as atualizações exigidas pelas lojas, e podemos adicionar novas funções conforme o aplicativo for usado.</p></div></div></div>
-    </div>
-  </div>
+<section class="faq-bands" id="faq" aria-labelledby="faq-h">
+  <div class="faq-head"><div class="wrap"><h2 id="faq-h">Dúvidas sobre aplicativos</h2><p>Não achou a sua? <a href="https://wa.me/5521998908129" data-wa="Olá! Tenho uma dúvida." target="_blank" rel="noopener">Pergunte no WhatsApp</a>.</p></div></div>
+  <div class="qa" data-reveal><div class="wrap"><h3>Quanto custa um aplicativo?</h3><div class="ans"><p>Depende das funções. Um aplicativo simples, com poucas telas, custa bem menos do que um com pagamentos, várias integrações e painel de gestão. Depois da conversa inicial, você recebe uma proposta com valor fechado.</p></div></div></div>
+  <div class="qa" data-reveal><div class="wrap"><h3>O aplicativo funciona no iPhone e no Android?</h3><div class="ans"><p>Sim. Desenvolvemos para os dois sistemas e publicamos nas duas lojas.</p></div></div></div>
+  <div class="qa" data-reveal><div class="wrap"><h3>Preciso de um site também?</h3><div class="ans"><p>Não é obrigatório, mas ajuda: o site é onde as pessoas encontram a sua empresa no Google e o link para baixar o aplicativo.</p></div></div></div>
+  <div class="qa" data-reveal><div class="wrap"><h3>E depois que o aplicativo for publicado?</h3><div class="ans"><p>Seguimos com o suporte, as correções e as atualizações exigidas pelas lojas, e podemos adicionar novas funções conforme o aplicativo for usado.</p></div></div></div>
 </section>
 
 <section class="cta">
   <div class="wrap">
-    <h2 data-reveal>Tem uma ideia de aplicativo?</h2>
+    <h2 data-reveal>Tem uma ideia?</h2>
     <p data-reveal style="--d:.1s">Conte o que você imagina, mesmo que ainda seja só um rascunho. Ajudamos a transformar em um plano com escopo e valor.</p>
-    <a class="btn btn-sand magnetic" href="https://wa.me/5521998908129" data-wa="Olá! Tenho uma ideia de aplicativo e quero um orçamento." target="_blank" rel="noopener" data-reveal style="--d:.2s">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    <a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Tenho uma ideia de aplicativo e quero um orçamento." target="_blank" rel="noopener" data-reveal style="--d:.2s">
       Conversar no WhatsApp</a>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="f-top">
-      <div class="f-brand">
-        <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="180" height="45">
-        <p>Criação, hospedagem e suporte de sites para pequenas empresas. Niterói/RJ, atendendo todo o Brasil.</p>
-      </div>
-      <div>
-        <h4>Serviços</h4>
-        <ul><li><a href="/servicos/landing-page">Landing page</a></li><li><a href="/servicos/site-wordpress">Site WordPress</a></li><li><a href="/servicos/email-profissional">E-mail profissional</a></li><li><a href="/servicos/aplicativos">Aplicativos</a></li></ul>
-      </div>
-      <div>
-        <h4>Firmiano</h4>
-        <ul><li><a href="/portfolio/">Portfólio</a></li><li><a href="/quem-somos">Quem somos</a></li><li><a href="/#como-funciona">Como funciona</a></li><li><a href="/#indique">Indique e ganhe</a></li><li><a href="/#faq">Perguntas</a></li></ul>
-      </div>
-      <div>
-        <h4>Contato</h4>
-        <ul><li><a href="https://wa.me/5521998908129" target="_blank" rel="noopener">(21) 99890-8129</a></li><li><a href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a></li><li>Av. Ernani do Amaral Peixoto, 450, sala 505, Centro, Niterói/RJ</li><li><a href="/dominio">Consultar domínio</a></li><li><a href="/contato">Todas as formas de contato</a></li></ul>
-      </div>
+<footer class="site-foot">
+  <div class="reel" aria-hidden="true">
+    <div class="reel-track">
+      <img src="/img/portfolio/fonoalice.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/niteroi/estacao-das-barcas.jpg" alt="" width="1280" height="849" loading="lazy"><img src="/img/portfolio/studiohope.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/fisioequilibrio.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/niteroi/boa-viagem-niteroi.jpg" alt="" width="1280" height="960" loading="lazy"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/animalultrapet.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy">
+      <img src="/img/portfolio/fonoalice.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/niteroi/estacao-das-barcas.jpg" alt="" width="1280" height="849" loading="lazy"><img src="/img/portfolio/studiohope.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/fisioequilibrio.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/niteroi/boa-viagem-niteroi.jpg" alt="" width="1280" height="960" loading="lazy"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/animalultrapet.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy">
     </div>
-    <div class="f-bot">
-      <div class="f-legal"><span>© 2026 Firmiano. Responsável: Ismael Firmiano, Niterói/RJ.</span><a href="/privacidade.html">Política de privacidade</a></div>
-      <div class="socials">
-        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
-        <a href="https://wa.me/5521998908129" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-      </div>
+  </div>
+  <div class="wrap">
+    <div class="foot-top" data-reveal>
+      <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32" loading="lazy">
+      <p>Av. Ernani do Amaral Peixoto, 450, sala 505<br>Centro, Niterói/RJ. Atendemos todo o Brasil.</p>
+      <p>Segunda a sexta, em horário comercial.<br>Resposta em até 1 dia útil.</p>
+      <a class="foot-up" href="#top">Voltar ao topo</a>
+    </div>
+    <div class="foot-big" data-reveal>
+      <a href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="WhatsApp (21) 99890-8129">(21) 99890-8129</a>
+      <a class="mail" href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a>
+    </div>
+    <div class="foot-meta" data-reveal>
+      <nav aria-label="Rodapé">
+        <a href="/servicos/landing-page">Landing page</a>
+        <a href="/servicos/site-wordpress">Site WordPress</a>
+        <a href="/servicos/email-profissional">E-mail profissional</a>
+        <a href="/servicos/aplicativos">Aplicativos</a>
+        <a href="/portfolio/">Portfólio</a>
+        <a href="/quem-somos">Quem somos</a>
+        <a href="/#indique">Indique e ganhe</a>
+        <a href="/dominio">Consultar domínio</a>
+        <a href="/contato">Contato</a>
+        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <p class="credits">Fotos de Niterói: <a href="https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_das_Barcas_em_Niter%C3%B3i_15_06_2007.jpg" target="_blank" rel="noopener">Estação das Barcas</a>, por Al Lemos, e <a href="https://commons.wikimedia.org/wiki/File:Boa_Viagem_Niter%C3%B3i.JPG" target="_blank" rel="noopener">Boa Viagem</a>, por DiMonteiro, ambas em domínio público, via Wikimedia Commons.</p>
+      <p class="legal-line">© 2026 Firmiano · Ismael Firmiano, Niterói/RJ<br><a href="/privacidade.html">Política de privacidade</a></p>
     </div>
   </div>
 </footer>
 
-<a class="wa-float" id="waFloat" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
-</a>
 
 <script src="/assets/site.js" defer></script>
 </body>

@@ -67,15 +67,16 @@
     if (document.getElementById('fm-cookie')) return;
     var css = document.createElement('style');
     css.textContent =
-      '#fm-cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:560px;margin:0 auto;' +
-      'background:#FBF9F4;color:#0E1F19;border-radius:18px;box-shadow:0 0 0 1px #D9D4C3,0 18px 50px rgba(7,42,32,.28);' +
-      'padding:20px 22px;font:15px/1.55 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif}' +
-      '#fm-cookie p{margin:0 0 14px}#fm-cookie a{color:#0B3D2E;text-underline-offset:3px}' +
-      '#fm-cookie .fm-row{display:flex;gap:10px;flex-wrap:wrap}' +
-      '#fm-cookie button{font:inherit;font-weight:600;cursor:pointer;border-radius:12px;padding:11px 18px;border:0;min-height:44px}' +
-      '#fm-cookie .fm-yes{background:#0B3D2E;color:#F3EFE4}#fm-cookie .fm-yes:hover{background:#072A20}' +
-      '#fm-cookie .fm-no{background:transparent;color:#0B3D2E;box-shadow:inset 0 0 0 1px #0B3D2E}' +
-      '#fm-cookie button:focus-visible{outline:2.5px solid #27805F;outline-offset:3px}';
+      '#fm-cookie{position:fixed;left:16px;bottom:16px;z-index:2147483000;max-width:400px;' +
+      'background:#072A20;color:#EFEFEA;border-radius:0;box-shadow:0 12px 40px rgba(7,42,32,.3);' +
+      'padding:18px 20px;font:14px/1.5 "Stack Sans Text",system-ui,-apple-system,"Segoe UI",sans-serif}' +
+      '#fm-cookie p{margin:0 0 14px}#fm-cookie a{color:inherit;text-underline-offset:3px}' +
+      '#fm-cookie .fm-row{display:flex;gap:8px;flex-wrap:wrap}' +
+      '#fm-cookie button{font:inherit;font-weight:500;cursor:pointer;border-radius:0;padding:10px 18px;border:0;min-height:44px}' +
+      '#fm-cookie .fm-yes{background:#27805F;color:#fff}#fm-cookie .fm-yes:hover{background:#2E9470}' +
+      '#fm-cookie .fm-no{background:rgba(239,239,234,.12);color:#EFEFEA}#fm-cookie .fm-no:hover{background:rgba(239,239,234,.2)}' +
+      '#fm-cookie button:focus-visible{outline:3px solid #A9D9C2;outline-offset:3px}' +
+      '@media (max-width:480px){#fm-cookie{right:16px;max-width:none}}';
     document.head.appendChild(css);
 
     var box = document.createElement('div');
@@ -83,8 +84,8 @@
     box.setAttribute('role', 'dialog');
     box.setAttribute('aria-label', 'Preferências de cookies');
     box.innerHTML =
-      '<p>Usamos cookies de estatística (Google Analytics) para entender de onde vêm as visitas e melhorar o site. ' +
-      'Você pode recusar sem perder nada. Detalhes na <a href="/privacidade.html">política de privacidade</a>.</p>' +
+      '<p>Usamos cookies de estatística (Google Analytics) para melhorar o site. ' +
+      'Você pode recusar sem perder nada. <a href="/privacidade.html">Política de privacidade</a>.</p>' +
       '<div class="fm-row"><button type="button" class="fm-yes">Aceitar</button>' +
       '<button type="button" class="fm-no">Recusar</button></div>';
     document.body.appendChild(box);

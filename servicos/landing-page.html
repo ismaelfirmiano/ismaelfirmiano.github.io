@@ -7,7 +7,7 @@
 <meta name="description" content="Criação de landing page com domínio .com.br, botão de WhatsApp e sem mensalidade de hospedagem. Ideal para negócios locais e profissionais autônomos em Niterói e todo o Brasil.">
 <link rel="canonical" href="https://firmiano.com.br/servicos/landing-page">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0B3D2E">
+<meta name="theme-color" content="#EFEFEA">
 <link rel="icon" type="image/svg+xml" href="/firmiano-identidade/firmiano-icone-quadrado.svg">
 <link rel="icon" type="image/png" sizes="1024x1024" href="/firmiano-identidade/firmiano-icone-quadrado.png">
 <link rel="apple-touch-icon" href="/firmiano-identidade/firmiano-icone-quadrado.png">
@@ -46,19 +46,17 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300&family=Stack+Sans+Text:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.add('js')</script>
 <script src="/assets/analytics.js"></script>
 </head>
-<body>
-<div class="progress" id="progress" aria-hidden="true"></div>
+<body id="top">
 
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="/" aria-label="Firmiano, ir para o início">
-      <img class="lg-white" src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32">
-      <img class="lg-green" src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="" width="127" height="32" aria-hidden="true">
-    </a>
+    <a class="logo" href="/" aria-label="Firmiano, ir para o início"><img src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="Firmiano" width="127" height="32"></a>
     <nav class="nav-links" aria-label="Principal">
       <a href="/servicos/" aria-current="page">Serviços</a>
       <a href="/portfolio/">Portfólio</a>
@@ -66,36 +64,35 @@
       <a href="/dominio">Domínio</a>
       <a href="/contato">Contato</a>
     </nav>
-    <a class="btn btn-leaf nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
-    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
-    <div class="menu" id="menu">
-      <a href="/">Início</a>
-      <a href="/servicos/">Serviços</a>
-      <a href="/portfolio/">Portfólio</a>
-      <a href="/quem-somos">Quem somos</a>
-      <a href="/dominio">Consultar domínio</a>
-      <a href="/contato">Contato</a>
-      <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
-    </div>
+    <a class="btn nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+  <div class="menu" id="menu">
+    <a href="/">Início</a>
+    <a href="/servicos/" aria-current="page">Serviços</a>
+    <a href="/portfolio/">Portfólio</a>
+    <a href="/quem-somos">Quem somos</a>
+    <a href="/dominio">Domínio</a>
+    <a href="/contato">Contato</a>
+    <a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
   </div>
 </header>
 
-<main>
+<main id="conteudo">
 <section class="page-hero" id="hero">
   <div class="wrap">
-    <ol class="crumbs" aria-label="Você está em"><li><a href="/">Início</a></li><li><a href="/servicos/">Serviços</a></li><li aria-current="page">Landing page</li></ol>
-    <h1>Uma página, um objetivo: fazer o cliente chamar você.</h1>
-    <p class="lead">A landing page é um site de uma página só, direto ao ponto: quem você é, o que oferece e um botão para falar com você. Rápida de fazer, sem mensalidade de hospedagem e pronta para receber visitas do Google, do Instagram e de anúncios.</p>
-    <div class="ctas"><a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Quero saber mais sobre a landing page." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Quero uma landing page</a><a class="btn btn-line-d" href="#precos">Ver preços</a></div>
+    <h1 data-reveal>Landing page para o seu negócio</h1>
+    <p class="lead" data-reveal>A landing page é um site de uma página só, direto ao ponto: quem você é, o que oferece e um botão para falar com você. Rápida de fazer, sem mensalidade de hospedagem e pronta para receber visitas do Google, do Instagram e de anúncios.</p>
+    <div class="ctas"><a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Quero saber mais sobre a landing page." target="_blank" rel="noopener">Quero uma landing page</a><a class="btn btn-line-d" href="#precos">Ver preços</a></div>
   </div>
 </section>
 
-<section class="sec">
+<section class="sec f-green">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <h2>O que é uma landing page</h2>
     </div>
-    <div class="split" style="margin-top:-24px">
+    <div class="split">
       <div class="prose" data-reveal>
         <p>É uma página única, pensada para levar quem chega até uma ação: chamar no WhatsApp, pedir um orçamento ou agendar um horário. Em vez de vários menus, a pessoa rola a tela e encontra tudo em sequência, do primeiro olhar ao botão de contato.</p>
         <p>Por isso ela funciona tão bem para negócios locais e profissionais que precisam de <strong>presença profissional na internet</strong> sem a estrutura de um site completo.</p>
@@ -108,29 +105,29 @@
   </div>
 </section>
 
-<section class="sec alt">
+<section class="sec f-paper">
   <div class="wrap">
     <div class="sec-head" data-reveal>
-      <h2>Quando a landing page é a melhor escolha</h2>
+      <h2>Quando escolher a landing page</h2>
       <p>Ela resolve muita coisa, mas não tudo. Veja se combina com o seu momento.</p>
     </div>
     <div class="fit">
       <div class="fit-card" data-reveal>
         <h3>É interessante quando</h3>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Você precisa de presença na internet rápido e com investimento menor.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>É profissional autônomo ou tem um negócio com poucos serviços.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Quer divulgar um serviço, produto ou evento específico.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Vai anunciar no Google ou no Instagram e precisa de uma página para receber esse público.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>O seu link na bio hoje leva para lugar nenhum, ou só para o WhatsApp.</span></li>
+          <li><span>Você precisa de presença na internet rápido e com investimento menor.</span></li>
+          <li><span>É profissional autônomo ou tem um negócio com poucos serviços.</span></li>
+          <li><span>Quer divulgar um serviço, produto ou evento específico.</span></li>
+          <li><span>Vai anunciar no Google ou no Instagram e precisa de uma página para receber esse público.</span></li>
+          <li><span>O seu link na bio hoje leva para lugar nenhum, ou só para o WhatsApp.</span></li>
         </ul>
       </div>
       <div class="fit-card no" data-reveal style="--d:.08s">
         <h3>Talvez não seja o ideal se</h3>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Você tem muitos serviços e cada um precisa de uma página própria.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Quer publicar notícias, artigos ou um blog.</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><span>Precisa atualizar textos e fotos sozinho com frequência.</span></li>
+          <li><span>Você tem muitos serviços e cada um precisa de uma página própria.</span></li>
+          <li><span>Quer publicar notícias, artigos ou um blog.</span></li>
+          <li><span>Precisa atualizar textos e fotos sozinho com frequência.</span></li>
         </ul>
         <a class="more" href="/servicos/site-wordpress">Nesses casos, conheça o site WordPress</a>
       </div>
@@ -138,17 +135,17 @@
   </div>
 </section>
 
-<section class="sec dark dom-cta" id="dominio">
+<section class="sec f-deep dom-cta" id="dominio">
   <div class="wrap">
-    <div class="sec-head" data-reveal style="margin-bottom:28px">
+    <div class="sec-head" data-reveal>
       <h2>O seu .com.br está livre?</h2>
       <p>Consulte na hora se o nome da sua empresa está disponível, com sugestões de alternativas.</p>
     </div>
-    <a class="btn btn-leaf" href="/dominio" data-reveal>Consultar domínio</a>
+    <a class="btn" href="/dominio" data-reveal>Consultar domínio</a>
   </div>
 </section>
 
-<section class="sec pricing-sec" id="precos">
+<section class="sec f-paper pricing-sec" id="precos">
   <div class="wrap">
     <div class="price-head">
       <div class="sec-head" data-reveal>
@@ -157,49 +154,49 @@
     </div>
     </div>
     <div class="plans">
-      <article class="plan">
+      <article class="plan" data-reveal>
         <h3>Landing page</h3>
-        <div class="was">De R$990</div>
         <div class="price">R$690</div>
+        <div class="was">De R$990</div>
         <p class="desc">1 página, sem mensalidade de hospedagem.</p>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>1 página, com design e programação</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Textos organizados e revisados</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Botão de WhatsApp</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Publicação no GitHub Pages da sua conta</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Ajuda para registrar o domínio no seu nome</li>
+          <li>1 página, com design e programação</li>
+          <li>Textos organizados e revisados</li>
+          <li>Botão de WhatsApp</li>
+          <li>Publicação no GitHub Pages da sua conta</li>
+          <li>Ajuda para registrar o domínio no seu nome</li>
         </ul>
         <a class="btn btn-line" href="https://wa.me/5521998908129" data-wa="Olá! Quero o plano Landing page (R$690)." target="_blank" rel="noopener">Quero este plano</a>
       </article>
-      <article class="plan feat">
+      <article class="plan feat" data-reveal>
         <span class="tag">Mais completo</span>
         <h3>Landing page + e-mails</h3>
-        <div class="was">De R$1.490</div>
         <div class="price">R$990</div>
+        <div class="was">De R$1.490</div>
         <p class="desc">Landing page com e-mails profissionais no seu domínio.</p>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Tudo do plano Landing page</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>E-mails com o seu domínio</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Configuração no celular e no computador</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Autenticação contra spam</li>
+          <li>Tudo do plano Landing page</li>
+          <li>E-mails com o seu domínio</li>
+          <li>Configuração no celular e no computador</li>
+          <li>Autenticação contra spam</li>
         </ul>
-        <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Quero o plano Landing page + e-mails (R$990)." target="_blank" rel="noopener">Quero este plano</a>
+        <a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Quero o plano Landing page + e-mails (R$990)." target="_blank" rel="noopener">Quero este plano</a>
       </article>
-      <article class="plan">
+      <article class="plan" data-reveal>
         <h3>Plano de manutenção</h3>
-        <div class="was" style="visibility:hidden" aria-hidden="true">–</div>
         <div class="price">R$100<small>por mês</small></div>
+        <div class="was" aria-hidden="true">–</div>
         <p class="desc">Opcional, para quem quer alterações sempre que precisar.</p>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Até 1 hora de alterações por mês</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Pedidos por WhatsApp ou e-mail</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Sem o plano, R$50 por alteração</li>
+          <li>Até 1 hora de alterações por mês</li>
+          <li>Pedidos por WhatsApp ou e-mail</li>
+          <li>Sem o plano, R$50 por alteração</li>
         </ul>
         <a class="btn btn-line" href="https://wa.me/5521998908129" data-wa="Olá! Quero saber mais sobre o plano de manutenção da landing page (R$100/mês)." target="_blank" rel="noopener">Saber mais</a>
       </article>
     </div>
     <div class="notes" data-reveal>
-      <h3>O que vale saber antes de contratar</h3>
+      <h3>Antes de contratar</h3>
       <dl>
         <dt>Domínio</dt><dd>Fica no nome do cliente, que paga a taxa anual direto ao Registro.br (hoje cerca de R$ 40 por ano para .com.br). Ajudamos a fazer o registro.</dd>
         <dt>E-mails</dt><dd>Opcionais. Configuramos os e-mails no seu domínio (ex.: contato@suaempresa.com.br) em um serviço de e-mail profissional. Planos gratuitos desses serviços têm limite de usuários.</dd>
@@ -213,66 +210,62 @@
   </div>
 </section>
 
-<section class="sec" id="faq">
-  <div class="wrap faq-grid">
-    <div class="sec-head" data-reveal>
-      <h2>Dúvidas sobre a landing page</h2>
-      <p>Não achou a sua? Chame no WhatsApp que a gente responde.</p>
-    </div>
-    <div class="faq" data-reveal style="--d:.1s">
-      <div class="qa open"><button aria-expanded="true">Não tem mensalidade mesmo?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Não há mensalidade de hospedagem: a página fica no GitHub Pages, numa conta no seu nome. O único custo recorrente é a renovação anual do domínio, cobrada pelo Registro.br (hoje cerca de R$ 40 por ano para .com.br).</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">Consigo alterar a página sozinho?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>A landing page é feita em código, sem painel de edição. As alterações são feitas por nós: pelo plano de manutenção, com até 1 hora por mês, ou a R$ 50 por alteração. Se você quer editar com frequência, o site WordPress é a melhor opção.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">Quanto tempo leva?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Até 7 dias úteis, contados a partir da entrada de 50% e do recebimento de todo o material.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">Dá para transformar em um site completo depois?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Sim. Quando o negócio crescer, a landing page pode virar um site WordPress com mais páginas, aproveitando o domínio, os textos e as fotos.</p></div></div></div>
-    </div>
-  </div>
+<section class="faq-bands" id="faq" aria-labelledby="faq-h">
+  <div class="faq-head"><div class="wrap"><h2 id="faq-h">Dúvidas sobre a landing page</h2><p>Não achou a sua? <a href="https://wa.me/5521998908129" data-wa="Olá! Tenho uma dúvida." target="_blank" rel="noopener">Pergunte no WhatsApp</a>.</p></div></div>
+  <div class="qa" data-reveal><div class="wrap"><h3>Não tem mensalidade mesmo?</h3><div class="ans"><p>Não há mensalidade de hospedagem: a página fica no GitHub Pages, numa conta no seu nome. O único custo recorrente é a renovação anual do domínio, cobrada pelo Registro.br (hoje cerca de R$ 40 por ano para .com.br).</p></div></div></div>
+  <div class="qa" data-reveal><div class="wrap"><h3>Consigo alterar a página sozinho?</h3><div class="ans"><p>A landing page é feita em código, sem painel de edição. As alterações são feitas por nós: pelo plano de manutenção, com até 1 hora por mês, ou a R$ 50 por alteração. Se você quer editar com frequência, o site WordPress é a melhor opção.</p></div></div></div>
+  <div class="qa" data-reveal><div class="wrap"><h3>Quanto tempo leva?</h3><div class="ans"><p>Até 7 dias úteis, contados a partir da entrada de 50% e do recebimento de todo o material.</p></div></div></div>
+  <div class="qa" data-reveal><div class="wrap"><h3>Dá para transformar em um site completo depois?</h3><div class="ans"><p>Sim. Quando o negócio crescer, a landing page pode virar um site WordPress com mais páginas, aproveitando o domínio, os textos e as fotos.</p></div></div></div>
 </section>
 
 <section class="cta">
   <div class="wrap">
-    <h2 data-reveal>Vamos colocar o seu negócio no ar?</h2>
+    <h2 data-reveal>Vamos colocar no ar?</h2>
     <p data-reveal style="--d:.1s">Conte o que você faz e para quem. Respondemos com uma proposta clara, sem compromisso.</p>
-    <a class="btn btn-sand magnetic" href="https://wa.me/5521998908129" data-wa="Olá! Quero uma landing page para o meu negócio." target="_blank" rel="noopener" data-reveal style="--d:.2s">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    <a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Quero uma landing page para o meu negócio." target="_blank" rel="noopener" data-reveal style="--d:.2s">
       Conversar no WhatsApp</a>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="f-top">
-      <div class="f-brand">
-        <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="180" height="45">
-        <p>Criação, hospedagem e suporte de sites para pequenas empresas. Niterói/RJ, atendendo todo o Brasil.</p>
-      </div>
-      <div>
-        <h4>Serviços</h4>
-        <ul><li><a href="/servicos/landing-page">Landing page</a></li><li><a href="/servicos/site-wordpress">Site WordPress</a></li><li><a href="/servicos/email-profissional">E-mail profissional</a></li><li><a href="/servicos/aplicativos">Aplicativos</a></li></ul>
-      </div>
-      <div>
-        <h4>Firmiano</h4>
-        <ul><li><a href="/portfolio/">Portfólio</a></li><li><a href="/quem-somos">Quem somos</a></li><li><a href="/#como-funciona">Como funciona</a></li><li><a href="/#indique">Indique e ganhe</a></li><li><a href="/#faq">Perguntas</a></li></ul>
-      </div>
-      <div>
-        <h4>Contato</h4>
-        <ul><li><a href="https://wa.me/5521998908129" target="_blank" rel="noopener">(21) 99890-8129</a></li><li><a href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a></li><li>Av. Ernani do Amaral Peixoto, 450, sala 505, Centro, Niterói/RJ</li><li><a href="/dominio">Consultar domínio</a></li><li><a href="/contato">Todas as formas de contato</a></li></ul>
-      </div>
+<footer class="site-foot">
+  <div class="reel" aria-hidden="true">
+    <div class="reel-track">
+      <img src="/img/portfolio/fonoalice.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/niteroi/estacao-das-barcas.jpg" alt="" width="1280" height="849" loading="lazy"><img src="/img/portfolio/studiohope.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/fisioequilibrio.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/niteroi/boa-viagem-niteroi.jpg" alt="" width="1280" height="960" loading="lazy"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/animalultrapet.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy">
+      <img src="/img/portfolio/fonoalice.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/niteroi/estacao-das-barcas.jpg" alt="" width="1280" height="849" loading="lazy"><img src="/img/portfolio/studiohope.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/fisioequilibrio.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/niteroi/boa-viagem-niteroi.jpg" alt="" width="1280" height="960" loading="lazy"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/animalultrapet.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy">
     </div>
-    <div class="f-bot">
-      <div class="f-legal"><span>© 2026 Firmiano. Responsável: Ismael Firmiano, Niterói/RJ.</span><a href="/privacidade.html">Política de privacidade</a></div>
-      <div class="socials">
-        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
-        <a href="https://wa.me/5521998908129" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-      </div>
+  </div>
+  <div class="wrap">
+    <div class="foot-top" data-reveal>
+      <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32" loading="lazy">
+      <p>Av. Ernani do Amaral Peixoto, 450, sala 505<br>Centro, Niterói/RJ. Atendemos todo o Brasil.</p>
+      <p>Segunda a sexta, em horário comercial.<br>Resposta em até 1 dia útil.</p>
+      <a class="foot-up" href="#top">Voltar ao topo</a>
+    </div>
+    <div class="foot-big" data-reveal>
+      <a href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="WhatsApp (21) 99890-8129">(21) 99890-8129</a>
+      <a class="mail" href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a>
+    </div>
+    <div class="foot-meta" data-reveal>
+      <nav aria-label="Rodapé">
+        <a href="/servicos/landing-page">Landing page</a>
+        <a href="/servicos/site-wordpress">Site WordPress</a>
+        <a href="/servicos/email-profissional">E-mail profissional</a>
+        <a href="/servicos/aplicativos">Aplicativos</a>
+        <a href="/portfolio/">Portfólio</a>
+        <a href="/quem-somos">Quem somos</a>
+        <a href="/#indique">Indique e ganhe</a>
+        <a href="/dominio">Consultar domínio</a>
+        <a href="/contato">Contato</a>
+        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <p class="credits">Fotos de Niterói: <a href="https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_das_Barcas_em_Niter%C3%B3i_15_06_2007.jpg" target="_blank" rel="noopener">Estação das Barcas</a>, por Al Lemos, e <a href="https://commons.wikimedia.org/wiki/File:Boa_Viagem_Niter%C3%B3i.JPG" target="_blank" rel="noopener">Boa Viagem</a>, por DiMonteiro, ambas em domínio público, via Wikimedia Commons.</p>
+      <p class="legal-line">© 2026 Firmiano · Ismael Firmiano, Niterói/RJ<br><a href="/privacidade.html">Política de privacidade</a></p>
     </div>
   </div>
 </footer>
 
-<a class="wa-float" id="waFloat" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
-</a>
 
 <script src="/assets/site.js" defer></script>
 </body>

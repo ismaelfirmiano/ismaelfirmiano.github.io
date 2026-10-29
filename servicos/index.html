@@ -7,7 +7,7 @@
 <meta name="description" content="Landing page, site WordPress, e-mail profissional e aplicativos para empresas em Niterói e todo o Brasil.">
 <link rel="canonical" href="https://firmiano.com.br/servicos/">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0B3D2E">
+<meta name="theme-color" content="#EFEFEA">
 <link rel="icon" type="image/svg+xml" href="/firmiano-identidade/firmiano-icone-quadrado.svg">
 <link rel="icon" type="image/png" sizes="1024x1024" href="/firmiano-identidade/firmiano-icone-quadrado.png">
 <link rel="apple-touch-icon" href="/firmiano-identidade/firmiano-icone-quadrado.png">
@@ -40,19 +40,17 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300&family=Stack+Sans+Text:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.add('js')</script>
 <script src="/assets/analytics.js"></script>
 </head>
-<body>
-<div class="progress" id="progress" aria-hidden="true"></div>
+<body id="top">
 
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="/" aria-label="Firmiano, ir para o início">
-      <img class="lg-white" src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32">
-      <img class="lg-green" src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="" width="127" height="32" aria-hidden="true">
-    </a>
+    <a class="logo" href="/" aria-label="Firmiano, ir para o início"><img src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="Firmiano" width="127" height="32"></a>
     <nav class="nav-links" aria-label="Principal">
       <a href="/servicos/" aria-current="page">Serviços</a>
       <a href="/portfolio/">Portfólio</a>
@@ -60,62 +58,61 @@
       <a href="/dominio">Domínio</a>
       <a href="/contato">Contato</a>
     </nav>
-    <a class="btn btn-leaf nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
-    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
-    <div class="menu" id="menu">
-      <a href="/">Início</a>
-      <a href="/servicos/">Serviços</a>
-      <a href="/portfolio/">Portfólio</a>
-      <a href="/quem-somos">Quem somos</a>
-      <a href="/dominio">Consultar domínio</a>
-      <a href="/contato">Contato</a>
-      <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
-    </div>
+    <a class="btn nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+  <div class="menu" id="menu">
+    <a href="/">Início</a>
+    <a href="/servicos/" aria-current="page">Serviços</a>
+    <a href="/portfolio/">Portfólio</a>
+    <a href="/quem-somos">Quem somos</a>
+    <a href="/dominio">Domínio</a>
+    <a href="/contato">Contato</a>
+    <a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
   </div>
 </header>
 
-<main>
+<main id="conteudo">
 <section class="page-hero" id="hero">
   <div class="wrap">
-    <ol class="crumbs" aria-label="Você está em"><li><a href="/">Início</a></li><li aria-current="page">Serviços</li></ol>
-    <h1>Tudo o que a sua empresa precisa para estar na internet.</h1>
-    <p class="lead">Do primeiro site ao aplicativo, com domínio no seu nome, e-mail profissional e suporte de quem fez o projeto.</p>
-    <div class="ctas"><a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Vim pela página de serviços e quero um orçamento." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Pedir orçamento</a></div>
+    <h1 data-reveal>Sites, e-mail e aplicativos</h1>
+    <p class="lead" data-reveal>Do primeiro site ao aplicativo, com domínio no seu nome, e-mail profissional e suporte de quem fez o projeto.</p>
+    <div class="ctas"><a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Vim pela página de serviços e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a></div>
   </div>
 </section>
 
-<section class="sec">
+<section class="sec f-green">
   <div class="wrap">
     <div class="svc-grid">
-      <a class="svc" href="/servicos/landing-page" data-reveal>
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <a class="svc" data-reveal href="/servicos/landing-page">
+        
         <h3>Landing page</h3>
         <p>Um site de uma página, direto ao ponto, para apresentar o negócio e levar o cliente até o WhatsApp. Sem mensalidade de hospedagem.</p>
-        <div class="foot"><span class="from">a partir de<b>R$690</b></span><span class="go">Conhecer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="foot"><span class="from">a partir de <b>R$690</b></span><span class="go">Conhecer <span class="arrow" aria-hidden="true">→</span></span></div>
       </a>
-      <a class="svc feat" href="/servicos/site-wordpress" data-reveal style="--d:.08s">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 9h18M8 4v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <a class="svc feat" data-reveal href="/servicos/site-wordpress" style="--d:.08s">
+        
         <h3>Site WordPress</h3>
         <p>Site completo de até 5 páginas, que você consegue atualizar sozinho, com hospedagem, segurança e suporte.</p>
-        <div class="foot"><span class="from">a partir de<b>R$1.450</b></span><span class="go">Conhecer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="foot"><span class="from">a partir de <b>R$1.450</b></span><span class="go">Conhecer <span class="arrow" aria-hidden="true">→</span></span></div>
       </a>
-      <a class="svc" href="/servicos/email-profissional" data-reveal>
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <a class="svc" data-reveal href="/servicos/email-profissional">
+        
         <h3>E-mail profissional</h3>
         <p>contato@suaempresa.com.br configurado no celular e no computador, com proteção contra spam.</p>
-        <div class="foot"><span class="from">junto com o site<b>ou avulso</b></span><span class="go">Conhecer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="foot"><span class="from">junto com o site <b>ou avulso</b></span><span class="go">Conhecer <span class="arrow" aria-hidden="true">→</span></span></div>
       </a>
-      <a class="svc" href="/servicos/aplicativos" data-reveal style="--d:.08s">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 18.5h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <a class="svc" data-reveal href="/servicos/aplicativos" style="--d:.08s">
+        
         <h3>Aplicativos</h3>
         <p>O aplicativo da sua empresa na App Store e no Google Play, do agendamento ao cartão fidelidade.</p>
-        <div class="foot"><span class="from">orçamento<b>sob medida</b></span><span class="go">Conhecer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="foot"><span class="from">orçamento <b>sob medida</b></span><span class="go">Conhecer <span class="arrow" aria-hidden="true">→</span></span></div>
       </a>
     </div>
   </div>
 </section>
 
-<section class="sec alt">
+<section class="sec f-paper">
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <h2>Landing page ou site WordPress?</h2>
@@ -125,21 +122,21 @@
       <div class="fit-card" data-reveal>
         <h3>Landing page</h3>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Uma página só, com tudo em sequência</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ideal para começar ou divulgar um serviço</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sem mensalidade de hospedagem</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Alterações feitas por nós</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pronta em até 7 dias úteis</span></li>
+          <li><span>Uma página só, com tudo em sequência</span></li>
+          <li><span>Ideal para começar ou divulgar um serviço</span></li>
+          <li><span>Sem mensalidade de hospedagem</span></li>
+          <li><span>Alterações feitas por nós</span></li>
+          <li><span>Pronta em até 7 dias úteis</span></li>
         </ul>
       </div>
       <div class="fit-card" data-reveal style="--d:.08s">
         <h3>Site WordPress</h3>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Até 5 páginas, uma para cada assunto</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ideal para empresas com vários serviços</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Hospedagem e suporte mensal</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Você atualiza pelo painel</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pronto em até 20 dias úteis</span></li>
+          <li><span>Até 5 páginas, uma para cada assunto</span></li>
+          <li><span>Ideal para empresas com vários serviços</span></li>
+          <li><span>Hospedagem e suporte mensal</span></li>
+          <li><span>Você atualiza pelo painel</span></li>
+          <li><span>Pronto em até 20 dias úteis</span></li>
         </ul>
       </div>
     </div>
@@ -150,47 +147,50 @@
   <div class="wrap">
     <h2 data-reveal>Ainda em dúvida?</h2>
     <p data-reveal style="--d:.1s">Conte o que o seu negócio precisa e indicamos o melhor caminho, sem compromisso.</p>
-    <a class="btn btn-sand magnetic" href="https://wa.me/5521998908129" data-wa="Olá! Quero ajuda para escolher entre landing page e site WordPress." target="_blank" rel="noopener" data-reveal style="--d:.2s">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    <a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Quero ajuda para escolher entre landing page e site WordPress." target="_blank" rel="noopener" data-reveal style="--d:.2s">
       Conversar no WhatsApp</a>
   </div>
 </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="f-top">
-      <div class="f-brand">
-        <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="180" height="45">
-        <p>Criação, hospedagem e suporte de sites para pequenas empresas. Niterói/RJ, atendendo todo o Brasil.</p>
-      </div>
-      <div>
-        <h4>Serviços</h4>
-        <ul><li><a href="/servicos/landing-page">Landing page</a></li><li><a href="/servicos/site-wordpress">Site WordPress</a></li><li><a href="/servicos/email-profissional">E-mail profissional</a></li><li><a href="/servicos/aplicativos">Aplicativos</a></li></ul>
-      </div>
-      <div>
-        <h4>Firmiano</h4>
-        <ul><li><a href="/portfolio/">Portfólio</a></li><li><a href="/quem-somos">Quem somos</a></li><li><a href="/#como-funciona">Como funciona</a></li><li><a href="/#indique">Indique e ganhe</a></li><li><a href="/#faq">Perguntas</a></li></ul>
-      </div>
-      <div>
-        <h4>Contato</h4>
-        <ul><li><a href="https://wa.me/5521998908129" target="_blank" rel="noopener">(21) 99890-8129</a></li><li><a href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a></li><li>Av. Ernani do Amaral Peixoto, 450, sala 505, Centro, Niterói/RJ</li><li><a href="/dominio">Consultar domínio</a></li><li><a href="/contato">Todas as formas de contato</a></li></ul>
-      </div>
+<footer class="site-foot">
+  <div class="reel" aria-hidden="true">
+    <div class="reel-track">
+      <img src="/img/portfolio/fonoalice.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/niteroi/estacao-das-barcas.jpg" alt="" width="1280" height="849" loading="lazy"><img src="/img/portfolio/studiohope.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/fisioequilibrio.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/niteroi/boa-viagem-niteroi.jpg" alt="" width="1280" height="960" loading="lazy"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/animalultrapet.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy">
+      <img src="/img/portfolio/fonoalice.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/niteroi/estacao-das-barcas.jpg" alt="" width="1280" height="849" loading="lazy"><img src="/img/portfolio/studiohope.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/fisioequilibrio.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/niteroi/boa-viagem-niteroi.jpg" alt="" width="1280" height="960" loading="lazy"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/animalultrapet.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy">
     </div>
-    <div class="f-bot">
-      <div class="f-legal"><span>© 2026 Firmiano. Responsável: Ismael Firmiano, Niterói/RJ.</span><a href="/privacidade.html">Política de privacidade</a></div>
-      <div class="socials">
-        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
-        <a href="https://wa.me/5521998908129" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-      </div>
+  </div>
+  <div class="wrap">
+    <div class="foot-top" data-reveal>
+      <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32" loading="lazy">
+      <p>Av. Ernani do Amaral Peixoto, 450, sala 505<br>Centro, Niterói/RJ. Atendemos todo o Brasil.</p>
+      <p>Segunda a sexta, em horário comercial.<br>Resposta em até 1 dia útil.</p>
+      <a class="foot-up" href="#top">Voltar ao topo</a>
+    </div>
+    <div class="foot-big" data-reveal>
+      <a href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="WhatsApp (21) 99890-8129">(21) 99890-8129</a>
+      <a class="mail" href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a>
+    </div>
+    <div class="foot-meta" data-reveal>
+      <nav aria-label="Rodapé">
+        <a href="/servicos/landing-page">Landing page</a>
+        <a href="/servicos/site-wordpress">Site WordPress</a>
+        <a href="/servicos/email-profissional">E-mail profissional</a>
+        <a href="/servicos/aplicativos">Aplicativos</a>
+        <a href="/portfolio/">Portfólio</a>
+        <a href="/quem-somos">Quem somos</a>
+        <a href="/#indique">Indique e ganhe</a>
+        <a href="/dominio">Consultar domínio</a>
+        <a href="/contato">Contato</a>
+        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <p class="credits">Fotos de Niterói: <a href="https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_das_Barcas_em_Niter%C3%B3i_15_06_2007.jpg" target="_blank" rel="noopener">Estação das Barcas</a>, por Al Lemos, e <a href="https://commons.wikimedia.org/wiki/File:Boa_Viagem_Niter%C3%B3i.JPG" target="_blank" rel="noopener">Boa Viagem</a>, por DiMonteiro, ambas em domínio público, via Wikimedia Commons.</p>
+      <p class="legal-line">© 2026 Firmiano · Ismael Firmiano, Niterói/RJ<br><a href="/privacidade.html">Política de privacidade</a></p>
     </div>
   </div>
 </footer>
 
-<a class="wa-float" id="waFloat" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
-</a>
 
 <script src="/assets/site.js" defer></script>
 </body>

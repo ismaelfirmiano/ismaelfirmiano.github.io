@@ -7,7 +7,7 @@
 <meta name="description" content="Firmiano: criação, hospedagem e manutenção de landing pages e sites WordPress para negócios locais em Niterói e todo o Brasil. Domínio no nome da sua empresa, configuração para o Google e atendimento direto.">
 <link rel="canonical" href="https://firmiano.com.br/">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0B3D2E">
+<meta name="theme-color" content="#EFEFEA">
 <link rel="icon" type="image/svg+xml" href="firmiano-identidade/firmiano-icone-quadrado.svg">
 <link rel="icon" type="image/png" sizes="1024x1024" href="firmiano-identidade/firmiano-icone-quadrado.png">
 <link rel="apple-touch-icon" href="firmiano-identidade/firmiano-icone-quadrado.png">
@@ -45,20 +45,16 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300&family=Stack+Sans+Text:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.add('js')</script>
 <script src="/assets/analytics.js"></script>
 </head>
-<body class="rosa">
-<script>/* Outubro Rosa: desliga sozinho a partir de 1º de novembro */ if (Date.now() >= Date.parse("2026-11-01T00:00:00-03:00")) document.body.classList.remove("rosa");</script>
-<div class="progress" id="progress" aria-hidden="true"></div>
-
+<body id="top">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="/" aria-label="Firmiano, ir para o início">
-      <img class="lg-white" src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32">
-      <img class="lg-green" src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="" width="127" height="32" aria-hidden="true">
-    </a>
+    <a class="logo" href="/" aria-label="Firmiano, ir para o início"><img src="/firmiano-identidade/firmiano-wordmark-verde.svg" alt="Firmiano" width="127" height="32"></a>
     <nav class="nav-links" aria-label="Principal">
       <a href="/servicos/">Serviços</a>
       <a href="/portfolio/">Portfólio</a>
@@ -66,341 +62,293 @@
       <a href="/dominio">Domínio</a>
       <a href="/contato">Contato</a>
     </nav>
-    <a class="btn btn-leaf nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
-    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
-    <div class="menu" id="menu">
-      <a href="/">Início</a>
-      <a href="/servicos/">Serviços</a>
-      <a href="/portfolio/">Portfólio</a>
-      <a href="/quem-somos">Quem somos</a>
-      <a href="/dominio">Consultar domínio</a>
-      <a href="/contato">Contato</a>
-      <a class="btn btn-leaf" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
-    </div>
+    <a class="btn nav-cta" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
+    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+  <div class="menu" id="menu">
+    <a href="/">Início</a>
+    <a href="/servicos/">Serviços</a>
+    <a href="/portfolio/">Portfólio</a>
+    <a href="/quem-somos">Quem somos</a>
+    <a href="/dominio">Domínio</a>
+    <a href="/contato">Contato</a>
+    <a class="btn" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
   </div>
 </header>
 
-<main id="topo">
-<section class="hero" id="hero">
-  <div class="grain" aria-hidden="true"></div>
-  <div class="wrap hero-grid">
-    <div>
-      <aside class="rosa-msg fade-up fu1" aria-label="Outubro Rosa">
-        <svg class="ribbon" width="34" height="50" viewBox="0 0 64 96" fill="none" aria-hidden="true"><path d="M28 56 C20 42 18 30 22 19 C25 10 39 10 42 19 C46 30 44 42 36 56 L48 90" stroke="#E0578B" stroke-width="11"/><path d="M36 56 L16 90" stroke="#F49BBE" stroke-width="11"/><path d="M28 56 C20 42 18 30 22 19" stroke="#F49BBE" stroke-width="11"/></svg>
-        <p><b>Outubro Rosa.</b> A Firmiano apoia a conscientização sobre o câncer de mama. Conheça o seu corpo, fique atenta a qualquer alteração nas mamas e converse com um profissional de saúde sobre os exames indicados para você. O diagnóstico precoce salva vidas. <a href="https://www.gov.br/inca/pt-br/assuntos/cancer/tipos/mama" target="_blank" rel="noopener">Saiba mais no INCA</a></p>
-      </aside>
-      <h1 id="headline">Seu negócio encontrado no Google e chamado no WhatsApp.</h1>
-      <p class="lead fade-up fu1">Landing pages e sites em WordPress para negócios locais, com textos pensados para quem procura o seu serviço na cidade, contato a um toque no celular e manutenção com escopo definido.</p>
-      <div class="hero-ctas fade-up fu2">
-        <a class="btn btn-leaf magnetic" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-          Pedir orçamento no WhatsApp</a>
-        <a class="btn btn-line-d" href="/servicos/">Ver serviços</a>
-      </div>
-      <ul class="hero-facts fade-up fu3">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Domínio registrado no nome da sua empresa</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Configuração básica para aparecer no Google</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Atendimento direto pelo WhatsApp</li>
-      </ul>
-    </div>
-    <div class="stage-holder fade-up fu4">
-      <div class="stage-glow" aria-hidden="true"></div>
-      <div class="stage-wrap" id="stageWrap">
-        <div class="stage" id="stage" role="img" aria-label="Animação: as três barras do logo da Firmiano se transformam em um site publicado no endereço suaempresa.com.br">
-          <div class="chrome" aria-hidden="true"><i></i><i></i><i></i>
-            <div class="url"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2.4"/><path d="M8 11V8a4 4 0 018 0v3" stroke="currentColor" stroke-width="2.4"/></svg><span>https://</span><b id="typed"></b><span class="caret"></span></div>
-          </div>
-          <div class="canvas" aria-hidden="true">
-            <div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div>
-            <div class="x x1"></div><div class="x x2"></div><div class="x x3"></div>
-            <div class="x x4"></div><div class="x x5"></div>
-            <div class="x x6"><span></span><span></span><span></span><span></span></div>
-            <div class="wa-mini"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
+<main id="conteudo">
+<section class="wl" id="hero" aria-labelledby="headline">
+  <h1 class="wl-h" id="headline">
+    <span class="wl-a"><span class="ln"><span>Sites para</span></span> <span class="ln"><span>negócios locais</span></span></span>
+    <span class="wl-b" aria-hidden="true"><span class="ln"><span>Sites para</span></span><span class="ln"><span>negócios locais</span></span></span>
+  </h1>
+  <div class="wl-foot wrap">
+    <p>Landing pages e sites WordPress feitos em Niterói, com domínio no nome da sua empresa e contato direto pelo WhatsApp.</p>
+    <a class="btn btn-paper" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+  </div>
+</section>
+
+<section class="work" id="portfolio" aria-labelledby="work-h">
+  <div class="wrap work-head">
+    <h2 id="work-h" data-reveal>Sites no ar</h2>
+    <p data-reveal style="--d:.08s">Projetos publicados pela Firmiano, cada um no próprio endereço. Abra qualquer um no seu celular.</p>
+  </div>
+  <div class="folders">
+    <article class="folder f-mint" style="--i:0">
+      <div class="wrap">
+        <div class="strip"><h3 class="tab">Alice Guedes</h3><span class="kind">Fonoaudióloga · Icaraí, Niterói</span></div>
+        <div class="folder-body">
+          <a class="shot" href="https://fonoalice.firmiano.com.br" target="_blank" rel="noopener" aria-label="Abrir o site de Alice Guedes, fonoaudióloga">
+            <img src="/img/portfolio/fonoalice.webp" alt="Página inicial do site de Alice Guedes, fonoaudióloga infantil" width="1200" height="750" loading="lazy">
+          </a>
+          <div class="folder-text">
+            <p>Landing page para uma fonoaudióloga infantil. Os atendimentos são explicados na língua dos pais, com a formação, depoimentos e o agendamento a um toque no WhatsApp.</p>
+            <a class="go" href="https://fonoalice.firmiano.com.br" target="_blank" rel="noopener">fonoalice.firmiano.com.br <span class="arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
-      <div class="status" aria-hidden="true"><i></i>No ar</div>
-    </div>
-  </div>
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Landing pages</span><span>Sites WordPress</span><span>Domínio .com.br</span><span>E-mail profissional</span><span>Certificado SSL</span><span>Backups</span><span>Botão de WhatsApp</span><span>Funciona no celular</span>
-      <span>Landing pages</span><span>Sites WordPress</span><span>Domínio .com.br</span><span>E-mail profissional</span><span>Certificado SSL</span><span>Backups</span><span>Botão de WhatsApp</span><span>Funciona no celular</span>
-    </div>
+    </article>
+    <article class="folder f-green" style="--i:1">
+      <div class="wrap">
+        <div class="strip"><h3 class="tab">Fisioequilíbrio</h3><span class="kind">Pilates e fisioterapia · Centro, Niterói</span></div>
+        <div class="folder-body">
+          <a class="shot" href="https://fisioequilibrio.firmiano.com.br" target="_blank" rel="noopener" aria-label="Abrir o site da Fisioequilíbrio">
+            <img src="/img/portfolio/fisioequilibrio.webp" alt="Página inicial do site da Fisioequilíbrio" width="1200" height="750" loading="lazy">
+          </a>
+          <div class="folder-text">
+            <p>Estúdio de pilates, RPG, acupuntura e fisioterapia. A página reúne os serviços, fotos do espaço e as avaliações dos alunos, e termina sempre no pedido de avaliação pelo WhatsApp.</p>
+            <a class="go" href="https://fisioequilibrio.firmiano.com.br" target="_blank" rel="noopener">fisioequilibrio.firmiano.com.br <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="folder f-stone" style="--i:2">
+      <div class="wrap">
+        <div class="strip"><h3 class="tab">Studio Hope</h3><span class="kind">Duas unidades · Icaraí e Piabetá</span></div>
+        <div class="folder-body">
+          <a class="shot" href="https://studiohope.firmiano.com.br" target="_blank" rel="noopener" aria-label="Abrir o site do Studio Hope">
+            <img src="/img/portfolio/studiohope.webp" alt="Página inicial do site do Studio Hope" width="1200" height="750" loading="lazy">
+          </a>
+          <div class="folder-text">
+            <p>Um estúdio com duas unidades, em Niterói e em Magé. Cada unidade tem endereço e contato próprios, com os convênios aceitos e o agendamento de sessão pelo WhatsApp.</p>
+            <a class="go" href="https://studiohope.firmiano.com.br" target="_blank" rel="noopener">studiohope.firmiano.com.br <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="folder f-leaf" style="--i:3">
+      <div class="wrap">
+        <div class="strip"><h3 class="tab">Aurora UltraPet</h3><span class="kind">Aplicativo web · demonstração</span></div>
+        <div class="folder-body">
+          <a class="shot" href="https://animalultrapet.firmiano.com.br" target="_blank" rel="noopener" aria-label="Abrir o site da Animal UltraPet">
+            <img src="/img/portfolio/animalultrapet.webp" alt="Página inicial do site da Aurora Animal UltraPet" width="1200" height="750" loading="lazy">
+          </a>
+          <div class="folder-text">
+            <p>Aplicativo web de demonstração para um pet shop: agendamento de banho e tosa em poucos passos, pagamento antecipado, vitrine de produtos e área do cliente. Pode ser instalado no celular como aplicativo.</p>
+            <a class="go" href="https://animalultrapet.firmiano.com.br" target="_blank" rel="noopener">animalultrapet.firmiano.com.br <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="go" href="/portfolio/">Ver o portfólio completo <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 
-<section class="sec" id="por-que">
-  <div class="wrap why">
-    <h2 data-reveal>O que a Firmiano faz diferente.</h2>
-    <ul class="why-list">
-      <li data-reveal><div class="fbars" aria-hidden="true"><i></i><i></i><i></i></div><div><h3>Pensado para negócio local</h3><p>Estrutura e textos seguem o que o seu cliente procura no Google: o serviço, o bairro ou a cidade, o horário e como chegar.</p></div></li>
-      <li data-reveal style="--d:.08s"><div class="fbars" aria-hidden="true"><i></i><i></i><i></i></div><div><h3>Feito para gerar contato</h3><p>WhatsApp, telefone e mapa a um toque no celular, e cada seção termina com um próximo passo claro. O site existe para trazer conversa, não só para ficar bonito.</p></div></li>
-      <li data-reveal style="--d:.16s"><div class="fbars" aria-hidden="true"><i></i><i></i><i></i></div><div><h3>Tudo no seu nome</h3><p>O domínio é registrado no nome da sua empresa e a landing page fica numa conta sua. Você não fica preso ao fornecedor.</p></div></li>
-      <li data-reveal style="--d:.24s"><div class="fbars" aria-hidden="true"><i></i><i></i><i></i></div><div><h3>Manutenção com escopo definido</h3><p>Quem fez o site é quem atende depois. Alteração avulsa ou plano mensal com 1 hora incluída: você sabe o custo antes de pedir.</p></div></li>
-    </ul>
-  </div>
-</section>
-
-<section class="sec" id="servicos" style="padding-top:40px">
+<section class="dom-ch f-deep" id="dominio" aria-labelledby="dom-h">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <h2>Serviços</h2>
-      <p>Do primeiro site ao aplicativo, com domínio no seu nome e suporte de quem fez o projeto.</p>
+    <div class="dom-ch-head">
+      <h2 id="dom-h" data-reveal>Tudo no seu nome</h2>
+      <p data-reveal style="--d:.08s">O domínio é registrado no nome da sua empresa e a landing page fica numa conta sua. Se um dia quiser mudar de fornecedor, o endereço vai com você. Veja agora se o seu .com.br está livre.</p>
     </div>
-    <div class="svc-grid">
-      <a class="svc" href="/servicos/landing-page" data-reveal>
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Landing page</h3>
-        <p>Um site de uma página, direto ao ponto, para apresentar o negócio e levar o cliente até o WhatsApp. Sem mensalidade de hospedagem.</p>
-        <div class="foot"><span class="from">a partir de<b>R$690</b></span><span class="go">Conhecer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      </a>
-      <a class="svc feat" href="/servicos/site-wordpress" data-reveal style="--d:.08s">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 9h18M8 4v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <form class="dom-bar" id="dom-form" autocomplete="off" novalidate action="/dominio" data-reveal style="--d:.16s">
+      <span class="pre" aria-hidden="true">https://</span>
+      <label for="dom-input" class="sr-only">Nome da sua empresa</label>
+      <input id="dom-input" name="q" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="60" placeholder="padaria pão quente">
+      <span class="suf" aria-hidden="true">.com.br</span>
+      <button type="submit" class="btn" id="dom-btn">Consultar</button>
+    </form>
+    <p class="dom-note muted">A consulta sai direto do seu navegador para serviços públicos de DNS e de registro. Não guardamos o que você digita.</p>
+    <div class="dom-out" id="dom-out" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="offer f-mint" id="precos" aria-labelledby="price-h">
+  <div class="wrap">
+    <h2 class="price-line" id="price-h" data-reveal><span class="ln">Seu site no ar</span> <span class="ln">por <span class="price-block">R$690</span></span></h2>
+    <div class="offer-row">
+      <p data-reveal style="--d:.08s">Uma landing page completa: design, textos revisados, botão de WhatsApp, configuração para o Google e publicação numa conta sua, sem mensalidade de hospedagem. Pronta em até 7 dias úteis.</p>
+      <div class="offer-act" data-reveal style="--d:.16s">
+        <a class="btn btn-ink" href="https://wa.me/5521998908129" data-wa="Olá! Quero uma landing page (a partir de R$690)." target="_blank" rel="noopener">Quero uma landing page</a>
+        <a class="inline" href="/servicos/landing-page">O que está incluído</a>
+      </div>
+    </div>
+    <div class="svc-grid" id="servicos">
+      <a class="svc" href="/servicos/site-wordpress" data-reveal>
         <h3>Site WordPress</h3>
-        <p>Site completo de até 5 páginas, que você consegue atualizar sozinho, com hospedagem, segurança e suporte.</p>
-        <div class="foot"><span class="from">a partir de<b>R$1.450</b></span><span class="go">Conhecer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <p>Até 5 páginas que você mesmo atualiza pelo painel, com hospedagem, backups e suporte de quem fez o site.</p>
+        <div class="foot"><span class="from">a partir de <b>R$1.450</b></span><span class="go">Conhecer <span class="arrow" aria-hidden="true">→</span></span></div>
       </a>
       <a class="svc" href="/servicos/email-profissional" data-reveal>
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>E-mail profissional</h3>
-        <p>contato@suaempresa.com.br configurado no celular e no computador, com proteção contra spam.</p>
-        <div class="foot"><span class="from">junto com o site<b>ou avulso</b></span><span class="go">Conhecer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <p>contato@suaempresa.com.br no celular e no computador, com autenticação contra spam.</p>
+        <div class="foot"><span class="from">com a landing page <b>R$990</b></span><span class="go">Conhecer <span class="arrow" aria-hidden="true">→</span></span></div>
       </a>
-      <a class="svc" href="/servicos/aplicativos" data-reveal style="--d:.08s">
-        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 18.5h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <a class="svc" href="/servicos/aplicativos" data-reveal>
         <h3>Aplicativos</h3>
         <p>O aplicativo da sua empresa na App Store e no Google Play, do agendamento ao cartão fidelidade.</p>
-        <div class="foot"><span class="from">orçamento<b>sob medida</b></span><span class="go">Conhecer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="foot"><span class="from">orçamento <b>sob medida</b></span><span class="go">Conhecer <span class="arrow" aria-hidden="true">→</span></span></div>
       </a>
     </div>
+    <p class="offer-note">Depois de publicado, cada alteração avulsa custa R$50. Quem prefere previsibilidade tem o plano de manutenção da landing page por R$100 por mês, com até 1 hora de alterações incluída.</p>
   </div>
 </section>
 
-<section class="sec bento-sec" id="recebe">
+<section class="grow f-paper" id="como-funciona" aria-labelledby="grow-h">
   <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <h2>Tudo o que o seu cliente precisa para confiar em você.</h2>
-      <p>O essencial para ser encontrado, passar credibilidade e receber contatos, sem pacote complicado.</p>
+    <div class="grow-grid">
+      <h2 id="grow-h" data-reveal>Do contato ao site no ar</h2>
+      <figure class="tile t1" data-reveal>
+        <dl class="proposal">
+          <dt>Páginas</dt><dd>1</dd>
+          <dt>Prazo</dt><dd>7 dias úteis</dd>
+          <dt>Valor</dt><dd>R$690</dd>
+          <dt>Entrada</dt><dd>50%</dd>
+        </dl>
+      </figure>
+      <figure class="tile t2" data-reveal style="--d:.08s">
+        <ol class="outline">
+          <li>Início</li><li>Atendimentos</li><li>Formação</li><li>Depoimentos</li><li>Como chegar</li><li>WhatsApp</li>
+        </ol>
+      </figure>
+      <figure class="tile t3" data-reveal style="--d:.16s">
+        <img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="Prévia do site da Fisioequilíbrio aberta no celular" width="300" height="533" loading="lazy">
+      </figure>
+      <figure class="tile t4" data-reveal style="--d:.24s">
+        <img src="/img/portfolio/studiohope.webp" alt="Site do Studio Hope publicado" width="1200" height="750" loading="lazy">
+        <figcaption>studiohope.firmiano.com.br</figcaption>
+      </figure>
+      <div class="cap c1"><h3>Conversa e proposta</h3><p>Entendemos o negócio e o objetivo. Você recebe a proposta por escrito com páginas, prazo e valor, e o trabalho começa com a entrada de 50%.</p></div>
+      <div class="cap c2"><h3>Estrutura e textos</h3><p>Organizamos as seções e escrevemos os textos a partir das suas informações. Você aprova antes de começar o design.</p></div>
+      <div class="cap c3"><h3>Design e revisões</h3><p>Um link de prévia para abrir no seu celular e no computador, com até 3 rodadas de ajustes incluídas.</p></div>
+      <div class="cap c4"><h3>Testes e publicação</h3><p>O site passa pelo checklist, você aprova a versão final por escrito e ele vai ao ar com o seu domínio e o cadeado de segurança, após os 50% restantes.</p></div>
     </div>
-    <div class="bento">
-      <article class="tile t-design spot" data-reveal>
-        <h3>Design profissional</h3>
-        <p>Visual limpo e organizado, com a cara do seu negócio, para passar confiança logo no primeiro olhar.</p>
-        <div class="viz" aria-hidden="true">
-          <div class="mini-site">
-            <div class="hd"><i></i><em><i></i><i></i><i></i></em></div>
-            <div class="hero-b"><i></i><i></i><b></b></div>
-            <div class="side"><i></i><i></i></div>
-          </div>
-        </div>
-      </article>
-      <article class="tile t-screen spot" data-reveal style="--d:.08s">
-        <h3>Funciona em qualquer tela</h3>
-        <p>Celular, tablet ou computador: o seu cliente lê e entra em contato sem esforço.</p>
-        <div class="viz" aria-hidden="true">
-          <div class="screens"><div class="scr-d"><i></i><i></i><i style="width:70%"></i></div><div class="scr-m"><i></i><i></i><i style="width:60%"></i></div></div>
-        </div>
-      </article>
-      <article class="tile t-contact spot" data-reveal>
-        <h3>Pronto para o Google</h3>
-        <p>Título e descrição em cada página, sitemap e envio ao Google Search Console.</p>
-        <div class="viz" aria-hidden="true">
-          <div class="serp"><small>suaempresa.com.br</small><b>Sua Empresa · Serviço em Niterói</b><span>Atendimento em Icaraí e região. Peça orçamento pelo WhatsApp.</span></div>
-        </div>
-      </article>
-      <article class="tile t-domain spot" data-reveal style="--d:.08s">
-        <h3>Seu próprio endereço</h3>
-        <p>Domínio com o nome da sua empresa e e-mail profissional.</p>
-        <div class="viz" aria-hidden="true">
-          <div class="addr">
-            <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18" stroke="currentColor" stroke-width="2"/></svg>suaempresa.com.br</div>
-            <div><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>contato@suaempresa.com.br</div>
-          </div>
-        </div>
-      </article>
-      <article class="tile t-text spot" data-reveal style="--d:.16s">
-        <h3>Textos claros</h3>
-        <p>Organizamos o conteúdo para explicar com clareza o que você faz e por que escolher você. Tudo é revisado antes de publicar.</p>
-        <div class="viz" aria-hidden="true"><div class="lines"><i></i><i></i><i></i><i></i></div></div>
-      </article>
-      <article class="tile t-person spot" data-reveal>
-        <div>
-          <h3>Conferido antes de ir ao ar</h3>
-          <p>Todo site passa por um checklist de publicação: celular e computador, links e botões, velocidade, configuração para o Google e textos revisados. <a class="inline" href="#checklist">Ver o checklist</a></p>
-        </div>
-        <div class="reply" aria-hidden="true">
-          <div class="clock"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div><b>Checklist de publicação</b><span>você vê o resultado antes de aprovar</span></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="portfolio">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <h2>Portfólio</h2>
-      <p>Alguns projetos que já estão no ar. Clique para ver o site funcionando.</p>
-    </div>
-    <div class="pf-grid three">
-      <a class="pf" href="https://fonoalice.firmiano.com.br" target="_blank" rel="noopener" data-reveal style="--d:0.00s">
-        <div class="pf-shot"><div class="pf-frame"><div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span>fonoalice.firmiano.com.br</span></div><img src="/img/portfolio/fonoalice.webp" alt="Página inicial do site Alice Guedes · Fonoaudióloga" width="1200" height="750" loading="lazy"></div><div class="pf-phone" aria-hidden="true"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"></div></div>
-        <div class="pf-info">
-          <span class="pf-kind">Landing page</span>
-          <h3>Alice Guedes · Fonoaudióloga</h3>
-          <span class="where">Icaraí, Niterói/RJ</span>
-          <p class="desc">Página para uma fonoaudióloga infantil, com os atendimentos explicados para os pais, formação, depoimentos e agendamento pelo WhatsApp.</p>
-          <ul class="pf-tags"><li>Saúde</li><li>WhatsApp</li><li>Celular</li></ul>
-          <span class="pf-link">Visitar o site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
-      </a>
-      <a class="pf" href="https://fisioequilibrio.firmiano.com.br" target="_blank" rel="noopener" data-reveal style="--d:0.08s">
-        <div class="pf-shot"><div class="pf-frame"><div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span>fisioequilibrio.firmiano.com.br</span></div><img src="/img/portfolio/fisioequilibrio.webp" alt="Página inicial do site Fisioequilíbrio" width="1200" height="750" loading="lazy"></div><div class="pf-phone" aria-hidden="true"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"></div></div>
-        <div class="pf-info">
-          <span class="pf-kind">Landing page</span>
-          <h3>Fisioequilíbrio</h3>
-          <span class="where">Centro, Niterói/RJ</span>
-          <p class="desc">Estúdio de pilates, RPG, acupuntura e fisioterapia: serviços, fotos do espaço, avaliações e agendamento de avaliação pelo WhatsApp.</p>
-          <ul class="pf-tags"><li>Saúde</li><li>Pilates</li><li>WhatsApp</li></ul>
-          <span class="pf-link">Visitar o site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
-      </a>
-      <a class="pf" href="https://studiohope.firmiano.com.br" target="_blank" rel="noopener" data-reveal style="--d:0.00s">
-        <div class="pf-shot"><div class="pf-frame"><div class="pf-bar" aria-hidden="true"><i></i><i></i><i></i><span>studiohope.firmiano.com.br</span></div><img src="/img/portfolio/studiohope.webp" alt="Página inicial do site Studio Hope" width="1200" height="750" loading="lazy"></div><div class="pf-phone" aria-hidden="true"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"></div></div>
-        <div class="pf-info">
-          <span class="pf-kind">Landing page</span>
-          <h3>Studio Hope</h3>
-          <span class="where">Icaraí, Niterói e Piabetá, Magé</span>
-          <p class="desc">Estúdio com duas unidades: serviços, convênios aceitos, fotos do espaço e agendamento de sessão pelo WhatsApp.</p>
-          <ul class="pf-tags"><li>Saúde</li><li>Duas unidades</li><li>WhatsApp</li></ul>
-          <span class="pf-link">Visitar o site <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
-      </a>
-    </div>
-    <div class="pf-more" data-reveal><a class="btn btn-line" href="/portfolio/">Ver o portfólio completo</a></div>
-  </div>
-</section>
-
-<section class="sec" id="como-funciona">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <h2>Do primeiro contato ao site no ar.</h2>
-      <p>Cada etapa tem uma entrega definida e só avança com a sua aprovação.</p>
-    </div>
-    <div class="steps" id="steps">
-      <div class="track" aria-hidden="true"><i></i></div>
-      <div class="step" data-reveal><div class="num">1</div><h3>Conversa e proposta</h3><p>Entendemos o seu negócio, o seu público e o objetivo do site.</p><p class="get"><b>Você recebe</b>Proposta por escrito com páginas, prazo e valor. O trabalho começa com a entrada de 50%.</p></div>
-      <div class="step" data-reveal style="--d:.08s"><div class="num">2</div><h3>Estrutura e textos</h3><p>Com o seu material em mãos, organizamos as seções e escrevemos os textos.</p><p class="get"><b>Você recebe</b>A estrutura e os textos para aprovar antes de começar o design.</p></div>
-      <div class="step" data-reveal style="--d:.16s"><div class="num">3</div><h3>Design e revisões</h3><p>Criamos o visual com a identidade do seu negócio.</p><p class="get"><b>Você recebe</b>Um link de prévia para ver no seu celular e no computador. Até 3 rodadas de ajustes incluídas.</p></div>
-      <div class="step" data-reveal style="--d:.24s"><div class="num">4</div><h3>Testes e publicação</h3><p>O site passa pelo checklist abaixo e você aprova a versão final por escrito.</p><p class="get"><b>Você recebe</b>O site no ar com o seu domínio e o cadeado de segurança, após os 50% restantes.</p></div>
-    </div>
-    <div class="deliver" id="checklist" data-reveal>
-      <div>
+    <div class="deliver" id="checklist">
+      <div data-reveal>
         <h3>O que você precisa enviar</h3>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Logo da empresa, se tiver</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Informações do negócio: o que você faz, para quem e diferenciais</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Fotos do seu trabalho, da equipe ou do local</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Contatos: WhatsApp, e-mail, endereço e redes sociais</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Acesso ao domínio, se você já tiver um</li>
+        <ul class="check">
+          <li>Logo da empresa, se tiver</li>
+          <li>O que você faz, para quem e os seus diferenciais</li>
+          <li>Fotos do seu trabalho, da equipe ou do local</li>
+          <li>WhatsApp, e-mail, endereço e redes sociais</li>
+          <li>Acesso ao domínio, se você já tiver um</li>
         </ul>
-        <p class="deliver-note">Não tem textos ou fotos prontos? Organizamos os textos a partir das suas informações e usamos imagens com licença de uso comercial até você ter as suas.</p>
+        <p class="muted">Sem textos ou fotos prontos? Escrevemos a partir das suas informações e usamos imagens com licença de uso comercial até você ter as suas.</p>
       </div>
-      <div>
-        <h3>Checklist antes de publicar</h3>
-        <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Telas:</b> testado no celular e no computador, nos principais navegadores</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Contato:</b> WhatsApp, telefone, e-mail, mapa e formulário conferidos um a um</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Velocidade:</b> imagens otimizadas e teste no PageSpeed Insights do Google</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Google:</b> título e descrição de cada página, sitemap e envio ao Search Console</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Segurança:</b> certificado SSL ativo e, no WordPress, backup antes de publicar</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Leitura:</b> textos revisados, contraste legível e descrição nas imagens</span></li>
-        </ul>
+      <div data-reveal style="--d:.08s">
+        <h3>Conferido antes de publicar</h3>
+        <dl class="checklist">
+          <dt>Telas</dt><dd>Testado no celular e no computador, nos principais navegadores.</dd>
+          <dt>Contato</dt><dd>WhatsApp, telefone, e-mail, mapa e formulário conferidos um a um.</dd>
+          <dt>Velocidade</dt><dd>Imagens otimizadas e teste no PageSpeed Insights do Google.</dd>
+          <dt>Google</dt><dd>Título e descrição de cada página, sitemap e envio ao Search Console.</dd>
+          <dt>Segurança</dt><dd>Certificado SSL ativo e, no WordPress, backup antes de publicar.</dd>
+          <dt>Leitura</dt><dd>Textos revisados, contraste legível e descrição nas imagens.</dd>
+        </dl>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="indique">
-  <div class="wrap refer">
-    <div data-reveal>
-      <h2>Virou cliente? Indique e ganhe.</h2>
-      <p class="note">Quando uma indicação sua fechar e o projeto for concluído, você recebe o valor abaixo. Vale para quem já é cliente Firmiano; para indicar, é só chamar no WhatsApp.</p>
+<section class="about-wrap" id="quem-somos" aria-labelledby="about-h">
+  <div class="about f-green">
+    <div class="about-l">
+      <h2 id="about-h" data-reveal>Quem faz o site é quem atende</h2>
+      <div class="portrait" data-reveal style="--d:.1s">
+        <picture>
+          <source srcset="/img/ismael-firmiano.webp" type="image/webp">
+          <img src="/img/ismael-firmiano.jpg" alt="Ismael Firmiano, fundador da Firmiano" width="300" height="400" loading="lazy">
+        </picture>
+      </div>
     </div>
-    <div class="refer-amts">
-      <div class="amt" data-reveal><b>R$50</b><span>por indicação que fechar e concluir uma landing page</span></div>
-      <div class="amt" data-reveal style="--d:.1s"><b>R$100</b><span>por indicação que fechar e concluir um site WordPress</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="faq" style="padding-top:40px;">
-  <div class="wrap faq-grid">
-    <div class="sec-head" data-reveal>
-      <h2>Perguntas frequentes</h2>
-      <p>Não achou a sua? Chame no WhatsApp que a gente responde.</p>
-    </div>
-    <div class="faq" data-reveal style="--d:.1s">
-      <div class="qa open"><button aria-expanded="true">Quanto tempo leva para o site ficar pronto?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>A landing page fica pronta em até 7 dias úteis e o site WordPress de 5 páginas em até 20 dias úteis. O prazo conta a partir da entrada de 50% e do recebimento de todo o material.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">Preciso ter textos e fotos prontos?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Não. Você manda as informações do negócio e organizamos os textos para você aprovar. Se ainda não tiver fotos, usamos imagens com licença de uso comercial até você ter as suas.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">E se eu não gostar do resultado?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Você aprova a estrutura e os textos antes do design, e o design tem até 3 rodadas de ajustes. Nada vai ao ar sem a sua aprovação por escrito.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">O meu site vai aparecer no Google?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Todo site sai com a configuração básica: título e descrição em cada página, sitemap e envio ao Google Search Console. A posição nos resultados depende também da concorrência e do tempo, por isso não prometemos primeiro lugar.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">Onde o meu site fica hospedado?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>A landing page fica no GitHub Pages, numa conta no seu nome, sem mensalidade de hospedagem. O site WordPress é hospedado pela Firmiano, com SSL, backups e atualizações incluídos na mensalidade.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">Que tipo de empresa vocês atendem?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Qualquer empresa, profissional autônomo ou instituição que precise de um site. Conte o que você precisa e respondemos se faz sentido e quanto custa.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false">É possível pedir um sistema além de um site em WordPress?<span class="ic" aria-hidden="true"></span></button><div class="ans"><div><p>Sim. Além de sites, a Firmiano desenvolve sistemas sob medida em nuvem, como controle de estoque, gestão de biblioteca ou um ERP simplificado para a rotina da sua empresa. Escopo, prazo e valor são definidos depois de entender o seu processo. Conte no WhatsApp o que você precisa.</p></div></div></div>
+    <div class="about-r">
+      <div data-reveal>
+        <h3>Ismael Firmiano</h3>
+        <p>Faço sites desde 2019 e me formo em Ciência da Computação pela UFF em dezembro de 2026. Na universidade, desenvolvo e mantenho os sites da Agência de Inovação (AGIR) e do ETCO. Na Firmiano, você fala comigo da primeira conversa ao suporte, sem intermediários.</p>
+      </div>
+      <div data-reveal style="--d:.08s">
+        <h3>No Centro de Niterói</h3>
+        <p>O escritório fica na Av. Ernani do Amaral Peixoto, 450, sala 505, a poucos minutos da estação das barcas. Atendemos negócios de Niterói, do Rio e de todo o Brasil, por WhatsApp, e-mail ou videochamada.</p>
+      </div>
+      <a class="btn" href="/quem-somos" data-reveal style="--d:.16s">Conhecer a Firmiano</a>
     </div>
   </div>
 </section>
 
-<section class="cta">
+<section class="faq-bands" id="faq" aria-labelledby="faq-h">
+  <div class="faq-head"><div class="wrap"><h2 id="faq-h">Perguntas frequentes</h2><p>Não achou a sua? <a href="https://wa.me/5521998908129" data-wa="Olá! Tenho uma dúvida sobre os sites." target="_blank" rel="noopener">Pergunte no WhatsApp</a>.</p></div></div>
+  <div class="qa"><div class="wrap"><h3>Quanto tempo leva para o site ficar pronto?</h3><div class="ans"><p>A landing page fica pronta em até 7 dias úteis e o site WordPress de 5 páginas em até 20 dias úteis. O prazo conta a partir da entrada de 50% e do recebimento de todo o material.</p></div></div></div>
+  <div class="qa"><div class="wrap"><h3>Preciso ter textos e fotos prontos?</h3><div class="ans"><p>Não. Você manda as informações do negócio e organizamos os textos para você aprovar. Se ainda não tiver fotos, usamos imagens com licença de uso comercial até você ter as suas.</p></div></div></div>
+  <div class="qa"><div class="wrap"><h3>E se eu não gostar do resultado?</h3><div class="ans"><p>Você aprova a estrutura e os textos antes do design, e o design tem até 3 rodadas de ajustes. Nada vai ao ar sem a sua aprovação por escrito.</p></div></div></div>
+  <div class="qa"><div class="wrap"><h3>O meu site vai aparecer no Google?</h3><div class="ans"><p>Todo site sai com a configuração básica: título e descrição em cada página, sitemap e envio ao Google Search Console. A posição nos resultados depende também da concorrência e do tempo, por isso não prometemos primeiro lugar.</p></div></div></div>
+  <div class="qa"><div class="wrap"><h3>Onde o meu site fica hospedado?</h3><div class="ans"><p>A landing page fica no GitHub Pages, numa conta no seu nome, sem mensalidade de hospedagem. O site WordPress é hospedado pela Firmiano, com SSL, backups e atualizações incluídos na mensalidade.</p></div></div></div>
+  <div class="qa"><div class="wrap"><h3>Que tipo de empresa vocês atendem?</h3><div class="ans"><p>Qualquer empresa, profissional autônomo ou instituição que precise de um site. Conte o que você precisa e respondemos se faz sentido e quanto custa.</p></div></div></div>
+  <div class="qa"><div class="wrap"><h3>Vocês fazem sistemas, além de sites?</h3><div class="ans"><p>Sim. A Firmiano desenvolve sistemas sob medida em nuvem, como controle de estoque, gestão de biblioteca ou um ERP simplificado para a rotina da sua empresa. Escopo, prazo e valor são definidos depois de entender o seu processo.</p></div></div></div>
+  <div class="qa" id="indique"><div class="wrap"><h3>Já sou cliente. Ganho algo se indicar?</h3><div class="ans"><p>Sim. Quando uma indicação sua fechar e o projeto for concluído, você recebe <b>R$50</b> por landing page ou <b>R$100</b> por site WordPress. Para indicar, é só chamar no WhatsApp.</p></div></div></div>
+</section>
+
+<section class="contact-ch f-mint" id="contato" aria-labelledby="contact-h">
+  <div class="reel" aria-hidden="true">
+    <div class="reel-track">
+      <img src="/img/portfolio/fonoalice.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/niteroi/estacao-das-barcas.jpg" alt="" width="1280" height="849" loading="lazy"><img src="/img/portfolio/studiohope.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/fisioequilibrio.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/niteroi/boa-viagem-niteroi.jpg" alt="" width="1280" height="960" loading="lazy"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/animalultrapet.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy">
+      <img src="/img/portfolio/fonoalice.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fisioequilibrio-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/niteroi/estacao-das-barcas.jpg" alt="" width="1280" height="849" loading="lazy"><img src="/img/portfolio/studiohope.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/fonoalice-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/fisioequilibrio.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/niteroi/boa-viagem-niteroi.jpg" alt="" width="1280" height="960" loading="lazy"><img src="/img/portfolio/studiohope-mobile.webp" alt="" width="300" height="533" loading="lazy"><img src="/img/portfolio/animalultrapet.webp" alt="" width="1200" height="750" loading="lazy"><img src="/img/portfolio/animalultrapet-mobile.webp" alt="" width="300" height="533" loading="lazy">
+    </div>
+  </div>
   <div class="wrap">
-    <h2 data-reveal>Vamos colocar o seu negócio no ar?</h2>
-    <p data-reveal style="--d:.1s">Conte o que você precisa. A gente responde com uma proposta clara, sem compromisso.</p>
-    <a class="btn btn-sand magnetic" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero colocar o meu negócio no ar." target="_blank" rel="noopener" data-reveal style="--d:.2s">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-      Conversar no WhatsApp</a>
-    <p class="cta-alt" data-reveal style="--d:.25s">Prefere e-mail ou formulário? <a href="/contato">Veja todas as formas de contato</a>.</p>
+    <h2 id="contact-h" data-reveal>Vamos conversar?</h2>
+    <form class="bar" id="wa-form" action="/contato" data-reveal style="--d:.08s">
+      <div class="cell"><label for="wa-name" class="sr-only">Seu nome</label><input id="wa-name" name="nome" type="text" autocomplete="name" placeholder="Seu nome" maxlength="80"></div>
+      <div class="cell"><label for="wa-biz" class="sr-only">O seu negócio</label><input id="wa-biz" name="negocio" type="text" placeholder="O seu negócio" maxlength="120"></div>
+      <button class="cell send" type="submit">Chamar no WhatsApp</button>
+    </form>
+    <div class="bar-notes">
+      <p>Abre o WhatsApp com a mensagem pronta. Nada é enviado antes de você tocar em enviar.</p>
+      <p>Prefere escrever? <a href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a> ou o <a href="/contato">formulário de contato</a>.</p>
+    </div>
   </div>
 </section>
-
 </main>
 
-<footer>
+<footer class="site-foot">
   <div class="wrap">
-    <div class="f-top">
-      <div class="f-brand">
-        <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="180" height="45">
-        <p>Criação, hospedagem e suporte de sites para pequenas empresas. Niterói/RJ, atendendo todo o Brasil.</p>
-      </div>
-      <div>
-        <h4>Serviços</h4>
-        <ul><li><a href="/servicos/landing-page">Landing page</a></li><li><a href="/servicos/site-wordpress">Site WordPress</a></li><li><a href="/servicos/email-profissional">E-mail profissional</a></li><li><a href="/servicos/aplicativos">Aplicativos</a></li></ul>
-      </div>
-      <div>
-        <h4>Firmiano</h4>
-        <ul><li><a href="/portfolio/">Portfólio</a></li><li><a href="/quem-somos">Quem somos</a></li><li><a href="/#como-funciona">Como funciona</a></li><li><a href="/#indique">Indique e ganhe</a></li><li><a href="/#faq">Perguntas</a></li></ul>
-      </div>
-      <div>
-        <h4>Contato</h4>
-        <ul><li><a href="https://wa.me/5521998908129" target="_blank" rel="noopener">(21) 99890-8129</a></li><li><a href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a></li><li>Av. Ernani do Amaral Peixoto, 450, sala 505, Centro, Niterói/RJ</li><li><a href="/dominio">Consultar domínio</a></li><li><a href="/contato">Todas as formas de contato</a></li></ul>
-      </div>
+    <div class="foot-top" data-reveal>
+      <img src="/firmiano-identidade/firmiano-wordmark-branco-transparente.svg" alt="Firmiano" width="127" height="32" loading="lazy">
+      <p>Av. Ernani do Amaral Peixoto, 450, sala 505<br>Centro, Niterói/RJ. Atendemos todo o Brasil.</p>
+      <p>Segunda a sexta, em horário comercial.<br>Resposta em até 1 dia útil.</p>
+      <a class="foot-up" href="#top">Voltar ao topo</a>
     </div>
-    <div class="f-bot">
-      <div class="f-legal"><span>© 2026 Firmiano. Responsável: Ismael Firmiano, Niterói/RJ.</span><a href="/privacidade.html">Política de privacidade</a></div>
-      <div class="socials">
-        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
-        <a href="https://wa.me/5521998908129" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></a>
-      </div>
+    <div class="foot-big" data-reveal>
+      <a href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="WhatsApp (21) 99890-8129">(21) 99890-8129</a>
+      <a class="mail" href="mailto:contato@firmiano.com.br">contato@firmiano.com.br</a>
+    </div>
+    <div class="foot-meta" data-reveal>
+      <nav aria-label="Rodapé">
+        <a href="/servicos/landing-page">Landing page</a>
+        <a href="/servicos/site-wordpress">Site WordPress</a>
+        <a href="/servicos/email-profissional">E-mail profissional</a>
+        <a href="/servicos/aplicativos">Aplicativos</a>
+        <a href="/portfolio/">Portfólio</a>
+        <a href="/quem-somos">Quem somos</a>
+        <a href="/#indique">Indique e ganhe</a>
+        <a href="/dominio">Consultar domínio</a>
+        <a href="/contato">Contato</a>
+        <a href="https://www.instagram.com/firmiano.oficial/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/firmiano" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <p class="credits">Fotos de Niterói: <a href="https://commons.wikimedia.org/wiki/File:Esta%C3%A7%C3%A3o_das_Barcas_em_Niter%C3%B3i_15_06_2007.jpg" target="_blank" rel="noopener">Estação das Barcas</a>, por Al Lemos, e <a href="https://commons.wikimedia.org/wiki/File:Boa_Viagem_Niter%C3%B3i.JPG" target="_blank" rel="noopener">Boa Viagem</a>, por DiMonteiro, ambas em domínio público, via Wikimedia Commons.</p>
+      <p class="legal-line">© 2026 Firmiano · Ismael Firmiano, Niterói/RJ<br><a href="/privacidade.html">Política de privacidade</a></p>
     </div>
   </div>
 </footer>
-
-<a class="wa-float" id="waFloat" href="https://wa.me/5521998908129" data-wa="Olá! Vim pelo site e quero um orçamento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.5L3 20l1.1-5.4A8.5 8.5 0 1121 11.5z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
-</a>
 
 <script src="/assets/site.js" defer></script>
 </body>

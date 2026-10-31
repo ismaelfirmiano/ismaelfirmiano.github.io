@@ -30,10 +30,23 @@
   gtag('js', new Date());
   gtag('config', GA_ID);
 
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-  document.head.appendChild(s);
+  /* O gtag (≈178 KiB) só carrega depois que a página aparece: na primeira interação
+     do visitante ou 3,5 s depois do carregamento, o que vier primeiro.
+     Os comandos acima ficam na fila (dataLayer) e são enviados quando ele chega. */
+  var gtagLoaded = false;
+  var EVENTS = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+  function loadGtag() {
+    if (gtagLoaded) return;
+    gtagLoaded = true;
+    EVENTS.forEach(function (ev) { window.removeEventListener(ev, loadGtag, true); });
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+  }
+  EVENTS.forEach(function (ev) { window.addEventListener(ev, loadGtag, { capture: true, passive: true, once: true }); });
+  function later() { setTimeout(loadGtag, 3500); }
+  if (document.readyState === 'complete') later(); else window.addEventListener('load', later);
 
   function apply(choice) {
     write(choice);
